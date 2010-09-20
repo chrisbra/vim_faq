@@ -12,6 +12,7 @@ vimball: $(PLUGIN).vba
 
 clean:
 	rm -f *.vba */*.orig *.~* .VimballRecord
+	find . -type f -name "*.un~" -delete
 
 dist-clean: clean
 
