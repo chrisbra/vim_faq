@@ -2,7 +2,7 @@ SCRIPT=$(wildcard plugin/*.vim)
 FAQ="vim_faq.txt"
 DOC=$(wildcard doc/*.txt)
 PLUGIN=$(shell basename "$$PWD")
-VERSION=$(shell sed -n '/Version:/{s/^.*\(\S\.\S\+\)$$/\1/;p}' $(SCRIPT))
+VERSION=$(shell sed -n '/Version:/{s/^.*\(\S\?\.\?\S\+\)$$/\1/;p}' $(SCRIPT))
 
 .PHONY: $(PLUGIN).vba README
 
@@ -33,7 +33,7 @@ $(PLUGIN).vba:
 generate:
 	vim -u NONE -U NONE -N -c ':$$s/Last updated on: \zs.*$$/\=strftime("%d %B %Y")/|wq' ${FAQ}
 	vim -u NONE -U NONE -N -c ':so vim_faq.vim|:CreateVimFAQHelp|wq' ${FAQ}
-	#vim -u NONE -U NONE -N -c '/^" GetLatestVimScripts: /s/\.\d\+\s\ze:AutoInstall:/\='.'.(submatch(0)+1).' '/|wq' ${SCRIPT}
-	#vim -u NONE -U NONE -N -c '/^" Last Change: /s/\$/strftime("%d %B %Y)/|wq' ${SCRIPT}
-	#vim -u NONE -U NONE -N -c '/^" Version:/s/\d\+/\=submatch(0)+1/|wq' ${SCRIPT}
-	#VERSION=$(shell sed -n '/Version:/{s/^.*\(\S\.\S\+\)$$/\1/;p}' $(SCRIPT))
+	vim -u NONE -U NONE -N -c '/^\" GetLatestVimScripts: /s/\d\+\s\ze:AutoInstall:/\=(submatch(0)+1)." "/|wq' ${SCRIPT}
+	vim -u NONE -U NONE -N -c '/^" Last Change: /s/: \zs.*$$/\=strftime("%d %B %Y")/|wq' ${SCRIPT}
+	vim -u NONE -U NONE -N -c '/^" Version:/s/\d\+/\=submatch(0)+1/|wq' ${SCRIPT}
+	VERSION=$(shell sed -n '/Version:/{s/^.*\(\S\?\.\?\S\+\)$$/\1/;p}' $(SCRIPT))
