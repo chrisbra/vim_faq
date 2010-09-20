@@ -28,12 +28,12 @@ README:
 $(PLUGIN).vba:
 	rm -f $(PLUGIN)-$(VERSION).vba
 	vim -N -c 'ru! vimballPlugin.vim' -c ':call append("0", [ "$(SCRIPT)", "$(DOC)"])' -c '$$d' -c ":%MkVimball $(PLUGIN)-$(VERSION)  ." -c':q!'
-	if [ -f $(PLUGIN)-$(VERSION).vba ]; then ln -f $(PLUGIN)-$(VERSION).vba $(PLUGIN).vba; endif
+	if [ -f $(PLUGIN)-$(VERSION).vba ]; then ln -f $(PLUGIN)-$(VERSION).vba $(PLUGIN).vba; fi
      
 generate:
-	vim -u NONE -U NONE -N -c ':\$s/Last updated on: \zs/\=strftime("%d %B %Y")/|wq' ${FAQ}
-	vim -u NONE -U NONE -N -c ':so vim_faq.vim|:CreateVimFAQHelp|' ${FAQ}
-	vim -u NONE -U NONE -N -c '/^" GetLatestVimScripts: /s/\.\d\+\s\ze:AutoInstall:/\='.'.(submatch(0)+1).' '/|wq' ${SCRIPT}
-	vim -u NONE -U NONE -N -c '/^" Last Change: /s/\$/strftime("%d %B %Y)/|wq' ${SCRIPT}
-	vim -u NONE -U NONE -N -c '/^" Version:/s/\d\+/\=submatch(0)+1/|wq' ${SCRIPT}
-	VERSION=$(shell sed -n '/Version:/{s/^.*\(\S\.\S\+\)$$/\1/;p}' $(SCRIPT))
+	vim -u NONE -U NONE -N -c ':$$s/Last updated on: \zs/\=strftime("%d %B %Y")/|wq' ${FAQ}
+	#vim -u NONE -U NONE -N -c ':so vim_faq.vim|:CreateVimFAQHelp|' ${FAQ}
+	#vim -u NONE -U NONE -N -c '/^" GetLatestVimScripts: /s/\.\d\+\s\ze:AutoInstall:/\='.'.(submatch(0)+1).' '/|wq' ${SCRIPT}
+	#vim -u NONE -U NONE -N -c '/^" Last Change: /s/\$/strftime("%d %B %Y)/|wq' ${SCRIPT}
+	#vim -u NONE -U NONE -N -c '/^" Version:/s/\d\+/\=submatch(0)+1/|wq' ${SCRIPT}
+	#VERSION=$(shell sed -n '/Version:/{s/^.*\(\S\.\S\+\)$$/\1/;p}' $(SCRIPT))
