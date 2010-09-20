@@ -215,4 +215,4 @@ function! VimifyAndInstallFaq(vim_faq_textfile, vim_doc_path)
     return 1
 endfunction
 
-com! CreateVimFAQHelp :call VimifyAndInstallFaq(expand("<sfile>")."./vim_faq.txt", expand("<sfile>")."./doc/")
+com! -bar CreateVimFAQHelp :call VimifyAndInstallFaq(expand("<sfile>")."./vim_faq.txt", expand("<sfile>")."./doc/")
