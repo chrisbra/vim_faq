@@ -4,11 +4,11 @@ For instructions on installing this file, type >
 	    :help add-local-help
 inside Vim.
 
-Last updated on: 18th September 2010
+Last updated on: 20 September 2010
 
 	    VIM REFERENCE MANUAL    by: Yegappan Lakshmanan
 
-Frequently Asked Questions                                      *faq* *FAQ*
+Frequently Asked Questions                                      faq FAQ
 
 This Vim FAQ is created from the questions and answers posted to the
 vim@vim.org user mailing list and the comp.editors newsgroup. There are

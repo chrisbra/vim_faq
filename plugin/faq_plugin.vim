@@ -1,11 +1,11 @@
 " VIM_FAQ - The Vim faq from http://vimdoc.sourceforge.net/
 " -------------------------------------------------------------
-" Version:	   0.1
+" Version:  3
 " Maintainer:  Yegappan Lakshmanan
-" Last Change: 
+" Last Change: 20 September 2010
 "
 " Script: 
-" GetLatestVimScripts: XXX 1 :AutoInstall: faq_plugin.vim
+" GetLatestVimScripts: XXX 3 :AutoInstall: faq_plugin.vim
 "
 "
 " empty stub. This plugin contains only of the documentation
