@@ -31,7 +31,7 @@ $(PLUGIN).vba:
 	if [ -f $(PLUGIN)-$(VERSION).vba ]; then ln -f $(PLUGIN)-$(VERSION).vba $(PLUGIN).vba; fi
      
 generate:
-	vim -u NONE -U NONE -N -c ':$$s/Last updated on: \zs/\=strftime("%d %B %Y")/|wq' ${FAQ}
+	vim -u NONE -U NONE -N -c ':$$s/Last updated on: \zs.*$$/\=strftime("%d %B %Y")/|wq' ${FAQ}
 	#vim -u NONE -U NONE -N -c ':so vim_faq.vim|:CreateVimFAQHelp|' ${FAQ}
 	#vim -u NONE -U NONE -N -c '/^" GetLatestVimScripts: /s/\.\d\+\s\ze:AutoInstall:/\='.'.(submatch(0)+1).' '/|wq' ${SCRIPT}
 	#vim -u NONE -U NONE -N -c '/^" Last Change: /s/\$/strftime("%d %B %Y)/|wq' ${SCRIPT}
