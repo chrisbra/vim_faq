@@ -193,6 +193,9 @@ function! VimifyAndInstallFaq(vim_faq_textfile, vim_doc_path)
     %s/^\s\+(\*\(New\|Updated\)\*)\n//
     " and now for the rest of those ...
     %s/(\*\(New\|Updated\)\*)//
+    
+    " don't install *faq* and *FAQ* tags
+    %s/\*\(faq\|FAQ\)\*/\1/g
 
     " remove a few lines at the end
     $-3,$d
@@ -215,4 +218,4 @@ function! VimifyAndInstallFaq(vim_faq_textfile, vim_doc_path)
     return 1
 endfunction
 
-com! -bar CreateVimFAQHelp :call VimifyAndInstallFaq(expand("<sfile>")."./vim_faq.txt", expand("<sfile>")."./doc/")
+:com! -bar CreateVimFAQHelp :echo VimifyAndInstallFaq("./vim_faq.txt", "./doc")
