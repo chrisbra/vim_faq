@@ -8,7 +8,7 @@ Last updated on: 04 October 2010
 
 	    VIM REFERENCE MANUAL    by: Yegappan Lakshmanan
 
-Frequently Asked Questions                                      faq FAQ
+Frequently Asked Questions                                 *vim-faq* *Vim-FAQ*
 
 This Vim FAQ is created from the questions and answers posted to the
 vim@vim.org user mailing list and the comp.editors newsgroup. There are
