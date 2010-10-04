@@ -168,17 +168,17 @@ function! VimifyAndInstallFaq(vim_faq_textfile, vim_doc_path)
     " (Paul Bolle)
 
     " but remove those helpExamples if these are ':help ...' examples
-    " %s/>\(\n^$\)\(\(\n \{4\}:help.*\)\+\)\(\n^\)<$/\1\2\4/
+    %s/>\(\n^$\)\(\(\n \{4\}:help.*\)\+\)\(\n^\)<$/\1\2\4/
 
     " make 'helpHyperTextJumps' from ':help ...' examples
-    " %s/\(^ \{4\}\):help \(.*\)/\1\|\2\|/
+    %s/\(^ \{4\}\):help \(.*\)/\1\|\2\|/
 
     " and revert all that for a block of three <C-D> examples (in 4.2)
-    " %s/\(^ \{4\}\)|\(.*<C-D>\)|/\1:help \2/ 
-    " %s/\(\n^$\)\(\(\n \{4\}:help .*<C-D>\)\+\)\(\n^\)$/ >\1\2\4</
+    %s/\(^ \{4\}\)|\(.*<C-D>\)|/\1:help \2/ 
+    %s/\(\n^$\)\(\(\n \{4\}:help .*<C-D>\)\+\)\(\n^\)$/ >\1\2\4</
 
     " another special case in the helpHyperTextJump: '|'"|' didn't work ...
-    " %s/\(^ \{4\}|'\)"\(|\)/\1quote\2/
+    %s/\(^ \{4\}|'\)"\(|\)/\1quote\2/
 
     " make 'helpHyperTextEntries' to SECTIONs (in answers), e.g.: *faq-27*
     norm gg
@@ -196,6 +196,8 @@ function! VimifyAndInstallFaq(vim_faq_textfile, vim_doc_path)
     
     " don't install *faq* and *FAQ* tags
     %s/\*\(faq\|FAQ\)\*/\1/g
+    " don't tag *always*
+    %s/*always[*]/always/g
 
     " remove a few lines at the end
     $-3,$d
