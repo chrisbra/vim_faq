@@ -138,7 +138,7 @@ function! VimifyAndInstallFaq(vim_faq_textfile, vim_doc_path)
     call append(7, '')
     call append(8, '                VIM REFERENCE MANUAL    by: ' . l:faq_author)
     call append(9, '')
-    call append(10, 'Frequently Asked Questions                                      *faq* *FAQ*')
+    call append(10, 'Frequently Asked Questions                                 *vim-faq* *Vim-FAQ*')
 
     " make 'helpHyperTextJumps' in index
     %s/^ \{4\}\([0-9]\{1,2\}\.[0-9]\{1,2\}\)\. \(\w\)/|faq-\1| \2/
@@ -195,7 +195,7 @@ function! VimifyAndInstallFaq(vim_faq_textfile, vim_doc_path)
     %s/(\*\(New\|Updated\)\*)//
     
     " don't install *faq* and *FAQ* tags
-    %s/\*\(faq\|FAQ\)\*/\1/g
+    "%s/\*\(faq\|FAQ\)\*/\1/g
     " don't tag *always*
     %s/*always[*]/always/g
 
