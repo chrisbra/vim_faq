@@ -224,7 +224,7 @@ SECTION 12 - CHANGING TEXT
     12.8. How do I yank a complete sentence that spans over more than one
           line?
     12.9. How do I yank all the lines containing a pattern into a buffer?
-    12.10. How do I delete all the lines in a file that does not contain a
+    12.10. How do I delete all the lines in a file that do not contain a
            pattern?
     12.11. How do I add a line before each line with "pattern" in it?
     12.12. Is there a way to operate on a line if the previous line
@@ -235,7 +235,7 @@ SECTION 12 - CHANGING TEXT
            position?
     12.15. How do I insert a blank line above/below the current line
            without entering insert mode?
-    12.16. How do I insert the name of current file into the current
+    12.16. How do I insert the name of the current file into the current
            buffer?
     12.17. How do I insert the contents of a Vim register into the current
            buffer?
@@ -398,7 +398,7 @@ SECTION 19 - OPTIONS
 
 SECTION 20 - MAPPING KEYS
     20.1. How do I know what a key is mapped to?
-    20.2. How do list all the user-defined key mappings?
+    20.2. How do I list all the user-defined key mappings?
     20.3. How do I unmap a key?
     20.4. I am not able to create a mapping for the <xxx> key. What is
           wrong?
@@ -3118,7 +3118,7 @@ For more information, read
     :help :put
 
 
-12.16. How do I insert the name of current file into the current buffer?
+12.16. How do I insert the name of the current file into the current buffer?
 
 There are several ways to insert the name of the current file into the
 current buffer. In insert mode, you can use the <C-R>% or the
@@ -4434,7 +4434,7 @@ Note that not all options can have a local value. You can use ":setlocal"
 command to set an option locally to a buffer/window only if the option is
 allowed to have a local value.
 
-You can also use the following command to set a option locally:
+You can also use the following command to set an option locally:
 
     :let &l:{option-name} = <value>
 
@@ -4704,7 +4704,7 @@ For more information, read
     :help map-overview
 
 
-20.2. How do list all the user-defined key mappings?
+20.2. How do I list all the user-defined key mappings?
 
 You can list all the user-defined key mappings using:
 
@@ -5237,7 +5237,7 @@ SECTION 23 - AUTOCOMMANDS
 23.1. How do I execute a command when I try to modify a read-only file?
 
 You can use the FileChangedRO autocommand event to execute a command when a
-read-only file modified. For example, you can use this event to checkout a
+read-only file is modified. For example, you can use this event to checkout a
 read-only file:
 
     :autocmd FileChangedRO * call MyCheckoutFunction()
@@ -5302,7 +5302,7 @@ For more information, read
 23.6. How do I execute/run a function when Vim exits to do some cleanup?
 
 You can use VimLeave autocmd event to execute a function just before Vim
-exists. For example,
+exits. For example,
 
     :autocmd VimLeave * call MyCleanupFunction()
 
