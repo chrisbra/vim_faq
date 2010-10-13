@@ -4,7 +4,7 @@ For instructions on installing this file, type >
 	    :help add-local-help
 inside Vim.
 
-Last updated on: 04 October 2010
+Last updated on: 13 October 2010
 
 	    VIM REFERENCE MANUAL    by: Yegappan Lakshmanan
 
@@ -736,6 +736,7 @@ SECTION 36 - VARIOUS
 |faq-36.8|  How do I use a normal mode command from insert mode without
 	    leaving the insert mode?
 |faq-36.9|  How do I start Vim in insert mode?
+|faq-36.10| How do I use Copy and Paste with Vim?
                                                                 *faq-unicode*
 SECTION 37 - UNICODE
 |faq-37.1|  Is it possible to create Unicode files using Vim?
@@ -7921,6 +7922,44 @@ you can use the following command: >
 For more information, read 
 
     |:startinsert|
+
+ 								*faq-36.10*
+36.10. How do I use Copy and Paste with Vim?
+
+You should first check the output of the ":version" command and make
+sure that +xterm-clipboard is present.
+
+When running Vim in an xterm, you can either let Vim control the mouse
+or let xterm control the mouse. This is configured by the 'mouse' option.
+
+If the 'mouse' option is not set (or set to the default value), then Vim will
+not control the mouse. You cannot move the Vim text cursor using the
+mouse. When you select some text using the mouse, xterm will copy
+it to the X11 cut buffer. When you press both the mouse buttons,
+xterm will paste the text from the cut buffer.
+
+If the 'mouse' option is set to 'a' or some other value, then Vim controls
+the mouse. The mode (normal or insert or visual, etc) in which Vim
+controls the mouse is configured by the 'mouse' option. You can move
+the Vim text cursor using the mouse. When you select some text,
+the 'clipboard' option setting is used to determine whether to transfer
+the selected text to the clipboard or not. The default setting is to
+transfer the selected text to the clipboard. If you want to use the
+xterm selection mechanism in this mode, then you can press the
+<Shift> key. If you press <Shift> key when selecting text using the
+mouse, then Vim doesn't control the mouse and xterm controls the
+mouse.
+
+In the GUI mode, Copy and Paste should just work, depending on the 'mouse'
+setting.
+
+   :help 'clipboard'
+   :help x11-selection
+   :help clipboard
+   :help 'go-a'
+   :help 'mouse'
+   :help xterm-copy-paste
+   :help 9.3
 
 =============================================================================
  								*faq-37*
