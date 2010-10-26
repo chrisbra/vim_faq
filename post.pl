@@ -18,6 +18,7 @@ sub GetPassword() {
 }
 
 my $sid=3298;
+my $vim_required_version=6.0;
 my $file;
 my @files=glob('*.vba');
 #my $scriptversion=shift @ARGV;
@@ -49,7 +50,7 @@ $mech->get("http://www.vim.org/scripts/script.php?script_id=$sid");
 $mech->follow_link(text => 'upload new version');
 $mech->form_name("script");
 $mech->field(script_file => $file);
-$mech->field(vim_version => 7.3);
+$mech->field(vim_version => $vim_required_version);
 $mech->field(script_version => $scriptversion);
 $mech->field(version_comment => $versioncomment);
 $mech->click_button(value => "upload");
