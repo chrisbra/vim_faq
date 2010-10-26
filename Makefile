@@ -2,7 +2,7 @@ SCRIPT=$(wildcard plugin/*.vim)
 FAQ="vim_faq.txt"
 DOC=$(wildcard doc/*.txt)
 PLUGIN=$(shell basename "$$PWD")
-VERSION=$(shell sed -n '/Version:/{s/^.*\(\S\?\.\?\S\+\)$$/\1/;p}' $(SCRIPT))
+VERSION=$(shell sed -n '/Version:/{s/^[^0-9]*\([0-9]\+\)$$/\1/;p}' $(SCRIPT))
 
 .PHONY: $(PLUGIN).vba README
 
