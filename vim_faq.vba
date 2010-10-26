@@ -5,18 +5,18 @@ plugin/faq_plugin.vim	[[[1
 12
 " VIM_FAQ - The Vim faq from http://vimdoc.sourceforge.net/
 " -------------------------------------------------------------
-" Version:  10
+" Version:  11
 " Maintainer:  Yegappan Lakshmanan
 " Last Change: 26 October 2010
 "
 " Script: 
-" GetLatestVimScripts: XXX 10 :AutoInstall: faq_plugin.vim
+" GetLatestVimScripts: XXX 11 :AutoInstall: faq_plugin.vim
 "
 "
 " empty stub. This plugin contains only of the documentation
 " and the GLVS headers for |GLVS|
 doc/vim_faq.txt	[[[1
-8163
+8162
 *vim_faq.txt*	Frequently Asked Questions
 
 For instructions on installing this file, type >
@@ -35,18 +35,6 @@ several ways to solve a problem in Vim. This FAQ gives one of those several
 possibilities. You can explore the other ways using the information and
 links given in this FAQ. The credit for the answers in this FAQ goes to
 Peppe, Benji, Charles Campbell and numerous others.
-
-TODO:
-How do I define a map to accept a count?
-
-Use the @= command to use an expression. For example, >
-
-    nnoremap = @='3l'
-<
-Now you can specify a count to the '=' command. 
-
-    |complex-repeat|
-
 								*faq-index*
 INDEX
                                                 *faq-general-information*
@@ -456,6 +444,7 @@ SECTION 20 - MAPPING KEYS
 	    selected text?
 |faq-20.18| How do I map the Ctrl-I key while still retaining the
 	    functionality of the <Tab> key?
+|faq-20.19| How do I define a map to accept a count?
                                                         *faq-abbreviations*
 SECTION 21 - ABBREVIATIONS
 |faq-21.1|  How do I auto correct misspelled words?
@@ -5069,6 +5058,16 @@ applies for the Ctrl-[ key and the <Esc> key.
 For more information, read 
 
     |keycodes|
+
+20.19 How do I define a map to accept a count?
+
+Use the @= command to use an expression. For example, >
+
+    nnoremap = @='3l'
+<
+Now you can specify a count to the '=' command. 
+
+    |complex-repeat|
 
 =============================================================================
  								*faq-21*
