@@ -5,12 +5,12 @@ plugin/faq_plugin.vim	[[[1
 12
 " VIM_FAQ - The Vim faq from http://vimdoc.sourceforge.net/
 " -------------------------------------------------------------
-" Version:  11
+" Version:  12
 " Maintainer:  Yegappan Lakshmanan
 " Last Change: 26 October 2010
 "
 " Script: 
-" GetLatestVimScripts: XXX 11 :AutoInstall: faq_plugin.vim
+" GetLatestVimScripts: XXX 12 :AutoInstall: faq_plugin.vim
 "
 "
 " empty stub. This plugin contains only of the documentation
@@ -724,7 +724,7 @@ SECTION 35 - BUILDING VIM FROM SOURCE
 	    time?
 |faq-35.7|  Can I build Vim without the GUI support?
 |faq-35.8|  When building Vim on a Unix system, I am getting "undefined
-	    reference to term_set_winsize' error. How do I resolve this
+	    reference to term_set_winsize" error. How do I resolve this
 	    error?
 |faq-35.9|  Vim configure keeps complaining about the lack of gtk-config
 	    while trying to use GTK 2.03. This is correct, since in GTK 2
@@ -920,7 +920,7 @@ Advanced user features:
      supported. Support for others can be added.
   Extended regular expressions
      Vim supports extended regular expressions which are similar in
-     functionality to that of perl regular expressions.
+     functionality to that of Perl regular expressions.
   Integrated Spell checking
      Spell checking has been integrated into Vim 
   Diff mode
@@ -3491,13 +3491,13 @@ For more information, read
 12.35. How do I change the characters used as word delimiters?
 
 Vim uses the characters specified by the 'iskeyword' option as word
-delimitiers. The default setting for this option is "@,48-57,_,192-255".
+delimiters. The default setting for this option is "@,48-57,_,192-255".
 
-For example, to add ':' as a word delimitier, you can use >
+For example, to add ':' as a word delimiter, you can use >
 
     :set iskeyword+=:
 <
-To remove '_' as a word delimitier, you can use >
+To remove '_' as a word delimiter, you can use >
 
     :set iskeyword-=_
 <
@@ -4504,7 +4504,7 @@ setting the 'numberwidth' option: >
 <
 This set's the width for the line number to 3 digits, which is enough, if
 your buffer contains less than 999 lines. However, if your current buffer
-contains more lines than 999, the numberwidth will be adjusted accordingly,
+contains more lines than 999, the 'numberwidth' will be adjusted accordingly,
 so that the maximum line number will fit on the screen.
 
  								*faq-19.8*
@@ -4801,7 +4801,7 @@ For more information, read
  								*faq-20.7*
 20.7. How do I create a mapping that works only in visual mode?
 
-You can create mappings that work only in specific mode (normal, command,
+You can create mappings that work only in specific modes (normal, command,
 insert, visual, etc). To create a mapping that works only in the visual
 mode, use the ":vmap" command: >
 
@@ -5162,7 +5162,7 @@ For more information, read
 21.5. How do I prevent an abbreviation from expanding in insert mode?
 
 You can prevent an abbreviation from expanding in insert mode by typing
-CTRL-V before the character after the abreviated word.
+CTRL-V before the character after the abbreviated word.
 
 For more information, read 
 
@@ -5471,7 +5471,7 @@ For more information, read
 You can specify the color scheme using the ":colorscheme" command in your
 .vimrc or .gvimrc file: >
 
-    colorschme evening
+    colorscheme evening
 <
 For more information, read 
 
@@ -5735,7 +5735,7 @@ For more information, read
 25.9. How do I check whether an environment variable is set or not from a
       Vim function?
 
-You can use the exists() function to check for the existence of a
+You can use the exists() function to check for the existence of an
 environment variable. >
 
     if exists("$MY_ENV_VAR")
@@ -6130,7 +6130,7 @@ For more information, read
     |:scriptnames|
 
  								*faq-25.30*
-25.30. Is it possible to un-source a sourced script? In otherwords, reverse
+25.30. Is it possible to un-source a sourced script? In other words, reverse
        all the commands executed by sourcing a script.
 
 No. It is not possible to reverse or undo all the commands executed by
@@ -6587,7 +6587,7 @@ SECTION 29 - FOLDING
  								*faq-29.1*
 29.1. How do I extend the Vim folding support?
 
-You can use the 'foldexpr' option to fold using an user specified function.
+You can use the 'foldexpr' option to fold using a user specified function.
 For example, to fold subroutines of the following form into a single line: >
 
     sub foo {
@@ -6885,7 +6885,7 @@ For more information, read
       command and replace the contents of the buffer with the output from
       the command?
 
-You can use the :! command to pipe the contents of the current buffer to a
+You can use the :! command to pipe the contents of the current buffer to an
 external command and replace the contents of the buffer with the output
 from the command. For example, to sort the contents of the current buffer,
 using the Unix sort command, you can use the following command: >
@@ -7771,7 +7771,7 @@ For more information, read
 
  								*faq-35.8*
 35.8. When building Vim on a Unix system, I am getting "undefined reference
-      to term_set_winsize' error. How do I resolve this error?
+      to term_set_winsize" error. How do I resolve this error?
 
 You will get this error when the build process is not able to locate the
 termlib, termcap or ncurses library. You have to install the ncurses-dev
