@@ -4,7 +4,7 @@ For instructions on installing this file, type >
 	    :help add-local-help
 inside Vim.
 
-Last updated on: 13 October 2010
+Last updated on: 26 October 2010
 
 	    VIM REFERENCE MANUAL    by: Yegappan Lakshmanan
 
@@ -411,30 +411,31 @@ SECTION 20 - MAPPING KEYS
 |faq-20.3|  How do I unmap a key?
 |faq-20.4|  I am not able to create a mapping for the <xxx> key. What is
 	    wrong?
-|faq-20.5|  How do I map the numeric keypad keys?
-|faq-20.6|  How do I create a mapping that works only in visual mode?
-|faq-20.7|  How do I create a mapping that works only in normal and operator
+|faq-20.5|  Why does mapping the <C-...> key not work?
+|faq-20.6|  How do I map the numeric keypad keys?
+|faq-20.7|  How do I create a mapping that works only in visual mode?
+|faq-20.8|  How do I create a mapping that works only in normal and operator
 	    pending mode (but not in visual mode)?
-|faq-20.8|  In a Vim script, how do I know which keys to use for my mappings,
+|faq-20.9|  In a Vim script, how do I know which keys to use for my mappings,
 	    so that the mapped key will not collide with an already used key?
-|faq-20.9|  How do I map the escape key?
-|faq-20.10| How do I map a key to perform nothing?
-|faq-20.11| I want to use the Tab key to indent a block of text and
+|faq-20.10| How do I map the escape key?
+|faq-20.11| How do I map a key to perform nothing?
+|faq-20.12| I want to use the Tab key to indent a block of text and
 	    Shift-Tab key to unindent a block of text. How do I map the keys
 	    to do this?  This behavior is similar to textpad, visual studio,
 	    etc.
-|faq-20.12| In my mappings the special characters like <CR> are not
+|faq-20.13| In my mappings the special characters like <CR> are not
 	    recognized. How can I configure Vim to recognize special
 	    characters?
-|faq-20.13| How do I use the '|' to separate multiple commands in a map?
-|faq-20.14| If I have a mapping/abbreviation whose ending is the beginning of
+|faq-20.14| How do I use the '|' to separate multiple commands in a map?
+|faq-20.15| If I have a mapping/abbreviation whose ending is the beginning of
 	    another mapping/abbreviation, how do I keep the first from
 	    expanding into the second one?
-|faq-20.15| Why does it take a second or more for Vim to process a key,
+|faq-20.16| Why does it take a second or more for Vim to process a key,
 	    sometimes when I press a key?
-|faq-20.16| How do I map a key to run an external command using a visually
+|faq-20.17| How do I map a key to run an external command using a visually
 	    selected text?
-|faq-20.17| How do I map the Ctrl-I key while still retaining the
+|faq-20.18| How do I map the Ctrl-I key while still retaining the
 	    functionality of the <Tab> key?
                                                         *faq-abbreviations*
 SECTION 21 - ABBREVIATIONS
@@ -4750,7 +4751,31 @@ For more information, read
     |key-codes|
 
  								*faq-20.5*
-20.5. How do I map the numeric keypad keys?
+20.5. Why does mapping the <C-...> key not work?
+
+The only Ctrl-printable-key chords which Vim can reliably detect (because they
+are defined in the ASCII standard) are the following: >
+
+        Ctrl-@                 0x00            NUL
+        Ctrl-A to Ctrl-Z       0x01 to 0x1A
+        Ctrl-a to Ctrl-z       0x01 to 0x1A
+        Ctrl-[                 0x1B            ESC
+        Ctrl-\                 0x1C
+        Ctrl-]                 0x1D
+        Ctrl-^                 0x1E
+        Ctrl-_                 0x1F
+        Ctrl-?                 0x7F            DEL
+<
+Most of these, however, already have a function in Vim (and some are
+aliases of other keys: Ctrl-H and Bsp, Ctrl-I and Tab, Ctrl-M and Enter,
+Ctrl-[ and Esc, Ctrl-? and Del).
+
+The "safest" keys to use in Vim for the {lhs} of a mapping are the F
+keys, with or without Shift: <F2> to <F12> and <S-F1> to <S-F12>. (Some
+OSes, including mine, intercept Ctrl-Fn and Alt-Fn, which never reach an
+application program such as vim or gvim.) 
+ 								*faq-20.6*
+20.6. How do I map the numeric keypad keys?
 
 First make sure that the numeric keypad keys are passed to Vim. Next, you
 can use the following command to map the numeric keypad keys: >
@@ -4765,8 +4790,8 @@ For more information, read
     |key-codes|
     |terminal-options|
 
- 								*faq-20.6*
-20.6. How do I create a mapping that works only in visual mode?
+ 								*faq-20.7*
+20.7. How do I create a mapping that works only in visual mode?
 
 You can create mappings that work only in specific mode (normal, command,
 insert, visual, etc). To create a mapping that works only in the visual
@@ -4792,8 +4817,8 @@ For more information, read
     |:smap|
     |map-modes|
     |40.1|
- 								*faq-20.7*
-20.7. How do I create a mapping that works only in normal and operator
+ 								*faq-20.8*
+20.8. How do I create a mapping that works only in normal and operator
    pending mode (but not in visual mode)?
 
 Using ":map" creates a mapping that works in normal, visual+select mode and
@@ -4809,8 +4834,8 @@ for visual and select mode:
 
 	:map <f3> <your mapping here>
 	:vunmap <f3>
- 								*faq-20.8*
-20.8. In a Vim script, how do I know which keys to use for my mappings, so
+ 								*faq-20.9*
+20.9. In a Vim script, how do I know which keys to use for my mappings, so
       that the mapped key will not collide with an already used key?
 
 Vim uses most of the keys in the keyboard. You can use the <leader> prefix
@@ -4842,16 +4867,16 @@ For more information, read
     |<LocalLeader>|
     |write-plugin|
 
- 								*faq-20.9*
-20.9. How do I map the escape key?
+ 								*faq-20.10*
+20.10. How do I map the escape key?
 
 You can map the Escape key to some other key using the ":map" command. For
 example, the following command maps the escape key to CTRL-O. >
 
     :map <C-O> <Esc>
 <
- 								*faq-20.10*
-20.10. How do I map a key to perform nothing?
+ 								*faq-20.11*
+20.11. How do I map a key to perform nothing?
 
 You can map a key to <Nop> to perform nothing when the key is pressed. For
 example, with the following mappings, the <F7> key will do nothing when
@@ -4867,8 +4892,8 @@ For more information, read
     |:map!|
     |map-modes|
 
- 								*faq-20.11*
-20.11. I want to use the Tab key to indent a block of text and Shift-Tab
+ 								*faq-20.12*
+20.12. I want to use the Tab key to indent a block of text and Shift-Tab
        key to unindent a block of text. How do I map the keys to do this?
        This behavior is similar to textpad, visual studio, etc.
 
@@ -4894,8 +4919,8 @@ For more information, read
     |<<|
     |<LT>|
 
- 								*faq-20.12*
-20.12. In my mappings the special characters like <CR> are not recognized.
+ 								*faq-20.13*
+20.13. In my mappings the special characters like <CR> are not recognized.
        How can I configure Vim to recognize special characters?
 
 Check the value of the 'cpoptions' option: >
@@ -4920,8 +4945,8 @@ For more information, read
     |'cpoptions'|
     |'compatible'|
 
- 								*faq-20.13*
-20.13. How do I use the '|' to separate multiple commands in a map?
+ 								*faq-20.14*
+20.14. How do I use the '|' to separate multiple commands in a map?
 
 You can escape the '|' character using backslash (\) to use '|' in a map. >
 
@@ -4937,8 +4962,8 @@ For more information, read
 
     |map_bar|
 
- 								*faq-20.14*
-20.14. If I have a mapping/abbreviation whose ending is the beginning of
+ 								*faq-20.15*
+20.15. If I have a mapping/abbreviation whose ending is the beginning of
        another mapping/abbreviation, how do I keep the first from expanding
        into the second one?
 
@@ -4951,8 +4976,8 @@ For more information, read
     |:noremap|
     |:noreabbrev|
 
- 								*faq-20.15*
-20.15. Why does it take a second or more for Vim to process a key,
+ 								*faq-20.16*
+20.16. Why does it take a second or more for Vim to process a key,
        sometimes when I press a key?
 
 Make sure you have not defined a mapping for this key using the following
@@ -4980,8 +5005,8 @@ For more information, read
     |vt100-cursor-keys|
     |slow-fast-terminal|
 
- 								*faq-20.16*
-20.16. How do I map a key to run an external command using a visually
+ 								*faq-20.17*
+20.17. How do I map a key to run an external command using a visually
        selected text?
 
 You can the ":vmap" command to map a key in the visual mode. In the mapped
@@ -5013,8 +5038,8 @@ For more information, read
     |c_CTRL-U|
     |:!cmd|
 
- 								*faq-20.17*
-20.17. How do I map the Ctrl-I key while still retaining the functionality
+ 								*faq-20.18*
+20.18. How do I map the Ctrl-I key while still retaining the functionality
        of the <Tab> key?
 
 The Ctrl-I key and the <Tab> key produce the same keycode, so Vim cannot
