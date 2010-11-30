@@ -5,12 +5,12 @@ plugin/faq_plugin.vim	[[[1
 12
 " VIM_FAQ - The Vim faq from http://vimdoc.sourceforge.net/
 " -------------------------------------------------------------
-" Version:  12
+" Version:  14
 " Maintainer:  Yegappan Lakshmanan
-" Last Change: 26 October 2010
+" Last Change: 30 November 2010
 "
 " Script: 
-" GetLatestVimScripts: XXX 12 :AutoInstall: faq_plugin.vim
+" GetLatestVimScripts: 3298 14 :AutoInstall: faq_plugin.vim
 "
 "
 " empty stub. This plugin contains only of the documentation
@@ -23,7 +23,7 @@ For instructions on installing this file, type >
 	    :help add-local-help
 inside Vim.
 
-Last updated on: 26 October 2010
+Last updated on: 30 November 2010
 
 	    VIM REFERENCE MANUAL    by: Yegappan Lakshmanan
 
@@ -96,7 +96,7 @@ SECTION 5 - EDITING A FILE
 |faq-5.11|  How do I open a file for editing without saving the modifications
 	    to the current file?
 |faq-5.12|  How do I reduce the loading time for very large files in Vim?
-                                                *faq-editing-multiple-files*
+                                               *faq-editing-multiple-files*
 SECTION 6 - EDITING MULTIPLE FILES
 |faq-6.1|   How do I open multiple files at once from within Vim?
 |faq-6.2|   How do I switch between multiple files/buffers in Vim?
@@ -792,10 +792,10 @@ document is secondary. With an editor, one's main concern is entering text,
 not making the text look good. Examples of editors other than Vim and Vi
 are Emacs, Crisp, Brief, TextMate and xedit.  And Notepad.
 
-For more information, read 
+For more information, read >
 
     |intro|
-
+<ùg	 ]\) 
  								*faq-1.2*
 1.2. Who wrote Vim?
 
@@ -1252,7 +1252,7 @@ a)  You can press the CTRL-D key after typing the help keyword to get a
     :help init<C-D>
     :help str*()<C-D>
     :help '*indent<C-D>
-<
+<@è@>
 b)  You can press the Tab key after typing a partial help keyword to expand
     to the matching keyword. You can continue to press the Tab key to see
     other keyword matches.
@@ -2901,7 +2901,7 @@ The explanation for this command is below: >
               -1    Adjust the range of lines to end with the line before
                     the last line.
                 j   Join the lines in the range.
-<
+<@Ø@
 Note that this will give an error message if the empty lines are at the end
 of the file. To correct this, you have to add a temporary line at the end
 of the file, execute the command and then remove the temporary line.
@@ -3536,7 +3536,7 @@ Vim supports completion of the following items: >
     CTRL-X CTRL-V    Vim command line
     CTRL-X CTRL-U    User defined completion
     CTRL-X CTRL-O    Omni completion
-<
+<@Ø@
 User defined completions and omni completions are often set by filetype
 plugins.
 
@@ -5058,8 +5058,8 @@ applies for the Ctrl-[ key and the <Esc> key.
 For more information, read 
 
     |keycodes|
-
-20.19 How do I define a map to accept a count?
+ 								*faq-20.19*
+20.19. How do I define a map to accept a count?
 
 Use the @= command to use an expression. For example, >
 
@@ -6610,12 +6610,12 @@ You can use the following commands: >
             return foldlevel(a:line - 1)
         endif
     endfun
-<
-For more information, read 
+<@Ø@
+For more information, read >
 
     |'foldexpr'|
     |fold-expr|
-
+<@Ø@
  								*faq-29.2*
 29.2. When I enable folding by setting the 'foldmethod' option, all the
       folds are closed. How do I prevent this?

@@ -776,7 +776,7 @@ are Emacs, Crisp, Brief, TextMate and xedit.  And Notepad.
 For more information, read >
 
     |intro|
-</1	 ]\) 
+<ùg	 ]\) 
  								*faq-1.2*
 1.2. Who wrote Vim?
 
