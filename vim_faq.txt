@@ -5050,7 +5050,7 @@ For more information, read
 
     :help keycodes
 
-20.19 How do I define a map to accept a count?
+20.19. How do I define a map to accept a count?
 
 Use the @= command to use an expression. For example,
 
@@ -8189,4 +8189,4 @@ For more information, read
 =============================================================================
 
 Current Maintainer: Yegappan Lakshmanan
-Last updated on: 26 October 2010
+Last updated on: 30 November 2010
