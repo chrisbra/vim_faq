@@ -765,7 +765,7 @@ document is secondary. With an editor, one's main concern is entering text,
 not making the text look good. Examples of editors other than Vim and Vi
 are Emacs, Crisp, Brief, TextMate and xedit.  And Notepad.
 
-For more information, read
+For more information, read:
 
     :help intro
 
@@ -778,7 +778,7 @@ people to mention here. See ":h credits" for a complete list.
 Vim is based on Stevie, worked on by Tim Thompson, Tony Andrews and G.R.
 (Fred) Walter.
 
-For more information, read
+For more information, read:
 
     :help author
 
@@ -1072,8 +1072,11 @@ For more information, read
 
 2.7. Where can the FAQ be found?
 
-The FAQ can be found at VimOnline (vim.sf.net).  Other places will be
-decided in the future.
+The FAQ can be found at http://vimhelp.appspot.com/vim_faq.txt.html.
+
+A slightly older version (which doesn't seem to get updated anymore) can
+still be found at VimOnline (vim.sf.net). Other places will be decided in
+the future.
 
 
 2.8. What if I don't find an answer in this FAQ?
@@ -1159,6 +1162,7 @@ For more information, read
     :help changed-6.4
     :help changed-7.1
     :help changed-7.2
+    :help changed-7.3
 
 3.2. Where can I find the latest version of Vim?
 
@@ -1714,7 +1718,7 @@ example, to edit a file over ftp, you can use the following command:
 
     $ vim ftp://machine/path
 
-For more information, read
+For more information, read:
 
     :help netrw.vim
 
@@ -2188,7 +2192,7 @@ For more information, read
 
     :help sentence
     :help 'joinspaces'
-    :help 'cpoptions' | /^\s*j\>
+    :help 'cpoptions'
     :help paragraph
     :help section
     :help word
@@ -2482,7 +2486,7 @@ For more information, read
 
     :help star
     :help #
-    :help g*
+    :help gstar
     :help g#
     :help 03.8
     :help search-commands
@@ -2563,7 +2567,7 @@ For more information, read
     :help word-count
     :help v_g_CTRL-G
     :help 12.5
-    :help s_flags | /^\[n\]
+    :help s_flags
 
 
 11.11. How do I place the cursor at the end of the matched word when
@@ -2596,7 +2600,7 @@ former only matches true empty lines. For more information, read
     :help /^
     :help /$
     :help /\s
-    :help /*
+    :help /star
     :help search-commands
 
 
@@ -2611,7 +2615,7 @@ For more information, read
     :help /^
     :help /\a
     :help /\s
-    :help /*
+    :help /star
     :help /$
 
 
@@ -2856,7 +2860,7 @@ multiple consecutive space characters to a single space:
 
     :%s/ \{2,}/ /g
 
-alternatively use:
+Alternatively use:
 
     :%s/  \+/ /g
 
@@ -2879,12 +2883,12 @@ The explanation for this command is below:
 
     :v/./           Execute the following command for all lines not
                     containing a character (empty lines).
-         .,         Use the current line as the start of the range of
+     .,             Use the current line as the start of the range of
                     lines.
-           /./      Use the line containing a character as the last line.
-              -1    Adjust the range of lines to end with the line before
+     /./            Use the line containing a character as the last line.
+     -1             Adjust the range of lines to end with the line before
                     the last line.
-                j   Join the lines in the range.
+     j              Join the lines in the range.
 
 Note that this will give an error message if the empty lines are at the end
 of the file. To correct this, you have to add a temporary line at the end
@@ -2948,7 +2952,7 @@ For more information, read
 
     :help yank
     :help motion.txt
-    :help 4.6
+    :help 04.6
 
 
 12.7. When I yank some text into a register, how do I append the text to
@@ -2982,7 +2986,7 @@ For more information, read
     :help yank
     :help {motion}
     :help object-motions
-    :help 4.6
+    :help 04.6
 
 
 12.9. How do I yank all the lines containing a pattern into a buffer?
@@ -3867,7 +3871,7 @@ For more information, read
 
     :help 'paste'
     :help 'pastetoggle'
-    :help i_CTRL-R_CTRL_O
+    :help i_CTRL-R_CTRL-O
     :help clipboard
     :help xterm-clipboard
     :help gui-clipboard
@@ -4080,7 +4084,7 @@ For more information, read
 
     :help Select-mode
     :help 'selectmode'
-    :help 9.4
+    :help 09.4
     :help :behave
 
 
@@ -4898,13 +4902,13 @@ For more information, read
 
 Use the following mapping:
 
-    :inoremap <S-Tab> <C-O><LT><LT>
+    :inoremap <S-Tab> <C-O><lt><lt>
     :nnoremap <Tab> >>
-    :nnoremap <S-Tab> <LT><LT>
+    :nnoremap <S-Tab> <lt><lt>
     :vnoremap <Tab> >
-    :vnoremap <S-Tab> <LT>
+    :vnoremap <S-Tab> <lt>
 
-Note that, the <S-Tab> mapping will work only if Vim receives the correct
+Note, that the <S-Tab> mapping will work only if Vim receives the correct
 key sequence. This is mostly the case with GUI Vim.
 
 For more information, read
@@ -4916,7 +4920,7 @@ For more information, read
     :help i_CTRL-O
     :help >>
     :help <<
-    :help <LT>
+    :help <lt>
 
 
 20.13. In my mappings the special characters like <CR> are not recognized.
@@ -5405,7 +5409,7 @@ the highlight colors to suit a dark/light background:
 For more information, read
 
     :help 'background'
-    :help 6.2
+    :help 06.2
 
 
 24.4. How do I change the color of the line numbers displayed when the
@@ -5925,7 +5929,7 @@ character under the cursor:
     normal! vy
     let ch=@"
 
-Note that the above commands will change the '< and '> marks.
+Note, that the above commands will change the '< and '> marks.
 
 For more information, read
 
@@ -5973,7 +5977,7 @@ in insert mode:
 
     <C-R>=MyFunc()
 
-Note that this will only insert the return value of the function.
+Note, that this will only insert the return value of the function.
 
 For more information, read
 
@@ -6850,7 +6854,7 @@ Cons:
  * Limited functionality
  * Inactive development
 
-
+-------------------------------------------
 
 
 30.2. How do I pass the word under the cursor to an external command?
@@ -6903,7 +6907,7 @@ results back in the buffer, you can use
 
     :w !sort
 
-The above command will pipe the entire buffer to the sort command.  Note
+The above command will pipe the entire buffer to the sort command.  Note,
 that the space between the 'w' and the '!' is critical.  To pipe only a
 range of lines, you can use
 
@@ -7466,7 +7470,7 @@ of CTRL-V.
 For more information, read
 
     :help CTRL-V
-    :help CTRl-V-alternative
+    :help CTRL-V-alternative
     :help CTRL-Q
     :help 10.5
 
@@ -7548,7 +7552,7 @@ information:
 
     http://sourceforge.net/projects/cubiclevim
 
-Note that currently this works only with MS-Office 2000 and XP.
+Note, that currently this works only with MS-Office 2000 and XP.
 
 Also the plugin OutlookVim might be worth a look:
 
@@ -8001,7 +8005,7 @@ mouse, then Vim doesn't control the mouse and xterm controls the
 mouse.
 
 In the GUI mode, Copy and Paste should just work, depending on the 'mouse'
-setting.
+setting. For more information, read
 
    :help 'clipboard'
    :help x11-selection
