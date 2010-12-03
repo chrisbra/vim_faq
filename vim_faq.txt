@@ -765,10 +765,9 @@ document is secondary. With an editor, one's main concern is entering text,
 not making the text look good. Examples of editors other than Vim and Vi
 are Emacs, Crisp, Brief, TextMate and xedit.  And Notepad.
 
-For more information, read:
+For more information read
 
     :help intro
-
 
 1.2. Who wrote Vim?
 
@@ -8007,13 +8006,13 @@ mouse.
 In the GUI mode, Copy and Paste should just work, depending on the 'mouse'
 setting. For more information, read
 
-   :help 'clipboard'
-   :help x11-selection
-   :help clipboard
-   :help 'go-a'
-   :help 'mouse'
-   :help xterm-copy-paste
-   :help 9.3
+    :help 'clipboard'
+    :help x11-selection
+    :help clipboard
+    :help 'go-a'
+    :help 'mouse'
+    :help xterm-copy-paste
+    :help 09.3
 
 
 =============================================================================
