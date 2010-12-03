@@ -5,12 +5,12 @@ plugin/faq_plugin.vim	[[[1
 12
 " VIM_FAQ - The Vim faq from http://vimdoc.sourceforge.net/
 " -------------------------------------------------------------
-" Version:  15
+" Version:  16
 " Maintainer:  Yegappan Lakshmanan
 " Last Change: 03 December 2010
 "
 " Script: 
-" GetLatestVimScripts: 3298 15 :AutoInstall: faq_plugin.vim
+" GetLatestVimScripts: 3298 16 :AutoInstall: faq_plugin.vim
 "
 "
 " empty stub. This plugin contains only of the documentation
@@ -795,7 +795,7 @@ are Emacs, Crisp, Brief, TextMate and xedit.  And Notepad.
 For more information, read >
 
     |intro|
-<kP ]\) 
+<Â	 ]\) 
  								*faq-1.2*
 1.2. Who wrote Vim?
 
