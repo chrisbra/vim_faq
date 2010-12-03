@@ -5,25 +5,25 @@ plugin/faq_plugin.vim	[[[1
 12
 " VIM_FAQ - The Vim faq from http://vimdoc.sourceforge.net/
 " -------------------------------------------------------------
-" Version:  14
+" Version:  15
 " Maintainer:  Yegappan Lakshmanan
-" Last Change: 30 November 2010
+" Last Change: 03 December 2010
 "
 " Script: 
-" GetLatestVimScripts: 3298 14 :AutoInstall: faq_plugin.vim
+" GetLatestVimScripts: 3298 15 :AutoInstall: faq_plugin.vim
 "
 "
 " empty stub. This plugin contains only of the documentation
 " and the GLVS headers for |GLVS|
 doc/vim_faq.txt	[[[1
-8162
+8161
 *vim_faq.txt*	Frequently Asked Questions
 
 For instructions on installing this file, type >
 	    :help add-local-help
 inside Vim.
 
-Last updated on: 30 November 2010
+Last updated on: 03 December 2010
 
 	    VIM REFERENCE MANUAL    by: Yegappan Lakshmanan
 
@@ -795,7 +795,7 @@ are Emacs, Crisp, Brief, TextMate and xedit.  And Notepad.
 For more information, read >
 
     |intro|
-<ùg	 ]\) 
+<kP ]\) 
  								*faq-1.2*
 1.2. Who wrote Vim?
 
@@ -3955,16 +3955,15 @@ character.
 To join lines without adding or removing any space characters, you can use
 the gJ or ":join!" commands.
 
-For more information, read >
+For more information, read 
 
     |gJ|
     |:join|
     |J|
-    :hep 10.5
+    |10.5|
     |'joinspaces'|
     |'cpoptions'|
     |'formatoptions'|
-<
 
 =============================================================================
  								*faq-15*

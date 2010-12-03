@@ -4,7 +4,7 @@ For instructions on installing this file, type >
 	    :help add-local-help
 inside Vim.
 
-Last updated on: 30 November 2010
+Last updated on: 03 December 2010
 
 	    VIM REFERENCE MANUAL    by: Yegappan Lakshmanan
 
@@ -776,7 +776,7 @@ are Emacs, Crisp, Brief, TextMate and xedit.  And Notepad.
 For more information, read >
 
     |intro|
-<ùg	 ]\) 
+<kP ]\) 
  								*faq-1.2*
 1.2. Who wrote Vim?
 
@@ -3936,16 +3936,15 @@ character.
 To join lines without adding or removing any space characters, you can use
 the gJ or ":join!" commands.
 
-For more information, read >
+For more information, read 
 
     |gJ|
     |:join|
     |J|
-    :hep 10.5
+    |10.5|
     |'joinspaces'|
     |'cpoptions'|
     |'formatoptions'|
-<
 
 =============================================================================
  								*faq-15*

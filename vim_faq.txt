@@ -3946,7 +3946,7 @@ For more information, read
     :help gJ
     :help :join
     :help J
-    :hep 10.5
+    :help 10.5
     :help 'joinspaces'
     :help 'cpoptions'
     :help 'formatoptions'
@@ -8189,4 +8189,4 @@ For more information, read
 =============================================================================
 
 Current Maintainer: Yegappan Lakshmanan
-Last updated on: 30 November 2010
+Last updated on: 03 December 2010
