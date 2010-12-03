@@ -162,13 +162,13 @@ function! VimifyAndInstallFaq(vim_faq_textfile, vim_doc_path)
     g/^ \+\*faq-.*\*$/s/\([^ ]\) /\1-/g
 
     " create helpExamples with '>' and '<' (in general: blue)
-    %s/\(\n^$\)\(\(\n \{4\}.*\)\+\)\(\n^\)$/ >\1\2\4</
+    %s/\(\n\_^$\)\(\(\n \{4\}.*\)\+\)\(\n\_^\)$/ >\1\2\4</
 
     " RFC I prefer helHyperTextJumps here. What do other people think
     " (Paul Bolle)
 
     " but remove those helpExamples if these are ':help ...' examples
-    %s/>\(\n^$\)\(\(\n \{4\}:help.*\)\+\)\(\n^\)<$/\1\2\4/
+    %s/>\(\n\_^$\)\(\(\n \{4\}:help.*\)\+\)\(\n^\)<$/\1\2\4/
 
     " make 'helpHyperTextJumps' from ':help ...' examples
     %s/\(^ \{4\}\):help \(.*\)/\1\|\2\|/
@@ -181,7 +181,7 @@ function! VimifyAndInstallFaq(vim_faq_textfile, vim_doc_path)
     %s/\(^ \{4\}|'\)"\(|\)/\1quote\2/
 
     " make 'helpHyperTextEntries' to SECTIONs (in answers), e.g.: *faq-27*
-    norm gg
+    norm! gg
     /==/,$s/\(\nSECTION \)\([0-9]\{1,2\}\)\( -\)/
 	\ \t\t\t\t\t\t\t\t*faq-\2*\1\2\3/
 
