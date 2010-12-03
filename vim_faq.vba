@@ -5,18 +5,18 @@ plugin/faq_plugin.vim	[[[1
 12
 " VIM_FAQ - The Vim faq from http://vimdoc.sourceforge.net/
 " -------------------------------------------------------------
-" Version:  16
+" Version:  23
 " Maintainer:  Yegappan Lakshmanan
 " Last Change: 03 December 2010
 "
 " Script: 
-" GetLatestVimScripts: 3298 16 :AutoInstall: faq_plugin.vim
+" GetLatestVimScripts: 3298 23 :AutoInstall: faq_plugin.vim
 "
 "
 " empty stub. This plugin contains only of the documentation
 " and the GLVS headers for |GLVS|
 doc/vim_faq.txt	[[[1
-8161
+8164
 *vim_faq.txt*	Frequently Asked Questions
 
 For instructions on installing this file, type >
@@ -96,7 +96,7 @@ SECTION 5 - EDITING A FILE
 |faq-5.11|  How do I open a file for editing without saving the modifications
 	    to the current file?
 |faq-5.12|  How do I reduce the loading time for very large files in Vim?
-                                               *faq-editing-multiple-files*
+                                                *faq-editing-multiple-files*
 SECTION 6 - EDITING MULTIPLE FILES
 |faq-6.1|   How do I open multiple files at once from within Vim?
 |faq-6.2|   How do I switch between multiple files/buffers in Vim?
@@ -792,10 +792,9 @@ document is secondary. With an editor, one's main concern is entering text,
 not making the text look good. Examples of editors other than Vim and Vi
 are Emacs, Crisp, Brief, TextMate and xedit.  And Notepad.
 
-For more information, read >
+For more information read 
 
     |intro|
-<Â	 ]\) 
  								*faq-1.2*
 1.2. Who wrote Vim?
 
@@ -805,7 +804,7 @@ people to mention here. See ":h credits" for a complete list.
 Vim is based on Stevie, worked on by Tim Thompson, Tony Andrews and G.R.
 (Fred) Walter.
 
-For more information, read 
+For more information, read: 
 
     |author|
 
@@ -1098,8 +1097,11 @@ For more information, read
  								*faq-2.7*
 2.7. Where can the FAQ be found?
 
-The FAQ can be found at VimOnline (vim.sf.net).  Other places will be
-decided in the future.
+The FAQ can be found at http://vimhelp.appspot.com/vim_faq.txt.html.
+
+A slightly older version (which doesn't seem to get updated anymore) can
+still be found at VimOnline (vim.sf.net). Other places will be decided in
+the future.
 
  								*faq-2.8*
 2.8. What if I don't find an answer in this FAQ?
@@ -1184,6 +1186,7 @@ For more information, read
     |changed-6.4|
     |changed-7.1|
     |changed-7.2|
+    |changed-7.3|
  								*faq-3.2*
 3.2. Where can I find the latest version of Vim?
 
@@ -1252,7 +1255,7 @@ a)  You can press the CTRL-D key after typing the help keyword to get a
     :help init<C-D>
     :help str*()<C-D>
     :help '*indent<C-D>
-<@è@>
+<
 b)  You can press the Tab key after typing a partial help keyword to expand
     to the matching keyword. You can continue to press the Tab key to see
     other keyword matches.
@@ -1736,7 +1739,7 @@ example, to edit a file over ftp, you can use the following command: >
 
     $ vim ftp://machine/path
 <
-For more information, read 
+For more information, read: 
 
     |netrw.vim|
 
@@ -2206,7 +2209,7 @@ For more information, read
 
     |sentence|
     |'joinspaces'|
-    |'cpoptions' | /^\s*j\>|
+    |'cpoptions'|
     |paragraph|
     |section|
     |word|
@@ -2499,7 +2502,7 @@ For more information, read
 
     |star|
     |#|
-    |g*|
+    |gstar|
     |g#|
     |03.8|
     |search-commands|
@@ -2580,7 +2583,7 @@ For more information, read
     |word-count|
     |v_g_CTRL-G|
     |12.5|
-    |s_flags | /^\[n\]|
+    |s_flags|
 
  								*faq-11.11*
 11.11. How do I place the cursor at the end of the matched word when
@@ -2613,7 +2616,7 @@ former only matches true empty lines. For more information, read
     |/^|
     |/$|
     |/\s|
-    |/*|
+    |/star|
     |search-commands|
 
  								*faq-11.13*
@@ -2628,7 +2631,7 @@ For more information, read
     |/^|
     |/\a|
     |/\s|
-    |/*|
+    |/star|
     |/$|
 
  								*faq-11.14*
@@ -2872,7 +2875,7 @@ multiple consecutive space characters to a single space: >
 
     :%s/ \{2,}/ /g
 <
-alternatively use: >
+Alternatively use: >
 
     :%s/  \+/ /g
 <
@@ -2895,13 +2898,13 @@ The explanation for this command is below: >
 
     :v/./           Execute the following command for all lines not
                     containing a character (empty lines).
-         .,         Use the current line as the start of the range of
+     .,             Use the current line as the start of the range of
                     lines.
-           /./      Use the line containing a character as the last line.
-              -1    Adjust the range of lines to end with the line before
+     /./            Use the line containing a character as the last line.
+     -1             Adjust the range of lines to end with the line before
                     the last line.
-                j   Join the lines in the range.
-<@Ø@
+     j              Join the lines in the range.
+<
 Note that this will give an error message if the empty lines are at the end
 of the file. To correct this, you have to add a temporary line at the end
 of the file, execute the command and then remove the temporary line.
@@ -2964,7 +2967,7 @@ For more information, read
 
     |yank|
     |motion.txt|
-    |4.6|
+    |04.6|
 
  								*faq-12.7*
 12.7. When I yank some text into a register, how do I append the text to
@@ -2998,7 +3001,7 @@ For more information, read
     |yank|
     |{motion}|
     |object-motions|
-    |4.6|
+    |04.6|
 
  								*faq-12.9*
 12.9. How do I yank all the lines containing a pattern into a buffer?
@@ -3536,7 +3539,7 @@ Vim supports completion of the following items: >
     CTRL-X CTRL-V    Vim command line
     CTRL-X CTRL-U    User defined completion
     CTRL-X CTRL-O    Omni completion
-<@Ø@
+<
 User defined completions and omni completions are often set by filetype
 plugins.
 
@@ -3881,7 +3884,7 @@ For more information, read
 
     |'paste'|
     |'pastetoggle'|
-    |i_CTRL-R_CTRL_O|
+    |i_CTRL-R_CTRL-O|
     |clipboard|
     |xterm-clipboard|
     |gui-clipboard|
@@ -4093,7 +4096,7 @@ For more information, read
 
     |Select-mode|
     |'selectmode'|
-    |9.4|
+    |09.4|
     |:behave|
 
  								*faq-15.9*
@@ -4906,13 +4909,13 @@ For more information, read
 
 Use the following mapping: >
 
-    :inoremap <S-Tab> <C-O><LT><LT>
+    :inoremap <S-Tab> <C-O><lt><lt>
     :nnoremap <Tab> >>
-    :nnoremap <S-Tab> <LT><LT>
+    :nnoremap <S-Tab> <lt><lt>
     :vnoremap <Tab> >
-    :vnoremap <S-Tab> <LT>
+    :vnoremap <S-Tab> <lt>
 <
-Note that, the <S-Tab> mapping will work only if Vim receives the correct
+Note, that the <S-Tab> mapping will work only if Vim receives the correct
 key sequence. This is mostly the case with GUI Vim.
 
 For more information, read 
@@ -4924,7 +4927,7 @@ For more information, read
     |i_CTRL-O|
     |>>|
     |<<|
-    |<LT>|
+    |<lt>|
 
  								*faq-20.13*
 20.13. In my mappings the special characters like <CR> are not recognized.
@@ -5408,7 +5411,7 @@ the highlight colors to suit a dark/light background: >
 For more information, read 
 
     |'background'|
-    |6.2|
+    |06.2|
 
  								*faq-24.4*
 24.4. How do I change the color of the line numbers displayed when the
@@ -5927,7 +5930,7 @@ character under the cursor: >
     normal! vy
     let ch=@"
 <
-Note that the above commands will change the '< and '> marks.
+Note, that the above commands will change the '< and '> marks.
 
 For more information, read 
 
@@ -5975,7 +5978,7 @@ in insert mode: >
 
     <C-R>=MyFunc()
 <
-Note that this will only insert the return value of the function.
+Note, that this will only insert the return value of the function.
 
 For more information, read 
 
@@ -6609,12 +6612,12 @@ You can use the following commands: >
             return foldlevel(a:line - 1)
         endif
     endfun
-<@Ø@
-For more information, read >
+<
+For more information, read 
 
     |'foldexpr'|
     |fold-expr|
-<@Ø@
+
  								*faq-29.2*
 29.2. When I enable folding by setting the 'foldmethod' option, all the
       folds are closed. How do I prevent this?
@@ -6847,7 +6850,7 @@ Cons:
  * Limited functionality
  * Inactive development
 
-
+-------------------------------------------
 
  								*faq-30.2*
 30.2. How do I pass the word under the cursor to an external command?
@@ -6900,7 +6903,7 @@ results back in the buffer, you can use >
 
     :w !sort
 <
-The above command will pipe the entire buffer to the sort command.  Note
+The above command will pipe the entire buffer to the sort command.  Note,
 that the space between the 'w' and the '!' is critical.  To pipe only a
 range of lines, you can use >
 
@@ -7460,7 +7463,7 @@ of CTRL-V.
 For more information, read 
 
     |CTRL-V|
-    |CTRl-V-alternative|
+    |CTRL-V-alternative|
     |CTRL-Q|
     |10.5|
 
@@ -7542,7 +7545,7 @@ information: >
 
     http://sourceforge.net/projects/cubiclevim
 <
-Note that currently this works only with MS-Office 2000 and XP.
+Note, that currently this works only with MS-Office 2000 and XP.
 
 Also the plugin OutlookVim might be worth a look:
 
@@ -7993,15 +7996,15 @@ mouse, then Vim doesn't control the mouse and xterm controls the
 mouse.
 
 In the GUI mode, Copy and Paste should just work, depending on the 'mouse'
-setting.
+setting. For more information, read 
 
-   :help 'clipboard'
-   :help x11-selection
-   :help clipboard
-   :help 'go-a'
-   :help 'mouse'
-   :help xterm-copy-paste
-   :help 9.3
+    |'clipboard'|
+    |x11-selection|
+    |clipboard|
+    |'go-a'|
+    |'mouse'|
+    |xterm-copy-paste|
+    |09.3|
 
 =============================================================================
  								*faq-37*
