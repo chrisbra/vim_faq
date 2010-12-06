@@ -4,7 +4,7 @@ For instructions on installing this file, type >
 	    :help add-local-help
 inside Vim.
 
-Last updated on: 03 December 2010
+Last updated on: 06 December 2010
 
 	    VIM REFERENCE MANUAL    by: Yegappan Lakshmanan
 
@@ -3844,31 +3844,75 @@ For more information, read
       the alignment (indentation) of the new text is messed up. How do I
       fix this?
 
-The indentation of the text is messed up due to various Vim settings
-related to indentation (like autoindent, smartindent, textwidth etc).
-Before pasting text into Vim, you can set the 'paste' option: >
+When you paste text into a GUI Vim using the mouse, Vim is able to
+detect that you are pasting text. So all the indentation related
+settings (like autoindent, smartindent, cindent, etc.) are ignored and
+the text is pasted literally.
 
-    :set paste
-<
-After pasting the text, you can turn off the option using: >
+When pasting text into a Vim running in a terminal (like xterm) using
+the mouse, Vim may not be able to detect that you are pasting text. This
+depends on several things: the capability of the terminal to pass the
+mouse events to Vim, Vim is compiled to handle mouse events and access
+the clipboard, the DISPLAY variable is set properly, the Vim 'mouse'
+option is set correctly.
 
-    :set nopaste
-<
-You can also toggle the paste option using: >
+If Vim is able to detect that you are pasting text using the mouse, then
+the pasted text will be inserted literally.
 
-    :set paste!
-<
-If you can access the clipboard through the * register, then you can paste
-the text without indentation using CTRL-R CTRL-O *.
+If Vim is not able to detect that you are pasting using the mouse, then
+it will see the pasted text as though you literally typed the text.
+After the first line from the pasted text is inserted, when Vim
+encounters the newline character, because of the indentation settings,
+the next line will start indented. The spaces at the beginning of the
+second line in the pasted text will be inserted leading to additional
+indentation. This will be repeated for subsequent lines. So the pasted
+text will be inserted with stair case indentation.
 
-For more information, read 
+You can fix this problem in a terminal Vim in several ways:
+
+1. Build Vim with the +mouse and +xterm_clipboard compile-time options.
+   The normal or big or huge build of Vim includes these options.  Set
+   the 'mouse' option to either 'a' or include 'i'.  When pasting text
+   using the mouse, don't press the Shift key. This will work only if
+   Vim can access the X display. For more information, read the
+   following Vim help topics: 
+
+    |+feature-list|
+    |'mouse'|
+    |<MiddleMouse>|
+    |x11-selection|
+    |xterm-clipboard|
+
+2. Paste the text using the CTRL-R CTRL-O * command.  This will paste
+   the text literally without any automatic indentation. If you want to
+   paste the text and then fix the indentation, then you can use CTRL-R
+   CTRL-P *. These commands will work only if Vim can access the X
+   display. For more information, read the following Vim help topics: 
+
+    |i_CTRL-R_CTRL-O|
+    |i_CTRL-R_CTRL-P|
+    |quotestar|
+
+3. Set the 'paste' option before pasting the text. This option will
+   disable the effect of all the indentation related settings. Make sure
+   to turn off this option using ':set nopaste' after pasting the text.
+   Otherwise the Vim indentation feature will not work.  Do not
+   permanently set the 'paste' option in your .vimrc file. If you are
+   going to repeat these steps often, then you can set the 'pastetoggle'
+   option to a key. When you press the specified key, the 'paste' option
+   option will be toggled. You can press the key once before pasting the
+   text and the press the key once after pasting the text. Note that
+   when the 'paste' option is set, all the mappings and abbreviations
+   are disabled.  For more information, read the following Vim help
+   topics: 
 
     |'paste'|
     |'pastetoggle'|
-    |i_CTRL-R_CTRL-O|
-    |clipboard|
-    |xterm-clipboard|
-    |gui-clipboard|
+
+You can also refer to the following topics in the user manual: 
+
+    |04.7|
+    |09.3|
 
  								*faq-14.15*
 14.15. When there is a very long wrapped line (wrap is "on") and a line
