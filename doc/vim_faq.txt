@@ -712,6 +712,10 @@ SECTION 35 - BUILDING VIM FROM SOURCE
 	    they moved to using the generic pkg-config. I can get pkg-config
 	    to list the various includes and libs for gtk, but for some
 	    reason the configure script still isn't picking this up.
+|faq-35.10| I did successfully download the sources and compiled Vim on
+	    Unix. But feature ... still does not work. What is wrong and
+	    how can I fix it?
+	     
                                                                 *faq-various*
 SECTION 36 - VARIOUS
 |faq-36.1|  How do I edit binary files with Vim?
@@ -7816,6 +7820,95 @@ Use the following shell script named gtk-config: >
     #!/bin/sh
     pkg-config gtk+-2.0 $1 $2
 <
+ 								*faq-35.10*
+35.10. I did successfully download the sources and compiled Vim on
+        Unix. But feature ... still does not work. What is wrong and
+        how can I fix it?
+
+Depending on your compile options, some features might not be included in
+your build of Vim. You can use the ":version" command to determine the Vim
+features that are enabled at compile time. The features that are enabled
+will be prefixed with a "+". The features that are not enabled will be
+prefixed with a "-".
+
+The easiest way to include all features is to build the huge version. To do
+this, you have to specify the --with-features option while running the
+configure script: >
+
+    $ ./configure --with-features=huge
+<
+Nevertheless, a feature could still be disabled at compile time, if the
+configure script can't find the required libraries for those features (e.g.
+for clipboard integration, your Vim needs to be linked against the X11
+development libraries). 
+
+There are several ways to install the required libraries:
+
+1) On a Debian based distribution, you can use the package manager "apt" to
+   install all required dependencies. As superuser, run the command:
+
+   $ apt-get build-dep vim-gtk
+
+   This makes sure all required libraries needed to compile the vim-gtk
+   package will be installed. (This requires, that your sources list
+   contains deb-src entries. See your distribution manual on to enable
+   this, if the above command did not work.)
+
+2) In openSUSE you can use the package manager "zypper" to install all
+   required libraries. This requires, that there is a source version of the
+   package installable from a configured repository (which by default is not
+   the case). Use:
+
+   $ zypper search -t srcpackage vim
+
+   to find out, whether or not there exists a source version in the
+   repository. If there is none, you'll need to add a source repository.
+   For openSUSE 11.2 you could use, e.g.
+   
+   $ zypper ar
+   http://download.opensuse.org/source/distribution/11.2/repo/oss/src-11.2
+
+   (one line)
+
+   Once you have a source version available in your repositories, use this
+   command to install all needed requirements:
+
+   $ zypper source-install --build-deps-only vim
+
+3) On a Fedora/RedHat based system, you can use
+   
+   $ yum-builddep vim-enhanced
+
+4) Run configure with your options and watch for missing libraries:
+  
+   $ ./configure --with-features=huge 2>&1 |tee logfile
+
+   This will run configure and record the output into the file "logfile".
+   You need to check the logfile for missing dependencies. Consider this
+   output: >
+
+    checking --disable-gtktest argument... gtk test enabled
+    checking for pkg-config... /usr/bin/pkg-config
+    checking for GTK - version >= 2.2.0... no
+<
+    Here you can see, that the gtk libraries are missing and therefore no
+    GTK gui version can't be build. So you need to install the GTK library
+    in your system, with your package manager or by compiling it yourself.
+    Then run the configure script again and check, that it finds the
+    library.
+
+In theory, those provided dependencies by your distribution might still
+lack some libraries, that are needed for features, that simply are not
+enabled in your distribution and therefore those commands in 1-3 won't
+install it. At the very least, this provides a jumping point and you need
+to track down the required missing packages using method 4 from above. But
+usually, this works good enough for most people and you won't have to
+bother with the fourth method.
+
+For more information, read 
+
+    |:version|
+    |+feature-list|
 
 =============================================================================
  								*faq-36*
