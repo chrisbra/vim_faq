@@ -4,7 +4,7 @@ For instructions on installing this file, type >
 	    :help add-local-help
 inside Vim.
 
-Last updated on: 06 December 2010
+Last updated on: 07 December 2010
 
 	    VIM REFERENCE MANUAL    by: Yegappan Lakshmanan
 
@@ -1058,7 +1058,7 @@ For more information, read
     |-V|
     |'verbose'|
     |:verbose|
-    |set-verbose|
+    |:set-verbose|
 
  								*faq-2.6*
 2.6. Where can I report bugs?
@@ -1348,7 +1348,7 @@ You can also use the ":args" command to load files into Vim: >
 <
 For more information, read 
 
-    |usr_07|
+    |usr_07.txt|
     |edit-files|
     |:edit|
     |:next_f|
@@ -2019,7 +2019,7 @@ You can also use CTRL-W < or CTRL-W > or CTRL-W | commands.
 
 For more information, read 
 
-    |vertical-resize|
+    |:vertical-resize|
     |CTRL-W_>|
     |CTRL-W_<|
     |window-resize|
@@ -2127,13 +2127,15 @@ return to command mode the cursor *must* drop back onto the last character
 you typed. For consistency sake, the cursor drops back everywhere, even if
 you are in the middle of a line.
 
-You can use the CTRL-O command in insert mode to execute a single ex
-command and return back to insert mode without moving the cursor column.
+You can use the CTRL-O or CTRL-\ CTRL-O command in insert mode to execute a
+single ex command and return back to insert mode without moving the cursor
+column.
 
 For more information, read 
 
-    |'virtual'|
+    |'virtualedit'|
     |i_CTRL-O|
+    |i_CTRL-\_CTRL-O|
 
  								*faq-10.3*
 10.3. How do I configure Vim to maintain the horizontal cursor position when
@@ -2568,7 +2570,7 @@ For more information, read
     |word-count|
     |v_g_CTRL-G|
     |12.5|
-    |s_flags|
+    |:s_flags|
 
  								*faq-11.11*
 11.11. How do I place the cursor at the end of the matched word when
@@ -2826,7 +2828,7 @@ the following command: >
 For more information, read 
 
     |@/|
-    |let-@|
+    |:let-@|
     |autocmd-searchpat|
     |last-pattern|
 
@@ -3006,7 +3008,7 @@ For more information, read
 
     |:g|
     |:y|
-    |let-register|
+    |:let-register|
     |quote_alpha|
     |put|
     |registers|
@@ -3262,9 +3264,9 @@ For more information, read
 
     |sub-replace-special|
     |:substitute|
-    |\U|
-    |\L|
-    |\u|
+    |/\U|
+    |/\L|
+    |/\u|
 
  								*faq-12.24*
 12.24. How do I enter characters that are not present in the keyboard?
@@ -3277,7 +3279,7 @@ defined digraphs. You can add a new digraph to the list using the
 For more information, read 
 
     |digraphs|
-    |'digraphs'|
+    |'digraph'|
     |24.9|
 
  								*faq-12.25*
@@ -4677,7 +4679,7 @@ keys over a slow line.
 
 For more information, read 
 
-    |ttimeout|
+    |'ttimeout'|
 
  								*faq-19.16*
 19.16. How do I make the 'c' and 's' commands display a '$' instead of
@@ -4770,8 +4772,8 @@ For more information, read
 
     |:unmap|
     |map-modes|
-    |map-local|
-    |'mapleader'|
+    |:map-local|
+    |mapleader|
 
  								*faq-20.4*
 20.4. I am not able to create a mapping for the <xxx> key. What is wrong?
@@ -5073,7 +5075,7 @@ For more information, read
 
     |:vmap|
     |quote_quote|
-    |let-register|
+    |:let-register|
     |c_CTRL-U|
     |:!cmd|
 
@@ -5256,7 +5258,7 @@ For more information, read
 
     |recording|
     |10.1|
-    |let-register|
+    |:let-register|
     |<>|
     |'cpoptions'|
 
@@ -5559,7 +5561,7 @@ highlighting: >
 <
 For more information, read 
 
-    |c-syntax|
+    |ft-c-syntax|
 
  								*faq-24.11*
 24.11. How do I add my own syntax extensions to the standard syntax files
@@ -5622,7 +5624,7 @@ with the Vim syntax highlighting. Use the following command: >
 For more information, read 
 
     |convert-to-HTML|
-    |TOhtml|
+    |:TOhtml|
 
  								*faq-24.15*
 24.15. How do I list the definition of all the current highlight groups?
@@ -5856,7 +5858,7 @@ For more information, read
 
     |gv|
     |:normal|
-    |let-@|
+    |:let-@|
     |quotestar|
     |clipboard|
     |registers|
@@ -5921,7 +5923,7 @@ the 'old_tw' variable, you can use the following command: >
 For more information, read 
 
     |expr-option|
-    |let-option|
+    |:let-option|
 
  								*faq-25.16*
 25.16. I have copied and inserted some text into a buffer from a Vim
@@ -6142,7 +6144,7 @@ function/mapping are reversed.
 For more information, read 
 
     |undo-redo|
-    |map-undo|
+    |:map-undo|
 
  								*faq-25.29*
 25.29. How can I call a function defined with s: (script local function)
@@ -6205,7 +6207,7 @@ For more information, read
 
     |filetype-plugin|
     |add-filetype-plugin|
-    |autocmd|
+    |:autocmd|
     |40.3|
 
  								*faq-26.2*
@@ -6296,8 +6298,8 @@ You can turn off loading the filetype plugins using: >
 <
 For more information, read 
 
-    |filetype-plugin-on|
-    |filetype-plugin-off|
+    |:filetype-plugin-on|
+    |:filetype-plugin-off|
     |:filetype|
 
  								*faq-26.6*
@@ -6423,7 +6425,7 @@ Also, check the setting for the following options: >
 For more information, read 
 
     |'cindent'|
-    |filetype-indent-off|
+    |:filetype-indent-off|
     |'autoindent'|
     |'smartindent'|
     |'indentexpr'|
@@ -6499,13 +6501,13 @@ The default filetype plugin for C and C++ files
 then you can add the above lines to the
 ~/.vim/after/ftplugin/cpp.vim file.
 
-For more information, read
+For more information, read 
 
-   :help formatoptions
-   :help 30.6
-   :help format-comments
-   :help filetype-plugins
-   :help ftplugin-overrule
+    |formatoptions|
+    |30.6|
+    |format-comments|
+    |filetype-plugins|
+    |ftplugin-overrule|
 
  								*faq-27.8*
 27.8. How do I add the comment character '#' to a set of lines at the
@@ -6589,7 +6591,7 @@ command runs the program specified by the 'makeprg' option.
 For more information, read 
 
     |30.1|
-    |make_makeprg|
+    |:make_makeprg|
     |'makeprg'|
     |'makeef'|
     |:make|
@@ -6891,7 +6893,7 @@ to an external command. For example: >
 <
 For more information, read 
 
-    |<cword>|
+    |:<cword>|
 
  								*faq-30.3*
 30.3. How do I get the output of a shell command into a Vim buffer?
@@ -6971,7 +6973,7 @@ You can also use a visual block, and use the "!sort" command on the
 selected block.
 
 See also:
-    |sort|
+    |:sort|
     |filter|
 
  								*faq-30.6*
@@ -7355,7 +7357,7 @@ feature, add the following line to your .vimrc file: >
 <
 For more information, read 
 
-    |restorescreen|
+    |'restorescreen'|
     |xterm-screens|
 
  								*faq-32.5*
@@ -7824,6 +7826,10 @@ Use the following shell script named gtk-config: >
 35.10. I did successfully download the sources and compiled Vim on
         Unix. But feature ... still does not work. What is wrong and
         how can I fix it?
+
+You should first check, that you are actually running your self compiled
+Vim and not the system's provided version. So first check your $PATH
+setting.
 
 Depending on your compile options, some features might not be included in
 your build of Vim. You can use the ":version" command to determine the Vim
