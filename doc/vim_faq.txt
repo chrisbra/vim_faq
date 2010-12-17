@@ -4,9 +4,9 @@ For instructions on installing this file, type >
 	    :help add-local-help
 inside Vim.
 
-Last updated on: 07 December 2010
+Last updated on: 17 December 2010
 
-	    VIM REFERENCE MANUAL    by: Yegappan Lakshmanan
+	    VIM FAQ by: Christian Brabandt <cb@256bit.org>
 
 Frequently Asked Questions                                 *vim-faq* *Vim-FAQ*
 
@@ -7857,7 +7857,7 @@ There are several ways to install the required libraries:
 
    This makes sure all required libraries needed to compile the vim-gtk
    package will be installed. (This requires, that your sources list
-   contains deb-src entries. See your distribution manual on to enable
+   contains deb-src entries. See your distribution manual on how to enable
    this, if the above command did not work.)
 
 2) In openSUSE you can use the package manager "zypper" to install all

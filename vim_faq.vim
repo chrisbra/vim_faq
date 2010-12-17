@@ -136,7 +136,7 @@ function! VimifyAndInstallFaq(vim_faq_textfile, vim_doc_path)
     call append(5, '')
     call append(6, 'Last updated on: ' . l:faq_updated)
     call append(7, '')
-    call append(8, '                VIM REFERENCE MANUAL    by: ' . l:faq_author)
+    call append(8, '                VIM FAQ by: ' . l:faq_author)
     call append(9, '')
     call append(10, 'Frequently Asked Questions                                 *vim-faq* *Vim-FAQ*')
 
