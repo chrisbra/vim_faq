@@ -43,13 +43,7 @@ endfunction
 "   A string of count spaces
 "'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 function! s:ReturnSpaces(count)
-    let s:i = 1
-    let s:s = ""
-    while s:i <= a:count
-	let s:s = s:s . " "
-        let s:i = s:i + 1
-    endwhile
-    return s:s
+    return repeat(' ', a:count)
 endfunction
 
 function MakePath(vim_doc_path)
@@ -169,7 +163,7 @@ function! VimifyAndInstallFaq(vim_faq_textfile, vim_doc_path)
     %s/^\(|faq-[0-9]\{1,2\}\.[0-9]\{1,2\}|\) \(.\)/\=submatch(1) . 
 	\ s:ReturnSpaces(12 - strlen(submatch(1))) . submatch(2)/
     " Allign 2nd, 3rd, etc. lines of questions at column 13 too ...
-    1,/==/s/^ \{5,\}\(.\)/\t    \1/
+    1,/==/s/^ \{5,\}\(.\)/\t  \1/
 
     " create 'helpHyperTextEntry' for INDEX (in questions)
     %s/\(\nINDEX\)/\t\t\t\t\t\t\t\t*faq-index*\1/
