@@ -1,10 +1,6 @@
 *vim_faq.txt*	Frequently Asked Questions
 
-For instructions on installing this file, type >
-	    :help add-local-help
-inside Vim.
-
-Last updated on: 17 December 2010
+Last updated on: 07 February 2011
 
 	    VIM FAQ by: Christian Brabandt <cb@256bit.org>
 
@@ -426,6 +422,8 @@ SECTION 20 - MAPPING KEYS
 |faq-20.18| How do I map the Ctrl-I key while still retaining the
 	    functionality of the <Tab> key?
 |faq-20.19| How do I define a map to accept a count?
+|faq-20.20| How can I make my normal mode mapping work from within Insert
+	    Mode?
                                                         *faq-abbreviations*
 SECTION 21 - ABBREVIATIONS
 |faq-21.1|  How do I auto correct misspelled words?
@@ -5101,6 +5099,59 @@ Use the @= command to use an expression. For example, >
 Now you can specify a count to the '=' command. 
 
     |complex-repeat|
+ 								*faq-20.20*
+20.20. How can I make my normal mode mapping work from within Insert
+       Mode?
+
+
+From https://groups.google.com/group/vim_dev/msg/75f1f2dfc00908bb
+
+Not every normal mode-mapping is automatically suitable for execution via
+<Ctrl-O> from within inser mode; you need to explicitly design your mappings
+for that purpose.
+
+The <Ctrl-O> command allows execution of one normal mode command from
+within insert mode, then returns to insert mode. If a normal mode mapping
+concatenates multiple normal mode commands, this breaks down in temporary
+normal mode and literally inserts the second part of the command into the
+buffer instead. To support execution of normal mode mappings from within
+insert mode, these strategies can be used: >
+
+    a) Instead of concatenating multiple normal mode commands, use one :normal
+       mapping:
+<
+       :nnoremap <silent> zC :<C-U>normal! zCVzC<CR> >
+
+    b) Concatenate multiple Ex commands via <Bar> on the rhs:
+<
+       :nnoremap zC :<C-U>call MyMap1()<CR><Bar>call MyMap2()<CR> >
+
+    c) Shadow normal mode mappings by insert mode mappings that
+       re-enter normal mode, then invoke the normal mode mapping:
+<
+       :inoremap <silent> <script> zC <SID>MyMap1<C-\><C-O><SID>MyMap2 >
+
+    d) Normal mode mappings that consist of multiple Ex command lines (and
+       where Ex commands cannot be concatenated via <Bar>) use <SID>NM
+       instead of ':<C-U>'; use the <SID>NM Mapping that enters normal mode
+       for one ex command line:
+<
+        :nnoremap <silent> <SID>NM :<C-U>
+        :inoremap <silent> <SID>NM <C-\><C-O>:
+        :nnoremap <silent> <script> zC <SID>MyMap1<SID>NMcall MyMap2()<CR> >
+
+    e)  If none of the above is possible, at least force normal mode for
+        subsequent commands via <CTRL-\><CTRL-N> to avoid accidental insertion
+        of the remainder of the mapping.
+<
+        :nnoremap zC zC<C-\><C-N>VzCzz
+
+
+For more information, read
+    |i_CTRL-O|
+    |map_bar|
+    |i_CTRL-\_CTRL-O|
+    |CTRL-\_CTRL-N|
 
 =============================================================================
  								*faq-21*
