@@ -1,5 +1,7 @@
 SCRIPT=$(wildcard plugin/*.vim)
-FAQ="vim_faq.txt"
+NAME="vim_faq"
+FAQ=$(NAME)".txt"
+POD=$(NAME)".pod"
 DOC=$(wildcard doc/*.txt)
 PLUGIN=$(shell basename "$$PWD")
 VERSION=$(shell sed -n '/Version:/{s/^[^0-9]*\([0-9]\+\)$$/\1/;p}' $(SCRIPT))
@@ -41,3 +43,8 @@ release:
 	vim -u NONE -U NONE -N -c '/^" Last Change: /s/: \zs.*$$/\=strftime("%d %B %Y")/|wq' ${SCRIPT}
 	vim -u NONE -U NONE -N -c '/^" Version:/s/\d\+/\=submatch(0)+1/|wq' ${SCRIPT}
 	VERSION=$(shell sed -n '/Version:/{s/^.*\(\S\?\.\?\S\+\)$$/\1/;p}' $(SCRIPT))
+	# Generate additional formats
+	vim -u NONE -U NONE -N -c ':so vim_faq.vim|:CreateVimPODFile|q' ${FAQ}
+	pod2man ${POD} > others/${NAME}.1
+	pod2html ${POD} > others/${NAME}.html
+	pod2text -c ${POD} > others/${NAME}.ansi
