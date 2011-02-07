@@ -91,19 +91,30 @@ function! VimifyAndInstallFaq(vim_faq_textfile, vim_doc_path)
     if (has("unix"))
         " On UNIX like system, using forward slash:
         let l:slash_char = '/'
+        let l:mkdir_cmd  = ':silent !mkdir -p '
     else
         " On M$ system, use backslash. Also mkdir syntax is different.
         " This should only work on W2K and up.
         let l:slash_char = '\'
+        let l:mkdir_cmd  = ':silent !mkdir '
     endif
 
-    if !MakePath(a:vim_doc_path)
-	return
+
+    if (!(filewritable(a:vim_doc_path) == 2))
+        echomsg "Creating doc path: " . a:vim_doc_path
+        execute l:mkdir_cmd . a:vim_doc_path
+        if (!(filewritable(a:vim_doc_path) == 2))
+            " Put a warning:
+           echomsg "Unable to open documentation directory"
+           echomsg "Type :help add-local-help for more informations."
+	   return
+        endif
     endif
+
 
     " Exit if we have problem to access the document directory:
     if !isdirectory(a:vim_doc_path)
-        return 0
+        return
     endif
 
     " Full name of script and documentation file:
@@ -142,15 +153,15 @@ function! VimifyAndInstallFaq(vim_faq_textfile, vim_doc_path)
     "Insert header
     call append(0, '*vim_faq.txt*	Frequently Asked Questions')
     call append(1, '')
-    call append(2, 'For instructions on installing this file, type >')
-    call append(3, '        :help add-local-help')
-    call append(4, 'inside Vim.')
+"    call append(2, 'For instructions on installing this file, type >')
+"   call append(3, '        :help add-local-help')
+"   call append(4, 'inside Vim.')
+"   call append(5, '')
+    call append(2, 'Last updated on: ' . l:faq_updated)
+    call append(3, '')
+    call append(4, '                VIM FAQ by: ' . l:faq_author)
     call append(5, '')
-    call append(6, 'Last updated on: ' . l:faq_updated)
-    call append(7, '')
-    call append(8, '                VIM FAQ by: ' . l:faq_author)
-    call append(9, '')
-    call append(10, 'Frequently Asked Questions                                 *vim-faq* *Vim-FAQ*')
+    call append(6, 'Frequently Asked Questions                                 *vim-faq* *Vim-FAQ*')
 
     " make 'helpHyperTextJumps' in index
     %s/^ \{4\}\([0-9]\{1,2\}\.[0-9]\{1,2\}\)\. \(\w\)/|faq-\1| \2/
