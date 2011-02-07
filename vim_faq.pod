@@ -10,6 +10,7 @@ possibilities. You can explore the other ways using the information and
 links given in this FAQ. The credit for the answers in this FAQ goes to
 Peppe, Benji, Charles Campbell and numerous others.
 
+
 =head1 GENERAL INFORMATION
 
     1.1. What is Vim?
@@ -741,6 +742,10 @@ Peppe, Benji, Charles Campbell and numerous others.
           they moved to using the generic pkg-config. I can get pkg-config
           to list the various includes and libs for gtk, but for some
           reason the configure script still isn't picking this up.
+    35.10. I did successfully download the sources and compiled Vim on
+           Unix. But feature ... still does not work. What is wrong and
+           how can I fix it?
+           
 
 =head1 VARIOUS
 
@@ -779,8 +784,8 @@ Peppe, Benji, Charles Campbell and numerous others.
 
 
 
-
 =head1 GENERAL INFORMATION
+
 
 
 =head2 1.1. What is Vim?
@@ -805,10 +810,9 @@ document is secondary. With an editor, one's main concern is entering text,
 not making the text look good. Examples of editors other than Vim and Vi
 are Emacs, Crisp, Brief, TextMate and xedit.  And Notepad.
 
-For more information, read
+For more information read
 
     :help intro
-
 
 =head2 1.2. Who wrote Vim?
 
@@ -818,7 +822,7 @@ people to mention here. See ":h credits" for a complete list.
 Vim is based on Stevie, worked on by Tim Thompson, Tony Andrews and G.R.
 (Fred) Walter.
 
-For more information, read
+For more information, read:
 
     :help author
 
@@ -991,7 +995,6 @@ For more information, read
 
 
 
-
 =head1 RESOURCES
 
 
@@ -1062,7 +1065,7 @@ You can download the HTML/PDF/PS format of the Vim user manual from:
      problem with my setup or with Vim?
 
 First, you have to determine that the problem is not with your .vimrc or
-=head2 . vimrc or system vimrc or your personal plugin files or in any of your
+.gvimrc or system vimrc or your personal plugin files or in any of your
 setup files. To do this, use
 
     $ vim -N -u NONE -U NONE
@@ -1089,7 +1092,7 @@ For more information, read
     :help -V
     :help 'verbose'
     :help :verbose
-    :help set-verbose
+    :help :set-verbose
 
 
 =head2 2.6. Where can I report bugs?
@@ -1113,8 +1116,11 @@ For more information, read
 
 =head2 2.7. Where can the FAQ be found?
 
-The FAQ can be found at VimOnline (vim.sf.net).  Other places will be
-decided in the future.
+The FAQ can be found at http://vimhelp.appspot.com/vim_faq.txt.html.
+
+A slightly older version (which doesn't seem to get updated anymore) can
+still be found at VimOnline (vim.sf.net). Other places will be decided in
+the future.
 
 
 =head2 2.8. What if I don't find an answer in this FAQ?
@@ -1149,7 +1155,6 @@ For more information, read
 
 Yes. You can use the Vim Online website to upload your plugins/scripts,
 colorschemes, tips, etc. The site is at http://vim.sourceforge.net
-
 
 
 
@@ -1201,6 +1206,7 @@ For more information, read
     :help changed-6.4
     :help changed-7.1
     :help changed-7.2
+    :help changed-7.3
 
 =head2 3.2. Where can I find the latest version of Vim?
 
@@ -1226,7 +1232,6 @@ ftp://ftp.vim.org/pub/vim/runtime directory.
 Alternatively, the runtime files can be downloaded from the mercurial
 repository that holds Vim source code at:
 http://code.google.com/p/vim/source/browse/runtime
-
 
 
 
@@ -1359,7 +1364,6 @@ For more information, read
 
 
 
-
 =head1 EDITING A FILE
 
 
@@ -1381,7 +1385,7 @@ You can also use the ":args" command to load files into Vim:
 
 For more information, read
 
-    :help usr_07
+    :help usr_07.txt
     :help edit-files
     :help :edit
     :help :next_f
@@ -1456,7 +1460,7 @@ For more information, read
 
 Vim stores the cursor position of the last edited location for each buffer
 in the '"' register. You can use the following autocmd in your .vimrc or
-=head2 . vimrc file to open a file at the last edited location:
+.gvimrc file to open a file at the last edited location:
 
     au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
                          \ exe "normal g'\"" | endif
@@ -1605,7 +1609,6 @@ very large files in Vim:
 Note that the above settings will disable many Vim features including the
 following: Swap files support for crash recovery, undo support, syntax
 highlighting, filetype detection and other autocommand based features.
-
 
 
 
@@ -1759,10 +1762,9 @@ example, to edit a file over ftp, you can use the following command:
 
     $ vim ftp://machine/path
 
-For more information, read
+For more information, read:
 
     :help netrw.vim
-
 
 
 
@@ -1860,7 +1862,6 @@ For more information, read
     :help backup
     :help 'backup'
     :help 'writebackup'
-
 
 
 
@@ -2027,7 +2028,6 @@ For more information read,
 
 
 
-
 =head1 WINDOWS
 
 
@@ -2060,7 +2060,7 @@ You can also use CTRL-W < or CTRL-W > or CTRL-W | commands.
 
 For more information, read
 
-    :help vertical-resize
+    :help :vertical-resize
     :help CTRL-W_>
     :help CTRL-W_<
     :help window-resize
@@ -2141,7 +2141,6 @@ For more information, read
 
 
 
-
 =head1 MOTION
 
 
@@ -2170,13 +2169,15 @@ return to command mode the cursor *must* drop back onto the last character
 you typed. For consistency sake, the cursor drops back everywhere, even if
 you are in the middle of a line.
 
-You can use the CTRL-O command in insert mode to execute a single ex
-command and return back to insert mode without moving the cursor column.
+You can use the CTRL-O or CTRL-\ CTRL-O command in insert mode to execute a
+single ex command and return back to insert mode without moving the cursor
+column.
 
 For more information, read
 
-    :help 'virtual'
+    :help 'virtualedit'
     :help i_CTRL-O
+    :help i_CTRL-\_CTRL-O
 
 
 =head2 10.3. How do I configure Vim to maintain the horizontal cursor position when
@@ -2237,7 +2238,7 @@ For more information, read
 
     :help sentence
     :help 'joinspaces'
-    :help 'cpoptions' | /^\s*j\>
+    :help 'cpoptions'
     :help paragraph
     :help section
     :help word
@@ -2415,7 +2416,6 @@ For more information, read
 
 
 
-
 =head1 SEARCHING TEXT
 
 
@@ -2532,7 +2532,7 @@ For more information, read
 
     :help star
     :help #
-    :help g*
+    :help gstar
     :help g#
     :help 03.8
     :help search-commands
@@ -2613,7 +2613,7 @@ For more information, read
     :help word-count
     :help v_g_CTRL-G
     :help 12.5
-    :help s_flags | /^\[n\]
+    :help :s_flags
 
 
 =head2 11.11. How do I place the cursor at the end of the matched word when
@@ -2646,7 +2646,7 @@ former only matches true empty lines. For more information, read
     :help /^
     :help /$
     :help /\s
-    :help /*
+    :help /star
     :help search-commands
 
 
@@ -2661,7 +2661,7 @@ For more information, read
     :help /^
     :help /\a
     :help /\s
-    :help /*
+    :help /star
     :help /$
 
 
@@ -2871,10 +2871,9 @@ the following command:
 For more information, read
 
     :help @/
-    :help let-@
+    :help :let-@
     :help autocmd-searchpat
     :help last-pattern
-
 
 
 
@@ -2907,7 +2906,7 @@ multiple consecutive space characters to a single space:
 
     :%s/ \{2,}/ /g
 
-alternatively use:
+Alternatively use:
 
     :%s/  \+/ /g
 
@@ -2930,12 +2929,12 @@ The explanation for this command is below:
 
     :v/./           Execute the following command for all lines not
                     containing a character (empty lines).
-         .,         Use the current line as the start of the range of
+     .,             Use the current line as the start of the range of
                     lines.
-           /./      Use the line containing a character as the last line.
-              -1    Adjust the range of lines to end with the line before
+     /./            Use the line containing a character as the last line.
+     -1             Adjust the range of lines to end with the line before
                     the last line.
-                j   Join the lines in the range.
+     j              Join the lines in the range.
 
 Note that this will give an error message if the empty lines are at the end
 of the file. To correct this, you have to add a temporary line at the end
@@ -2999,7 +2998,7 @@ For more information, read
 
     :help yank
     :help motion.txt
-    :help 4.6
+    :help 04.6
 
 
 =head2 12.7. When I yank some text into a register, how do I append the text to
@@ -3033,7 +3032,7 @@ For more information, read
     :help yank
     :help {motion}
     :help object-motions
-    :help 4.6
+    :help 04.6
 
 
 =head2 12.9. How do I yank all the lines containing a pattern into a buffer?
@@ -3053,7 +3052,7 @@ For more information, read
 
     :help :g
     :help :y
-    :help let-register
+    :help :let-register
     :help quote_alpha
     :help put
     :help registers
@@ -3309,9 +3308,9 @@ For more information, read
 
     :help sub-replace-special
     :help :substitute
-    :help \U
-    :help \L
-    :help \u
+    :help /\U
+    :help /\L
+    :help /\u
 
 
 =head2 12.24. How do I enter characters that are not present in the keyboard?
@@ -3324,7 +3323,7 @@ defined digraphs. You can add a new digraph to the list using the
 For more information, read
 
     :help digraphs
-    :help 'digraphs'
+    :help 'digraph'
     :help 24.9
 
 
@@ -3440,7 +3439,7 @@ cursor.
 
 You can enter the non-printable character by entering CTRL-V followed by
 the decimal number 1-255 (with no leading zero), or by x and a hex number
-=head2 00 FF, or by an octal number 0-0377 (with leading zero), or by u and a hex
+00-FF, or by an octal number 0-0377 (with leading zero), or by u and a hex
 number 0-FFFF, or by U and a hex number 0-7FFFFFFF
 
 Another alternative is to use the ":digraphs" ex command to display the
@@ -3543,7 +3542,6 @@ For more information, read
 
 
 
-
 =head1 COMPLETION IN INSERT MODE
 
 
@@ -3605,7 +3603,6 @@ For more information, read
     :help i_CTRL-X_CTRL-P
     :help i_CTRL-X_CTRL-N
     :help ins-completion
-
 
 
 
@@ -3899,31 +3896,75 @@ For more information, read
       the alignment (indentation) of the new text is messed up. How do I
       fix this?
 
-The indentation of the text is messed up due to various Vim settings
-related to indentation (like autoindent, smartindent, textwidth etc).
-Before pasting text into Vim, you can set the 'paste' option:
+When you paste text into a GUI Vim using the mouse, Vim is able to
+detect that you are pasting text. So all the indentation related
+settings (like autoindent, smartindent, cindent, etc.) are ignored and
+the text is pasted literally.
 
-    :set paste
+When pasting text into a Vim running in a terminal (like xterm) using
+the mouse, Vim may not be able to detect that you are pasting text. This
+depends on several things: the capability of the terminal to pass the
+mouse events to Vim, Vim is compiled to handle mouse events and access
+the clipboard, the DISPLAY variable is set properly, the Vim 'mouse'
+option is set correctly.
 
-After pasting the text, you can turn off the option using:
+If Vim is able to detect that you are pasting text using the mouse, then
+the pasted text will be inserted literally.
 
-    :set nopaste
+If Vim is not able to detect that you are pasting using the mouse, then
+it will see the pasted text as though you literally typed the text.
+After the first line from the pasted text is inserted, when Vim
+encounters the newline character, because of the indentation settings,
+the next line will start indented. The spaces at the beginning of the
+second line in the pasted text will be inserted leading to additional
+indentation. This will be repeated for subsequent lines. So the pasted
+text will be inserted with stair case indentation.
 
-You can also toggle the paste option using:
+You can fix this problem in a terminal Vim in several ways:
 
-    :set paste!
+1. Build Vim with the +mouse and +xterm_clipboard compile-time options.
+   The normal or big or huge build of Vim includes these options.  Set
+   the 'mouse' option to either 'a' or include 'i'.  When pasting text
+   using the mouse, don't press the Shift key. This will work only if
+   Vim can access the X display. For more information, read the
+   following Vim help topics:
 
-If you can access the clipboard through the * register, then you can paste
-the text without indentation using CTRL-R CTRL-O *.
+    :help +feature-list
+    :help 'mouse'
+    :help <MiddleMouse>
+    :help x11-selection
+    :help xterm-clipboard
 
-For more information, read
+2. Paste the text using the CTRL-R CTRL-O * command.  This will paste
+   the text literally without any automatic indentation. If you want to
+   paste the text and then fix the indentation, then you can use CTRL-R
+   CTRL-P *. These commands will work only if Vim can access the X
+   display. For more information, read the following Vim help topics:
+
+    :help i_CTRL-R_CTRL-O
+    :help i_CTRL-R_CTRL-P
+    :help quotestar
+
+3. Set the 'paste' option before pasting the text. This option will
+   disable the effect of all the indentation related settings. Make sure
+   to turn off this option using ':set nopaste' after pasting the text.
+   Otherwise the Vim indentation feature will not work.  Do not
+   permanently set the 'paste' option in your .vimrc file. If you are
+   going to repeat these steps often, then you can set the 'pastetoggle'
+   option to a key. When you press the specified key, the 'paste' option
+   option will be toggled. You can press the key once before pasting the
+   text and the press the key once after pasting the text. Note that
+   when the 'paste' option is set, all the mappings and abbreviations
+   are disabled.  For more information, read the following Vim help
+   topics:
 
     :help 'paste'
     :help 'pastetoggle'
-    :help i_CTRL-R_CTRL_O
-    :help clipboard
-    :help xterm-clipboard
-    :help gui-clipboard
+
+You can also refer to the following topics in the user manual:
+
+    :help 04.7
+    :help 09.3
 
 
 =head2 14.15. When there is a very long wrapped line (wrap is "on") and a line
@@ -3999,11 +4040,10 @@ For more information, read
     :help gJ
     :help :join
     :help J
-    :hep 10.5
+    :help 10.5
     :help 'joinspaces'
     :help 'cpoptions'
     :help 'formatoptions'
-
 
 
 
@@ -4134,7 +4174,7 @@ For more information, read
 
     :help Select-mode
     :help 'selectmode'
-    :help 9.4
+    :help 09.4
     :help :behave
 
 
@@ -4171,7 +4211,6 @@ For more information, read
     :help ']
     :help `a
     :help v
-
 
 
 
@@ -4332,7 +4371,6 @@ For more information, read
 
 
 
-
 =head1 VIMINFO
 
 
@@ -4356,7 +4394,7 @@ For more information, read
 By default, the viminfo feature is disabled. If the viminfo feature is
 enabled by a system-wide vimrc file, then you can disable the viminfo
 feature by setting the 'viminfo' option to an empty string in your local
-=head2 . imrc file:
+.vimrc file:
 
     :set viminfo=""
 
@@ -4379,7 +4417,6 @@ For more information, read
     :help 'viminfo'
     :help :wviminfo
     :help :rviminfo
-
 
 
 
@@ -4425,7 +4462,6 @@ You can get more information about the Vim remote server functionality by
 reading
 
     :help client-server
-
 
 
 
@@ -4694,7 +4730,7 @@ keys over a slow line.
 
 For more information, read
 
-    :help ttimeout
+    :help 'ttimeout'
 
 
 =head2 19.16. How do I make the 'c' and 's' commands display a '$' instead of
@@ -4730,7 +4766,6 @@ remove the flags one by one:
 For more information, read
 
     :help :set-=
-
 
 
 
@@ -4789,8 +4824,8 @@ For more information, read
 
     :help :unmap
     :help map-modes
-    :help map-local
-    :help 'mapleader'
+    :help :map-local
+    :help mapleader
 
 
 =head2 20.4. I am not able to create a mapping for the <xxx> key. What is wrong?
@@ -4957,13 +4992,13 @@ For more information, read
 
 Use the following mapping:
 
-    :inoremap <S-Tab> <C-O><LT><LT>
+    :inoremap <S-Tab> <C-O><lt><lt>
     :nnoremap <Tab> >>
-    :nnoremap <S-Tab> <LT><LT>
+    :nnoremap <S-Tab> <lt><lt>
     :vnoremap <Tab> >
-    :vnoremap <S-Tab> <LT>
+    :vnoremap <S-Tab> <lt>
 
-Note that, the <S-Tab> mapping will work only if Vim receives the correct
+Note, that the <S-Tab> mapping will work only if Vim receives the correct
 key sequence. This is mostly the case with GUI Vim.
 
 For more information, read
@@ -4975,7 +5010,7 @@ For more information, read
     :help i_CTRL-O
     :help >>
     :help <<
-    :help <LT>
+    :help <lt>
 
 
 =head2 20.13. In my mappings the special characters like <CR> are not recognized.
@@ -5092,7 +5127,7 @@ For more information, read
 
     :help :vmap
     :help quote_quote
-    :help let-register
+    :help :let-register
     :help c_CTRL-U
     :help :!cmd
 
@@ -5109,7 +5144,7 @@ For more information, read
 
     :help keycodes
 
-=head2 20.19 How do I define a map to accept a count?
+=head2 20.19. How do I define a map to accept a count?
 
 Use the @= command to use an expression. For example,
 
@@ -5118,7 +5153,6 @@ Use the @= command to use an expression. For example,
 Now you can specify a count to the '=' command.
 
     :help complex-repeat
-
 
 =head2 20.20. How can I make my normal mode mapping work from within Insert
        Mode?
@@ -5172,6 +5206,7 @@ For more information, read
     :help map_bar
     :help i_CTRL-\_CTRL-O
     :help CTRL-\_CTRL-N
+
 
 
 
@@ -5275,7 +5310,6 @@ For more information, read
 
 
 
-
 =head1 RECORD AND PLAYBACK
 
 
@@ -5332,7 +5366,7 @@ For more information, read
 
     :help recording
     :help 10.1
-    :help let-register
+    :help :let-register
     :help <>
     :help 'cpoptions'
 
@@ -5366,7 +5400,6 @@ to use some other register.
 For more information, read
 
     :help registers
-
 
 
 
@@ -5452,7 +5485,6 @@ For more information, read
 
 
 
-
 =head1 SYNTAX HIGHLIGHT
 
 
@@ -5520,7 +5552,7 @@ the highlight colors to suit a dark/light background:
 For more information, read
 
     :help 'background'
-    :help 6.2
+    :help 06.2
 
 
 =head2 24.4. How do I change the color of the line numbers displayed when the
@@ -5580,7 +5612,7 @@ For more information, read
       uses the specified colorscheme everytime?
 
 You can specify the color scheme using the ":colorscheme" command in your
-=head2 . imrc or .gvimrc file:
+.vimrc or .gvimrc file:
 
     colorscheme evening
 
@@ -5639,7 +5671,7 @@ highlighting:
 
 For more information, read
 
-    :help c-syntax
+    :help ft-c-syntax
 
 
 =head2 24.11. How do I add my own syntax extensions to the standard syntax files
@@ -5702,7 +5734,7 @@ with the Vim syntax highlighting. Use the following command:
 For more information, read
 
     :help convert-to-HTML
-    :help TOhtml
+    :help :TOhtml
 
 
 =head2 24.15. How do I list the definition of all the current highlight groups?
@@ -5713,7 +5745,6 @@ You can list the definition of all the current highlight groups using the
 For more information, read
 
     :help :highlight
-
 
 
 
@@ -5938,7 +5969,7 @@ For more information, read
 
     :help gv
     :help :normal
-    :help let-@
+    :help :let-@
     :help quotestar
     :help clipboard
     :help registers
@@ -6003,7 +6034,7 @@ the 'old_tw' variable, you can use the following command:
 For more information, read
 
     :help expr-option
-    :help let-option
+    :help :let-option
 
 
 =head2 25.16. I have copied and inserted some text into a buffer from a Vim
@@ -6041,7 +6072,7 @@ character under the cursor:
     normal! vy
     let ch=@"
 
-Note that the above commands will change the '< and '> marks.
+Note, that the above commands will change the '< and '> marks.
 
 For more information, read
 
@@ -6089,7 +6120,7 @@ in insert mode:
 
     <C-R>=MyFunc()
 
-Note that this will only insert the return value of the function.
+Note, that this will only insert the return value of the function.
 
 For more information, read
 
@@ -6224,7 +6255,7 @@ function/mapping are reversed.
 For more information, read
 
     :help undo-redo
-    :help map-undo
+    :help :map-undo
 
 
 =head2 25.29. How can I call a function defined with s: (script local function)
@@ -6252,7 +6283,6 @@ sourcing a script.
 For more information, read
 
     :help :source
-
 
 
 
@@ -6289,7 +6319,7 @@ For more information, read
 
     :help filetype-plugin
     :help add-filetype-plugin
-    :help autocmd
+    :help :autocmd
     :help 40.3
 
 
@@ -6380,8 +6410,8 @@ You can turn off loading the filetype plugins using:
 
 For more information, read
 
-    :help filetype-plugin-on
-    :help filetype-plugin-off
+    :help :filetype-plugin-on
+    :help :filetype-plugin-off
     :help :filetype
 
 
@@ -6450,7 +6480,6 @@ For more information, read
 
 
 
-
 =head1 EDITING PROGRAM FILES
 
 
@@ -6509,7 +6538,7 @@ Also, check the setting for the following options:
 For more information, read
 
     :help 'cindent'
-    :help filetype-indent-off
+    :help :filetype-indent-off
     :help 'autoindent'
     :help 'smartindent'
     :help 'indentexpr'
@@ -6587,11 +6616,11 @@ then you can add the above lines to the
 
 For more information, read
 
-   :help formatoptions
-   :help 30.6
-   :help format-comments
-   :help filetype-plugins
-   :help ftplugin-overrule
+    :help formatoptions
+    :help 30.6
+    :help format-comments
+    :help filetype-plugins
+    :help ftplugin-overrule
 
 
 =head2 27.8. How do I add the comment character '#' to a set of lines at the
@@ -6664,7 +6693,6 @@ For more information, read
 
 
 
-
 =head1 QUICKFIX
 
 
@@ -6677,7 +6705,7 @@ command runs the program specified by the 'makeprg' option.
 For more information, read
 
     :help 30.1
-    :help make_makeprg
+    :help :make_makeprg
     :help 'makeprg'
     :help 'makeef'
     :help :make
@@ -6698,7 +6726,6 @@ For more information, read
     :help :copen
     :help :cwindow
     :help quickfix
-
 
 
 
@@ -6812,7 +6839,6 @@ For more information, read
     :help 'viewdir'
     :help :mksession
     :help 'sessionoptions'
-
 
 
 
@@ -6971,7 +6997,7 @@ Cons:
  * Limited functionality
  * Inactive development
 
-
+-------------------------------------------
 
 
 =head2 30.2. How do I pass the word under the cursor to an external command?
@@ -6983,7 +7009,7 @@ to an external command. For example:
 
 For more information, read
 
-    :help <cword>
+    :help :<cword>
 
 
 =head2 30.3. How do I get the output of a shell command into a Vim buffer?
@@ -7024,7 +7050,7 @@ results back in the buffer, you can use
 
     :w !sort
 
-The above command will pipe the entire buffer to the sort command.  Note
+The above command will pipe the entire buffer to the sort command.  Note,
 that the space between the 'w' and the '!' is critical.  To pipe only a
 range of lines, you can use
 
@@ -7063,7 +7089,7 @@ You can also use a visual block, and use the "!sort" command on the
 selected block.
 
 See also:
-    :help sort
+    :help :sort
     :help filter
 
 
@@ -7121,7 +7147,6 @@ If you like vertically split windows, then replace "-o" with "-O".
 For more information, read
 
     :help vimdiff
-
 
 
 
@@ -7376,7 +7401,6 @@ For more information, read
 
 
 
-
 =head1 VIM ON UNIX
 
 
@@ -7451,7 +7475,7 @@ feature, add the following line to your .vimrc file:
 
 For more information, read
 
-    :help restorescreen
+    :help 'restorescreen'
     :help xterm-screens
 
 
@@ -7572,7 +7596,6 @@ For more information, read
 
 
 
-
 =head1 VIM ON MS-WINDOWS
 
 
@@ -7590,7 +7613,7 @@ of CTRL-V.
 For more information, read
 
     :help CTRL-V
-    :help CTRl-V-alternative
+    :help CTRL-V-alternative
     :help CTRL-Q
     :help 10.5
 
@@ -7672,7 +7695,7 @@ information:
 
     http://sourceforge.net/projects/cubiclevim
 
-Note that currently this works only with MS-Office 2000 and XP.
+Note, that currently this works only with MS-Office 2000 and XP.
 
 Also the plugin OutlookVim might be worth a look:
 
@@ -7735,7 +7758,6 @@ For more information, read
 
 
 
-
 =head1 PRINTING
 
 
@@ -7766,7 +7788,6 @@ For more information, read
     :help 2html.vim
     :help :hardcopy
     :help printing
-
 
 
 
@@ -7922,6 +7943,99 @@ Use the following shell script named gtk-config:
     #!/bin/sh
     pkg-config gtk+-2.0 $1 $2
 
+
+=head2 35.10. I did successfully download the sources and compiled Vim on
+        Unix. But feature ... still does not work. What is wrong and
+        how can I fix it?
+
+You should first check, that you are actually running your self compiled
+Vim and not the system's provided version. So first check your $PATH
+setting.
+
+Depending on your compile options, some features might not be included in
+your build of Vim. You can use the ":version" command to determine the Vim
+features that are enabled at compile time. The features that are enabled
+will be prefixed with a "+". The features that are not enabled will be
+prefixed with a "-".
+
+The easiest way to include all features is to build the huge version. To do
+this, you have to specify the --with-features option while running the
+configure script:
+
+    $ ./configure --with-features=huge
+
+Nevertheless, a feature could still be disabled at compile time, if the
+configure script can't find the required libraries for those features (e.g.
+for clipboard integration, your Vim needs to be linked against the X11
+development libraries). 
+
+There are several ways to install the required libraries:
+
+1) On a Debian based distribution, you can use the package manager "apt" to
+   install all required dependencies. As superuser, run the command:
+
+   $ apt-get build-dep vim-gtk
+
+   This makes sure all required libraries needed to compile the vim-gtk
+   package will be installed. (This requires, that your sources list
+   contains deb-src entries. See your distribution manual on how to enable
+   this, if the above command did not work.)
+
+2) In openSUSE you can use the package manager "zypper" to install all
+   required libraries. This requires, that there is a source version of the
+   package installable from a configured repository (which by default is not
+   the case). Use:
+
+   $ zypper search -t srcpackage vim
+
+   to find out, whether or not there exists a source version in the
+   repository. If there is none, you'll need to add a source repository.
+   For openSUSE 11.2 you could use, e.g.
+   
+   $ zypper ar
+   http://download.opensuse.org/source/distribution/11.2/repo/oss/src-11.2
+
+   (one line)
+
+   Once you have a source version available in your repositories, use this
+   command to install all needed requirements:
+
+   $ zypper source-install --build-deps-only vim
+
+3) On a Fedora/RedHat based system, you can use
+   
+   $ yum-builddep vim-enhanced
+
+4) Run configure with your options and watch for missing libraries:
+  
+   $ ./configure --with-features=huge 2>&1 |tee logfile
+
+   This will run configure and record the output into the file "logfile".
+   You need to check the logfile for missing dependencies. Consider this
+   output:
+
+    checking --disable-gtktest argument... gtk test enabled
+    checking for pkg-config... /usr/bin/pkg-config
+    checking for GTK - version >= 2.2.0... no
+
+    Here you can see, that the gtk libraries are missing and therefore no
+    GTK gui version can't be build. So you need to install the GTK library
+    in your system, with your package manager or by compiling it yourself.
+    Then run the configure script again and check, that it finds the
+    library.
+
+In theory, those provided dependencies by your distribution might still
+lack some libraries, that are needed for features, that simply are not
+enabled in your distribution and therefore those commands in 1-3 won't
+install it. At the very least, this provides a jumping point and you need
+to track down the required missing packages using method 4 from above. But
+usually, this works good enough for most people and you won't have to
+bother with the fourth method.
+
+For more information, read
+
+    :help :version
+    :help +feature-list
 
 
 
@@ -8128,16 +8242,15 @@ mouse, then Vim doesn't control the mouse and xterm controls the
 mouse.
 
 In the GUI mode, Copy and Paste should just work, depending on the 'mouse'
-setting.
+setting. For more information, read
 
-   :help 'clipboard'
-   :help x11-selection
-   :help clipboard
-   :help 'go-a'
-   :help 'mouse'
-   :help xterm-copy-paste
-   :help 9.3
-
+    :help 'clipboard'
+    :help x11-selection
+    :help clipboard
+    :help 'go-a'
+    :help 'mouse'
+    :help xterm-copy-paste
+    :help 09.3
 
 
 
@@ -8313,10 +8426,11 @@ For more information, read
     :help :digraphs
     :help 'encoding'
 
+
+
 =head1 AUTHOR
 
-Current Maintainer: Yegappan Lakshmanan
+Current Maintainer: Christian Brabandt <cb@256bit.org>
 
-Last updated on: 26 October 2010
-
+Last updated on: 07 February 2011
 =cut

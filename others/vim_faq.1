@@ -903,6 +903,9 @@ Peppe, Benji, Charles Campbell and numerous others.
 \&          they moved to using the generic pkg\-config. I can get pkg\-config
 \&          to list the various includes and libs for gtk, but for some
 \&          reason the configure script still isn\*(Aqt picking this up.
+\&    35.10. I did successfully download the sources and compiled Vim on
+\&           Unix. But feature ... still does not work. What is wrong and
+\&           how can I fix it?
 .Ve
 .SH "VARIOUS"
 .IX Header "VARIOUS"
@@ -965,7 +968,7 @@ document is secondary. With an editor, one's main concern is entering text,
 not making the text look good. Examples of editors other than Vim and Vi
 are Emacs, Crisp, Brief, TextMate and xedit.  And Notepad.
 .PP
-For more information, read
+For more information read
 .PP
 .Vb 1
 \&    :help intro
@@ -978,7 +981,7 @@ people to mention here. See \*(L":h credits\*(R" for a complete list.
 Vim is based on Stevie, worked on by Tim Thompson, Tony Andrews and G.R.
 (Fred) Walter.
 .PP
-For more information, read
+For more information, read:
 .PP
 .Vb 1
 \&    :help author
@@ -1230,7 +1233,7 @@ You can download the \s-1HTML/PDF/PS\s0 format of the Vim user manual from:
 .el .SS "2.5. I have a ``xyz'' (some) problem with Vim. How do I determine it is a problem with my setup or with Vim?"
 .IX Subsection "2.5. I have a xyz (some) problem with Vim. How do I determine it is a problem with my setup or with Vim?"
 First, you have to determine that the problem is not with your .vimrc or
-=head2 . vimrc or system vimrc or your personal plugin files or in any of your
+\&.gvimrc or system vimrc or your personal plugin files or in any of your
 setup files. To do this, use
 .PP
 .Vb 1
@@ -1262,7 +1265,7 @@ For more information, read
 \&    :help \-V
 \&    :help \*(Aqverbose\*(Aq
 \&    :help :verbose
-\&    :help set\-verbose
+\&    :help :set\-verbose
 .Ve
 .SS "2.6. Where can I report bugs?"
 .IX Subsection "2.6. Where can I report bugs?"
@@ -1287,8 +1290,11 @@ For more information, read
 .Ve
 .SS "2.7. Where can the \s-1FAQ\s0 be found?"
 .IX Subsection "2.7. Where can the FAQ be found?"
-The \s-1FAQ\s0 can be found at VimOnline (vim.sf.net).  Other places will be
-decided in the future.
+The \s-1FAQ\s0 can be found at http://vimhelp.appspot.com/vim_faq.txt.html.
+.PP
+A slightly older version (which doesn't seem to get updated anymore) can
+still be found at VimOnline (vim.sf.net). Other places will be decided in
+the future.
 .SS "2.8. What if I don't find an answer in this \s-1FAQ\s0?"
 .IX Subsection "2.8. What if I don't find an answer in this FAQ?"
 This \s-1FAQ\s0 covers mainly Vim-specific questions. You may find more
@@ -1355,7 +1361,7 @@ Version 1.17    21st April, 1992
 .PP
 For more information, read
 .PP
-.Vb 9
+.Vb 10
 \&    :help new\-5
 \&    :help new\-6
 \&    :help new\-7
@@ -1365,6 +1371,7 @@ For more information, read
 \&    :help changed\-6.4
 \&    :help changed\-7.1
 \&    :help changed\-7.2
+\&    :help changed\-7.3
 .Ve
 .SS "3.2. Where can I find the latest version of Vim?"
 .IX Subsection "3.2. Where can I find the latest version of Vim?"
@@ -1547,7 +1554,7 @@ You can also use the \*(L":args\*(R" command to load files into Vim:
 For more information, read
 .PP
 .Vb 5
-\&    :help usr_07
+\&    :help usr_07.txt
 \&    :help edit\-files
 \&    :help :edit
 \&    :help :next_f
@@ -1630,7 +1637,7 @@ For more information, read
 .IX Subsection "5.5. How do I configure Vim to open a file at the last edited location?"
 Vim stores the cursor position of the last edited location for each buffer
 in the '"' register. You can use the following autocmd in your .vimrc or
-=head2 . vimrc file to open a file at the last edited location:
+\&.gvimrc file to open a file at the last edited location:
 .PP
 .Vb 2
 \&    au BufReadPost * if line("\*(Aq\e"") > 0 && line("\*(Aq\e"") <= line("$") |
@@ -1958,7 +1965,7 @@ example, to edit a file over ftp, you can use the following command:
 \&    $ vim ftp://machine/path
 .Ve
 .PP
-For more information, read
+For more information, read:
 .PP
 .Vb 1
 \&    :help netrw.vim
@@ -2265,7 +2272,7 @@ You can also use CTRL-W < or CTRL-W > or CTRL-W | commands.
 For more information, read
 .PP
 .Vb 4
-\&    :help vertical\-resize
+\&    :help :vertical\-resize
 \&    :help CTRL\-W_>
 \&    :help CTRL\-W_<
 \&    :help window\-resize
@@ -2369,14 +2376,16 @@ return to command mode the cursor *must* drop back onto the last character
 you typed. For consistency sake, the cursor drops back everywhere, even if
 you are in the middle of a line.
 .PP
-You can use the CTRL-O command in insert mode to execute a single ex
-command and return back to insert mode without moving the cursor column.
+You can use the CTRL-O or CTRL\-\e CTRL-O command in insert mode to execute a
+single ex command and return back to insert mode without moving the cursor
+column.
 .PP
 For more information, read
 .PP
-.Vb 2
-\&    :help \*(Aqvirtual\*(Aq
+.Vb 3
+\&    :help \*(Aqvirtualedit\*(Aq
 \&    :help i_CTRL\-O
+\&    :help i_CTRL\-\e_CTRL\-O
 .Ve
 .SS "10.3. How do I configure Vim to maintain the horizontal cursor position when scrolling with the <Page Up>, <Page Down>, etc keys?"
 .IX Subsection "10.3. How do I configure Vim to maintain the horizontal cursor position when scrolling with the <Page Up>, <Page Down>, etc keys?"
@@ -2439,7 +2448,7 @@ For more information, read
 .Vb 6
 \&    :help sentence
 \&    :help \*(Aqjoinspaces\*(Aq
-\&    :help \*(Aqcpoptions\*(Aq | /^\es*j\e>
+\&    :help \*(Aqcpoptions\*(Aq
 \&    :help paragraph
 \&    :help section
 \&    :help word
@@ -2747,7 +2756,7 @@ For more information, read
 .Vb 6
 \&    :help star
 \&    :help #
-\&    :help g*
+\&    :help gstar
 \&    :help g#
 \&    :help 03.8
 \&    :help search\-commands
@@ -2840,7 +2849,7 @@ For more information, read
 \&    :help word\-count
 \&    :help v_g_CTRL\-G
 \&    :help 12.5
-\&    :help s_flags | /^\e[n\e]
+\&    :help :s_flags
 .Ve
 .SS "11.11. How do I place the cursor at the end of the matched word when searching for a pattern?"
 .IX Subsection "11.11. How do I place the cursor at the end of the matched word when searching for a pattern?"
@@ -2876,7 +2885,7 @@ former only matches true empty lines. For more information, read
 \&    :help /^
 \&    :help /$
 \&    :help /\es
-\&    :help /*
+\&    :help /star
 \&    :help search\-commands
 .Ve
 .SS "11.13. How do I search for a line containing only a single character?"
@@ -2893,7 +2902,7 @@ For more information, read
 \&    :help /^
 \&    :help /\ea
 \&    :help /\es
-\&    :help /*
+\&    :help /star
 \&    :help /$
 .Ve
 .SS "11.14. How do I search and replace a string in multiple files?"
@@ -3128,7 +3137,7 @@ For more information, read
 .PP
 .Vb 4
 \&    :help @/
-\&    :help let\-@
+\&    :help :let\-@
 \&    :help autocmd\-searchpat
 \&    :help last\-pattern
 .Ve
@@ -3161,7 +3170,7 @@ multiple consecutive space characters to a single space:
 \&    :%s/ \e{2,}/ /g
 .Ve
 .PP
-alternatively use:
+Alternatively use:
 .PP
 .Vb 1
 \&    :%s/  \e+/ /g
@@ -3189,12 +3198,12 @@ The explanation for this command is below:
 .Vb 8
 \&    :v/./           Execute the following command for all lines not
 \&                    containing a character (empty lines).
-\&         .,         Use the current line as the start of the range of
+\&     .,             Use the current line as the start of the range of
 \&                    lines.
-\&           /./      Use the line containing a character as the last line.
-\&              \-1    Adjust the range of lines to end with the line before
+\&     /./            Use the line containing a character as the last line.
+\&     \-1             Adjust the range of lines to end with the line before
 \&                    the last line.
-\&                j   Join the lines in the range.
+\&     j              Join the lines in the range.
 .Ve
 .PP
 Note that this will give an error message if the empty lines are at the end
@@ -3262,7 +3271,7 @@ For more information, read
 .Vb 3
 \&    :help yank
 \&    :help motion.txt
-\&    :help 4.6
+\&    :help 04.6
 .Ve
 .SS "12.7. When I yank some text into a register, how do I append the text to the current contents of the register?"
 .IX Subsection "12.7. When I yank some text into a register, how do I append the text to the current contents of the register?"
@@ -3297,7 +3306,7 @@ For more information, read
 \&    :help yank
 \&    :help {motion}
 \&    :help object\-motions
-\&    :help 4.6
+\&    :help 04.6
 .Ve
 .SS "12.9. How do I yank all the lines containing a pattern into a buffer?"
 .IX Subsection "12.9. How do I yank all the lines containing a pattern into a buffer?"
@@ -3319,7 +3328,7 @@ For more information, read
 .Vb 7
 \&    :help :g
 \&    :help :y
-\&    :help let\-register
+\&    :help :let\-register
 \&    :help quote_alpha
 \&    :help put
 \&    :help registers
@@ -3603,9 +3612,9 @@ For more information, read
 .Vb 5
 \&    :help sub\-replace\-special
 \&    :help :substitute
-\&    :help \eU
-\&    :help \eL
-\&    :help \eu
+\&    :help /\eU
+\&    :help /\eL
+\&    :help /\eu
 .Ve
 .SS "12.24. How do I enter characters that are not present in the keyboard?"
 .IX Subsection "12.24. How do I enter characters that are not present in the keyboard?"
@@ -3618,7 +3627,7 @@ For more information, read
 .PP
 .Vb 3
 \&    :help digraphs
-\&    :help \*(Aqdigraphs\*(Aq
+\&    :help \*(Aqdigraph\*(Aq
 \&    :help 24.9
 .Ve
 .SS "12.25. Is there a command to remove any or all digraphs?"
@@ -3735,7 +3744,7 @@ cursor.
 .PP
 You can enter the non-printable character by entering CTRL-V followed by
 the decimal number 1\-255 (with no leading zero), or by x and a hex number
-=head2 00 \s-1FF\s0, or by an octal number 0\-0377 (with leading zero), or by u and a hex
+00\-FF, or by an octal number 0\-0377 (with leading zero), or by u and a hex
 number 0\-FFFF, or by U and a hex number 0\-7FFFFFFF
 .PP
 Another alternative is to use the \*(L":digraphs\*(R" ex command to display the
@@ -4221,38 +4230,82 @@ For more information, read
 .Ve
 .SS "14.14. When I paste some text into a Vim buffer from another application, the alignment (indentation) of the new text is messed up. How do I fix this?"
 .IX Subsection "14.14. When I paste some text into a Vim buffer from another application, the alignment (indentation) of the new text is messed up. How do I fix this?"
-The indentation of the text is messed up due to various Vim settings
-related to indentation (like autoindent, smartindent, textwidth etc).
-Before pasting text into Vim, you can set the 'paste' option:
+When you paste text into a \s-1GUI\s0 Vim using the mouse, Vim is able to
+detect that you are pasting text. So all the indentation related
+settings (like autoindent, smartindent, cindent, etc.) are ignored and
+the text is pasted literally.
 .PP
-.Vb 1
-\&    :set paste
+When pasting text into a Vim running in a terminal (like xterm) using
+the mouse, Vim may not be able to detect that you are pasting text. This
+depends on several things: the capability of the terminal to pass the
+mouse events to Vim, Vim is compiled to handle mouse events and access
+the clipboard, the \s-1DISPLAY\s0 variable is set properly, the Vim 'mouse'
+option is set correctly.
+.PP
+If Vim is able to detect that you are pasting text using the mouse, then
+the pasted text will be inserted literally.
+.PP
+If Vim is not able to detect that you are pasting using the mouse, then
+it will see the pasted text as though you literally typed the text.
+After the first line from the pasted text is inserted, when Vim
+encounters the newline character, because of the indentation settings,
+the next line will start indented. The spaces at the beginning of the
+second line in the pasted text will be inserted leading to additional
+indentation. This will be repeated for subsequent lines. So the pasted
+text will be inserted with stair case indentation.
+.PP
+You can fix this problem in a terminal Vim in several ways:
+.PP
+1. Build Vim with the +mouse and +xterm_clipboard compile-time options.
+   The normal or big or huge build of Vim includes these options.  Set
+   the 'mouse' option to either 'a' or include 'i'.  When pasting text
+   using the mouse, don't press the Shift key. This will work only if
+   Vim can access the X display. For more information, read the
+   following Vim help topics:
+.PP
+.Vb 5
+\&    :help +feature\-list
+\&    :help \*(Aqmouse\*(Aq
+\&    :help <MiddleMouse>
+\&    :help x11\-selection
+\&    :help xterm\-clipboard
 .Ve
 .PP
-After pasting the text, you can turn off the option using:
+2. Paste the text using the CTRL-R CTRL-O * command.  This will paste
+   the text literally without any automatic indentation. If you want to
+   paste the text and then fix the indentation, then you can use CTRL-R
+   CTRL-P *. These commands will work only if Vim can access the X
+   display. For more information, read the following Vim help topics:
 .PP
-.Vb 1
-\&    :set nopaste
+.Vb 3
+\&    :help i_CTRL\-R_CTRL\-O
+\&    :help i_CTRL\-R_CTRL\-P
+\&    :help quotestar
 .Ve
 .PP
-You can also toggle the paste option using:
+3. Set the 'paste' option before pasting the text. This option will
+   disable the effect of all the indentation related settings. Make sure
+   to turn off this option using ':set nopaste' after pasting the text.
+   Otherwise the Vim indentation feature will not work.  Do not
+   permanently set the 'paste' option in your .vimrc file. If you are
+   going to repeat these steps often, then you can set the 'pastetoggle'
+   option to a key. When you press the specified key, the 'paste' option
+   option will be toggled. You can press the key once before pasting the
+   text and the press the key once after pasting the text. Note that
+   when the 'paste' option is set, all the mappings and abbreviations
+   are disabled.  For more information, read the following Vim help
+   topics:
 .PP
-.Vb 1
-\&    :set paste!
-.Ve
-.PP
-If you can access the clipboard through the * register, then you can paste
-the text without indentation using CTRL-R CTRL-O *.
-.PP
-For more information, read
-.PP
-.Vb 6
+.Vb 2
 \&    :help \*(Aqpaste\*(Aq
 \&    :help \*(Aqpastetoggle\*(Aq
-\&    :help i_CTRL\-R_CTRL_O
-\&    :help clipboard
-\&    :help xterm\-clipboard
-\&    :help gui\-clipboard
+.Ve
+.PP
+You can also refer to the following topics in the user manual:
+.PP
+.Vb 2
+\&    :help 04.7
+\&    :help 09.3
 .Ve
 .ie n .SS "14.15. When there is a very long wrapped line (wrap is ""on"") and a line doesn't fit entirely on the screen it is not displayed at all. There are blank lines beginning with '@' symbol instead of wrapped line. If I scroll the screen to fit the line the '@' symbols disappear and the line is displayed again. What Vim setting control this behavior?"
 .el .SS "14.15. When there is a very long wrapped line (wrap is ``on'') and a line doesn't fit entirely on the screen it is not displayed at all. There are blank lines beginning with '@' symbol instead of wrapped line. If I scroll the screen to fit the line the '@' symbols disappear and the line is displayed again. What Vim setting control this behavior?"
@@ -4329,7 +4382,7 @@ For more information, read
 \&    :help gJ
 \&    :help :join
 \&    :help J
-\&    :hep 10.5
+\&    :help 10.5
 \&    :help \*(Aqjoinspaces\*(Aq
 \&    :help \*(Aqcpoptions\*(Aq
 \&    :help \*(Aqformatoptions\*(Aq
@@ -4457,7 +4510,7 @@ For more information, read
 .Vb 4
 \&    :help Select\-mode
 \&    :help \*(Aqselectmode\*(Aq
-\&    :help 9.4
+\&    :help 09.4
 \&    :help :behave
 .Ve
 .SS "15.9. When I select a block of text using the mouse, Vim goes into selection mode instead of Visual mode. Why?"
@@ -4678,7 +4731,7 @@ For more information, read
 By default, the viminfo feature is disabled. If the viminfo feature is
 enabled by a system-wide vimrc file, then you can disable the viminfo
 feature by setting the 'viminfo' option to an empty string in your local
-=head2 . imrc file:
+\&.vimrc file:
 .PP
 .Vb 1
 \&    :set viminfo=""
@@ -5039,7 +5092,7 @@ keys over a slow line.
 For more information, read
 .PP
 .Vb 1
-\&    :help ttimeout
+\&    :help \*(Aqttimeout\*(Aq
 .Ve
 .SS "19.16. How do I make the 'c' and 's' commands display a '$' instead of deleting the characters I'm changing?"
 .IX Subsection "19.16. How do I make the 'c' and 's' commands display a '$' instead of deleting the characters I'm changing?"
@@ -5145,8 +5198,8 @@ For more information, read
 .Vb 4
 \&    :help :unmap
 \&    :help map\-modes
-\&    :help map\-local
-\&    :help \*(Aqmapleader\*(Aq
+\&    :help :map\-local
+\&    :help mapleader
 .Ve
 .SS "20.4. I am not able to create a mapping for the <xxx> key. What is wrong?"
 .IX Subsection "20.4. I am not able to create a mapping for the <xxx> key. What is wrong?"
@@ -5329,14 +5382,14 @@ For more information, read
 Use the following mapping:
 .PP
 .Vb 5
-\&    :inoremap <S\-Tab> <C\-O><LT><LT>
+\&    :inoremap <S\-Tab> <C\-O><lt><lt>
 \&    :nnoremap <Tab> >>
-\&    :nnoremap <S\-Tab> <LT><LT>
+\&    :nnoremap <S\-Tab> <lt><lt>
 \&    :vnoremap <Tab> >
-\&    :vnoremap <S\-Tab> <LT>
+\&    :vnoremap <S\-Tab> <lt>
 .Ve
 .PP
-Note that, the <S\-Tab> mapping will work only if Vim receives the correct
+Note, that the <S\-Tab> mapping will work only if Vim receives the correct
 key sequence. This is mostly the case with \s-1GUI\s0 Vim.
 .PP
 For more information, read
@@ -5349,7 +5402,7 @@ For more information, read
 \&    :help i_CTRL\-O
 \&    :help >>
 \&    :help <<
-\&    :help <LT>
+\&    :help <lt>
 .Ve
 .SS "20.13. In my mappings the special characters like <\s-1CR\s0> are not recognized. How can I configure Vim to recognize special characters?"
 .IX Subsection "20.13. In my mappings the special characters like <CR> are not recognized. How can I configure Vim to recognize special characters?"
@@ -5479,7 +5532,7 @@ For more information, read
 .Vb 5
 \&    :help :vmap
 \&    :help quote_quote
-\&    :help let\-register
+\&    :help :let\-register
 \&    :help c_CTRL\-U
 \&    :help :!cmd
 .Ve
@@ -5495,8 +5548,8 @@ For more information, read
 .Vb 1
 \&    :help keycodes
 .Ve
-.SS "20.19 How do I define a map to accept a count?"
-.IX Subsection "20.19 How do I define a map to accept a count?"
+.SS "20.19. How do I define a map to accept a count?"
+.IX Subsection "20.19. How do I define a map to accept a count?"
 Use the @= command to use an expression. For example,
 .PP
 .Vb 1
@@ -5723,7 +5776,7 @@ For more information, read
 .Vb 5
 \&    :help recording
 \&    :help 10.1
-\&    :help let\-register
+\&    :help :let\-register
 \&    :help <>
 \&    :help \*(Aqcpoptions\*(Aq
 .Ve
@@ -5920,7 +5973,7 @@ For more information, read
 .PP
 .Vb 2
 \&    :help \*(Aqbackground\*(Aq
-\&    :help 6.2
+\&    :help 06.2
 .Ve
 .ie n .SS "24.4. How do I change the color of the line numbers displayed when the "":set number"" command is used?"
 .el .SS "24.4. How do I change the color of the line numbers displayed when the ``:set number'' command is used?"
@@ -5984,7 +6037,7 @@ For more information, read
 .SS "24.7. How do I specify a colorscheme in my .vimrc/.gvimrc file, so that Vim uses the specified colorscheme everytime?"
 .IX Subsection "24.7. How do I specify a colorscheme in my .vimrc/.gvimrc file, so that Vim uses the specified colorscheme everytime?"
 You can specify the color scheme using the \*(L":colorscheme\*(R" command in your
-=head2 . imrc or .gvimrc file:
+\&.vimrc or .gvimrc file:
 .PP
 .Vb 1
 \&    colorscheme evening
@@ -6047,7 +6100,7 @@ highlighting:
 For more information, read
 .PP
 .Vb 1
-\&    :help c\-syntax
+\&    :help ft\-c\-syntax
 .Ve
 .SS "24.11. How do I add my own syntax extensions to the standard syntax files supplied with Vim?"
 .IX Subsection "24.11. How do I add my own syntax extensions to the standard syntax files supplied with Vim?"
@@ -6111,7 +6164,7 @@ For more information, read
 .PP
 .Vb 2
 \&    :help convert\-to\-HTML
-\&    :help TOhtml
+\&    :help :TOhtml
 .Ve
 .SS "24.15. How do I list the definition of all the current highlight groups?"
 .IX Subsection "24.15. How do I list the definition of all the current highlight groups?"
@@ -6363,7 +6416,7 @@ For more information, read
 .Vb 6
 \&    :help gv
 \&    :help :normal
-\&    :help let\-@
+\&    :help :let\-@
 \&    :help quotestar
 \&    :help clipboard
 \&    :help registers
@@ -6440,7 +6493,7 @@ For more information, read
 .PP
 .Vb 2
 \&    :help expr\-option
-\&    :help let\-option
+\&    :help :let\-option
 .Ve
 .SS "25.16. I have copied and inserted some text into a buffer from a Vim function. How do I indent the inserted text from the Vim function?"
 .IX Subsection "25.16. I have copied and inserted some text into a buffer from a Vim function. How do I indent the inserted text from the Vim function?"
@@ -6482,7 +6535,7 @@ character under the cursor:
 \&    let ch=@"
 .Ve
 .PP
-Note that the above commands will change the '< and '> marks.
+Note, that the above commands will change the '< and '> marks.
 .PP
 For more information, read
 .PP
@@ -6538,7 +6591,7 @@ in insert mode:
 \&    <C\-R>=MyFunc()
 .Ve
 .PP
-Note that this will only insert the return value of the function.
+Note, that this will only insert the return value of the function.
 .PP
 For more information, read
 .PP
@@ -6683,7 +6736,7 @@ For more information, read
 .PP
 .Vb 2
 \&    :help undo\-redo
-\&    :help map\-undo
+\&    :help :map\-undo
 .Ve
 .SS "25.29. How can I call a function defined with s: (script local function) from another script/plugin?"
 .IX Subsection "25.29. How can I call a function defined with s: (script local function) from another script/plugin?"
@@ -6750,7 +6803,7 @@ For more information, read
 .Vb 4
 \&    :help filetype\-plugin
 \&    :help add\-filetype\-plugin
-\&    :help autocmd
+\&    :help :autocmd
 \&    :help 40.3
 .Ve
 .SS "26.2. I have downloaded a Vim plugin or a syntax file or a indent file, or a color scheme or a filetype plugin from the web. Where should I copy these files so that Vim will find them?"
@@ -6851,8 +6904,8 @@ You can turn off loading the filetype plugins using:
 For more information, read
 .PP
 .Vb 3
-\&    :help filetype\-plugin\-on
-\&    :help filetype\-plugin\-off
+\&    :help :filetype\-plugin\-on
+\&    :help :filetype\-plugin\-off
 \&    :help :filetype
 .Ve
 .SS "26.6. How do I override settings made in a file type plugin in the global ftplugin directory for all the file types?"
@@ -6992,7 +7045,7 @@ For more information, read
 .PP
 .Vb 5
 \&    :help \*(Aqcindent\*(Aq
-\&    :help filetype\-indent\-off
+\&    :help :filetype\-indent\-off
 \&    :help \*(Aqautoindent\*(Aq
 \&    :help \*(Aqsmartindent\*(Aq
 \&    :help \*(Aqindentexpr\*(Aq
@@ -7069,11 +7122,11 @@ then you can add the above lines to the
 For more information, read
 .PP
 .Vb 5
-\&   :help formatoptions
-\&   :help 30.6
-\&   :help format\-comments
-\&   :help filetype\-plugins
-\&   :help ftplugin\-overrule
+\&    :help formatoptions
+\&    :help 30.6
+\&    :help format\-comments
+\&    :help filetype\-plugins
+\&    :help ftplugin\-overrule
 .Ve
 .SS "27.8. How do I add the comment character '#' to a set of lines at the beginning of each line?"
 .IX Subsection "27.8. How do I add the comment character '#' to a set of lines at the beginning of each line?"
@@ -7163,7 +7216,7 @@ For more information, read
 .PP
 .Vb 6
 \&    :help 30.1
-\&    :help make_makeprg
+\&    :help :make_makeprg
 \&    :help \*(Aqmakeprg\*(Aq
 \&    :help \*(Aqmakeef\*(Aq
 \&    :help :make
@@ -7452,6 +7505,8 @@ Pros:
 Cons:
  * Limited functionality
  * Inactive development
+.PP
+\&\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-
 .SS "30.2. How do I pass the word under the cursor to an external command?"
 .IX Subsection "30.2. How do I pass the word under the cursor to an external command?"
 You can use the special keyword <cword> to pass the word under the cursor
@@ -7464,7 +7519,7 @@ to an external command. For example:
 For more information, read
 .PP
 .Vb 1
-\&    :help <cword>
+\&    :help :<cword>
 .Ve
 .SS "30.3. How do I get the output of a shell command into a Vim buffer?"
 .IX Subsection "30.3. How do I get the output of a shell command into a Vim buffer?"
@@ -7512,7 +7567,7 @@ results back in the buffer, you can use
 \&    :w !sort
 .Ve
 .PP
-The above command will pipe the entire buffer to the sort command.  Note
+The above command will pipe the entire buffer to the sort command.  Note,
 that the space between the 'w' and the '!' is critical.  To pipe only a
 range of lines, you can use
 .PP
@@ -7561,7 +7616,7 @@ You can also use a visual block, and use the \*(L"!sort\*(R" command on the
 selected block.
 .PP
 See also:
-    :help sort
+    :help :sort
     :help filter
 .SS "30.6. How do I use Vim as a pager?"
 .IX Subsection "30.6. How do I use Vim as a pager?"
@@ -7966,7 +8021,7 @@ feature, add the following line to your .vimrc file:
 For more information, read
 .PP
 .Vb 2
-\&    :help restorescreen
+\&    :help \*(Aqrestorescreen\*(Aq
 \&    :help xterm\-screens
 .Ve
 .SS "32.5. When I start Vim, it takes quite a few seconds to start. How do I minimize the startup time?"
@@ -8112,7 +8167,7 @@ For more information, read
 .PP
 .Vb 4
 \&    :help CTRL\-V
-\&    :help CTRl\-V\-alternative
+\&    :help CTRL\-V\-alternative
 \&    :help CTRL\-Q
 \&    :help 10.5
 .Ve
@@ -8186,7 +8241,7 @@ information:
 \&    http://sourceforge.net/projects/cubiclevim
 .Ve
 .PP
-Note that currently this works only with MS-Office 2000 and \s-1XP\s0.
+Note, that currently this works only with MS-Office 2000 and \s-1XP\s0.
 .PP
 Also the plugin OutlookVim might be worth a look:
 .PP
@@ -8427,6 +8482,108 @@ Use the following shell script named gtk-config:
 \&    #!/bin/sh
 \&    pkg\-config gtk+\-2.0 $1 $2
 .Ve
+.SS "35.10. I did successfully download the sources and compiled Vim on Unix. But feature ... still does not work. What is wrong and how can I fix it?"
+.IX Subsection "35.10. I did successfully download the sources and compiled Vim on Unix. But feature ... still does not work. What is wrong and how can I fix it?"
+You should first check, that you are actually running your self compiled
+Vim and not the system's provided version. So first check your \f(CW$PATH\fR
+setting.
+.PP
+Depending on your compile options, some features might not be included in
+your build of Vim. You can use the \*(L":version\*(R" command to determine the Vim
+features that are enabled at compile time. The features that are enabled
+will be prefixed with a \*(L"+\*(R". The features that are not enabled will be
+prefixed with a \*(L"\-\*(R".
+.PP
+The easiest way to include all features is to build the huge version. To do
+this, you have to specify the \-\-with\-features option while running the
+configure script:
+.PP
+.Vb 1
+\&    $ ./configure \-\-with\-features=huge
+.Ve
+.PP
+Nevertheless, a feature could still be disabled at compile time, if the
+configure script can't find the required libraries for those features (e.g.
+for clipboard integration, your Vim needs to be linked against the X11
+development libraries).
+.PP
+There are several ways to install the required libraries:
+.PP
+1) On a Debian based distribution, you can use the package manager \*(L"apt\*(R" to
+   install all required dependencies. As superuser, run the command:
+.PP
+.Vb 1
+\&   $ apt\-get build\-dep vim\-gtk
+\&
+\&   This makes sure all required libraries needed to compile the vim\-gtk
+\&   package will be installed. (This requires, that your sources list
+\&   contains deb\-src entries. See your distribution manual on how to enable
+\&   this, if the above command did not work.)
+.Ve
+.PP
+2) In openSUSE you can use the package manager \*(L"zypper\*(R" to install all
+   required libraries. This requires, that there is a source version of the
+   package installable from a configured repository (which by default is not
+   the case). Use:
+.PP
+.Vb 1
+\&   $ zypper search \-t srcpackage vim
+\&
+\&   to find out, whether or not there exists a source version in the
+\&   repository. If there is none, you\*(Aqll need to add a source repository.
+\&   For openSUSE 11.2 you could use, e.g.
+\&   
+\&   $ zypper ar
+\&   http://download.opensuse.org/source/distribution/11.2/repo/oss/src\-11.2
+\&
+\&   (one line)
+\&
+\&   Once you have a source version available in your repositories, use this
+\&   command to install all needed requirements:
+\&
+\&   $ zypper source\-install \-\-build\-deps\-only vim
+.Ve
+.PP
+3) On a Fedora/RedHat based system, you can use
+.PP
+.Vb 1
+\&   $ yum\-builddep vim\-enhanced
+.Ve
+.PP
+4) Run configure with your options and watch for missing libraries:
+.PP
+.Vb 1
+\&   $ ./configure \-\-with\-features=huge 2>&1 |tee logfile
+\&
+\&   This will run configure and record the output into the file "logfile".
+\&   You need to check the logfile for missing dependencies. Consider this
+\&   output:
+\&
+\&    checking \-\-disable\-gtktest argument... gtk test enabled
+\&    checking for pkg\-config... /usr/bin/pkg\-config
+\&    checking for GTK \- version >= 2.2.0... no
+\&
+\&    Here you can see, that the gtk libraries are missing and therefore no
+\&    GTK gui version can\*(Aqt be build. So you need to install the GTK library
+\&    in your system, with your package manager or by compiling it yourself.
+\&    Then run the configure script again and check, that it finds the
+\&    library.
+.Ve
+.PP
+In theory, those provided dependencies by your distribution might still
+lack some libraries, that are needed for features, that simply are not
+enabled in your distribution and therefore those commands in 1\-3 won't
+install it. At the very least, this provides a jumping point and you need
+to track down the required missing packages using method 4 from above. But
+usually, this works good enough for most people and you won't have to
+bother with the fourth method.
+.PP
+For more information, read
+.PP
+.Vb 2
+\&    :help :version
+\&    :help +feature\-list
+.Ve
 .SH "VARIOUS"
 .IX Header "VARIOUS"
 .SS "36.1. How do I edit binary files with Vim?"
@@ -8652,16 +8809,16 @@ mouse, then Vim doesn't control the mouse and xterm controls the
 mouse.
 .PP
 In the \s-1GUI\s0 mode, Copy and Paste should just work, depending on the 'mouse'
-setting.
+setting. For more information, read
 .PP
 .Vb 7
-\&   :help \*(Aqclipboard\*(Aq
-\&   :help x11\-selection
-\&   :help clipboard
-\&   :help \*(Aqgo\-a\*(Aq
-\&   :help \*(Aqmouse\*(Aq
-\&   :help xterm\-copy\-paste
-\&   :help 9.3
+\&    :help \*(Aqclipboard\*(Aq
+\&    :help x11\-selection
+\&    :help clipboard
+\&    :help \*(Aqgo\-a\*(Aq
+\&    :help \*(Aqmouse\*(Aq
+\&    :help xterm\-copy\-paste
+\&    :help 09.3
 .Ve
 .SH "UNICODE"
 .IX Header "UNICODE"
@@ -8835,6 +8992,6 @@ For more information, read
 .Ve
 .SH "AUTHOR"
 .IX Header "AUTHOR"
-Current Maintainer: Yegappan Lakshmanan
+Current Maintainer: Christian Brabandt <cb@256bit.org>
 .PP
-Last updated on: 26 October 2010
+Last updated on: 07 February 2011
