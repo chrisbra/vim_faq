@@ -52,6 +52,27 @@ function! s:ReturnSpaces(count)
     return s:s
 endfunction
 
+function MakePath(vim_doc_path)
+    " Name of the document path based on the system we use:
+    if (has("unix"))
+        let l:mkdir_cmd  = ':silent !mkdir -p '
+    else
+        let l:mkdir_cmd  = ':silent !mkdir '
+    endif
+
+    if (!(filewritable(a:vim_doc_path) == 2))
+        echomsg "Creating doc path: " . a:vim_doc_path
+        execute l:mkdir_cmd . a:vim_doc_path
+        if (!(filewritable(a:vim_doc_path) == 2))
+            " Put a warning:
+           echomsg "Unable to open documentation directory"
+           echomsg "Type :help add-local-help for more informations."
+        return 0
+        endif
+    endif
+endfunction
+
+
 "'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 " Function: VimifyAndInstallFaq(vim_faq_textfile, vim_doc_path) 
 "   Install vim_faq.txt in documentation.
@@ -70,23 +91,14 @@ function! VimifyAndInstallFaq(vim_faq_textfile, vim_doc_path)
     if (has("unix"))
         " On UNIX like system, using forward slash:
         let l:slash_char = '/'
-        let l:mkdir_cmd  = ':silent !mkdir -p '
     else
         " On M$ system, use backslash. Also mkdir syntax is different.
         " This should only work on W2K and up.
         let l:slash_char = '\'
-        let l:mkdir_cmd  = ':silent !mkdir '
     endif
 
-    if (!(filewritable(a:vim_doc_path) == 2))
-        echomsg "Creating doc path: " . a:vim_doc_path
-        execute l:mkdir_cmd . a:vim_doc_path
-        if (!(filewritable(a:vim_doc_path) == 2))
-            " Put a warning:
-           echomsg "Unable to open documentation directory"
-           echomsg "Type :help add-local-help for more informations."
-        return 0
-        endif
+    if !MakePath(a:vim_doc_path)
+	return
     endif
 
     " Exit if we have problem to access the document directory:
@@ -220,4 +232,17 @@ function! VimifyAndInstallFaq(vim_faq_textfile, vim_doc_path)
     return 1
 endfunction
 
+func! MakePODFile(textfile)
+    /^INDEX/d
+    g/^=\+$/d
+    call append(1,['=pod', '', '=head1 DESCRIPTION'])
+    %s/^SECTION \d\+ - \(.\+\)$/=head1 \1\r/
+    %s/^\d\+\.\d\+\./=head2 &/
+    /^Current Maintainer:/s//=head1 AUTHOR\r\r&/
+    /^Last updated on:/s//\r&/
+    call append('$', '=cut')
+    exe ':saveas! ' a:textfile
+endfunc
+
 :com! -bar CreateVimFAQHelp :echo VimifyAndInstallFaq("./vim_faq.txt", "./doc")
+:com! -bar CreateVimPODFile :echo MakePODFile("./vim_faq.pod")
