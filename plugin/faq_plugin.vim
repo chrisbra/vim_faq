@@ -1,7 +1,7 @@
 " VIM_FAQ - The Vim faq from http://vimdoc.sourceforge.net/
 " -------------------------------------------------------------
 " Version:  31
-" Maintainer:  Yegappan Lakshmanan
+" Maintainer:  Christian Brabandt
 " Last Change: 07 February 2011
 "
 " Script: 
