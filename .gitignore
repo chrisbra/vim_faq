@@ -1,1 +1,5 @@
 vim_passfile
+# ignore undo-files
+.*.un~
+# ignore swap files
+.*.sw*
