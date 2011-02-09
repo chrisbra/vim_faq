@@ -1,11 +1,12 @@
-vim:tw=75:wrap:fo=tcqn2:sw=4:sts=4:et:spell:spelllang=en
+vim:tw=72:wrap:fo=tcqn2:sw=4:sts=4:et:spell:spelllang=en
 
 This Vim FAQ is created from the questions and answers posted to the
 vim@vim.org user mailing list and the comp.editors newsgroup. There are
 several ways to solve a problem in Vim. This FAQ gives one of those several
 possibilities. You can explore the other ways using the information and
 links given in this FAQ. The credit for the answers in this FAQ goes to
-Peppe, Benji, Charles Campbell and numerous others.
+Peppe, Benji, Charles Campbell and numerous others. An online version of
+this FAQ is available at http://vimhelp.appspot.com/vim_faq.txt.html
 
 INDEX
 
@@ -394,7 +395,7 @@ SECTION 20 - MAPPING KEYS
     20.6. How do I map the numeric keypad keys?
     20.7. How do I create a mapping that works only in visual mode?
     20.8. How do I create a mapping that works only in normal and operator
-       pending mode (but not in visual mode)?
+          pending mode (but not in visual mode)?
     20.9. In a Vim script, how do I know which keys to use for my mappings,
           so that the mapped key will not collide with an already used key?
     20.10. How do I map the escape key?
@@ -621,8 +622,8 @@ SECTION 31 - GUI VIM
     31.9. How do I get gvim to start browsing files in a particular
           directory when using the ":browse" command?
     31.10. For some questions, like when a file is changed outside of Vim,
-          Vim displays a GUI dialog box. How do I replace this GUI dialog
-          box with a console dialog box?
+           Vim displays a GUI dialog box. How do I replace this GUI dialog
+           box with a console dialog box?
     31.11. I am trying to use GUI Vim as the editor for my xxx application.
            When the xxx application launches GUI Vim to edit a file, the
            control immediately returns to the xxx application. How do I
@@ -820,94 +821,145 @@ emphasis on general power-user features and features for programmers.
 Features to modernise Vi:
 
   Multi-level undo
+
      Allows you to set the number of times you can undo your changes in a
      file buffer. You can also redo an undone change.
+
   Tabs, Multiple windows and buffers
+
      Each file can be displayed in its own window. You can move easily from
      one window to another. Each file opened during a Vim session also has
      an associated buffer and you can easily jump from one to the other.
      Also like any modern GUI, Vim supports opening several files in tabs.
+
   Flexible insert mode
+
      Vim allows you to use the arrow keys while in insert mode to move
      around in the file. No more hitting <Esc>, moving around, then hitting
      `i' or `a'.
+
   Macros
+
      Vim has a facility which allows you to record a sequence of typed
      characters and repeat them any number of times.
+
   Visual mode
+
      You can highlight sections of text and execute operations on this
      section of text only.
+
   Block operators
+
      Allow selection and highlighting of rectangular blocks of text in
      order do execute specific operations on them.
+
   Online help system
+
      You can easily find help on any aspect of using Vim. Help is displayed
      in its own window.
+
   Command-line editing and history
+
      History allows you to use the arrow keys to repeat or search for a
      command that has already been typed. Allows you to match the beginning
      of a command with the beginning of another similar command in the
      history buffer. You can also edit a command to correct typos or change
      a few values.
+
   Command line completion.
+
      Using the <Tab> key, you can complete commands, options, filenames,
      etc. as needed.
+
   Horizontal scrolling.
+
      Long lines can be scrolled horizontally (with or without the GUI).
+
   Unicode and internationalization improvements.
+
      Vim is able to edit files in unicode encoding and uses internally an
-     utf-8 encoding. Additionally Vim can display text right to left oriented.
+     utf-8 encoding. Additionally Vim can display text right to left
+     oriented.
 
 Advanced user features:
 
-  Text formatting.
+  Text formatting
+
      With two keystrokes, you can format large sections of text, without
      the use of external programs.
+
   Completion in Insert mode
+
      Vim provides several different possibilities to complete your text. 
      For example Vim can complete words while you are typing, by matching
      the current word with other similar words in the file.
+
   Jump tags
+
      Just like in an internet browser, you can jump back to previous parts
      of the text you were editing, and then forward again.  Your brain is
      thus free to edit instead of navigate.
+
   Automatic commands
+
      Commands automatically executed when reading or writing a file,
      jumping to another buffer, etc.
+
   Viminfo
+
      Allows storing of the command line history, marks and registers in a
      file to be read on startup.  Therefore, you can recall old search
      patterns, macros, etc., in a new Vim session.
+
   Mouse support
+
      The mouse is supported in an xterm and for MS-DOS. It can be used to
      position the cursor, select the visual area, paste a register, etc.
+
   Graphical User Interface (GUI)
+
      There are several different graphical user interfaces available. 
      Also, it's very easy to add your own menus.  Of course, console vim is
      still supported, and very widely used.
+
   Scripting language
+
      Vim has a powerful scripting language so new commands can be created.
      You can also use Perl, Python, TCL and Ruby to achieve the same thing!
+
   Plugins
+
      Extra functionality implemented via vim commands (regular commands or
      the scripting language) that is automatically loaded on startup.
      Examples: file explorer, network editing.  More are being developed
      and shared on VimOnline all the time.
+
   Syntax highlighting for many programming languages
+
      Syntax highlighting for hundreds of programming languages is
      supported. Support for others can be added.
+
   Extended regular expressions
+
      Vim supports extended regular expressions which are similar in
      functionality to that of Perl regular expressions.
+
   Integrated Spell checking
+
      Spell checking has been integrated into Vim 
+
   Diff mode
+
      Vim can highlight the differences between two, three or four files.
      Identical lines will be folded away and hidden.
+
   Encryption using the blowfish algorithm
+
      Vim allows to encrypt your files using the symmetric block cipher
      blowfish as well as the swap file.
+
   Extensive customizable
+
      Vim can be tuned and customized to work like you want by setting
      options.  You can define your own commands, macros and even plugins
      to extend its capabilities
@@ -915,27 +967,40 @@ Advanced user features:
 Programming performance features:
 
   Edit-compile-edit speedup
+
      You can compile within Vim and automatically jump to the location of
      errors in the source code.
+
   Indenting for many programming languages
+
      C, C++, Java, Perl, XML and many other languages can be automatically
      indented by vim while you type.  Support for others can be added.
+
   Searching for words in include files
+
      Vim allows you to search for a match of the word under the cursor in
      the current and included files.
+
   Advance text objects
+
      Instantly select, or delete, or copy, or indent, or format, or change
      case, or ... to all the text between ( and ), or { and }, or < and >,
      or [ and ].  Or a word, sentence, or paragraph.  Very powerful.
+
   Folding
+
      Certain parts of the text can be "folded" away.  The best example is
      the body of a function.  You can get an overview of the code, and then
      open the fold of the function whose detail you need to see.
+
   ctags and cscope integration
+
      Using these two powerful programs, you can jump to a definition of a
      function from a calling instance of it, and use other tricks to
      navigate source code.
+
   Integration of several programming languages
+
      If you find the internal scripting language not powerful enough, you
      can extend Vim using Lua, Ruby, Tcl, Perl and Python 2 and 3.
 
@@ -995,18 +1060,18 @@ There are several:
     vim-multibyte     Multibyte development issues
     vim-vms           Development on VMS
 
-Of these, only vim and vim-dev are of general interest.  vim-announce is
+Of these, only vim and vim-dev are of general interest. vim-announce is
 read-only to most people, and its messages are sent to the other lists as
-well.  The remaining four are very low volume.
+well. The remaining four are very low volume.
 
-To subscribe:   send an email to <NAME>-subscribe@vim.org
-To unsubscribe: send an email to <NAME>-unsubscribe@vim.org
-To get help:    send an email to <NAME>-help@vim.org
+    To subscribe:   send an email to <NAME>-subscribe@vim.org
+    To unsubscribe: send an email to <NAME>-unsubscribe@vim.org
+    To get help:    send an email to <NAME>-help@vim.org
 
 
 2.3. Is there an archive available for the Vim mailing lists?
 
-Yes.  Visit http://www.yahoogroups.com/list/<name>, where name is one of:
+Yes. Visit http://www.yahoogroups.com/list/<name>, where name is one of:
 vimannounce, vim, vimdev, vim-fr, vim-mac, vim-multibyte, vim-vms.
 
 Alternatively, visit www.gmane.org to find out about GMANE, which allows
@@ -1110,9 +1175,9 @@ For more information, read
     :help vim-dev
 
 
-2.10. I have a Vim tip or developed a new Vim
-      syntax/indent/filetype/compiler plugin or developed a new script or a
-      colorscheme. Is there a public website where I can upload this?
+2.10. I have a Vim tip or developed a new Vim syntax/indent/filetype/
+      compiler plugin or developed a new script or a colorscheme.
+      Is there a public website where I can upload this?
 
 Yes. You can use the Vim Online website to upload your plugins/scripts,
 colorschemes, tips, etc. The site is at http://vim.sourceforge.net
@@ -1129,32 +1194,32 @@ The latest version of Vim is 7.3 released on 15th August 2010.
 
 The release-history of different versions of Vim is below:
 
-Version 7.3     15th August, 2010
-Version 7.2     9th August, 2008
-Version 7.1     12th May, 2007
-Version 7.0     8th May, 2006
-Version 6.4     15th October, 2005
-Version 6.3     8th June 2004
-Version 6.2     1st June 2003
-Version 6.1     24th March 2002
-Version 6.0     27th September, 2001
-Version 5.8     31st May, 2001
-Version 5.7     24th June, 2000
-Version 5.6     16th January, 2000
-Version 5.5     21st September, 1999
-Version 5.4     26th July, 1999
-Version 5.3     31st August, 1998
-Version 5.2     24th August, 1998
-Version 5.1     7th April, 1998
-Version 5.0     19th February, 1998
-Version 4.6     13th March,1997
-Version 4.5     17th October, 1996
-Version 4.2     5th July,1996
-Version 4.0     21st May, 1996
-Version 3.0     16th August, 1994
-Version 2.0     21st December, 1993
-Version 1.27    23rd April, 1993
-Version 1.17    21st April, 1992
+    Version 7.3     15th August, 2010
+    Version 7.2     9th August, 2008
+    Version 7.1     12th May, 2007
+    Version 7.0     8th May, 2006
+    Version 6.4     15th October, 2005
+    Version 6.3     8th June 2004
+    Version 6.2     1st June 2003
+    Version 6.1     24th March 2002
+    Version 6.0     27th September, 2001
+    Version 5.8     31st May, 2001
+    Version 5.7     24th June, 2000
+    Version 5.6     16th January, 2000
+    Version 5.5     21st September, 1999
+    Version 5.4     26th July, 1999
+    Version 5.3     31st August, 1998
+    Version 5.2     24th August, 1998
+    Version 5.1     7th April, 1998
+    Version 5.0     19th February, 1998
+    Version 4.6     13th March,1997
+    Version 4.5     17th October, 1996
+    Version 4.2     5th July,1996
+    Version 4.0     21st May, 1996
+    Version 3.0     16th August, 1994
+    Version 2.0     21st December, 1993
+    Version 1.27    23rd April, 1993
+    Version 1.17    21st April, 1992
 
 For more information, read
 
@@ -1209,9 +1274,10 @@ around in the help pages the same way you would in a read-only document.
 You can jump to specific subjects by using tags. This can be done in two
 ways:
 
-   * Use the "<Ctrl-]>" command while standing on the name of a command or
-     option. This only works when the tag is a keyword. "<Ctrl-LeftMouse>"
-     and "g<LeftMouse>" work just like "<Ctrl-]>".
+   * Use the "<Ctrl-]>" command while standing on the name of a command
+     or option. This only works when the tag is a keyword.
+     "<Ctrl-LeftMouse>" and "g<LeftMouse>" work just like "<Ctrl-]>".
+
    * use the ":tag <subject>" command. This works with all characters.
 
 Use "<Ctrl-T>" to jump back to previous positions in the help files. Use
@@ -1250,8 +1316,8 @@ c)  From the help window, you can use the ":tag" command to search for
     This command will list all the help keywords containing the text
     "window". You can select one from the list and jump to it.
 
-d)  You can use the ":helpgrep" command to search for the given text in all
-    the help files. The quickfix window will be opened with all the
+d)  You can use the ":helpgrep" command to search for the given text in
+    all the help files. The quickfix window will be opened with all the
     matching lines.
 
 For more information, read
@@ -1540,7 +1606,7 @@ methods:
 You can also set the 'hidden' option and edit a new file:
 
     :set hidden
-    : e <new_filename>
+    :e <new_filename>
 
 If you want to discard the changes made to the current file and load
 another file for editing, then you can use the following command:
@@ -3907,17 +3973,17 @@ You can fix this problem in a terminal Vim in several ways:
     :help quotestar
 
 3. Set the 'paste' option before pasting the text. This option will
-   disable the effect of all the indentation related settings. Make sure
-   to turn off this option using ':set nopaste' after pasting the text.
-   Otherwise the Vim indentation feature will not work.  Do not
+   disable the effect of all the indentation related settings. Make
+   sure to turn off this option using ':set nopaste' after pasting the
+   text. Otherwise the Vim indentation feature will not work.  Do not
    permanently set the 'paste' option in your .vimrc file. If you are
-   going to repeat these steps often, then you can set the 'pastetoggle'
-   option to a key. When you press the specified key, the 'paste' option
-   option will be toggled. You can press the key once before pasting the
-   text and the press the key once after pasting the text. Note that
-   when the 'paste' option is set, all the mappings and abbreviations
-   are disabled.  For more information, read the following Vim help
-   topics:
+   going to repeat these steps often, then you can set the
+   'pastetoggle' option to a key. When you press the specified key,
+   the 'paste' option option will be toggled. You can press the key
+   once before pasting the text and the press the key once after
+   pasting the text. Note that when the 'paste' option is set, all the
+   mappings and abbreviations are disabled.  For more information,
+   read the following Vim help topics:
 
     :help 'paste'
     :help 'pastetoggle'
@@ -5120,16 +5186,16 @@ Now you can specify a count to the '=' command.
 
 Mappings in normal mode can be executed after <Ctrl-O> from insert mode as
 well but if there are more commands included in the mapping {rhs}, only the
-first one will be executed in normal mode and the rest of {rhs} will be printed
-literally in insert mode. One of ways to workaround this problem is to make
-{rhs} be one command, via wrapping it to the function. For example:
+first one will be executed in normal mode and the rest of {rhs} will be
+printed literally in insert mode. One of ways to workaround this problem is
+to make {rhs} be one command, via wrapping it to the function. For example:
 
-function GetFontNameOfFirstChar()
-  normal 0
-  echo getfontname()
-endfunction
+    function GetFontNameOfFirstChar()
+    normal 0
+    echo getfontname()
+    endfunction
 
-:nmap <F9> :call GetFontNameOfFirstChar()<CR>
+    :nmap <F9> :call GetFontNameOfFirstChar()<CR>
 
 A more technical and detailed solution to this problem follows and can
 be found at http://groups.google.com/group/vim_dev/msg/75f1f2dfc00908bb
@@ -5236,11 +5302,11 @@ will be expanded without adding a space character at the end.
 
 Another alternative is to use the following function and command:
 
-function! Eatchar(pat)
-    let c = nr2char(getchar())
-    return (c =~ a:pat) ? '' : c
-endfunction
-command! -nargs=+ Iabbr execute "iabbr" <q-args> . "<C-R>=Eatchar('\\s')<CR>"
+    function! Eatchar(pat)
+        let c = nr2char(getchar())
+        return (c =~ a:pat) ? '' : c
+    endfunction
+    command! -nargs=+ Iabbr execute "iabbr" <q-args> . "<C-R>=Eatchar('\\s')<CR>"
 
 Now, define your abbreviations using the new "Iabbr" command instead of the
 builtin "iabbrev" command. With this command, after expanding the
@@ -6865,13 +6931,13 @@ Pros:
  * Relatively easy to install
  * Near complete VT100 support (you can run emacs in a vim buffer)
  * Use of Vim features in terminal, including syntax highlighting,
-copy/paste, etc
+   copy/paste, etc
  * Active development
 
 Cons:
  * No Windows support (coming with Vim 7.3)
  * Can be slow, especially with programs which use a lot of terminal
-colors
+   colors
 
 Vimshell
 URL: http://github.com/Shougo/vimshell + http://github.com/Shougo/vimproc
@@ -6890,14 +6956,14 @@ regarding interactive programs.
 Pros:
  * Relatively easy to install
  * Edit the command line with Vim, full use of Vim features in both
-normal and insert mode
+   normal and insert mode
  * Very fast, since there is no background process required
  * Windows support
  * Active development
 
 Cons:
  * Very limited support of interactive programs such as bash, mysql or
-python.
+   python.
  * Shell has incomplete functionality compared to bash, etc.
  * Documentation only available in Japanese.
 
@@ -7826,16 +7892,17 @@ compiler or the Borland C++ compiler or the Ming GCC compiler or the cygwin
 gcc compiler. Follow these steps to build Vim from the sources for
 MS-Windows:
 
-- Download the source (vim##src.zip), runtime (vim##rt.zip) and the extra
-  (vim-##-extra.tar.gz) archives from the ftp://ftp.vim.org/pub/vim/pc
-  directory.
-- Extract the archives into a directory (for example, c:\vimsrc)
-- Alternatively, download the source from the mercurial repository:
-  http://code.google.com/p/vim/source/checkout
-- Depending on the installed compiler, you can use the corresponding
-  makefile to build the Vim sources. For Visual C++ use the Make_mvc.mak
-  makefile, for borland C++ use the Make_bc5.mak makefile, for ming GCC use
-  the Make_ming.mak makefile, for cygwin gcc use the Make_cyg.mak makefile.
+    - Download the source (vim##src.zip), runtime (vim##rt.zip) and the
+      extra (vim-##-extra.tar.gz) archives from the
+      ftp://ftp.vim.org/pub/vim/pc directory.
+    - Extract the archives into a directory (for example, c:\vimsrc)
+    - Alternatively, download the source from the mercurial repository:
+      http://code.google.com/p/vim/source/checkout
+    - Depending on the installed compiler, you can use the corresponding
+      makefile to build the Vim sources. For Visual C++ use the
+      Make_mvc.mak makefile, for borland C++ use the Make_bc5.mak makefile,
+      for ming GCC use the Make_ming.mak makefile, for cygwin gcc use the
+      Make_cyg.mak makefile.
 
 Depending on whether you want to build the GUI version of Vim or the
 console version of Vim, you have to pass different arguments to the
@@ -7947,20 +8014,20 @@ development libraries).
 
 There are several ways to install the required libraries:
 
-1) On a Debian based distribution, you can use the package manager "apt" to
-   install all required dependencies. As superuser, run the command:
+1) On a Debian based distribution, you can use the package manager "apt"
+   to install all required dependencies. As superuser, run the command:
 
    $ apt-get build-dep vim-gtk
 
    This makes sure all required libraries needed to compile the vim-gtk
    package will be installed. (This requires, that your sources list
-   contains deb-src entries. See your distribution manual on how to enable
-   this, if the above command did not work.)
+   contains deb-src entries. See your distribution manual on how to
+   enable this, if the above command did not work.)
 
 2) In openSUSE you can use the package manager "zypper" to install all
-   required libraries. This requires, that there is a source version of the
-   package installable from a configured repository (which by default is not
-   the case). Use:
+   required libraries. This requires, that there is a source version of
+   the package installable from a configured repository (which by
+   default is not the case). Use:
 
    $ zypper search -t srcpackage vim
 
@@ -7973,8 +8040,8 @@ There are several ways to install the required libraries:
 
    (one line)
 
-   Once you have a source version available in your repositories, use this
-   command to install all needed requirements:
+   Once you have a source version available in your repositories, use
+   this command to install all needed requirements:
 
    $ zypper source-install --build-deps-only vim
 
@@ -7994,11 +8061,11 @@ There are several ways to install the required libraries:
     checking for pkg-config... /usr/bin/pkg-config
     checking for GTK - version >= 2.2.0... no
 
-    Here you can see, that the gtk libraries are missing and therefore no
-    GTK gui version can't be build. So you need to install the GTK library
-    in your system, with your package manager or by compiling it yourself.
-    Then run the configure script again and check, that it finds the
-    library.
+    Here you can see, that the gtk libraries are missing and therefore
+    no GTK gui version can't be build. So you need to install the GTK
+    library in your system, with your package manager or by compiling it
+    yourself. Then run the configure script again and check, that it
+    finds the library.
 
 In theory, those provided dependencies by your distribution might still
 lack some libraries, that are needed for features, that simply are not
