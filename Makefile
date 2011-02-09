@@ -1,7 +1,7 @@
 SCRIPT=$(wildcard plugin/*.vim)
 NAME="vim_faq"
-FAQ=$(NAME)".txt"
-POD=$(NAME)".pod"
+FAQ=$(NAME).txt
+POD=others/$(NAME).pod
 DOC=$(wildcard doc/*.txt)
 PLUGIN=$(shell basename "$$PWD")
 VERSION=$(shell sed -n '/Version:/{s/^[^0-9]*\([0-9]\+\)$$/\1/;p}' $(SCRIPT))
@@ -16,7 +16,7 @@ vimball: $(PLUGIN).vba
 clean:
 	find . -type f \( -name "*.vba" -o -name "*.orig" -o -name "*.~*" \
 	-o -name ".VimballRecord" -o -name ".*.un~" -o -name "*.sw*" -o \
-	-name tags \) -delete
+	-name tags -o -name "*.tmp" \) -delete
 
 dist-clean: clean
 

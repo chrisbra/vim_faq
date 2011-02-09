@@ -250,4 +250,4 @@ func! MakePODFile(textfile)
 endfunc
 
 :com! -bar CreateVimFAQHelp :echo VimifyAndInstallFaq("./vim_faq.txt", "./doc")
-:com! -bar CreateVimPODFile :echo MakePODFile("./vim_faq.pod")
+:com! -bar CreateVimPODFile :echo MakePODFile("./others/vim_faq.pod")
