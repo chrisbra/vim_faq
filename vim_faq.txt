@@ -5122,7 +5122,7 @@ Now you can specify a count to the '=' command.
 From https://groups.google.com/group/vim_dev/msg/75f1f2dfc00908bb
 
 Not every normal mode-mapping is automatically suitable for execution via
-<Ctrl-O> from within inser mode; you need to explicitly design your mappings
+<Ctrl-O> from within insert mode; you need to explicitly design your mappings
 for that purpose.
 
 The <Ctrl-O> command allows execution of one normal mode command from
@@ -5139,17 +5139,19 @@ insert mode, these strategies can be used:
 
     b) Concatenate multiple Ex commands via <Bar> on the rhs:
 
-       :nnoremap zC :<C-U>call MyMap1()<CR><Bar>call MyMap2()<CR>
+       :nnoremap zC :<C-U>call MyMap1()<Bar>call MyMap2()<CR>
 
     c) Shadow normal mode mappings by insert mode mappings that
        re-enter normal mode, then invoke the normal mode mapping:
 
-       :inoremap <silent> <script> zC <SID>MyMap1<C-\><C-O><SID>MyMap2
+       :nnoremap <silent> <SID>MyMap2 :<C-U>call MyMap2()<CR>
+       :inoremap <silent> <script> <SID>MyMap2 <C-\><C-O><SID>MyMap2
+       :nnoremap <silent> <script> zC <SID>MyMap1<SID>MyMap2
 
     d) Normal mode mappings that consist of multiple Ex command lines (and
-       where Ex commands cannot be concatenated via <Bar>) use <SID>NM
-       instead of ':<C-U>'; use the <SID>NM Mapping that enters normal mode
-       for one ex command line:
+       where Ex commands cannot be concatenated via <Bar>) replace ':<C-U>'
+       with <SID>NM; the <SID>NM mapping enters normal mode for one ex command
+       line:
 
         :nnoremap <silent> <SID>NM :<C-U>
         :inoremap <silent> <SID>NM <C-\><C-O>:
