@@ -5132,36 +5132,36 @@ normal mode and literally inserts the second part of the command into the
 buffer instead. To support execution of normal mode mappings from within
 insert mode, these strategies can be used:
 
-    a) Instead of concatenating multiple normal mode commands, use one :normal
-       mapping:
+1) Instead of concatenating multiple normal mode commands, use one :normal
+    mapping:
 
-       :nnoremap <silent> zC :<C-U>normal! zCVzC<CR>
+    :nnoremap <silent> zC :<C-U>normal! zCVzC<CR>
 
-    b) Concatenate multiple Ex commands via <Bar> on the rhs:
+2) Concatenate multiple Ex commands via <Bar> on the rhs:
 
-       :nnoremap zC :<C-U>call MyMap1()<Bar>call MyMap2()<CR>
+    :nnoremap zC :<C-U>call MyMap1()<Bar>call MyMap2()<CR>
 
-    c) Shadow normal mode mappings by insert mode mappings that
-       re-enter normal mode, then invoke the normal mode mapping:
+3) Shadow normal mode mappings by insert mode mappings that
+    re-enter normal mode, then invoke the normal mode mapping:
 
-       :nnoremap <silent> <SID>MyMap2 :<C-U>call MyMap2()<CR>
-       :inoremap <silent> <script> <SID>MyMap2 <C-\><C-O><SID>MyMap2
-       :nnoremap <silent> <script> zC <SID>MyMap1<SID>MyMap2
+    :nnoremap <silent> <SID>MyMap2 :<C-U>call MyMap2()<CR>
+    :inoremap <silent> <script> <SID>MyMap2 <C-\><C-O><SID>MyMap2
+    :nnoremap <silent> <script> zC <SID>MyMap1<SID>MyMap2
 
-    d) Normal mode mappings that consist of multiple Ex command lines (and
-       where Ex commands cannot be concatenated via <Bar>) replace ':<C-U>'
-       with <SID>NM; the <SID>NM mapping enters normal mode for one ex command
-       line:
+4) Normal mode mappings that consist of multiple Ex command lines (and
+    where Ex commands cannot be concatenated via <Bar>) replace ':<C-U>'
+    with <SID>NM; the <SID>NM mapping enters normal mode for one ex command
+    line:
 
-        :nnoremap <silent> <SID>NM :<C-U>
-        :inoremap <silent> <SID>NM <C-\><C-O>:
-        :nnoremap <silent> <script> zC <SID>MyMap1<SID>NMcall MyMap2()<CR>
+    :nnoremap <silent> <SID>NM :<C-U>
+    :inoremap <silent> <SID>NM <C-\><C-O>:
+    :nnoremap <silent> <script> zC <SID>MyMap1<SID>NMcall MyMap2()<CR>
 
-    e)  If none of the above is possible, at least force normal mode for
-        subsequent commands via <CTRL-\><CTRL-N> to avoid accidental insertion
-        of the remainder of the mapping.
+5)  If none of the above is possible, at least force normal mode for
+    subsequent commands via <CTRL-\><CTRL-N> to avoid accidental insertion
+    of the remainder of the mapping.
 
-        :nnoremap zC zC<C-\><C-N>VzCzz
+    :nnoremap zC zC<C-\><C-N>VzCzz
 
 
 For more information, read
