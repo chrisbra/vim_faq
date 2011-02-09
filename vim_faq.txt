@@ -5118,8 +5118,21 @@ Now you can specify a count to the '=' command.
 20.20. How can I make my normal mode mapping work from within Insert
        Mode?
 
+Mappings in normal mode can be executed after <Ctrl-O> from insert mode as
+well but if there are more commands included in the mapping {rhs}, only the
+first one will be executed in normal mode and the rest of {rhs} will be printed
+literally in insert mode. One of ways to workaround this problem is to make
+{rhs} be one command, via wrapping it to the function. For example:
 
-From https://groups.google.com/group/vim_dev/msg/75f1f2dfc00908bb
+function GetFontNameOfFirstChar()
+  normal 0
+  echo getfontname()
+endfunction
+
+:nmap <F9> :call GetFontNameOfFirstChar()<CR>
+
+A more technical and detailed solution to this problem follows and can
+be found at http://groups.google.com/group/vim_dev/msg/75f1f2dfc00908bb
 
 Not every normal mode-mapping is automatically suitable for execution via
 <Ctrl-O> from within insert mode; you need to explicitly design your mappings
