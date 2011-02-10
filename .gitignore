@@ -3,3 +3,5 @@ vim_passfile
 .*.un~
 # ignore swap files
 .*.sw*
+# pod html temp files
+*.tmp
