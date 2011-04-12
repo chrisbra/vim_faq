@@ -3962,6 +3962,36 @@ You can fix this problem in a terminal Vim in several ways:
     :help x11-selection
     :help xterm-clipboard
 
+1.1 Some Linux distributions build their terminal vim packages
+    without X support.  This makes no sense and leaves many users
+    with the impression that Vim in terminal mode doesn't support
+    some operations such as properly pasting text with a mouse.
+
+    If your distribution includes gvim, which it almost certainly
+    does these days, the solutions to this include the following.
+
+    a)  Start Vim as
+
+            gvim -v
+
+    b)  Put this alias in your shell's configuration file, e.g.
+        ~/.bashrc:
+
+            alias vim='gvim -v'
+
+    c)  Put the following command in a file named 'vim' and put that
+        file in your ~/bin directory:
+
+            gvim -v "$@"
+
+    d)  Link the distribution's gvim to ~/bin/vim with the following
+        command, which needs to be executed only once.
+
+            ln -s $(which gvim) ~/bin/vim
+
+    For c) and d), make sure that ~/bin precedes /usr/bin in your
+    PATH.
+
 2. Paste the text using the CTRL-R CTRL-O * command.  This will paste
    the text literally without any automatic indentation. If you want to
    paste the text and then fix the indentation, then you can use CTRL-R
