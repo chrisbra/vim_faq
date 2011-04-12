@@ -25,11 +25,6 @@ my @files=glob('*.vba');
 my $scriptversion = 0;
 my $versioncomment=shift @ARGV;
 
-unless ($versioncomment){
-	print "Please enter comment!\n";
-	exit;
-}
-$versioncomment.="\n(automatically uploaded)";
 
 
 my @userpasswordpair = GetPassword();
@@ -40,6 +35,17 @@ for (@files) {
 		$file = $f;
 	}
 }
+
+# Error Checking
+unless ($file){
+	print "Didn't find a file to upload!\n";
+	exit;
+}
+unless ($versioncomment){
+	print "Please enter comment!\n";
+	exit;
+}
+$versioncomment.="\n(automatically uploaded)";
 
 my $mech=WWW::Mechanize->new(autocheck => 1);
 $mech->get("http://www.vim.org/login.php");
