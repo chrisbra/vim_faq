@@ -4201,6 +4201,35 @@ text will be inserted with stair case indentation.</p>
 <p><strong>:help &lt;MiddleMouse</strong>&gt;</p>
 <p><strong>:help x11-selection</strong></p>
 <p><strong>:help xterm-clipboard</strong></p>
+<p>1.1 Some Linux distributions build their terminal vim packages
+ without X support.  This makes no sense and leaves many users
+ with the impression that Vim in terminal mode doesn't support
+ some operations such as properly pasting text with a mouse.</p>
+<pre>
+ If your distribution includes gvim, which it almost certainly
+ does these days, the solutions to this include the following.</pre>
+<pre>
+ a)  Start Vim as</pre>
+<pre>
+         gvim -v</pre>
+<pre>
+ b)  Put this alias in your shell's configuration file, e.g.
+     ~/.bashrc:</pre>
+<pre>
+         alias vim='gvim -v'</pre>
+<pre>
+ c)  Put the following command in a file named 'vim' and put that
+     file in your ~/bin directory:</pre>
+<pre>
+         gvim -v &quot;$@&quot;</pre>
+<pre>
+ d)  Link the distribution's gvim to ~/bin/vim with the following
+     command, which needs to be executed only once.</pre>
+<pre>
+         ln -s $(which gvim) ~/bin/vim</pre>
+<pre>
+ For c) and d), make sure that ~/bin precedes /usr/bin in your
+ PATH.</pre>
 <p>2. Paste the text using the CTRL-R CTRL-O * command.  This will paste
    the text literally without any automatic indentation. If you want to
    paste the text and then fix the indentation, then you can use CTRL-R
@@ -7809,7 +7838,7 @@ the :digraphs command to list the currently defined digraphs.</p>
 <hr />
 <h1><a name="author">AUTHOR</a></h1>
 <p>Current Maintainer: Christian Brabandt &lt;<a href="mailto:cb@256bit.org">cb@256bit.org</a>&gt;</p>
-<p>Last updated on: 09 February 2011
+<p>Last updated on: 12 April 2011
 =cut</p>
 
 </body>

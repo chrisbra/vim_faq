@@ -124,7 +124,7 @@
 .\" ========================================================================
 .\"
 .IX Title "VIM_FAQ 1"
-.TH VIM_FAQ 1 "2011-02-09" "perl v5.10.1" "User Contributed Perl Documentation"
+.TH VIM_FAQ 1 "2011-04-12" "perl v5.10.1" "User Contributed Perl Documentation"
 .\" For nroff, turn off justification.  Always turn off hyphenation; it makes
 .\" way too many mistakes in technical documents.
 .if n .ad l
@@ -4513,6 +4513,38 @@ You can fix this problem in a terminal Vim in several ways:
 \&\fB:help x11\-selection\fR
 .PP
 \&\fB:help xterm-clipboard\fR
+.PP
+1.1 Some Linux distributions build their terminal vim packages
+ without X support.  This makes no sense and leaves many users
+ with the impression that Vim in terminal mode doesn't support
+ some operations such as properly pasting text with a mouse.
+.PP
+.Vb 2
+\& If your distribution includes gvim, which it almost certainly
+\& does these days, the solutions to this include the following.
+\&
+\& a)  Start Vim as
+\&
+\&         gvim \-v
+\&
+\& b)  Put this alias in your shell\*(Aqs configuration file, e.g.
+\&     ~/.bashrc:
+\&
+\&         alias vim=\*(Aqgvim \-v\*(Aq
+\&
+\& c)  Put the following command in a file named \*(Aqvim\*(Aq and put that
+\&     file in your ~/bin directory:
+\&
+\&         gvim \-v "$@"
+\&
+\& d)  Link the distribution\*(Aqs gvim to ~/bin/vim with the following
+\&     command, which needs to be executed only once.
+\&
+\&         ln \-s $(which gvim) ~/bin/vim
+\&
+\& For c) and d), make sure that ~/bin precedes /usr/bin in your
+\& PATH.
+.Ve
 .PP
 2. Paste the text using the CTRL-R CTRL-O * command.  This will paste
    the text literally without any automatic indentation. If you want to
@@ -9178,4 +9210,4 @@ For more information, read
 .IX Header "AUTHOR"
 Current Maintainer: Christian Brabandt <cb@256bit.org>
 .PP
-Last updated on: 09 February 2011
+Last updated on: 12 April 2011

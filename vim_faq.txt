@@ -8503,4 +8503,4 @@ For more information, read
 =============================================================================
 
 Current Maintainer: Christian Brabandt <cb@256bit.org>
-Last updated on: 09 February 2011
+Last updated on: 12 April 2011
