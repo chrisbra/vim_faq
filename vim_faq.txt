@@ -5764,7 +5764,7 @@ For more information, read
 24.12. How do I replace a standard syntax file that comes with the Vim
        distribution with my own syntax file?
 
-You can replace a standary syntax file that comes with the Vim distribution
+You can replace a standard syntax file that comes with the Vim distribution
 by creating a file with the same name as the original syntax file and
 placing it in the vim runtime syntax (~/.vim/syntax) directory. For
 example, to replace the c.vim syntax file in a Unix system, place the new
