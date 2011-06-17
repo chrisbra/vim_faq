@@ -725,6 +725,8 @@ SECTION 36 - VARIOUS
           leaving the insert mode?
     36.9. How do I start Vim in insert mode?
     36.10. How do I use Copy and Paste with Vim?
+    36.11. Why shouldn't I modify the files in the system runtime
+           directory?
 
 SECTION 37 - UNICODE
     37.1. Is it possible to create Unicode files using Vim?
@@ -8329,6 +8331,29 @@ setting. For more information, read
     :help 'mouse'
     :help xterm-copy-paste
     :help 09.3
+
+36.11 Why shouldn't I modify the files in the system runtime directory?
+
+Just be careful about modifying files under $VIMRUNTIME, which in
+is usually /usr/share/vim/vimXX (Unix) or C:\Program Files\vim\vimXX
+(Windows) and XX being the version for which it applies, e.g. 73 for Vim
+7.3.
+
+One should generally avoid modifying those files because they may be
+replaced during an upgrade of your Vim installation and your changes
+will be lost.  Also, if you upgrade to a new major or minor revision of
+Vim (e.g., from 7.3 to 7.4), the new version of Vim will use a different
+$VIMRUNTIME directory and while your changes won't be lost, they will be
+ignored.
+
+Consequently, take a look at
+
+    :help filetypes
+
+for an explanation of several ways to modify Vim's response to
+different filetypes and where to put those modifications so that
+they will not be overwritten.
+
 
 
 =============================================================================
