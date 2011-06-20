@@ -5725,20 +5725,24 @@ For more information, read
 
 Yes. Vim includes the matchparen Plugin as standard plugin that is enabled
 by default. Whenever the cursor moves over an item defined with the
-'matchpairs' option, the cursor will jump back to the corresponding
-bracket.
+'matchpairs' option, Vim will highlight the corresponding bracket using the
+MatchParen hilighting group.
 
-However, this will only work, if the corresponding parenthesis is not
-visible in the current window, the cursor won't jump to it. 
+However, if the corresponding parenthesis is not visible in the current
+window, the cursor won't jump to it. 
 
-The matchit plugin provides an improved version, that skips matches in
-comments and can jump to related items (e.g. "if", "else", "endif" items).
+The matchit plugin provides a similar function, that let's the cursor
+jump to related items (e.g. "if", "else", "endif" items) and skips
+matches in comments. This uses the % command to jump to corresponding
+items. Though both plugins provide similar functions they are unrelated
+and work differently.
 
 For more information, read
 
     :help matchparen
     :help 'matchpairs'
     :help matchit-install
+    :help matchit-intro
 
 
 24.10. How do I turn off the C comment syntax highlighting?
@@ -8533,4 +8537,4 @@ For more information, read
 =============================================================================
 
 Current Maintainer: Christian Brabandt <cb@256bit.org>
-Last updated on: 12 April 2011
+Last updated on: 17 Juni 2011
