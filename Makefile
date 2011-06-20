@@ -47,3 +47,9 @@ release:
 	pod2man --name=vimfaq --release=${VERSION} --center='http://vimhelp.appspot.com/vim_faq.txt.html' ${POD} > others/${NAME}.1
 	pod2html ${POD} > others/${NAME}.html
 	pod2text -c ${POD} > others/${NAME}.ansi
+	test -x /usr/bin/pod2pdf &&\
+	    echo "Generating pdf version, this may take a while" &&\
+	    pod2pdf --footer-text "Vim FAQ" --icon vim.png\
+	    --icon-scale 0.3 --page-orientation portrait ${POD}\
+	    > others/${NAME}.pdf
+	rm -f *.tmp
