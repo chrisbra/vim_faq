@@ -44,6 +44,6 @@ release:
 	vim -u NONE -U NONE -N -c ':so vim_faq.vim|:CreateVimFAQHelp|wq' ${FAQ}
 	# Generate additional formats
 	vim -u NONE -U NONE -N -c ':so vim_faq.vim|:CreateVimPODFile|q' ${FAQ}
-	pod2man ${POD} > others/${NAME}.1
+	pod2man --name=vimfaq --release=${VERSION} --center='http://vimhelp.appspot.com/vim_faq.txt.html' ${POD} > others/${NAME}.1
 	pod2html ${POD} > others/${NAME}.html
 	pod2text -c ${POD} > others/${NAME}.ansi
