@@ -247,7 +247,7 @@ func! MakePODFile(textfile)
     %s/^\d\+\.\d\+\./=head2 &/
     /^Current Maintainer:/s//=head1 AUTHOR\r\r&/
     /^Last updated on:/s//\r&/
-    call append('$', '=cut')
+    "call append('$', '=cut') Not needed in a pod file
     " Don't make it too wide
     %s/^\s\{4}/ /
     " Generate bold text around help references
