@@ -45,7 +45,7 @@ release:
 	# Generate additional formats
 	vim -u NONE -U NONE -N -c ':so vim_faq.vim|:CreateVimPODFile|q' ${FAQ}
 	pod2man --name=vimfaq --release=${VERSION} --center='http://vimhelp.appspot.com/vim_faq.txt.html' ${POD} > others/${NAME}.1
-	pod2html ${POD} > others/${NAME}.html
+	pod2html --verbose --title="Vim FAQ" ${POD} > others/${NAME}.html
 	pod2text -c ${POD} > others/${NAME}.ansi
 	test -x /usr/bin/pod2pdf &&\
 	    echo "Generating pdf version, this may take a while" &&\
