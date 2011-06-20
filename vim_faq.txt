@@ -8537,4 +8537,4 @@ For more information, read
 =============================================================================
 
 Current Maintainer: Christian Brabandt <cb@256bit.org>
-Last updated on: 17 Juni 2011
+Last updated on: 20 Juni 2011
