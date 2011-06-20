@@ -722,6 +722,8 @@
            leaving the insert mode?
      36.9. How do I start Vim in insert mode?
      36.10. How do I use Copy and Paste with Vim?
+     36.11. Why shouldn't I modify the files in the system runtime
+            directory?
 
 [1mUNICODE[0m
      37.1. Is it possible to create Unicode files using Vim?
@@ -1084,7 +1086,12 @@
     [1m:help bug-reports[0m
 
   [1m2.7. Where can the FAQ be found?[0m
-    The FAQ can be found at http://vimhelp.appspot.com/vim_faq.txt.html.
+    The FAQ can be found at http://vimhelp.appspot.com/vim_faq.txt.html. It
+    will be auto-generated from the source that is managed in the github
+    repository http://www.github.com/chrisbra/vim_faq (Patches are welcome).
+
+    The repository also includes the faq in different formats, e.g. manpage,
+    and html file, plain text version and a version in vim help format.
 
     A slightly older version (which doesn't seem to get updated anymore) can
     still be found at VimOnline (vim.sf.net). Other places will be decided
@@ -5624,15 +5631,17 @@
    matching bracket?[0m
     Yes. Vim includes the matchparen Plugin as standard plugin that is
     enabled by default. Whenever the cursor moves over an item defined with
-    the 'matchpairs' option, the cursor will jump back to the corresponding
-    bracket.
+    the 'matchpairs' option, Vim will highlight the corresponding bracket
+    using the MatchParen hilighting group.
 
-    However, this will only work, if the corresponding parenthesis is not
-    visible in the current window, the cursor won't jump to it.
+    However, if the corresponding parenthesis is not visible in the current
+    window, the cursor won't jump to it.
 
-    The matchit plugin provides an improved version, that skips matches in
-    comments and can jump to related items (e.g. "if", "else", "endif"
-    items).
+    The matchit plugin provides a similar function, that let's the cursor
+    jump to related items (e.g. "if", "else", "endif" items) and skips
+    matches in comments. This uses the % command to jump to corresponding
+    items. Though both plugins provide similar functions they are unrelated
+    and work differently.
 
     For more information, read
 
@@ -5641,6 +5650,8 @@
     [1m:help 'matchpairs'[0m
 
     [1m:help matchit-install[0m
+
+    [1m:help matchit-intro[0m
 
   [1m24.10. How do I turn off the C comment syntax highlighting?[0m
     You can use the following command to turn off C comment syntax
@@ -5668,7 +5679,7 @@
 
   [1m24.12. How do I replace a standard syntax file that comes with the Vim
     distribution with my own syntax file?[0m
-    You can replace a standary syntax file that comes with the Vim
+    You can replace a standard syntax file that comes with the Vim
     distribution by creating a file with the same name as the original
     syntax file and placing it in the vim runtime syntax (~/.vim/syntax)
     directory. For example, to replace the c.vim syntax file in a Unix
@@ -8093,6 +8104,28 @@
 
     [1m:help 09.3[0m
 
+    36.11 Why shouldn't I modify the files in the system runtime directory?
+
+    Just be careful about modifying files under $VIMRUNTIME, which in is
+    usually /usr/share/vim/vimXX (Unix) or C:\Program Files\vim\vimXX
+    (Windows) and XX being the version for which it applies, e.g. 73 for Vim
+    =head2 7.3.
+
+    One should generally avoid modifying those files because they may be
+    replaced during an upgrade of your Vim installation and your changes
+    will be lost. Also, if you upgrade to a new major or minor revision of
+    Vim (e.g., from 7.3 to 7.4), the new version of Vim will use a different
+    $VIMRUNTIME directory and while your changes won't be lost, they will be
+    ignored.
+
+    Consequently, take a look at
+
+    [1m:help filetypes[0m
+
+    for an explanation of several ways to modify Vim's response to different
+    filetypes and where to put those modifications so that they will not be
+    overwritten.
+
 [1mUNICODE[0m
     Author: Tony Mechelynck <antoine.mechelynck AT belgacom.net>
 
@@ -8259,5 +8292,5 @@
 [1mAUTHOR[0m
     Current Maintainer: Christian Brabandt <cb@256bit.org>
 
-    Last updated on: 12 April 2011
+    Last updated on: 20 Juni 2011
 
