@@ -1,6 +1,6 @@
 *vim_faq.txt*	Frequently Asked Questions
 
-Last updated on: 20 Juni 2011
+Last updated on: 22 Juni 2011
 
 	  VIM FAQ by: Christian Brabandt <cb@256bit.org>
 
@@ -8304,7 +8304,8 @@ setting. For more information, read
     |xterm-copy-paste|
     |09.3|
 
-36.11 Why shouldn't I modify the files in the system runtime directory?
+ 								*faq-36.11*
+36.11. Why shouldn't I modify the files in the system runtime directory?
 
 Just be careful about modifying files under $VIMRUNTIME, which in
 is usually /usr/share/vim/vimXX (Unix) or C:\Program Files\vim\vimXX

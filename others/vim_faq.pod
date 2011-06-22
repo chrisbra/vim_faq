@@ -9409,7 +9409,8 @@ B<:help xterm-copy-paste>
 B<:help 09.3>
 
 
-36.11 Why shouldn't I modify the files in the system runtime directory?
+
+=head2 36.11. Why shouldn't I modify the files in the system runtime directory?
 
 Just be careful about modifying files under $VIMRUNTIME, which in
 is usually /usr/share/vim/vimXX (Unix) or C:\Program Files\vim\vimXX
@@ -9637,4 +9638,4 @@ B<:help 'encoding'>
 
 Current Maintainer: Christian Brabandt <cb@256bit.org>
 
-Last updated on: 20 Juni 2011
+Last updated on: 22 Juni 2011

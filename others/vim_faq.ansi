@@ -8104,8 +8104,7 @@
 
     [1m:help 09.3[0m
 
-    36.11 Why shouldn't I modify the files in the system runtime directory?
-
+  [1m36.11. Why shouldn't I modify the files in the system runtime directory?[0m
     Just be careful about modifying files under $VIMRUNTIME, which in is
     usually /usr/share/vim/vimXX (Unix) or C:\Program Files\vim\vimXX
     (Windows) and XX being the version for which it applies, e.g. 73 for Vim
@@ -8292,5 +8291,5 @@
 [1mAUTHOR[0m
     Current Maintainer: Christian Brabandt <cb@256bit.org>
 
-    Last updated on: 20 Juni 2011
+    Last updated on: 22 Juni 2011
 
