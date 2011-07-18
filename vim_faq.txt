@@ -591,6 +591,8 @@ SECTION 29 - FOLDING
     29.5. How do I change the text displayed for a closed fold?
     29.6. How do I store and restore manually created folds across
           different Vim invocations?
+    29.7. I have enabled syntax based folding. Why is Vim so slow?
+
 
 SECTION 30 - VIM WITH EXTERNAL APPLICATIONS
     30.1. Can I run a shell inside a Vim window?
@@ -6922,6 +6924,24 @@ For more information, read
     :help 'viewdir'
     :help :mksession
     :help 'sessionoptions'
+
+
+29.7. I have enabled syntax based folding. Why is Vim so slow?
+
+Syntax based folding is currently rather slow in Vim and will possibly
+slow down Vim considerably. There is an issue in the todo list to fix
+this, but the todo list is rather long and it may take a while until
+this will be fixed.
+
+You can find the issue in the todo list, if you read
+
+    :help todo.txt
+
+followed by a search for "folding with 'foldmethod'"
+
+A workaround is to temporarily set the foldmethod to manual while in
+insert mode. This is described in the wiki at:
+http://vim.wikia.com/wiki/Keep_folds_closed_while_inserting_text
 
 
 =============================================================================
