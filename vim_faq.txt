@@ -828,6 +828,9 @@ Features to modernise Vi:
 
      Allows you to set the number of times you can undo your changes in a
      file buffer. You can also redo an undone change.
+     Also starting with version 7.3 Vim can permanently store your undo
+     information, so that you can undo your changes which you have done
+     in a previous editing session.
 
   Tabs, Multiple windows and buffers
 
