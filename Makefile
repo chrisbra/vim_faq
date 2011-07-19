@@ -5,6 +5,8 @@ POD=others/$(NAME).pod
 DOC=$(wildcard doc/*.txt)
 PLUGIN=$(shell basename "$$PWD")
 VERSION=$(shell sed -n '/Version:/{s/^[^0-9]*\([0-9]\+\)$$/\1/;p}' $(SCRIPT))
+# generate pdf file
+DOPDF=1
 
 
 .PHONY: $(PLUGIN).vba README
@@ -44,6 +46,15 @@ release:
 	vim -u NONE -U NONE -N -c ':so vim_faq.vim|:CreateVimFAQHelp|wq' ${FAQ}
 	# Generate additional formats
 	vim -u NONE -U NONE -N -c ':so vim_faq.vim|:CreateVimPODFile|q' ${FAQ}
-	pod2man ${POD} > others/${NAME}.1
-	pod2html ${POD} > others/${NAME}.html
+	pod2man --name=vimfaq --release=${VERSION} --center='http://vimhelp.appspot.com/vim_faq.txt.html' ${POD} > others/${NAME}.1
+	pod2html --verbose --title="Vim FAQ" ${POD} > others/${NAME}.html
 	pod2text -c ${POD} > others/${NAME}.ansi
+	@/bin/sh -c "if test -x \"$$(which pod2pdf)\" && test ${DOPDF} -eq 1 ;\
+	    then echo 'Generating pdf version, this may take a while'; \
+	    pod2pdf --footer-text 'Vim FAQ' --icon vim.png \
+	    --icon-scale 0.3 --page-orientation portrait ${POD}\
+	    > others/${NAME}.pdf ; \
+	else \
+	    echo 'Skipping pdf generation' ; \
+	fi"
+	rm -f *.tmp

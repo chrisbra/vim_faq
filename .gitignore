@@ -5,3 +5,6 @@ vim_passfile
 .*.sw*
 # pod html temp files
 *.tmp
+
+others/*
+*.vba

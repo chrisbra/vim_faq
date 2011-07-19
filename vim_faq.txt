@@ -5731,7 +5731,7 @@ For more information, read
 Yes. Vim includes the matchparen Plugin as standard plugin that is enabled
 by default. Whenever the cursor moves over an item defined with the
 'matchpairs' option, Vim will highlight the corresponding bracket using the
-MatchParen hilighting group.
+MatchParen highlighting group.
 
 However, if the corresponding parenthesis is not visible in the current
 window, the cursor won't jump to it. 

@@ -1,6 +1,6 @@
 *vim_faq.txt*	Frequently Asked Questions
 
-Last updated on: 08 February 2011
+Last updated on: 22 Juni 2011
 
 	  VIM FAQ by: Christian Brabandt <cb@256bit.org>
 
@@ -730,6 +730,8 @@ SECTION 36 - VARIOUS
 	  leaving the insert mode?
 |faq-36.9|  How do I start Vim in insert mode?
 |faq-36.10| How do I use Copy and Paste with Vim?
+|faq-36.11| Why shouldn't I modify the files in the system runtime
+	  directory?
                                                                 *faq-unicode*
 SECTION 37 - UNICODE
 |faq-37.1|  Is it possible to create Unicode files using Vim?
@@ -1146,6 +1148,11 @@ For more information, read
 2.7. Where can the FAQ be found?
 
 The FAQ can be found at http://vimhelp.appspot.com/vim_faq.txt.html.
+It will be auto-generated from the source that is managed in the github
+repository http://www.github.com/chrisbra/vim_faq (Patches are welcome).
+
+The repository also includes the faq in different formats, e.g. manpage,
+and html file, plain text version and a version in vim help format.
 
 A slightly older version (which doesn't seem to get updated anymore) can
 still be found at VimOnline (vim.sf.net). Other places will be decided in
@@ -1162,8 +1169,8 @@ regularly on comp.editors. You can also find a copy at >
 <
 Also, since Vim has gathered so many features in the last few years,
 successfully documenting the frequently asked questions here is a
-near-impossible task.  To make it possible, please email the maintainer if
-you have a good question.  A good question is one that you've tried to
+near-impossible task. To make it possible, please email the maintainer if
+you have a good question. A good question is one that you've tried to
 answer yourself (remember, Vim has great documentation) but struggled.
 
  								*faq-2.9*
@@ -3953,6 +3960,36 @@ You can fix this problem in a terminal Vim in several ways:
     |x11-selection|
     |xterm-clipboard|
 
+1.1 Some Linux distributions build their terminal vim packages
+    without X support.  This makes no sense and leaves many users
+    with the impression that Vim in terminal mode doesn't support
+    some operations such as properly pasting text with a mouse. >
+
+    If your distribution includes gvim, which it almost certainly
+    does these days, the solutions to this include the following.
+<
+    a)  Start Vim as >
+
+            gvim -v
+<
+    b)  Put this alias in your shell's configuration file, e.g.
+        ~/.bashrc: >
+
+            alias vim='gvim -v'
+<
+    c)  Put the following command in a file named 'vim' and put that
+        file in your ~/bin directory: >
+
+            gvim -v "$@"
+<
+    d)  Link the distribution's gvim to ~/bin/vim with the following
+        command, which needs to be executed only once. >
+
+            ln -s $(which gvim) ~/bin/vim
+<
+    For c) and d), make sure that ~/bin precedes /usr/bin in your
+    PATH.
+
 2. Paste the text using the CTRL-R CTRL-O * command.  This will paste
    the text literally without any automatic indentation. If you want to
    paste the text and then fix the indentation, then you can use CTRL-R
@@ -5668,20 +5705,24 @@ For more information, read
 
 Yes. Vim includes the matchparen Plugin as standard plugin that is enabled
 by default. Whenever the cursor moves over an item defined with the
-'matchpairs' option, the cursor will jump back to the corresponding
-bracket.
+'matchpairs' option, Vim will highlight the corresponding bracket using the
+MatchParen hilighting group.
 
-However, this will only work, if the corresponding parenthesis is not
-visible in the current window, the cursor won't jump to it. 
+However, if the corresponding parenthesis is not visible in the current
+window, the cursor won't jump to it. 
 
-The matchit plugin provides an improved version, that skips matches in
-comments and can jump to related items (e.g. "if", "else", "endif" items).
+The matchit plugin provides a similar function, that let's the cursor
+jump to related items (e.g. "if", "else", "endif" items) and skips
+matches in comments. This uses the % command to jump to corresponding
+items. Though both plugins provide similar functions they are unrelated
+and work differently.
 
 For more information, read 
 
     |matchparen|
     |'matchpairs'|
     |matchit-install|
+    |matchit-intro|
 
  								*faq-24.10*
 24.10. How do I turn off the C comment syntax highlighting?
@@ -5714,7 +5755,7 @@ For more information, read
 24.12. How do I replace a standard syntax file that comes with the Vim
        distribution with my own syntax file?
 
-You can replace a standary syntax file that comes with the Vim distribution
+You can replace a standard syntax file that comes with the Vim distribution
 by creating a file with the same name as the original syntax file and
 placing it in the vim runtime syntax (~/.vim/syntax) directory. For
 example, to replace the c.vim syntax file in a Unix system, place the new
@@ -8262,6 +8303,29 @@ setting. For more information, read
     |'mouse'|
     |xterm-copy-paste|
     |09.3|
+
+ 								*faq-36.11*
+36.11. Why shouldn't I modify the files in the system runtime directory?
+
+Just be careful about modifying files under $VIMRUNTIME, which in
+is usually /usr/share/vim/vimXX (Unix) or C:\Program Files\vim\vimXX
+(Windows) and XX being the version for which it applies, e.g. 73 for Vim
+7.3.
+
+One should generally avoid modifying those files because they may be
+replaced during an upgrade of your Vim installation and your changes
+will be lost.  Also, if you upgrade to a new major or minor revision of
+Vim (e.g., from 7.3 to 7.4), the new version of Vim will use a different
+$VIMRUNTIME directory and while your changes won't be lost, they will be
+ignored.
+
+Consequently, take a look at 
+
+    |filetypes|
+
+for an explanation of several ways to modify Vim's response to
+different filetypes and where to put those modifications so that
+they will not be overwritten.
 
 =============================================================================
  								*faq-37*
