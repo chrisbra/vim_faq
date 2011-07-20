@@ -1,6 +1,6 @@
 *vim_faq.txt*	Frequently Asked Questions
 
-Last updated on: 22 Juni 2011
+Last updated on: 20 Juli 2011
 
 	  VIM FAQ by: Christian Brabandt <cb@256bit.org>
 
@@ -596,6 +596,8 @@ SECTION 29 - FOLDING
 |faq-29.5|  How do I change the text displayed for a closed fold?
 |faq-29.6|  How do I store and restore manually created folds across
 	  different Vim invocations?
+|faq-29.7|  I have enabled syntax based folding. Why is Vim so slow?
+
                                         *faq-vim-with-external-applications*
 SECTION 30 - VIM WITH EXTERNAL APPLICATIONS
 |faq-30.1|  Can I run a shell inside a Vim window?
@@ -830,6 +832,9 @@ Features to modernise Vi:
 
      Allows you to set the number of times you can undo your changes in a
      file buffer. You can also redo an undone change.
+     Also starting with version 7.3 Vim can permanently store your undo
+     information, so that you can undo your changes which you have done
+     in a previous editing session.
 <
   Tabs, Multiple windows and buffers >
 
@@ -1091,6 +1096,9 @@ You can download the HTML/PDF/PS format of the Vim user manual from: >
 
     http://vimdoc.sourceforge.net/
 <
+Note, the user manual from that page is currently pretty outdated. It's
+best to either use the documentation that comes with vim or use the
+online version at http://vimhelp.appspot.com
  								*faq-2.5*
 2.5. I have a "xyz" (some) problem with Vim. How do I determine it is a
      problem with my setup or with Vim?
@@ -5706,7 +5714,7 @@ For more information, read
 Yes. Vim includes the matchparen Plugin as standard plugin that is enabled
 by default. Whenever the cursor moves over an item defined with the
 'matchpairs' option, Vim will highlight the corresponding bracket using the
-MatchParen hilighting group.
+MatchParen highlighting group.
 
 However, if the corresponding parenthesis is not visible in the current
 window, the cursor won't jump to it. 
@@ -6897,6 +6905,24 @@ For more information, read
     |'viewdir'|
     |:mksession|
     |'sessionoptions'|
+
+ 								*faq-29.7*
+29.7. I have enabled syntax based folding. Why is Vim so slow?
+
+Syntax based folding is currently rather slow in Vim and will possibly
+slow down Vim considerably. There is an issue in the todo list to fix
+this, but the todo list is rather long and it may take a while until
+this will be fixed.
+
+You can find the issue in the todo list, if you read 
+
+    |todo.txt|
+
+followed by a search for "folding with 'foldmethod'"
+
+A workaround is to temporarily set the foldmethod to manual while in
+insert mode. This is described in the wiki at:
+http://vim.wikia.com/wiki/Keep_folds_closed_while_inserting_text
 
 =============================================================================
  								*faq-30*
@@ -8307,8 +8333,8 @@ setting. For more information, read
  								*faq-36.11*
 36.11. Why shouldn't I modify the files in the system runtime directory?
 
-Just be careful about modifying files under $VIMRUNTIME, which in
-is usually /usr/share/vim/vimXX (Unix) or C:\Program Files\vim\vimXX
+Just be careful about modifying files under $VIMRUNTIME, which usually
+is /usr/share/vim/vimXX (Unix) or C:\Program Files\vim\vimXX
 (Windows) and XX being the version for which it applies, e.g. 73 for Vim
 7.3.
 

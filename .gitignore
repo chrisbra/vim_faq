@@ -6,5 +6,5 @@ vim_passfile
 # pod html temp files
 *.tmp
 
-others/*
+#others/*
 *.vba
