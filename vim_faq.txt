@@ -729,6 +729,8 @@ SECTION 36 - VARIOUS
     36.10. How do I use Copy and Paste with Vim?
     36.11. Why shouldn't I modify the files in the system runtime
            directory?
+    36.12. How Du I debug and find out if there is an error in my .vimrc
+           or in any other file that is read during startup?
 
 SECTION 37 - UNICODE
     37.1. Is it possible to create Unicode files using Vim?
@@ -1138,7 +1140,9 @@ First collect the required information using the following command:
     :source $VIMRUNTIME/bugreport.vim
 
 Now send the resulting text from the above command to the bugs@vim.org
-e-mail address.
+e-mail address. There is also a public bug tracker available at
+http://code.google.com/p/vim/issues/list. A copy of each message there
+will be forwarded to the Vim Development list.
 
 The Vim Development mailing list (see above) is a good place to discuss
 general bugs.  If the bug you find is with syntax highlighting or some
@@ -8432,6 +8436,52 @@ different filetypes and where to put those modifications so that
 they will not be overwritten.
 
 
+36.12. How Du I debug and find out if there is an error in my .vimrc or
+       in any other file that is read during startup?
+
+First, you need to find out, whether the error is in the actual runtime
+files or any plugin that is distributed with Vim or whether it is a
+simple side effect of any configuration option from your .vimrc. So
+first, start vim like this:
+
+    vim -u NONE -U NONE -N -i NONE
+
+this starts Vim in nocompatible mode (-N), without reading your viminfo
+file (-i NONE), without reading any configuration file (-u NONE for not
+reading .vimrc file and -U NONE for not reading a .gvimrc file).
+
+If the error persists, the chance is good you've found a bug in Vim (see
+also Question 2.6.
+
+If the error does not occur when starting Vim this way, you need to find
+out, what triggers the error, you try starting Vim this way:
+
+    vim -u ~/.vimrc --noplugin -N -i NONE
+
+This will simply use your .vimrc as configuration file, but not load any
+plugins. If the error occurs this time, the error is possibly caused by
+some configuration option inside your .vimrc file. Depending on the
+length of your vimrc file, it can be quite hard to trace the origin
+within that file.
+
+The best way is to add :finish command in the middle of your .vimrc.
+Then restart again using the same command line. If the error still
+occurs, the bug must be caused because of a setting in the first half of
+your .vimrc. If it doesn't happen, the problematic setting must be in
+the second half of your .vimrc. So move the :finish command to the
+middle of that half, of which you know that triggers the error and move
+your way along, until you find the problematic option. If your .vimrc is
+350 lines long, you need at a maximum 9 tries to find the offending line
+(in practise, this can often be further reduced, since often lines
+depend on each other).
+
+If the problem does not occur, when only loading your .vimrc file, the
+error must be caused by a plugin or another runtime file (indent
+autoload or syntax script). Check the output of the :scriptnames command
+to see what files have been loaded and for each one try to disable each
+one by one and see which one triggers the bug. (Often files that are
+loaded by vim, have a simple configuration variable to disable them, but
+you need to check inside each file separately.
 
 =============================================================================
 
