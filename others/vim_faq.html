@@ -258,6 +258,7 @@
 		<li><a href="#11_21__how_do_i_search_for_a_text_string_that_spans_multiple_lines">11.21. How do I search for a text string that spans multiple lines?</a></li>
 		<li><a href="#11_22__how_do_i_search_for_a_pattern_within_the_specified_range_of_lines">11.22. How do I search for a pattern within the specified range of lines</a></li>
 		<li><a href="#11_23__how_do_i_clear_the_last_searched_pattern">11.23. How do I clear the last searched pattern?</a></li>
+		<li><a href="#11_24__why_does_this_pattern__a_____p_____not_match">11.24. Why does this pattern 'a.\{-}p\@!' not match?</a></li>
 	</ul>
 
 	<li><a href="#changing_text">CHANGING TEXT</a></li>
@@ -657,6 +658,7 @@
 		<li><a href="#36_9__how_do_i_start_vim_in_insert_mode">36.9. How do I start Vim in insert mode?</a></li>
 		<li><a href="#36_10__how_do_i_use_copy_and_paste_with_vim">36.10. How do I use Copy and Paste with Vim?</a></li>
 		<li><a href="#36_11__why_shouldn_t_i_modify_the_files_in_the_system_runtime_directory">36.11. Why shouldn't I modify the files in the system runtime directory?</a></li>
+		<li><a href="#36_12__how_du_i_debug_and_find_out_if_there_is_an_error_in_my__vimrc_or">36.12. How Du I debug and find out if there is an error in my .vimrc or</a></li>
 	</ul>
 
 	<li><a href="#unicode">UNICODE</a></li>
@@ -766,8 +768,7 @@ this FAQ is available at <a href="http://vimhelp.appspot.com/vim_faq.txt.html">h
  5.10. How do I open a file in read-only mode?
  5.11. How do I open a file for editing without saving the modifications
        to the current file?
- 5.12. How do I reduce the loading time for very large files in Vim?
-       (*New*)</pre>
+ 5.12. How do I reduce the loading time for very large files in Vim?</pre>
 <p>
 </p>
 <hr />
@@ -912,7 +913,8 @@ this FAQ is available at <a href="http://vimhelp.appspot.com/vim_faq.txt.html">h
  11.21. How do I search for a text string that spans multiple lines?
  11.22. How do I search for a pattern only within a range of lines
         in a buffer?
- 11.23. How do I clear the last searched pattern? (*New*)</pre>
+ 11.23. How do I clear the last searched pattern?
+ 11.24. Why does this pattern 'a.\{-}p\@!' not match?</pre>
 <p>
 </p>
 <hr />
@@ -1518,7 +1520,9 @@ this FAQ is available at <a href="http://vimhelp.appspot.com/vim_faq.txt.html">h
  36.9. How do I start Vim in insert mode?
  36.10. How do I use Copy and Paste with Vim?
  36.11. Why shouldn't I modify the files in the system runtime
-        directory?</pre>
+        directory?
+ 36.12. How Du I debug and find out if there is an error in my .vimrc
+        or in any other file that is read during startup?</pre>
 <p>
 </p>
 <hr />
@@ -1929,7 +1933,9 @@ information.</p>
 <pre>
  :source $VIMRUNTIME/bugreport.vim</pre>
 <p>Now send the resulting text from the above command to the <a href="mailto:bugs@vim.org">bugs@vim.org</a>
-e-mail address.</p>
+e-mail address. There is also a public bug tracker available at
+<a href="http://code.google.com/p/vim/issues/list.">http://code.google.com/p/vim/issues/list.</a> A copy of each message there
+will be forwarded to the Vim Development list.</p>
 <p>The Vim Development mailing list (see above) is a good place to discuss
 general bugs.  If the bug you find is with syntax highlighting or some
 other &quot;added feature&quot; (i.e. not directly programmed into vim), attempt to
@@ -2347,6 +2353,11 @@ very large files in Vim:</p>
 <p>Note that the above settings will disable many Vim features including the
 following: Swap files support for crash recovery, undo support, syntax
 highlighting, filetype detection and other autocommand based features.</p>
+<p>There is also the LargeFile plugin available at
+<a href="http://www.vim.org/scripts/script.php?script_id=1506">http://www.vim.org/scripts/script.php?script_id=1506</a>
+which automatically sets these options, when working with large files
+(it is configurable, what is considered to be a large file, be default,
+it is 100MB).</p>
 <p>
 </p>
 <hr />
@@ -3363,6 +3374,24 @@ the following command:</p>
 <p><strong>:help :let-@</strong></p>
 <p><strong>:help autocmd-searchpat</strong></p>
 <p><strong>:help last-pattern</strong></p>
+<p>
+</p>
+<h2><a name="11_24__why_does_this_pattern__a_____p_____not_match">11.24. Why does this pattern 'a.\{-}p\@!' not match?</a></h2>
+<p>&quot;\{-}&quot; doesn't just mean &quot;as few as possible&quot;, it means &quot;as few as
+possible to make the whole pattern succeed&quot;. If it didn't match the 'p',
+the whole pattern would fail (because of the &quot;p\@!&quot;) so it does match
+the &quot;p&quot;. It is a longer match, but it is the shortest match that makes
+the whole pattern succeed.</p>
+<p>If you wanted &quot;as few as possible regardless&quot; you would use &quot;\@&gt;&quot;, which
+basically divides a pattern up so that the pieces either side behave
+independently. If the pattern were &quot;a.\{-}\@&gt;p\@!&quot; then &quot;.\{-}&quot; would
+always match nothing because that's the smallest match that can succeed
+when there are not other restrictions. The whole pattern then would
+behave the same as &quot;ap\@!&quot;, i.e. it would match any &quot;a&quot; not followed by
+a &quot;p&quot;).</p>
+<p>This means, it matches as
+few as possible 'a's whithout trying to keep going until Vim finds the
+longest match. This means, it will still match 'ap'.</p>
 <p>
 </p>
 <hr />
@@ -4954,12 +4983,51 @@ the unmap command:</p>
 <p>
 </p>
 <h2><a name="20_4__i_am_not_able_to_create_a_mapping_for_the__xxx__key__what_is_wrong">20.4. I am not able to create a mapping for the &lt;xxx&gt; key. What is wrong?</a></h2>
-<p>First make sure that the key is passed to Vim. In insert mode, press CTRL-V
-followed by the desired key.  You should see the keycode corresponding to
-the key .  If you do see the keycode, then you can create a mapping for the
-key using the following command:</p>
+<p>1) First make sure, the key is passed correctly to Vim. To determine if
+   this is the case, put Vim in Insert mode and then hit Ctrl-V (or
+   Ctrl-Q if your Ctrl-V is remapped to the paste operation (e.g. on
+   Windows if you are using the mswin.vim script file) followed by your
+   key.</p>
 <pre>
- :map &lt;C-V&gt;&lt;xxx&gt;  &lt;your_command_to_be_mapped&gt;</pre>
+   If nothing appears in the buffer (and assuming that you have
+   'showcmd' on, ^V remains displayed near the bottom right of the Vim
+   screen), then Vim doesn't get your key correctly and there is nothing
+   to be done, other than selecting a different key for your mapping or
+   using GVim, which should recognise the key correctly.</pre>
+<p>2) Possibly, Vim gets your key, but sees it as no different than
+   something else. Say you want to map Ctrl-Right, then in Insert mode
+   hit Ctrl-K followed by Ctrl-Right. If Vim displays &lt;C-Right&gt; it has
+   correctly seen the keystroke and you should be able to map it (by
+   using &lt;C-Right&gt; as your {lhs}). If it displays &lt;Right&gt; it has seen
+   the keystroke but as if you hadn't held Ctrl down: this means your
+   temrinal passes Ctrl-Right as if it were just &lt;Right&gt;. Anything else
+   means the key has been misidentified.</p>
+<p>3) If the key is seen, but not as itself and not as some recognizable
+   key, then there is probably an error in the terminal library for the
+   current terminal (termcap or terminfo database). In that case</p>
+<pre>
+     :set term?</pre>
+<pre>
+   will tell you which termcap or terminfo Vim is using. You can try to
+   tell vim, what termcode to use in that terminal, by adding the
+   following to your vimrc:</pre>
+<pre>
+     if &amp;term == &lt;termname&gt;
+         set &lt;C-Right&gt;=&lt;keycode&gt;
+     endif</pre>
+<pre>
+   where &lt;termname&gt; above should be replaced by the value of 'term'
+   (with quotes around it) and &lt;keycode&gt; by what you get when hitting
+   Ctrl-V followed by Ctrl-Right in Insert mode (with nothing around
+   it). &lt;C-Right&gt; should be left as-is (9 characters). Don't forget that
+   in a :set command, white space is not allowed between the equal sign
+   and the value, and any space, double quote, vertical bar or backslash
+   present as part of the value must be backslash-escaped.</pre>
+<pre>
+   Now you should be able to see the keycode corresponding to the key
+   and you can create a mapping for the key using the following command:</pre>
+<pre>
+     :map &lt;C-Right&gt;  &lt;your_command_to_be_mapped&gt;</pre>
 <p>For more information, read</p>
 <p><strong>:help map-keys-fails</strong></p>
 <p><strong>:help :map-special-keys</strong></p>
@@ -4985,7 +5053,11 @@ Ctrl-[ and Esc, Ctrl-? and Del).</p>
 <p>The &quot;safest&quot; keys to use in Vim for the {lhs} of a mapping are the F
 keys, with or without Shift: &lt;F2&gt; to &lt;F12&gt; and &lt;S-F1&gt; to &lt;S-F12&gt;. (Some
 OSes, including mine, intercept Ctrl-Fn and Alt-Fn, which never reach an
-application program such as vim or gvim.)</p>
+application program such as vim or gvim).</p>
+<p>You can try other combinations of Ctrl + any key, but they may either
+not work everywhere (e.g. the terminal might not pass that key to Vim,
+or they might have unintended side effects (e.g. mapping &lt;C-I&gt; means
+also to map &lt;Tab&gt;).</p>
 <p>
 </p>
 <h2><a name="20_6__how_do_i_map_the_numeric_keypad_keys">20.6. How do I map the numeric keypad keys?</a></h2>
@@ -7749,6 +7821,47 @@ different filetypes and where to put those modifications so that
 they will not be overwritten.</p>
 <p>
 </p>
+<h2><a name="36_12__how_du_i_debug_and_find_out_if_there_is_an_error_in_my__vimrc_or_in_any_other_file_that_is_read_during_startup">36.12. How Du I debug and find out if there is an error in my .vimrc or
+    in any other file that is read during startup?</a></h2>
+<p>First, you need to find out, whether the error is in the actual runtime
+files or any plugin that is distributed with Vim or whether it is a
+simple side effect of any configuration option from your .vimrc. So
+first, start vim like this:</p>
+<pre>
+ vim -u NONE -U NONE -N -i NONE</pre>
+<p>this starts Vim in nocompatible mode (-N), without reading your viminfo
+file (-i NONE), without reading any configuration file (-u NONE for not
+reading .vimrc file and -U NONE for not reading a .gvimrc file).</p>
+<p>If the error persists, the chance is good you've found a bug in Vim (see
+also Question 2.6.</p>
+<p>If the error does not occur when starting Vim this way, you need to find
+out, what triggers the error, you try starting Vim this way:</p>
+<pre>
+ vim -u ~/.vimrc --noplugin -N -i NONE</pre>
+<p>This will simply use your .vimrc as configuration file, but not load any
+plugins. If the error occurs this time, the error is possibly caused by
+some configuration option inside your .vimrc file. Depending on the
+length of your vimrc file, it can be quite hard to trace the origin
+within that file.</p>
+<p>The best way is to add :finish command in the middle of your .vimrc.
+Then restart again using the same command line. If the error still
+occurs, the bug must be caused because of a setting in the first half of
+your .vimrc. If it doesn't happen, the problematic setting must be in
+the second half of your .vimrc. So move the :finish command to the
+middle of that half, of which you know that triggers the error and move
+your way along, until you find the problematic option. If your .vimrc is
+350 lines long, you need at a maximum 9 tries to find the offending line
+(in practise, this can often be further reduced, since often lines
+depend on each other).</p>
+<p>If the problem does not occur, when only loading your .vimrc file, the
+error must be caused by a plugin or another runtime file (indent
+autoload or syntax script). Check the output of the :scriptnames command
+to see what files have been loaded and for each one try to disable each
+one by one and see which one triggers the bug. (Often files that are
+loaded by vim, have a simple configuration variable to disable them, but
+you need to check inside each file separately.</p>
+<p>
+</p>
 <hr />
 <h1><a name="unicode">UNICODE</a></h1>
 <p>Author: Tony Mechelynck &lt;antoine.mechelynck AT belgacom.net&gt;</p>
@@ -7888,7 +8001,7 @@ the :digraphs command to list the currently defined digraphs.</p>
 <hr />
 <h1><a name="author">AUTHOR</a></h1>
 <p>Current Maintainer: Christian Brabandt &lt;<a href="mailto:cb@256bit.org">cb@256bit.org</a>&gt;</p>
-<p>Last updated on: 20 Juli 2011</p>
+<p>Last updated on: 26 September 2011</p>
 
 </body>
 

@@ -2,7 +2,7 @@
 " -------------------------------------------------------------
 " Version:  38
 " Maintainer:  Christian Brabandt
-" Last Change: 20 Juli 2011
+" Last Change: 26 September 2011
 "
 " Script: 
 " GetLatestVimScripts: 3298 38 :AutoInstall: faq_plugin.vim

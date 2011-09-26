@@ -124,7 +124,7 @@
 .\" ========================================================================
 .\"
 .IX Title "vimfaq 1"
-.TH vimfaq 1 "2011-07-20" "37" "http://vimhelp.appspot.com/vim_faq.txt.html"
+.TH vimfaq 1 "2011-09-26" "42" "http://vimhelp.appspot.com/vim_faq.txt.html"
 .\" For nroff, turn off justification.  Always turn off hyphenation; it makes
 .\" way too many mistakes in technical documents.
 .if n .ad l
@@ -206,7 +206,6 @@ this \s-1FAQ\s0 is available at http://vimhelp.appspot.com/vim_faq.txt.html
 \& 5.11. How do I open a file for editing without saving the modifications
 \&       to the current file?
 \& 5.12. How do I reduce the loading time for very large files in Vim?
-\&       (*New*)
 .Ve
 .SH "EDITING MULTIPLE FILES"
 .IX Header "EDITING MULTIPLE FILES"
@@ -345,7 +344,8 @@ this \s-1FAQ\s0 is available at http://vimhelp.appspot.com/vim_faq.txt.html
 \& 11.21. How do I search for a text string that spans multiple lines?
 \& 11.22. How do I search for a pattern only within a range of lines
 \&        in a buffer?
-\& 11.23. How do I clear the last searched pattern? (*New*)
+\& 11.23. How do I clear the last searched pattern?
+\& 11.24. Why does this pattern \*(Aqa.\e{\-}p\e@!\*(Aq not match?
 .Ve
 .SH "CHANGING TEXT"
 .IX Header "CHANGING TEXT"
@@ -927,6 +927,8 @@ this \s-1FAQ\s0 is available at http://vimhelp.appspot.com/vim_faq.txt.html
 \& 36.10. How do I use Copy and Paste with Vim?
 \& 36.11. Why shouldn\*(Aqt I modify the files in the system runtime
 \&        directory?
+\& 36.12. How Du I debug and find out if there is an error in my .vimrc
+\&        or in any other file that is read during startup?
 .Ve
 .SH "UNICODE"
 .IX Header "UNICODE"
@@ -1444,7 +1446,9 @@ First collect the required information using the following command:
 .Ve
 .PP
 Now send the resulting text from the above command to the bugs@vim.org
-e\-mail address.
+e\-mail address. There is also a public bug tracker available at
+http://code.google.com/p/vim/issues/list. A copy of each message there
+will be forwarded to the Vim Development list.
 .PP
 The Vim Development mailing list (see above) is a good place to discuss
 general bugs.  If the bug you find is with syntax highlighting or some
@@ -1991,6 +1995,12 @@ very large files in Vim:
 Note that the above settings will disable many Vim features including the
 following: Swap files support for crash recovery, undo support, syntax
 highlighting, filetype detection and other autocommand based features.
+.PP
+There is also the LargeFile plugin available at
+http://www.vim.org/scripts/script.php?script_id=1506
+which automatically sets these options, when working with large files
+(it is configurable, what is considered to be a large file, be default,
+it is 100MB).
 .SH "EDITING MULTIPLE FILES"
 .IX Header "EDITING MULTIPLE FILES"
 .SS "6.1. How do I open multiple files at once from within Vim?"
@@ -3364,6 +3374,25 @@ For more information, read
 \&\fB:help autocmd-searchpat\fR
 .PP
 \&\fB:help last-pattern\fR
+.SS "11.24. Why does this pattern 'a.\e{\-}p\e@!' not match?"
+.IX Subsection "11.24. Why does this pattern 'a.{-}p@!' not match?"
+\&\*(L"\e{\-}\*(R" doesn't just mean \*(L"as few as possible\*(R", it means \*(L"as few as
+possible to make the whole pattern succeed\*(R". If it didn't match the 'p',
+the whole pattern would fail (because of the \*(L"p\e@!\*(R") so it does match
+the \*(L"p\*(R". It is a longer match, but it is the shortest match that makes
+the whole pattern succeed.
+.PP
+If you wanted \*(L"as few as possible regardless\*(R" you would use \*(L"\e@>\*(R", which
+basically divides a pattern up so that the pieces either side behave
+independently. If the pattern were \*(L"a.\e{\-}\e@>p\e@!\*(R" then \*(L".\e{\-}\*(R" would
+always match nothing because that's the smallest match that can succeed
+when there are not other restrictions. The whole pattern then would
+behave the same as \*(L"ap\e@!\*(R", i.e. it would match any \*(L"a\*(R" not followed by
+a \*(L"p\*(R").
+.PP
+This means, it matches as
+few as possible 'a's whithout trying to keep going until Vim finds the
+longest match. This means, it will still match 'ap'.
 .SH "CHANGING TEXT"
 .IX Header "CHANGING TEXT"
 .SS "12.1. How do I delete all the trailing white space characters (\s-1SPACE\s0 and \s-1TAB\s0) at the end of all the lines in a file?"
@@ -5469,13 +5498,56 @@ For more information, read
 \&\fB:help mapleader\fR
 .SS "20.4. I am not able to create a mapping for the <xxx> key. What is wrong?"
 .IX Subsection "20.4. I am not able to create a mapping for the <xxx> key. What is wrong?"
-First make sure that the key is passed to Vim. In insert mode, press CTRL-V
-followed by the desired key.  You should see the keycode corresponding to
-the key .  If you do see the keycode, then you can create a mapping for the
-key using the following command:
+1) First make sure, the key is passed correctly to Vim. To determine if
+   this is the case, put Vim in Insert mode and then hit Ctrl-V (or
+   Ctrl-Q if your Ctrl-V is remapped to the paste operation (e.g. on
+   Windows if you are using the mswin.vim script file) followed by your
+   key.
+.PP
+.Vb 5
+\&   If nothing appears in the buffer (and assuming that you have
+\&   \*(Aqshowcmd\*(Aq on, ^V remains displayed near the bottom right of the Vim
+\&   screen), then Vim doesn\*(Aqt get your key correctly and there is nothing
+\&   to be done, other than selecting a different key for your mapping or
+\&   using GVim, which should recognise the key correctly.
+.Ve
+.PP
+2) Possibly, Vim gets your key, but sees it as no different than
+   something else. Say you want to map Ctrl-Right, then in Insert mode
+   hit Ctrl-K followed by Ctrl-Right. If Vim displays <C\-Right> it has
+   correctly seen the keystroke and you should be able to map it (by
+   using <C\-Right> as your {lhs}). If it displays <Right> it has seen
+   the keystroke but as if you hadn't held Ctrl down: this means your
+   temrinal passes Ctrl-Right as if it were just <Right>. Anything else
+   means the key has been misidentified.
+.PP
+3) If the key is seen, but not as itself and not as some recognizable
+   key, then there is probably an error in the terminal library for the
+   current terminal (termcap or terminfo database). In that case
 .PP
 .Vb 1
-\& :map <C\-V><xxx>  <your_command_to_be_mapped>
+\&     :set term?
+\&
+\&   will tell you which termcap or terminfo Vim is using. You can try to
+\&   tell vim, what termcode to use in that terminal, by adding the
+\&   following to your vimrc:
+\&
+\&     if &term == <termname>
+\&         set <C\-Right>=<keycode>
+\&     endif
+\&
+\&   where <termname> above should be replaced by the value of \*(Aqterm\*(Aq
+\&   (with quotes around it) and <keycode> by what you get when hitting
+\&   Ctrl\-V followed by Ctrl\-Right in Insert mode (with nothing around
+\&   it). <C\-Right> should be left as\-is (9 characters). Don\*(Aqt forget that
+\&   in a :set command, white space is not allowed between the equal sign
+\&   and the value, and any space, double quote, vertical bar or backslash
+\&   present as part of the value must be backslash\-escaped.
+\&
+\&   Now you should be able to see the keycode corresponding to the key
+\&   and you can create a mapping for the key using the following command:
+\&
+\&     :map <C\-Right>  <your_command_to_be_mapped>
 .Ve
 .PP
 For more information, read
@@ -5509,7 +5581,12 @@ Ctrl\-[ and Esc, Ctrl\-? and Del).
 The \*(L"safest\*(R" keys to use in Vim for the {lhs} of a mapping are the F
 keys, with or without Shift: <F2> to <F12> and <S\-F1> to <S\-F12>. (Some
 OSes, including mine, intercept Ctrl-Fn and Alt-Fn, which never reach an
-application program such as vim or gvim.)
+application program such as vim or gvim).
+.PP
+You can try other combinations of Ctrl + any key, but they may either
+not work everywhere (e.g. the terminal might not pass that key to Vim,
+or they might have unintended side effects (e.g. mapping <C\-I> means
+also to map <Tab>).
 .SS "20.6. How do I map the numeric keypad keys?"
 .IX Subsection "20.6. How do I map the numeric keypad keys?"
 First make sure that the numeric keypad keys are passed to Vim. Next, you
@@ -9102,6 +9179,55 @@ Consequently, take a look at
 for an explanation of several ways to modify Vim's response to
 different filetypes and where to put those modifications so that
 they will not be overwritten.
+.SS "36.12. How Du I debug and find out if there is an error in my .vimrc or in any other file that is read during startup?"
+.IX Subsection "36.12. How Du I debug and find out if there is an error in my .vimrc or in any other file that is read during startup?"
+First, you need to find out, whether the error is in the actual runtime
+files or any plugin that is distributed with Vim or whether it is a
+simple side effect of any configuration option from your .vimrc. So
+first, start vim like this:
+.PP
+.Vb 1
+\& vim \-u NONE \-U NONE \-N \-i NONE
+.Ve
+.PP
+this starts Vim in nocompatible mode (\-N), without reading your viminfo
+file (\-i \s-1NONE\s0), without reading any configuration file (\-u \s-1NONE\s0 for not
+reading .vimrc file and \-U \s-1NONE\s0 for not reading a .gvimrc file).
+.PP
+If the error persists, the chance is good you've found a bug in Vim (see
+also Question 2.6.
+.PP
+If the error does not occur when starting Vim this way, you need to find
+out, what triggers the error, you try starting Vim this way:
+.PP
+.Vb 1
+\& vim \-u ~/.vimrc \-\-noplugin \-N \-i NONE
+.Ve
+.PP
+This will simply use your .vimrc as configuration file, but not load any
+plugins. If the error occurs this time, the error is possibly caused by
+some configuration option inside your .vimrc file. Depending on the
+length of your vimrc file, it can be quite hard to trace the origin
+within that file.
+.PP
+The best way is to add :finish command in the middle of your .vimrc.
+Then restart again using the same command line. If the error still
+occurs, the bug must be caused because of a setting in the first half of
+your .vimrc. If it doesn't happen, the problematic setting must be in
+the second half of your .vimrc. So move the :finish command to the
+middle of that half, of which you know that triggers the error and move
+your way along, until you find the problematic option. If your .vimrc is
+350 lines long, you need at a maximum 9 tries to find the offending line
+(in practise, this can often be further reduced, since often lines
+depend on each other).
+.PP
+If the problem does not occur, when only loading your .vimrc file, the
+error must be caused by a plugin or another runtime file (indent
+autoload or syntax script). Check the output of the :scriptnames command
+to see what files have been loaded and for each one try to disable each
+one by one and see which one triggers the bug. (Often files that are
+loaded by vim, have a simple configuration variable to disable them, but
+you need to check inside each file separately.
 .SH "UNICODE"
 .IX Header "UNICODE"
 Author: Tony Mechelynck <antoine.mechelynck \s-1AT\s0 belgacom.net>
@@ -9267,4 +9393,4 @@ For more information, read
 .IX Header "AUTHOR"
 Current Maintainer: Christian Brabandt <cb@256bit.org>
 .PP
-Last updated on: 20 Juli 2011
+Last updated on: 26 September 2011
