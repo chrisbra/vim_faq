@@ -6,7 +6,7 @@ DOC=$(wildcard doc/*.txt)
 PLUGIN=$(shell basename "$$PWD")
 VERSION=$(shell sed -n '/Version:/{s/^[^0-9]*\([0-9]\+\)$$/\1/;p}' $(SCRIPT))
 # generate pdf file
-DOPDF=0
+DOPDF=1
 
 
 .PHONY: $(PLUGIN).vmb README
