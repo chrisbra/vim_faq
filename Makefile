@@ -6,35 +6,35 @@ DOC=$(wildcard doc/*.txt)
 PLUGIN=$(shell basename "$$PWD")
 VERSION=$(shell sed -n '/Version:/{s/^[^0-9]*\([0-9]\+\)$$/\1/;p}' $(SCRIPT))
 # generate pdf file
-DOPDF=1
+DOPDF=0
 
 
-.PHONY: $(PLUGIN).vba README
+.PHONY: $(PLUGIN).vmb README
 
 all: release README uninstall install 
 
-vimball: $(PLUGIN).vba
+vimball: $(PLUGIN).vmb
 
 clean:
 	find . -type f \( -name "*.vba" -o -name "*.orig" -o -name "*.~*" \
 	-o -name ".VimballRecord" -o -name ".*.un~" -o -name "*.sw*" -o \
-	-name tags -o -name "*.tmp" \) -delete
+	-name tags -o -name "*.tmp" -o -name "*.vmb" \) -delete
 
 dist-clean: clean
 
 install:
-	vim -N -c':so %' -c':q!' $(PLUGIN)-$(VERSION).vba
+	vim -N -c':so %' -c':q!' $(PLUGIN)-$(VERSION).vmb
 
 uninstall:
-	vim -N -c':RmVimball' -c':q!' $(PLUGIN)-$(VERSION).vba
+	vim -N -c':RmVimball' -c':q!' $(PLUGIN)-$(VERSION).vmb
 
 README:
 	cp -f $(DOC) README
 
-$(PLUGIN).vba:
-	rm -f $(PLUGIN)-$(VERSION).vba
+$(PLUGIN).vmb:
+	rm -f $(PLUGIN)-$(VERSION).vmb
 	vim -N -c 'ru! vimballPlugin.vim' -c ':call append("0", [ "$(SCRIPT)", "$(DOC)"])' -c '$$d' -c ":%MkVimball $(PLUGIN)-$(VERSION)  ." -c':q!'
-	if [ -f $(PLUGIN)-$(VERSION).vba ]; then ln -f $(PLUGIN)-$(VERSION).vba $(PLUGIN).vba; fi
+	if [ -f $(PLUGIN)-$(VERSION).vmb ]; then ln -f $(PLUGIN)-$(VERSION).vmb $(PLUGIN).vmb; fi
      
 
 release:
