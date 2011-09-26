@@ -68,7 +68,6 @@ SECTION 5 - EDITING A FILE
     5.11. How do I open a file for editing without saving the modifications
           to the current file?
     5.12. How do I reduce the loading time for very large files in Vim?
-          (*New*)
 
 SECTION 6 - EDITING MULTIPLE FILES
     6.1. How do I open multiple files at once from within Vim?
@@ -195,7 +194,8 @@ SECTION 11 - SEARCHING TEXT
     11.21. How do I search for a text string that spans multiple lines?
     11.22. How do I search for a pattern only within a range of lines
            in a buffer?
-    11.23. How do I clear the last searched pattern? (*New*)
+    11.23. How do I clear the last searched pattern?
+    11.24. Why does this pattern 'a.\{-}p\@!' not match?
 
 SECTION 12 - CHANGING TEXT
     12.1. How do I delete all the trailing white space characters (SPACE
@@ -1656,6 +1656,12 @@ Note that the above settings will disable many Vim features including the
 following: Swap files support for crash recovery, undo support, syntax
 highlighting, filetype detection and other autocommand based features.
 
+There is also the LargeFile plugin available at
+http://www.vim.org/scripts/script.php?script_id=1506
+which automatically sets these options, when working with large files
+(it is configurable, what is considered to be a large file, be default,
+it is 100MB).
+
 
 =============================================================================
 
@@ -2920,6 +2926,28 @@ For more information, read
     :help :let-@
     :help autocmd-searchpat
     :help last-pattern
+
+11.24. Why does this pattern 'a.\{-}p\@!' not match?
+
+"\{-}" doesn't just mean "as few as possible", it means "as few as
+possible to make the whole pattern succeed". If it didn't match the 'p',
+the whole pattern would fail (because of the "p\@!") so it does match
+the "p". It is a longer match, but it is the shortest match that makes
+the whole pattern succeed. 
+
+If you wanted "as few as possible regardless" you would use "\@>", which
+basically divides a pattern up so that the pieces either side behave
+independently. If the pattern were "a.\{-}\@>p\@!" then ".\{-}" would
+always match nothing because that's the smallest match that can succeed
+when there are not other restrictions. The whole pattern then would
+behave the same as "ap\@!", i.e. it would match any "a" not followed by
+a "p").
+
+This means, it matches as
+few as possible 'a's whithout trying to keep going until Vim finds the
+longest match. This means, it will still match 'ap'.
+
+
 
 
 =============================================================================
