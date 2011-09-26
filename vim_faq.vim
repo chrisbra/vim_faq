@@ -207,7 +207,7 @@ function! VimifyAndInstallFaq(vim_faq_textfile, vim_doc_path)
 	\ \t\t\t\t\t\t\t\t*faq-\2*\1\2\.\3/
 
     " Add hyperlinks to references to other questions
-    %s/Question:\? \?\(\d\+\.\d\+\)\.\?/ *faq-\1*/
+    %s/Question:\? \?\(\d\+\.\d\+\)\.\?/& *faq-\1*/
 
     " Remove (*New*) and (*Updated*), first if on separate line
     %s/^\s\+(\*\(New\|Updated\)\*)\n//
