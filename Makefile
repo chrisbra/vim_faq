@@ -11,7 +11,9 @@ DOPDF=1
 
 .PHONY: $(PLUGIN).vmb README
 
-all: release README uninstall install 
+all: help vimball uninstall install 
+
+release: help generate README vimball uninstall install
 
 vimball: $(PLUGIN).vmb
 
@@ -37,13 +39,15 @@ $(PLUGIN).vmb:
 	if [ -f $(PLUGIN)-$(VERSION).vmb ]; then ln -f $(PLUGIN)-$(VERSION).vmb $(PLUGIN).vmb; fi
      
 
-release:
+help:
+	vim -u NONE -U NONE -N -c ':so vim_faq.vim|:CreateVimFAQHelp|wq' ${FAQ}
+
+generate:
 	vim -u NONE -U NONE -N -c ':$$s/Last updated on: \zs.*$$/\=strftime("%d %B %Y")/|wq' ${FAQ}
 	vim -u NONE -U NONE -N -c '/^\" GetLatestVimScripts: /s/\d\+\s\ze:AutoInstall:/\=(submatch(0)+1)." "/|wq' ${SCRIPT}
 	vim -u NONE -U NONE -N -c '/^" Last Change: /s/: \zs.*$$/\=strftime("%d %B %Y")/|wq' ${SCRIPT}
 	vim -u NONE -U NONE -N -c '/^" Version:/s/\d\+/\=submatch(0)+1/|wq' ${SCRIPT}
 	VERSION=$(shell sed -n '/Version:/{s/^.*\(\S\?\.\?\S\+\)$$/\1/;p}' $(SCRIPT))
-	vim -u NONE -U NONE -N -c ':so vim_faq.vim|:CreateVimFAQHelp|wq' ${FAQ}
 	# Generate additional formats
 	vim -u NONE -U NONE -N -c ':so vim_faq.vim|:CreateVimPODFile|q' ${FAQ}
 	pod2man --name=vimfaq --release=${VERSION} --center='http://vimhelp.appspot.com/vim_faq.txt.html' ${POD} > others/${NAME}.1
