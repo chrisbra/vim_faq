@@ -1144,7 +1144,7 @@ e-mail address. There is also a public bug tracker available at
 http://code.google.com/p/vim/issues/list. A copy of each message there
 will be forwarded to the Vim Development list.
 
-The Vim Development mailing list (see Question 2.3) is a good place to
+The Vim Development mailing list (see Question 2.2) is a good place to
 discuss general bugs.  If the bug you find is with syntax highlighting
 or some other "added feature" (i.e. not directly programmed into vim),
 attempt to inform the maintainer of that feature.
@@ -8688,4 +8688,4 @@ For more information, read
 =============================================================================
 
 Current Maintainer: Christian Brabandt <cb@256bit.org>
-Last updated on: 26 September 2011
+Last updated on: 29 September 2011
