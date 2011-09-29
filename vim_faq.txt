@@ -729,7 +729,7 @@ SECTION 36 - VARIOUS
     36.10. How do I use Copy and Paste with Vim?
     36.11. Why shouldn't I modify the files in the system runtime
            directory?
-    36.12. How Du I debug and find out if there is an error in my .vimrc
+    36.12. How do I debug and find out if there is an error in my .vimrc
            or in any other file that is read during startup?
 
 SECTION 37 - UNICODE
@@ -8464,7 +8464,7 @@ different filetypes and where to put those modifications so that
 they will not be overwritten.
 
 
-36.12. How Du I debug and find out if there is an error in my .vimrc or
+36.12. How do I debug and find out if there is an error in my .vimrc or
        in any other file that is read during startup?
 
 First, you need to find out, whether the error is in the actual runtime
