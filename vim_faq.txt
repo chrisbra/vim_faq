@@ -1144,10 +1144,10 @@ e-mail address. There is also a public bug tracker available at
 http://code.google.com/p/vim/issues/list. A copy of each message there
 will be forwarded to the Vim Development list.
 
-The Vim Development mailing list (see above) is a good place to discuss
-general bugs.  If the bug you find is with syntax highlighting or some
-other "added feature" (i.e. not directly programmed into vim), attempt to
-inform the maintainer of that feature.
+The Vim Development mailing list (see Question 2.3) is a good place to
+discuss general bugs.  If the bug you find is with syntax highlighting
+or some other "added feature" (i.e. not directly programmed into vim),
+attempt to inform the maintainer of that feature.
 
 For more information, read
 
@@ -8479,7 +8479,7 @@ file (-i NONE), without reading any configuration file (-u NONE for not
 reading .vimrc file and -U NONE for not reading a .gvimrc file).
 
 If the error persists, the chance is good you've found a bug in Vim (see
-also Question 2.6.
+also Question 2.6.)
 
 If the error does not occur when starting Vim this way, you need to find
 out, what triggers the error, you try starting Vim this way:
