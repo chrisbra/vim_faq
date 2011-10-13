@@ -4514,6 +4514,20 @@ file. To use the viminfo file, make sure the 'viminfo' option is not empty.
 To save and restore Vim marks, the 'viminfo' option should not contain the
 'f' flag or should have a value greater than zero for the 'f' option.
 
+You can also use the viminfo file to synchronize the commandline history
+across different sessions using :wvimfo and :rviminfo commands together
+with the FocusGained and FocusLost autocommands:
+
+    augroup viminfo
+        au!
+        au FocusLost * wviminfo
+        au FocusGained * rviminfo
+    auggroup end
+
+Note, this will only work reliably, when Vim can detect the FocusLost
+and FocusGained autocommands correctly. This means it should work with
+GVim but might depend on your terminal for konsole vim.
+
 For more information, read
 
     :help 21.3
@@ -4521,6 +4535,8 @@ For more information, read
     :help 'viminfo'
     :help :wviminfo
     :help :rviminfo
+    :help FocusLost
+    :help FocusGained
 
 
 =============================================================================
