@@ -346,7 +346,7 @@ SECTION 17 - VIMINFO
           in the viminfo file. What should I do to get rid of these
           messages?
     17.2. How do I disable the viminfo feature?
-    17.3. How do I save and use Vim marks across Vim sessions?
+    17.3. How do I save and use Vim marks/commands across Vim sessions? 
 
 SECTION 18 - REMOTE EDITING
     18.1. How do I open a file with existing instance of gvim? What
@@ -4507,7 +4507,7 @@ For more information, read
     :help 'viminfo'
 
 
-17.3. How do I save and use Vim marks across Vim sessions?
+17.3. How do I save and use Vim marks/commands across Vim sessions?
 
 You can save and restore Vim marks across Vim sessions using the viminfo
 file. To use the viminfo file, make sure the 'viminfo' option is not empty.
@@ -4520,8 +4520,8 @@ with the FocusGained and FocusLost autocommands:
 
     augroup viminfo
         au!
-        au FocusLost * wviminfo
-        au FocusGained * rviminfo
+        au FocusLost   * wviminfo
+        au FocusGained * rviminfo!
     auggroup end
 
 Note, this will only work reliably, when Vim can detect the FocusLost
@@ -8499,6 +8499,11 @@ also Question 2.6.)
 
 If the error does not occur when starting Vim this way, you need to find
 out, what triggers the error, you try starting Vim this way:
+
+    vim -u NONE -U NONE -N
+
+If the error occurs, the problem is your .viminfo file. Simply delete
+the viminfo file then. If the error does not occur, try:
 
     vim -u ~/.vimrc --noplugin -N -i NONE
 
