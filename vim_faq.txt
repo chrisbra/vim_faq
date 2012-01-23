@@ -480,6 +480,8 @@ SECTION 24 - SYNTAX HIGHLIGHT
            highlighting into a HTML file?
     24.15. How do I list the definition of all the current highlight
            groups?
+    24.16. How can I embed one syntax highlighting language into another
+           one?
 
 SECTION 25 - VIM SCRIPT WRITING
     25.1. How do I list the names of all the scripts sourced by Vim?
@@ -5931,6 +5933,23 @@ For more information, read
 
     :help :highlight
 
+24.16. How can I embed one syntax highlighting language into another one?
+
+It is possible to include one syntax highlighting into another one,
+however most of the currently deployed syntax highlighting scripts are
+not prepared to be included into another syntax script.
+
+You can however create your own custom script to define your own
+regions, which will be highlighted with a different language.
+
+See the wiki for a comprehensive solution:
+http://vim.wikia.com/wiki/Different_syntax_highlighting_within_regions_of_a_file
+
+For more information, read
+
+    :help :syn-include
+    :help sh-awk
+    
 
 =============================================================================
 
