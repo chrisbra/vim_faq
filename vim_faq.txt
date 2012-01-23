@@ -3557,6 +3557,17 @@ The last two commands will pad the line numbers with space characters.  The
 last command will right align the numbers and the command before that will
 left align the numbers.
 
+If you don't want to number consecutive lines but rather non-consecutive
+regions, you can also use this idiom:
+
+    :let i = 1
+    :g/TODO/s/^/\=printf('%2d.',i)|let i+=1
+
+This first initializes the variable i with 1. In the next line, a :g
+command is used to perform a substitute command only on lines, that
+match 'TODO'. After the substitute command has taken place, the variable
+i will be incremented by 1.
+
 For more information, read
 
     :help sub-replace-special
