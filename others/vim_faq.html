@@ -259,6 +259,7 @@
 		<li><a href="#11_22__how_do_i_search_for_a_pattern_within_the_specified_range_of_lines">11.22. How do I search for a pattern within the specified range of lines</a></li>
 		<li><a href="#11_23__how_do_i_clear_the_last_searched_pattern">11.23. How do I clear the last searched pattern?</a></li>
 		<li><a href="#11_24__why_does_this_pattern__a_____p_____not_match">11.24. Why does this pattern 'a.\{-}p\@!' not match?</a></li>
+		<li><a href="#11_25__how_can_i_use_____within_a_pattern__without_escaping_it">11.25. How can I use '/' within a pattern, without escaping it?</a></li>
 	</ul>
 
 	<li><a href="#changing_text">CHANGING TEXT</a></li>
@@ -365,7 +366,7 @@
 
 		<li><a href="#17_1__when_i_invoke_vim__i_get_error_messages_about_illegal_characters_in">17.1. When I invoke Vim, I get error messages about illegal characters in</a></li>
 		<li><a href="#17_2__how_do_i_disable_the_viminfo_feature">17.2. How do I disable the viminfo feature?</a></li>
-		<li><a href="#17_3__how_do_i_save_and_use_vim_marks_across_vim_sessions">17.3. How do I save and use Vim marks across Vim sessions?</a></li>
+		<li><a href="#17_3__how_do_i_save_and_use_vim_marks_commands_across_vim_sessions">17.3. How do I save and use Vim marks/commands across Vim sessions?</a></li>
 	</ul>
 
 	<li><a href="#remote_editing">REMOTE EDITING</a></li>
@@ -472,6 +473,7 @@
 		<li><a href="#24_13__how_do_i_highlight_all_the_characters_after_a_particular_column">24.13. How do I highlight all the characters after a particular column?</a></li>
 		<li><a href="#24_14__how_do_i_convert_a_source_file___c___h__etc__with_the_vim_syntax">24.14. How do I convert a source file (.c, .h, etc) with the Vim syntax</a></li>
 		<li><a href="#24_15__how_do_i_list_the_definition_of_all_the_current_highlight_groups">24.15. How do I list the definition of all the current highlight groups?</a></li>
+		<li><a href="#24_16__how_can_i_embed_one_syntax_highlighting_language_into_another_one">24.16. How can I embed one syntax highlighting language into another one?</a></li>
 	</ul>
 
 	<li><a href="#vim_script_writing">VIM SCRIPT WRITING</a></li>
@@ -658,7 +660,7 @@
 		<li><a href="#36_9__how_do_i_start_vim_in_insert_mode">36.9. How do I start Vim in insert mode?</a></li>
 		<li><a href="#36_10__how_do_i_use_copy_and_paste_with_vim">36.10. How do I use Copy and Paste with Vim?</a></li>
 		<li><a href="#36_11__why_shouldn_t_i_modify_the_files_in_the_system_runtime_directory">36.11. Why shouldn't I modify the files in the system runtime directory?</a></li>
-		<li><a href="#36_12__how_du_i_debug_and_find_out_if_there_is_an_error_in_my__vimrc_or">36.12. How Du I debug and find out if there is an error in my .vimrc or</a></li>
+		<li><a href="#36_12__how_do_i_debug_and_find_out_if_there_is_an_error_in_my__vimrc_or">36.12. How do I debug and find out if there is an error in my .vimrc or</a></li>
 	</ul>
 
 	<li><a href="#unicode">UNICODE</a></li>
@@ -914,7 +916,8 @@ this FAQ is available at <a href="http://vimhelp.appspot.com/vim_faq.txt.html">h
  11.22. How do I search for a pattern only within a range of lines
         in a buffer?
  11.23. How do I clear the last searched pattern?
- 11.24. Why does this pattern 'a.\{-}p\@!' not match?</pre>
+ 11.24. Why does this pattern 'a.\{-}p\@!' not match?
+ 11.25. How can I use '/' within a pattern, without escaping it?</pre>
 <p>
 </p>
 <hr />
@@ -1083,7 +1086,7 @@ this FAQ is available at <a href="http://vimhelp.appspot.com/vim_faq.txt.html">h
        in the viminfo file. What should I do to get rid of these
        messages?
  17.2. How do I disable the viminfo feature?
- 17.3. How do I save and use Vim marks across Vim sessions?</pre>
+ 17.3. How do I save and use Vim marks/commands across Vim sessions?</pre>
 <p>
 </p>
 <hr />
@@ -1237,7 +1240,9 @@ this FAQ is available at <a href="http://vimhelp.appspot.com/vim_faq.txt.html">h
  24.14. How do I convert a source file (.c, .h, etc) with the Vim syntax
         highlighting into a HTML file?
  24.15. How do I list the definition of all the current highlight
-        groups?</pre>
+        groups?
+ 24.16. How can I embed one syntax highlighting language into another
+        one?</pre>
 <p>
 </p>
 <hr />
@@ -1521,7 +1526,7 @@ this FAQ is available at <a href="http://vimhelp.appspot.com/vim_faq.txt.html">h
  36.10. How do I use Copy and Paste with Vim?
  36.11. Why shouldn't I modify the files in the system runtime
         directory?
- 36.12. How Du I debug and find out if there is an error in my .vimrc
+ 36.12. How do I debug and find out if there is an error in my .vimrc
         or in any other file that is read during startup?</pre>
 <p>
 </p>
@@ -1936,10 +1941,10 @@ information.</p>
 e-mail address. There is also a public bug tracker available at
 <a href="http://code.google.com/p/vim/issues/list.">http://code.google.com/p/vim/issues/list.</a> A copy of each message there
 will be forwarded to the Vim Development list.</p>
-<p>The Vim Development mailing list (see above) is a good place to discuss
-general bugs.  If the bug you find is with syntax highlighting or some
-other &quot;added feature&quot; (i.e. not directly programmed into vim), attempt to
-inform the maintainer of that feature.</p>
+<p>The Vim Development mailing list (see Question 2.2) is a good
+place to discuss general bugs.  If the bug you find is with syntax
+highlighting or some other &quot;added feature&quot; (i.e. not directly programmed
+into vim), attempt to inform the maintainer of that feature.</p>
 <p>For more information, read</p>
 <p><strong>:help bug-reports</strong></p>
 <p>
@@ -3394,6 +3399,25 @@ few as possible 'a's whithout trying to keep going until Vim finds the
 longest match. This means, it will still match 'ap'.</p>
 <p>
 </p>
+<h2><a name="11_25__how_can_i_use_____within_a_pattern__without_escaping_it">11.25. How can I use '/' within a pattern, without escaping it?</a></h2>
+<p>When using / to search for a pattern, you need to escape all '/' within
+the pattern, because they would otherwise terminate the pattern. So you
+can't directly search for /usr/share/doc/ but need to search for
+\/usr\/share\/doc\/</p>
+<p>The easiest solution around that, would be to use '?' to start a
+backward search and afterwards use /&lt;CR&gt; to use the last search-pattern
+in forward direction.</p>
+<p>If you have a Vim, that has the eval-feature built in (which needs at
+least a normal built or higher), you can also directly paste the pattern
+into the search register:</p>
+<p>:let @/ = '/usr/share/doc/'</p>
+<p>Then use 'n' to jump to the next occurrence.</p>
+<p>See also the help at</p>
+<pre>
+ :h @/
+ :h /&lt;CR&gt;</pre>
+<p>
+</p>
 <hr />
 <h1><a name="changing_text">CHANGING TEXT</a></h1>
 <p>
@@ -3878,6 +3902,15 @@ several ways. Some of them are listed below:</p>
 <p>The last two commands will pad the line numbers with space characters.  The
 last command will right align the numbers and the command before that will
 left align the numbers.</p>
+<p>If you don't want to number consecutive lines but rather non-consecutive
+regions, you can also use this idiom:</p>
+<pre>
+ :let i = 1
+ :g/TODO/s/^/\=printf('%2d.',i)|let i+=1</pre>
+<p>This first initializes the variable i with 1. In the next line, a :g
+command is used to perform a substitute command only on lines, that
+match 'TODO'. After the substitute command has taken place, the variable
+i will be incremented by 1.</p>
 <p>For more information, read</p>
 <p><strong>:help sub-replace-special</strong></p>
 <p><strong>:help line()</strong></p>
@@ -4650,17 +4683,31 @@ feature by setting the 'viminfo' option to an empty string in your local
 <p><strong>:help 'viminfo'</strong></p>
 <p>
 </p>
-<h2><a name="17_3__how_do_i_save_and_use_vim_marks_across_vim_sessions">17.3. How do I save and use Vim marks across Vim sessions?</a></h2>
+<h2><a name="17_3__how_do_i_save_and_use_vim_marks_commands_across_vim_sessions">17.3. How do I save and use Vim marks/commands across Vim sessions?</a></h2>
 <p>You can save and restore Vim marks across Vim sessions using the viminfo
 file. To use the viminfo file, make sure the 'viminfo' option is not empty.
 To save and restore Vim marks, the 'viminfo' option should not contain the
 'f' flag or should have a value greater than zero for the 'f' option.</p>
+<p>You can also use the viminfo file to synchronize the commandline history
+across different sessions using :wvimfo and :rviminfo commands together
+with the FocusGained and FocusLost autocommands:</p>
+<pre>
+ augroup viminfo
+     au!
+     au FocusLost   * wviminfo
+     au FocusGained * rviminfo!
+ auggroup end</pre>
+<p>Note, this will only work reliably, when Vim can detect the FocusLost
+and FocusGained autocommands correctly. This means it should work with
+GVim but might depend on your terminal for konsole vim.</p>
 <p>For more information, read</p>
 <p><strong>:help 21.3</strong></p>
 <p><strong>:help viminfo</strong></p>
 <p><strong>:help 'viminfo'</strong></p>
 <p><strong>:help :wviminfo</strong></p>
 <p><strong>:help :rviminfo</strong></p>
+<p><strong>:help FocusLost</strong></p>
+<p><strong>:help FocusGained</strong></p>
 <p>
 </p>
 <hr />
@@ -5777,6 +5824,20 @@ with the Vim syntax highlighting. Use the following command:</p>
 &quot;:highlight&quot; (without any arguments) ex command.</p>
 <p>For more information, read</p>
 <p><strong>:help :highlight</strong></p>
+<p>
+</p>
+<h2><a name="24_16__how_can_i_embed_one_syntax_highlighting_language_into_another_one">24.16. How can I embed one syntax highlighting language into another one?</a></h2>
+<p>It is possible to include one syntax highlighting into another one,
+however most of the currently deployed syntax highlighting scripts are
+not prepared to be included into another syntax script.</p>
+<p>You can however create your own custom script to define your own
+regions, which will be highlighted with a different language.</p>
+<p>See the wiki for a comprehensive solution:
+<a href="http://vim.wikia.com/wiki/Different_syntax_highlighting_within_regions_of_a_file">http://vim.wikia.com/wiki/Different_syntax_highlighting_within_regions_of_a_file</a></p>
+<p>For more information, read</p>
+<p><strong>:help :syn-include</strong></p>
+<p><strong>:help sh-awk</strong></p>
+<p></p>
 <p>
 </p>
 <hr />
@@ -7821,7 +7882,7 @@ different filetypes and where to put those modifications so that
 they will not be overwritten.</p>
 <p>
 </p>
-<h2><a name="36_12__how_du_i_debug_and_find_out_if_there_is_an_error_in_my__vimrc_or_in_any_other_file_that_is_read_during_startup">36.12. How Du I debug and find out if there is an error in my .vimrc or
+<h2><a name="36_12__how_do_i_debug_and_find_out_if_there_is_an_error_in_my__vimrc_or_in_any_other_file_that_is_read_during_startup">36.12. How do I debug and find out if there is an error in my .vimrc or
     in any other file that is read during startup?</a></h2>
 <p>First, you need to find out, whether the error is in the actual runtime
 files or any plugin that is distributed with Vim or whether it is a
@@ -7833,9 +7894,13 @@ first, start vim like this:</p>
 file (-i NONE), without reading any configuration file (-u NONE for not
 reading .vimrc file and -U NONE for not reading a .gvimrc file).</p>
 <p>If the error persists, the chance is good you've found a bug in Vim (see
-also Question 2.6.</p>
+also Question 2.6.)</p>
 <p>If the error does not occur when starting Vim this way, you need to find
 out, what triggers the error, you try starting Vim this way:</p>
+<pre>
+ vim -u NONE -U NONE -N</pre>
+<p>If the error occurs, the problem is your .viminfo file. Simply delete
+the viminfo file then. If the error does not occur, try:</p>
 <pre>
  vim -u ~/.vimrc --noplugin -N -i NONE</pre>
 <p>This will simply use your .vimrc as configuration file, but not load any
@@ -8001,7 +8066,7 @@ the :digraphs command to list the currently defined digraphs.</p>
 <hr />
 <h1><a name="author">AUTHOR</a></h1>
 <p>Current Maintainer: Christian Brabandt &lt;<a href="mailto:cb@256bit.org">cb@256bit.org</a>&gt;</p>
-<p>Last updated on: 26 September 2011</p>
+<p>Last updated on: 31 Januar 2012</p>
 
 </body>
 

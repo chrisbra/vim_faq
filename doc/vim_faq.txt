@@ -1,6 +1,6 @@
 *vim_faq.txt*	Frequently Asked Questions
 
-Last updated on: 29 September 2011
+Last updated on: 31 January 2012
 
 	  VIM FAQ by: Christian Brabandt <cb@256bit.org>
 

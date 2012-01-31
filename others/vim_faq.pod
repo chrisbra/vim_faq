@@ -209,6 +209,7 @@ this FAQ is available at http://vimhelp.appspot.com/vim_faq.txt.html
         in a buffer?
  11.23. How do I clear the last searched pattern?
  11.24. Why does this pattern 'a.\{-}p\@!' not match?
+ 11.25. How can I use '/' within a pattern, without escaping it?
 
 =head1 CHANGING TEXT
 
@@ -365,7 +366,7 @@ this FAQ is available at http://vimhelp.appspot.com/vim_faq.txt.html
        in the viminfo file. What should I do to get rid of these
        messages?
  17.2. How do I disable the viminfo feature?
- 17.3. How do I save and use Vim marks across Vim sessions?
+ 17.3. How do I save and use Vim marks/commands across Vim sessions? 
 
 =head1 REMOTE EDITING
 
@@ -506,6 +507,8 @@ this FAQ is available at http://vimhelp.appspot.com/vim_faq.txt.html
         highlighting into a HTML file?
  24.15. How do I list the definition of all the current highlight
         groups?
+ 24.16. How can I embed one syntax highlighting language into another
+        one?
 
 =head1 VIM SCRIPT WRITING
 
@@ -767,7 +770,7 @@ this FAQ is available at http://vimhelp.appspot.com/vim_faq.txt.html
  36.10. How do I use Copy and Paste with Vim?
  36.11. Why shouldn't I modify the files in the system runtime
         directory?
- 36.12. How Du I debug and find out if there is an error in my .vimrc
+ 36.12. How do I debug and find out if there is an error in my .vimrc
         or in any other file that is read during startup?
 
 =head1 UNICODE
@@ -1199,10 +1202,10 @@ e-mail address. There is also a public bug tracker available at
 http://code.google.com/p/vim/issues/list. A copy of each message there
 will be forwarded to the Vim Development list.
 
-The Vim Development mailing list (see above) is a good place to discuss
-general bugs.  If the bug you find is with syntax highlighting or some
-other "added feature" (i.e. not directly programmed into vim), attempt to
-inform the maintainer of that feature.
+The Vim Development mailing list (see Question 2.2) is a good
+place to discuss general bugs.  If the bug you find is with syntax
+highlighting or some other "added feature" (i.e. not directly programmed
+into vim), attempt to inform the maintainer of that feature.
 
 For more information, read
 
@@ -3299,6 +3302,29 @@ few as possible 'a's whithout trying to keep going until Vim finds the
 longest match. This means, it will still match 'ap'.
 
 
+=head2 11.25. How can I use '/' within a pattern, without escaping it?
+
+When using / to search for a pattern, you need to escape all '/' within
+the pattern, because they would otherwise terminate the pattern. So you
+can't directly search for /usr/share/doc/ but need to search for
+\/usr\/share\/doc\/
+
+The easiest solution around that, would be to use '?' to start a
+backward search and afterwards use /<CR> to use the last search-pattern
+in forward direction.
+
+If you have a Vim, that has the eval-feature built in (which needs at
+least a normal built or higher), you can also directly paste the pattern
+into the search register:
+
+:let @/ = '/usr/share/doc/'
+
+Then use 'n' to jump to the next occurrence.
+
+See also the help at
+
+ :h @/
+ :h /<CR>
 
 
 
@@ -4001,6 +4027,17 @@ several ways. Some of them are listed below:
 The last two commands will pad the line numbers with space characters.  The
 last command will right align the numbers and the command before that will
 left align the numbers.
+
+If you don't want to number consecutive lines but rather non-consecutive
+regions, you can also use this idiom:
+
+ :let i = 1
+ :g/TODO/s/^/\=printf('%2d.',i)|let i+=1
+
+This first initializes the variable i with 1. In the next line, a :g
+command is used to perform a substitute command only on lines, that
+match 'TODO'. After the substitute command has taken place, the variable
+i will be incremented by 1.
 
 For more information, read
 
@@ -5119,12 +5156,26 @@ B<:help 'viminfo'>
 
 
 
-=head2 17.3. How do I save and use Vim marks across Vim sessions?
+=head2 17.3. How do I save and use Vim marks/commands across Vim sessions?
 
 You can save and restore Vim marks across Vim sessions using the viminfo
 file. To use the viminfo file, make sure the 'viminfo' option is not empty.
 To save and restore Vim marks, the 'viminfo' option should not contain the
 'f' flag or should have a value greater than zero for the 'f' option.
+
+You can also use the viminfo file to synchronize the commandline history
+across different sessions using :wvimfo and :rviminfo commands together
+with the FocusGained and FocusLost autocommands:
+
+ augroup viminfo
+     au!
+     au FocusLost   * wviminfo
+     au FocusGained * rviminfo!
+ auggroup end
+
+Note, this will only work reliably, when Vim can detect the FocusLost
+and FocusGained autocommands correctly. This means it should work with
+GVim but might depend on your terminal for konsole vim.
 
 For more information, read
 
@@ -5137,6 +5188,10 @@ B<:help 'viminfo'>
 B<:help :wviminfo>
 
 B<:help :rviminfo>
+
+B<:help FocusLost>
+
+B<:help FocusGained>
 
 
 
@@ -6690,6 +6745,25 @@ For more information, read
 B<:help :highlight>
 
 
+=head2 24.16. How can I embed one syntax highlighting language into another one?
+
+It is possible to include one syntax highlighting into another one,
+however most of the currently deployed syntax highlighting scripts are
+not prepared to be included into another syntax script.
+
+You can however create your own custom script to define your own
+regions, which will be highlighted with a different language.
+
+See the wiki for a comprehensive solution:
+http://vim.wikia.com/wiki/Different_syntax_highlighting_within_regions_of_a_file
+
+For more information, read
+
+B<:help :syn-include>
+
+B<:help sh-awk>
+
+ 
 
 
 =head1 VIM SCRIPT WRITING
@@ -9539,7 +9613,7 @@ different filetypes and where to put those modifications so that
 they will not be overwritten.
 
 
-=head2 36.12. How Du I debug and find out if there is an error in my .vimrc or
+=head2 36.12. How do I debug and find out if there is an error in my .vimrc or
     in any other file that is read during startup?
 
 First, you need to find out, whether the error is in the actual runtime
@@ -9554,10 +9628,15 @@ file (-i NONE), without reading any configuration file (-u NONE for not
 reading .vimrc file and -U NONE for not reading a .gvimrc file).
 
 If the error persists, the chance is good you've found a bug in Vim (see
-also Question 2.6.
+also Question 2.6.)
 
 If the error does not occur when starting Vim this way, you need to find
 out, what triggers the error, you try starting Vim this way:
+
+ vim -u NONE -U NONE -N
+
+If the error occurs, the problem is your .viminfo file. Simply delete
+the viminfo file then. If the error does not occur, try:
 
  vim -u ~/.vimrc --noplugin -N -i NONE
 
@@ -9789,4 +9868,4 @@ B<:help 'encoding'>
 
 Current Maintainer: Christian Brabandt <cb@256bit.org>
 
-Last updated on: 26 September 2011
+Last updated on: 31 Januar 2012
