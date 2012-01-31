@@ -196,6 +196,7 @@ SECTION 11 - SEARCHING TEXT
            in a buffer?
     11.23. How do I clear the last searched pattern?
     11.24. Why does this pattern 'a.\{-}p\@!' not match?
+    11.25. How can I use '/' within a pattern, without escaping it?
 
 SECTION 12 - CHANGING TEXT
     12.1. How do I delete all the trailing white space characters (SPACE
@@ -2950,6 +2951,29 @@ few as possible 'a's whithout trying to keep going until Vim finds the
 longest match. This means, it will still match 'ap'.
 
 
+11.25. How can I use '/' within a pattern, without escaping it?
+
+When using / to search for a pattern, you need to escape all '/' within
+the pattern, because they would otherwise terminate the pattern. So you
+can't directly search for /usr/share/doc/ but need to search for
+\/usr\/share\/doc\/
+
+The easiest solution around that, would be to use '?' to start a
+backward search and afterwards use /<CR> to use the last search-pattern
+in forward direction.
+
+If you have a Vim, that has the eval-feature built in (which needs at
+least a normal built or higher), you can also directly paste the pattern
+into the search register:
+
+:let @/ = '/usr/share/doc/'
+
+Then use 'n' to jump to the next occurrence.
+
+See also the help at
+
+    :h @/
+    :h /<CR>
 
 
 =============================================================================
