@@ -7462,10 +7462,45 @@ B<:help :runtime>
 
 =head2 26.3. How do I extend an existing filetype plugin?
 
-You can extend an existing filetype plugin by creating a file under either
-the $VIMRTUNTIME/after/ftplugin or the $VIMRTUNTIME/ftplugin directory. The
-name of the file should be the same as the name of the existing filetype
-plugin file. You can place your additions to the new file.
+You can extend an existing filetype plugin by creating a file in the
+after/ directory in any of the 'runtimepath' directories.
+
+
+- for small changes to be done after (and in addition to) what is
+  already done by the ftplugin installed with Vim, use an after-directory,
+  as follows (replacing foobar by the 'filetype' of the concerned
+  files):
+
+ - For changes private to one user:
+     - on Windows:
+         $HOME/vimfiles/after/ftplugin/foobar.vim
+     - on Unix-like OSes:
+         $HOME/.vim/after/ftplugin/foobar.vim
+ - For changes affecting all users on the system:
+     $VIM/vimfiles/after/ftplugin/foobar.vim
+
+- when replacing the whole filetype-plugin by a different version, or
+  when installing a new ftplugin for some filetype not yet supported by
+  Vim out of the box: use the same paths without the after/ in them. In
+  that case you should place near the start of your plugin an "if...
+  finish... endif... let" block like the one in the plugins distributed
+  with Vim.
+
+All the above paths are given in Vim terminology (which is similar to
+Unix terminology, but is understood even by Vim for Windows); they don't
+exist by default, so the first time you need them you will have to
+create them using mkdir (on any OS including DOS/Windows) or md (on
+DOS/Windows only). $VIM and, on DOS/Windows, $HOME, do not necessarily
+exist outside Vim. If $HOME has no value (or no valid value) inside Vim,
+you can use $VIM instead; but on any but possibly very old versions of
+Windows, $HOMEDRIVE and $HOMEPATH are defined by the system, and if
+$HOME is undefined at Vim startup, Vim will set it by expanding
+$HOMEDRIVE$HOMEPATH before sourcing your vimrc. To know which values Vim
+uses, you can type (in a running Vim):
+
+ :echo $VIM
+ :echo $HOME
+
 
 If you placed the file in the after/ftplugin runtime directory, then Vim
 will first source the existing filetype plugin file and then will source
@@ -9868,4 +9903,4 @@ B<:help 'encoding'>
 
 Current Maintainer: Christian Brabandt <cb@256bit.org>
 
-Last updated on: 31 Januar 2012
+Last updated on: 14 Juli 2012
