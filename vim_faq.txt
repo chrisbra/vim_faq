@@ -4558,8 +4558,8 @@ with the FocusGained and FocusLost autocommands:
     augroup viminfo
         au!
         au FocusLost   * wviminfo
-        au FocusGained * rviminfo!
-    auggroup end
+        au FocusGained * rviminfo
+    augroup end
 
 Note, this will only work reliably, when Vim can detect the FocusLost
 and FocusGained autocommands correctly. This means it should work with
