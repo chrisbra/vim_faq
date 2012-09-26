@@ -124,7 +124,7 @@
 .\" ========================================================================
 .\"
 .IX Title "vimfaq 1"
-.TH vimfaq 1 "2012-07-14" "42" "http://vimhelp.appspot.com/vim_faq.txt.html"
+.TH vimfaq 1 "2012-09-26" "43" "http://vimhelp.appspot.com/vim_faq.txt.html"
 .\" For nroff, turn off justification.  Always turn off hyphenation; it makes
 .\" way too many mistakes in technical documents.
 .if n .ad l
@@ -5115,8 +5115,8 @@ with the FocusGained and FocusLost autocommands:
 \& augroup viminfo
 \&     au!
 \&     au FocusLost   * wviminfo
-\&     au FocusGained * rviminfo!
-\& auggroup end
+\&     au FocusGained * rviminfo
+\& augroup end
 .Ve
 .PP
 Note, this will only work reliably, when Vim can detect the FocusLost
@@ -9515,4 +9515,4 @@ For more information, read
 .IX Header "AUTHOR"
 Current Maintainer: Christian Brabandt <cb@256bit.org>
 .PP
-Last updated on: 14 Juli 2012
+Last updated on: 26 September 2012
