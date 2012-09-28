@@ -8798,4 +8798,4 @@ For more information, read
 =============================================================================
 
 Current Maintainer: Christian Brabandt <cb@256bit.org>
-Last updated on: 26 September 2012
+Last updated on: 28 September 2012

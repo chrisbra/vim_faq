@@ -621,7 +621,7 @@
 		<li><a href="#33_9__i_am_using_vim_to_edit_html_files__how_do_i_start_internet_explorer">33.9. I am using Vim to edit HTML files. How do I start internet explorer</a></li>
 		<li><a href="#33_10__i_would_like_to_use_vim_with_microsoft_visual_studio__how_do_i_do">33.10. I would like to use Vim with Microsoft Visual Studio. How do I do</a></li>
 		<li><a href="#33_11__where_do_i_place_the__vimrc_and__gvimrc_files">33.11. Where do I place the _vimrc and _gvimrc files?</a></li>
-		<li><a href="#33_12__everytime_i_save_a_file__vim_warns_about_the_file_being_changed">33.12. Everytime I save a file, Vim warns about the file being changed</a></li>
+		<li><a href="#33_12__every_time_i_save_a_file__vim_warns_about_the_file_being_changed">33.12. Every time I save a file, Vim warns about the file being changed</a></li>
 	</ul>
 
 	<li><a href="#printing">PRINTING</a></li>
@@ -1225,7 +1225,7 @@ this FAQ is available at <a href="http://vimhelp.appspot.com/vim_faq.txt.html">h
  24.6. How do I highlight the special characters (tabs, trailing spaces,
        end of line, etc) displayed by the 'list' option?
  24.7. How do I specify a colorscheme in my .vimrc/.gvimrc file, so that
-       Vim uses the specified colorscheme everytime?
+       Vim uses the specified colorscheme every time?
  24.8. Vim syntax highlighting is broken. When I am editing a file, some
        parts of the file is not syntax highlighted or syntax highlighted
        incorrectly.
@@ -3395,7 +3395,7 @@ when there are not other restrictions. The whole pattern then would
 behave the same as &quot;ap\@!&quot;, i.e. it would match any &quot;a&quot; not followed by
 a &quot;p&quot;).</p>
 <p>This means, it matches as
-few as possible 'a's whithout trying to keep going until Vim finds the
+few as possible 'a's without trying to keep going until Vim finds the
 longest match. This means, it will still match 'ap'.</p>
 <p>
 </p>
@@ -4322,9 +4322,9 @@ text will be inserted with stair case indentation.</p>
    permanently set the 'paste' option in your .vimrc file. If you are
    going to repeat these steps often, then you can set the
    'pastetoggle' option to a key. When you press the specified key,
-   the 'paste' option option will be toggled. You can press the key
-   once before pasting the text and the press the key once after
-   pasting the text. Note that when the 'paste' option is set, all the
+   the 'paste' option will be toggled. You can press the key once
+   before pasting the text and the press the key once after pasting
+   the text. Note that when the 'paste' option is set, all the
    mappings and abbreviations are disabled.  For more information,
    read the following Vim help topics:</p>
 <p><strong>:help 'paste'</strong></p>
@@ -5714,8 +5714,8 @@ highlighting group is used for the &quot;tab&quot; and &quot;trail&quot; setting
 <p><strong>:help hl-SpecialKey</strong></p>
 <p>
 </p>
-<h2><a name="24_7__how_do_i_specify_a_colorscheme_in_my__vimrc__gvimrc_file__so_that_vim_uses_the_specified_colorscheme_everytime">24.7. How do I specify a colorscheme in my .vimrc/.gvimrc file, so that Vim
-   uses the specified colorscheme everytime?</a></h2>
+<h2><a name="24_7__how_do_i_specify_a_colorscheme_in_my__vimrc__gvimrc_file__so_that_vim_uses_the_specified_colorscheme_every_time">24.7. How do I specify a colorscheme in my .vimrc/.gvimrc file, so that Vim
+   uses the specified colorscheme every time?</a></h2>
 <p>You can specify the color scheme using the &quot;:colorscheme&quot; command in your
 .vimrc or .gvimrc file:</p>
 <pre>
@@ -5748,7 +5748,7 @@ by default. Whenever the cursor moves over an item defined with the
 MatchParen highlighting group.</p>
 <p>However, if the corresponding parenthesis is not visible in the current
 window, the cursor won't jump to it.</p>
-<p>The matchit plugin provides a similar function, that let's the cursor
+<p>The matchit plugin provides a similar function, that lets the cursor
 jump to related items (e.g. &quot;if&quot;, &quot;else&quot;, &quot;endif&quot; items) and skips
 matches in comments. This uses the % command to jump to corresponding
 items. Though both plugins provide similar functions they are unrelated
@@ -7469,9 +7469,9 @@ environment variable to this directory.</p>
 <p><strong>:help _vimrc</strong></p>
 <p>
 </p>
-<h2><a name="33_12__everytime_i_save_a_file__vim_warns_about_the_file_being_changed_outside_of_vim__why">33.12. Everytime I save a file, Vim warns about the file being changed
+<h2><a name="33_12__every_time_i_save_a_file__vim_warns_about_the_file_being_changed_outside_of_vim__why">33.12. Every time I save a file, Vim warns about the file being changed
     outside of Vim. Why?</a></h2>
-<p>If you get the following warning message, everytime you save a file:</p>
+<p>If you get the following warning message, every time you save a file:</p>
 <pre>
  WARNING: The file has been changed since reading it!!!
  Do you really want to write to it (y/n)?</pre>
@@ -8076,7 +8076,7 @@ unset it manually do make Vim write, or not write, the b.o.m.</p>
 - Characters for which a digraph is defined can be typed as two characters
   prefixed by &lt;Ctrl-K&gt;.
 - If you have set the 'digraph' option, you can enter the characters for
-  which a digrph is defined as &lt;char1&gt;&lt;BS&gt;&lt;char2&gt;.
+  which a digraph is defined as &lt;char1&gt;&lt;BS&gt;&lt;char2&gt;.
 - Any character can be entered by using a &lt;Ctrl-V&gt; prefix (or &lt;Ctrl-Q&gt; if
   &lt;Ctrl-V&gt; is remapped to paste from the clipboard).</p>
 <p>For more information, read</p>
@@ -8096,7 +8096,7 @@ the :digraphs command to list the currently defined digraphs.</p>
 <hr />
 <h1><a name="author">AUTHOR</a></h1>
 <p>Current Maintainer: Christian Brabandt &lt;<a href="mailto:cb@256bit.org">cb@256bit.org</a>&gt;</p>
-<p>Last updated on: 26 September 2012</p>
+<p>Last updated on: 28 September 2012</p>
 
 </body>
 

@@ -124,7 +124,7 @@
 .\" ========================================================================
 .\"
 .IX Title "vimfaq 1"
-.TH vimfaq 1 "2012-09-26" "43" "http://vimhelp.appspot.com/vim_faq.txt.html"
+.TH vimfaq 1 "2012-09-28" "44" "http://vimhelp.appspot.com/vim_faq.txt.html"
 .\" For nroff, turn off justification.  Always turn off hyphenation; it makes
 .\" way too many mistakes in technical documents.
 .if n .ad l
@@ -641,7 +641,7 @@ this \s-1FAQ\s0 is available at http://vimhelp.appspot.com/vim_faq.txt.html
 \& 24.6. How do I highlight the special characters (tabs, trailing spaces,
 \&       end of line, etc) displayed by the \*(Aqlist\*(Aq option?
 \& 24.7. How do I specify a colorscheme in my .vimrc/.gvimrc file, so that
-\&       Vim uses the specified colorscheme everytime?
+\&       Vim uses the specified colorscheme every time?
 \& 24.8. Vim syntax highlighting is broken. When I am editing a file, some
 \&       parts of the file is not syntax highlighted or syntax highlighted
 \&       incorrectly.
@@ -3394,7 +3394,7 @@ behave the same as \*(L"ap\e@!\*(R", i.e. it would match any \*(L"a\*(R" not fol
 a \*(L"p\*(R").
 .PP
 This means, it matches as
-few as possible 'a's whithout trying to keep going until Vim finds the
+few as possible 'a's without trying to keep going until Vim finds the
 longest match. This means, it will still match 'ap'.
 .SS "11.25. How can I use '/' within a pattern, without escaping it?"
 .IX Subsection "11.25. How can I use '/' within a pattern, without escaping it?"
@@ -4650,9 +4650,9 @@ You can fix this problem in a terminal Vim in several ways:
    permanently set the 'paste' option in your .vimrc file. If you are
    going to repeat these steps often, then you can set the
    'pastetoggle' option to a key. When you press the specified key,
-   the 'paste' option option will be toggled. You can press the key
-   once before pasting the text and the press the key once after
-   pasting the text. Note that when the 'paste' option is set, all the
+   the 'paste' option will be toggled. You can press the key once
+   before pasting the text and the press the key once after pasting
+   the text. Note that when the 'paste' option is set, all the
    mappings and abbreviations are disabled.  For more information,
    read the following Vim help topics:
 .PP
@@ -6456,8 +6456,8 @@ For more information, read
 \&\fB:help hl-NonText\fR
 .PP
 \&\fB:help hl-SpecialKey\fR
-.SS "24.7. How do I specify a colorscheme in my .vimrc/.gvimrc file, so that Vim uses the specified colorscheme everytime?"
-.IX Subsection "24.7. How do I specify a colorscheme in my .vimrc/.gvimrc file, so that Vim uses the specified colorscheme everytime?"
+.SS "24.7. How do I specify a colorscheme in my .vimrc/.gvimrc file, so that Vim uses the specified colorscheme every time?"
+.IX Subsection "24.7. How do I specify a colorscheme in my .vimrc/.gvimrc file, so that Vim uses the specified colorscheme every time?"
 You can specify the color scheme using the \*(L":colorscheme\*(R" command in your
 \&.vimrc or .gvimrc file:
 .PP
@@ -6497,7 +6497,7 @@ MatchParen highlighting group.
 However, if the corresponding parenthesis is not visible in the current
 window, the cursor won't jump to it.
 .PP
-The matchit plugin provides a similar function, that let's the cursor
+The matchit plugin provides a similar function, that lets the cursor
 jump to related items (e.g. \*(L"if\*(R", \*(L"else\*(R", \*(L"endif\*(R" items) and skips
 matches in comments. This uses the % command to jump to corresponding
 items. Though both plugins provide similar functions they are unrelated
@@ -8737,9 +8737,9 @@ For more information, read
 \&\fB:help \f(CB$HOME\fB\-use\fR
 .PP
 \&\fB:help _vimrc\fR
-.SS "33.12. Everytime I save a file, Vim warns about the file being changed outside of Vim. Why?"
-.IX Subsection "33.12. Everytime I save a file, Vim warns about the file being changed outside of Vim. Why?"
-If you get the following warning message, everytime you save a file:
+.SS "33.12. Every time I save a file, Vim warns about the file being changed outside of Vim. Why?"
+.IX Subsection "33.12. Every time I save a file, Vim warns about the file being changed outside of Vim. Why?"
+If you get the following warning message, every time you save a file:
 .PP
 .Vb 2
 \& WARNING: The file has been changed since reading it!!!
@@ -9490,7 +9490,7 @@ Several methods are available:
 \&\- Characters for which a digraph is defined can be typed as two characters
   prefixed by <Ctrl\-K>.
 \&\- If you have set the 'digraph' option, you can enter the characters for
-  which a digrph is defined as <char1><\s-1BS\s0><char2>.
+  which a digraph is defined as <char1><\s-1BS\s0><char2>.
 \&\- Any character can be entered by using a <Ctrl\-V> prefix (or <Ctrl\-Q> if
   <Ctrl\-V> is remapped to paste from the clipboard).
 .PP
@@ -9515,4 +9515,4 @@ For more information, read
 .IX Header "AUTHOR"
 Current Maintainer: Christian Brabandt <cb@256bit.org>
 .PP
-Last updated on: 26 September 2012
+Last updated on: 28 September 2012

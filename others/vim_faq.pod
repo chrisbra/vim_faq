@@ -491,7 +491,7 @@ this FAQ is available at http://vimhelp.appspot.com/vim_faq.txt.html
  24.6. How do I highlight the special characters (tabs, trailing spaces,
        end of line, etc) displayed by the 'list' option?
  24.7. How do I specify a colorscheme in my .vimrc/.gvimrc file, so that
-       Vim uses the specified colorscheme everytime?
+       Vim uses the specified colorscheme every time?
  24.8. Vim syntax highlighting is broken. When I am editing a file, some
        parts of the file is not syntax highlighted or syntax highlighted
        incorrectly.
@@ -3298,7 +3298,7 @@ behave the same as "ap\@!", i.e. it would match any "a" not followed by
 a "p").
 
 This means, it matches as
-few as possible 'a's whithout trying to keep going until Vim finds the
+few as possible 'a's without trying to keep going until Vim finds the
 longest match. This means, it will still match 'ap'.
 
 
@@ -4629,9 +4629,9 @@ B<:help quotestar>
    permanently set the 'paste' option in your .vimrc file. If you are
    going to repeat these steps often, then you can set the
    'pastetoggle' option to a key. When you press the specified key,
-   the 'paste' option option will be toggled. You can press the key
-   once before pasting the text and the press the key once after
-   pasting the text. Note that when the 'paste' option is set, all the
+   the 'paste' option will be toggled. You can press the key once
+   before pasting the text and the press the key once after pasting
+   the text. Note that when the 'paste' option is set, all the
    mappings and abbreviations are disabled.  For more information,
    read the following Vim help topics:
 
@@ -6584,7 +6584,7 @@ B<:help hl-SpecialKey>
 
 
 =head2 24.7. How do I specify a colorscheme in my .vimrc/.gvimrc file, so that Vim
-   uses the specified colorscheme everytime?
+   uses the specified colorscheme every time?
 
 You can specify the color scheme using the ":colorscheme" command in your
 .vimrc or .gvimrc file:
@@ -6630,7 +6630,7 @@ MatchParen highlighting group.
 However, if the corresponding parenthesis is not visible in the current
 window, the cursor won't jump to it. 
 
-The matchit plugin provides a similar function, that let's the cursor
+The matchit plugin provides a similar function, that lets the cursor
 jump to related items (e.g. "if", "else", "endif" items) and skips
 matches in comments. This uses the % command to jump to corresponding
 items. Though both plugins provide similar functions they are unrelated
@@ -9055,10 +9055,10 @@ B<:help _vimrc>
 
 
 
-=head2 33.12. Everytime I save a file, Vim warns about the file being changed
+=head2 33.12. Every time I save a file, Vim warns about the file being changed
     outside of Vim. Why?
 
-If you get the following warning message, everytime you save a file:
+If you get the following warning message, every time you save a file:
 
  WARNING: The file has been changed since reading it!!!
  Do you really want to write to it (y/n)?
@@ -9871,7 +9871,7 @@ Several methods are available:
 - Characters for which a digraph is defined can be typed as two characters
   prefixed by <Ctrl-K>.
 - If you have set the 'digraph' option, you can enter the characters for
-  which a digrph is defined as <char1><BS><char2>.
+  which a digraph is defined as <char1><BS><char2>.
 - Any character can be entered by using a <Ctrl-V> prefix (or <Ctrl-Q> if
   <Ctrl-V> is remapped to paste from the clipboard).
 
@@ -9903,4 +9903,4 @@ B<:help 'encoding'>
 
 Current Maintainer: Christian Brabandt <cb@256bit.org>
 
-Last updated on: 26 September 2012
+Last updated on: 28 September 2012
