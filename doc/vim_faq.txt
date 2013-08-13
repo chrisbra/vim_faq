@@ -1,6 +1,6 @@
 *vim_faq.txt*	Frequently Asked Questions
 
-Last updated on: 26 September 2012
+Last updated on: 28 September 2012
 
 	  VIM FAQ by: Christian Brabandt <cb@256bit.org>
 
@@ -1215,10 +1215,11 @@ SECTION 3 - AVAILABILITY
  								*faq-3.1*
 3.1. What is the latest version of Vim?
 
-The latest version of Vim is 7.3 released on 15th August 2010.
+The latest version of Vim is 7.4 released on 10th August 2013.
 
 The release-history of different versions of Vim is below: >
 
+    Version 7.4     10th August, 2013
     Version 7.3     15th August, 2010
     Version 7.2     9th August, 2008
     Version 7.1     12th May, 2007
@@ -1258,6 +1259,7 @@ For more information, read
     |changed-7.1|
     |changed-7.2|
     |changed-7.3|
+    |changed-7.4|
  								*faq-3.2*
 3.2. Where can I find the latest version of Vim?
 
