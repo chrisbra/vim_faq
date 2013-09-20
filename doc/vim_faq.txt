@@ -1,6 +1,6 @@
 *vim_faq.txt*	Frequently Asked Questions
 
-Last updated on: 28 September 2012
+Last updated on: 13 August 2013
 
 	  VIM FAQ by: Christian Brabandt <cb@256bit.org>
 
@@ -738,8 +738,6 @@ SECTION 36 - VARIOUS
 |faq-36.10| How do I use Copy and Paste with Vim?
 |faq-36.11| Why shouldn't I modify the files in the system runtime
 	  directory?
-|faq-36.12| How do I debug and find out if there is an error in my .vimrc
-	  or in any other file that is read during startup?
                                                                 *faq-unicode*
 SECTION 37 - UNICODE
 |faq-37.1|  Is it possible to create Unicode files using Vim?
@@ -774,17 +772,17 @@ advantage that you can keep your fingers on the keyboard and your eyes on
 the screen. For those who want it, there is mouse support and a GUI version
 with scrollbars and menus.
 
-Vim is an editor, not a word processor. A word processor is used mainly to
-do layout of text. This means positioning it, changing the way it appears
-on output. More often than not, the final document is meant to be printed
-or typeset or what have you, in order to present it in a pleasing manner to
-others. Examples of word processors are Microsoft Word, WordPerfect,
-FrameMaker, and OpenOffice Writer.
+Vim is an editor, not a word processor. A word processor is used mainly
+to do layout of text. This means positioning it, changing the way it
+appears on output. More often than not, the final document is meant to
+be printed or typeset or what have you, in order to present it in a
+pleasing manner to others. Examples of word processors are Microsoft
+Word, FrameMaker, and OpenOffice Writer.
 
 An editor is simply for entering text. Any typesetting or laying out of the
 document is secondary. With an editor, one's main concern is entering text,
 not making the text look good. Examples of editors other than Vim and Vi
-are Emacs, Crisp, Brief, TextMate and xedit.  And Notepad.
+are Emacs, TextMate, Ultraedit and gedit. And Notepad.
 
 For more information read 
 
@@ -792,16 +790,13 @@ For more information read
  								*faq-1.2*
 1.2. Who wrote Vim?
 
-Most of Vim was written by Bram Moolenar, with contributions from too many
-people to mention here. See ":h credits" for a complete list.
-
-Vim is based on Stevie, worked on by Tim Thompson, Tony Andrews and G.R.
-(Fred) Walter.
+Most of Vim is based on Stevie and was written by Bram Moolenaar, with contributions from too many
+people to mention here.
 
 For more information, read: 
 
     |author|
-
+    |credits|
  								*faq-1.3*
 1.3. Is Vim compatible with Vi?
 
@@ -818,9 +813,15 @@ You can also set the 'compatible' option to enable Vi compatibility: >
 
     :set compatible
 <
+If you want to make sure, to start Vim in a 'nocompatible' mode to
+original Vi, supply the -N command line argument: >
+
+    $ vim -N
+<
 For more information, read 
 
     |-C|
+    |-N|
     |'compatible'|
     |compatible-default|
 
@@ -848,6 +849,8 @@ Features to modernise Vi:
      one window to another. Each file opened during a Vim session also has
      an associated buffer and you can easily jump from one to the other.
      Also like any modern GUI, Vim supports opening several files in tabs.
+     You can do batch processing for tabs, buffers, windows and the
+     argumentlist.
 <
   Flexible insert mode >
 
@@ -942,19 +945,21 @@ Advanced user features:
   Scripting language >
 
      Vim has a powerful scripting language so new commands can be created.
-     You can also use Perl, Python, TCL and Ruby to achieve the same thing!
+     You can also use Perl, Python, TCL, Lua and Ruby to achieve the same thing!
 <
   Plugins >
 
      Extra functionality implemented via vim commands (regular commands or
      the scripting language) that is automatically loaded on startup.
-     Examples: file explorer, network editing.  More are being developed
-     and shared on VimOnline all the time.
+     Examples: file explorer, network editing, enhanced autocompletion,
+     syntax checks.
+     More are being developed and shared on VimOnline all the time.
 <
   Syntax highlighting for many programming languages >
 
-     Syntax highlighting for hundreds of programming languages is
-     supported. Support for others can be added.
+     Syntax highlighting (including concealing items) for hundreds of
+     programming languages is supported. Support for others can be
+     added.
 <
   Extended regular expressions >
 
@@ -978,7 +983,7 @@ Advanced user features:
   Extensive customizable >
 
      Vim can be tuned and customized to work like you want by setting
-     options.  You can define your own commands, macros and even plugins
+     options. You can define your own commands, macros and even plugins
      to extend its capabilities
 <
 Programming performance features:
@@ -998,11 +1003,11 @@ Programming performance features:
      Vim allows you to search for a match of the word under the cursor in
      the current and included files.
 <
-  Advance text objects >
+  Advanced text objects >
 
-     Instantly select, or delete, or copy, or indent, or format, or change
-     case, or ... to all the text between ( and ), or { and }, or < and >,
-     or [ and ].  Or a word, sentence, or paragraph.  Very powerful.
+     Instantly select, delete, copy, indent, format, change case, or ...
+     to all the text between ( and ), or { and }, or < and >, or [ and
+     ].  Or a word, sentence, or paragraph.  Very powerful.
 <
   Folding >
 
@@ -1024,7 +1029,6 @@ Programming performance features:
 For more information, read 
 
     |vi-differences|
-
  								*faq-1.5*
 1.5. Is Vim free?
 
@@ -1105,29 +1109,81 @@ You can download the HTML/PDF/PS format of the Vim user manual from: >
 Note, the user manual from that page is currently pretty outdated. It's
 best to either use the documentation that comes with vim or use the
 online version at http://vimhelp.appspot.com
+
+You can find a pdf version of the full English help, including this faq
+(in letter, A4 and Ipad format) at: >
+
+    http://www.nathangrigg.net/vimhelp/
+<
+This document is cross-referenced, so you can use the hyperlink
+functionality.
  								*faq-2.5*
 2.5. I have a "xyz" (some) problem with Vim. How do I determine it is a
-     problem with my setup or with Vim?
+     problem with my setup or with Vim?  / Have I found a bug in Vim?
 
-First, you have to determine that the problem is not with your .vimrc or
-.gvimrc or system vimrc or your personal plugin files or in any of your
-setup files. To do this, use >
+First, you need to find out, whether the error is in the actual runtime
+files or any plugin that is distributed with Vim or whether it is a
+simple side effect of any configuration option from your .vimrc or
+.gvimrc. So first, start vim like this: >
 
-    $ vim -N -u NONE -U NONE
+    vim -u NONE -U NONE -N -i NONE
 <
-This will start Vim in 'nocompatible" mode and will not source your
-personal .vimrc and .gvimrc files. It will also not load your personal
-plugins. In this invocation of Vim, try to reproduce your problem. If you
-are not able to reproduce the problem, then the problem is related to some
-setting in one of your local setup files or plugins. To locate the problem
-in your setup files, you have to use trial and error and try commenting out
-the lines in your setup files one by one. You can also use the -V command
-line argument to Vim to get more debug information and analyze the problem: >
+this starts Vim in nocompatible mode (-N), without reading your viminfo
+file (-i NONE), without reading any configuration file (-u NONE for not
+reading .vimrc file and -U NONE for not reading a .gvimrc file) or even
+plugin.
 
-    $ vim -V2
+In this invocation, try to reproduce your problem. If the error
+persists, the chance is good you've found a bug in Vim (see also
+Question 2.6. |faq-2.6|)
+
+If the error does not occur when starting Vim this way, then the problem
+is either related to some plugin of yours or some setting in onr of your
+local setup files. You need to find out, what triggers the error, you
+try starting Vim this way: >
+
+    vim -u NONE -U NONE -N
+<
+If the error occurs, the problem is your .viminfo file. Simply delete
+the viminfo file then. If the error does not occur, try: >
+
+    vim -u ~/.vimrc --noplugin -N -i NONE
+<
+This will simply use your .vimrc as configuration file, but not load any
+plugins. If the error occurs this time, the error is possibly caused by
+some configuration option inside your .vimrc file. Depending on the
+length of your vimrc file, it can be quite hard to trace the origin
+within that file.
+
+The best way is to add :finish command in the middle of your .vimrc.
+Then restart again using the same command line. If the error still
+occurs, the bug must be caused because of a setting in the first half of
+your .vimrc. If it doesn't happen, the problematic setting must be in
+the second half of your .vimrc. So move the :finish command to the
+middle of that half, of which you know that triggers the error and move
+your way along, until you find the problematic option. If your .vimrc is
+350 lines long, you need at a maximum 9 tries to find the offending line
+(in practise, this can often be further reduced, since often lines
+depend on each other).
+
+If the problem does not occur, when only loading your .vimrc file, the
+error must be caused by a plugin or another runtime file (indent
+autoload or syntax script). Check the output of the :scriptnames command
+to see what files have been loaded and for each one try to disable each
+one by one and see which one triggers the bug. (Often files that are
+loaded by vim, have a simple configuration variable to disable them, but
+you need to check inside each file separately.
+
+You can also use the -V command line argument to get more debug
+information to analyze the problem: >
+
+    $ vim -V2logfile
 <
 You can increase the value passed to the -V argument to get more debug
-information.
+information. By also specifying a logfile name, this makes sure, the
+debug messages don't appear on the screen and won't disturb you when
+trying to reproduce the problem.
+
 
 For more information, read 
 
@@ -1151,10 +1207,12 @@ e-mail address. There is also a public bug tracker available at
 http://code.google.com/p/vim/issues/list. A copy of each message there
 will be forwarded to the Vim Development list.
 
-The Vim Development mailing list (see Question 2.2 |faq-2.2|) is a good
-place to discuss general bugs.  If the bug you find is with syntax
-highlighting or some other "added feature" (i.e. not directly programmed
-into vim), attempt to inform the maintainer of that feature.
+The Vim Development mailing list (see Question 2.2 |faq-2.2|) is a good place to
+discuss general bugs.  If the bug you find is with syntax highlighting,
+a runtime file, or some other "added feature" (i.e. not directly
+programmed into vim), attempt to inform the maintainer of that feature.
+His e-mail address will be mentioned at the top of the corresponding
+runtime file.
 
 For more information, read 
 
@@ -1168,7 +1226,7 @@ It will be auto-generated from the source that is managed in the github
 repository http://www.github.com/chrisbra/vim_faq (Patches are welcome).
 
 The repository also includes the faq in different formats, e.g. manpage,
-and html file, plain text version and a version in vim help format.
+,pdf file, html file, plain text version and a version in vim help format.
 
 A slightly older version (which doesn't seem to get updated anymore) can
 still be found at VimOnline (vim.sf.net). Other places will be decided in
@@ -1206,7 +1264,12 @@ For more information, read
       Is there a public website where I can upload this?
 
 Yes. You can use the Vim Online website to upload your plugins/scripts,
-colorschemes, tips, etc. The site is at http://vim.sourceforge.net
+colorschemes, etc. The site is at http://vim.sourceforge.net
+Nowadays people also seem to share their plugins/runtime files at
+github.
+
+Tips can also be shared in the Wiki which you can find at
+http://vim.wikia.com
 
 =============================================================================
  								*faq-3*
@@ -1313,6 +1376,8 @@ If you want to jump to a specific subject on the help pages, use ":help
 {subject}". If you don't know what to look for, try ":help index" to get a
 list of all available subjects. Use the standard search keys to locate the
 information you want. You can abbreviate the ":help" command as ":h".
+
+For searching the help, see the next Question 4.2. |faq-4.2|
 
 For more information, read 
 
@@ -8541,59 +8606,6 @@ for an explanation of several ways to modify Vim's response to
 different filetypes and where to put those modifications so that
 they will not be overwritten.
 
- 								*faq-36.12*
-36.12. How do I debug and find out if there is an error in my .vimrc or
-       in any other file that is read during startup?
-
-First, you need to find out, whether the error is in the actual runtime
-files or any plugin that is distributed with Vim or whether it is a
-simple side effect of any configuration option from your .vimrc. So
-first, start vim like this: >
-
-    vim -u NONE -U NONE -N -i NONE
-<
-this starts Vim in nocompatible mode (-N), without reading your viminfo
-file (-i NONE), without reading any configuration file (-u NONE for not
-reading .vimrc file and -U NONE for not reading a .gvimrc file).
-
-If the error persists, the chance is good you've found a bug in Vim (see
-also Question 2.6. |faq-2.6|)
-
-If the error does not occur when starting Vim this way, you need to find
-out, what triggers the error, you try starting Vim this way: >
-
-    vim -u NONE -U NONE -N
-<
-If the error occurs, the problem is your .viminfo file. Simply delete
-the viminfo file then. If the error does not occur, try: >
-
-    vim -u ~/.vimrc --noplugin -N -i NONE
-<
-This will simply use your .vimrc as configuration file, but not load any
-plugins. If the error occurs this time, the error is possibly caused by
-some configuration option inside your .vimrc file. Depending on the
-length of your vimrc file, it can be quite hard to trace the origin
-within that file.
-
-The best way is to add :finish command in the middle of your .vimrc.
-Then restart again using the same command line. If the error still
-occurs, the bug must be caused because of a setting in the first half of
-your .vimrc. If it doesn't happen, the problematic setting must be in
-the second half of your .vimrc. So move the :finish command to the
-middle of that half, of which you know that triggers the error and move
-your way along, until you find the problematic option. If your .vimrc is
-350 lines long, you need at a maximum 9 tries to find the offending line
-(in practise, this can often be further reduced, since often lines
-depend on each other).
-
-If the problem does not occur, when only loading your .vimrc file, the
-error must be caused by a plugin or another runtime file (indent
-autoload or syntax script). Check the output of the :scriptnames command
-to see what files have been loaded and for each one try to disable each
-one by one and see which one triggers the bug. (Often files that are
-loaded by vim, have a simple configuration variable to disable them, but
-you need to check inside each file separately.
-
 =============================================================================
  								*faq-37*
 SECTION 37 - UNICODE
@@ -8766,6 +8778,5 @@ For more information, read
 
     |:digraphs|
     |'encoding'|
-
 
  vim:tw=78:ts=8:ft=help:norl:
