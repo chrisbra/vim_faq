@@ -210,9 +210,9 @@ function! VimifyAndInstallFaq(vim_faq_textfile, vim_doc_path)
     %s/Question:\? \?\(\d\+\.\d\+\)\.\?/& |faq-\1|/
 
     " Remove (*New*) and (*Updated*), first if on separate line
-    %s/^\s\+(\*\(New\|Updated\)\*)\n//
+    %s/^\s\+(\*\(New\|Updated\)\*)\n//e
     " and now for the rest of those ...
-    %s/(\*\(New\|Updated\)\*)//
+    %s/(\*\(New\|Updated\)\*)//e
     
     " don't install *faq* and *FAQ* tags
     "%s/\*\(faq\|FAQ\)\*/\1/g
