@@ -114,14 +114,12 @@ SECTION 8 - BUFFERS
 	  number?
 |faq-8.5|   How do I open all the current buffers in separate windows?
 |faq-8.6|   How do I close (delete) a buffer without exiting Vim?
-|faq-8.7|   I have several buffers opened with ":e filename". How do I close
-	  one of the buffers without exiting Vim?
-|faq-8.8|   When I use the command ":%bd" to delete all the buffers, not all
+|faq-8.7|   When I use the command ":%bd" to delete all the buffers, not all
 	  the buffers are deleted. Why?
-|faq-8.9|   How do I display the buffer number of the current buffer/file?
-|faq-8.10|  How do I delete a buffer without closing the window in which the
+|faq-8.8|   How do I display the buffer number of the current buffer/file?
+|faq-8.9|   How do I delete a buffer without closing the window in which the
 	  buffer is displayed?
-|faq-8.11|  How do I map the tab key to cycle through and open all the
+|faq-8.10|  How do I map the tab key to cycle through and open all the
 	  buffers?
                                                                 *faq-windows*
 SECTION 9 - WINDOWS
@@ -1566,6 +1564,11 @@ a file without the EOL at the end of the file: >
     :set noeol
     :w
 <
+Alternatively, you can use: >
+
+    :set noeol
+    :w ++bin
+<
 For more information, read 
 
     |'endofline'|
@@ -1580,7 +1583,7 @@ in the '"' register. You can use the following autocmd in your .vimrc or
 .gvimrc file to open a file at the last edited location: >
 
     au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
-                         \ exe "normal g'\"" | endif
+                         \ exe "normal! g`\"" | endif
 <
 For more information, read 
 
@@ -1635,7 +1638,8 @@ For more information, read
 You can use the ":edit" command, without specifying a file name, to reload
 the current file.  If you have made modifications to the file, you can use
 ":edit!" to force the reload of the current file (you will lose your
-modifications).
+modifications, but depending on your 'undolevels' settings, those
+changes might be saved into the undo history).
 
 For more information, read 
 
@@ -1730,7 +1734,7 @@ highlighting, filetype detection and other autocommand based features.
 There is also the LargeFile plugin available at
 http://www.vim.org/scripts/script.php?script_id=1506
 which automatically sets these options, when working with large files
-(it is configurable, what is considered to be a large file, be default,
+(it is configurable, what is considered to be a large file, by default,
 it is 100MB).
 
 =============================================================================
@@ -1848,7 +1852,7 @@ For more information, read
 
  								*faq-6.5*
 6.5. Is it possible to open multiple top level windows in a single instance
-     of Vim similar to Nedit or emacs?
+     of Vim similar to Nedit or Emacs?
 
 No. It is currently not possible to open multiple top-level windows in a
 single instance of Vim. This feature is in the todo list.
@@ -2000,7 +2004,7 @@ to the current file: >
 <
 By setting the 'hidden' option, you can also save the modification history
 (undo-history) for the buffer. Otherwise, as you switch between files, the
-undo-history will be lost.
+undo-history will be lost (unless you use persistent undofiles).
 
 For more information, read 
 
@@ -2052,6 +2056,11 @@ in the buffer list: >
 
     :ball
 <
+If you want all buffers to be opened in new tabs, simply prefix the :tab
+command: >
+
+    :tab :sball
+<
 For more information, read 
 
     |:ball|
@@ -2071,19 +2080,7 @@ For more information, read
     |:bunload|
 
  								*faq-8.7*
-8.7. I have several buffers opened with :e filename. How do I close one of
-     the buffers without exiting Vim?
-
-You can use the ":bdelete <buffername>" command to close the buffer.
-
-For more information, read 
-
-    |:bdelete|
-    |:bunload|
-    |:bwipeout|
-
- 								*faq-8.8*
-8.8. When I use the command ":%bd" to delete all the buffers, not all the
+8.7. When I use the command ":%bd" to delete all the buffers, not all the
      buffers are deleted. Why?
 
 In the ":%bd" command, the '%' range will be replaced with the starting and
@@ -2095,8 +2092,8 @@ For more information, read
 
     |:bd|
 
- 								*faq-8.9*
-8.9. How do I display the buffer number of the current buffer/file?
+ 								*faq-8.8*
+8.8. How do I display the buffer number of the current buffer/file?
 
 You can use 2<CTRL-G> command to display the buffer number for the current
 file/buffer. Note the use of count before the CTRL-G command. If the count
@@ -2117,9 +2114,9 @@ For more information read,
     |:echo|
     |'statusline'|
 
- 								*faq-8.10*
-8.10. How do I delete a buffer without closing the window in which the
-      buffer is displayed?
+ 								*faq-8.9*
+8.9. How do I delete a buffer without closing the window in which the
+     buffer is displayed?
 
 You can use the following command to open the next buffer and delete
 the current buffer. >
@@ -2132,8 +2129,8 @@ For more information read,
     |:bdelete|
     |:buffers|
 
- 								*faq-8.11*
-8.11. How do I map the tab key to cycle through and open all the buffers?
+ 								*faq-8.10*
+8.10. How do I map the tab key to cycle through and open all the buffers?
 
 You can use the following two map commands, to map the CTRL-Tab key to open
 the next buffer and the CTRL-SHIFT-Tab key to open the previous buffer: >
@@ -2141,10 +2138,12 @@ the next buffer and the CTRL-SHIFT-Tab key to open the previous buffer: >
     :nnoremap <C-Tab> :bnext<CR>
     :nnoremap <S-C-Tab> :bprevious<CR>
 <
+Note, this might not work in the terminal version of Vim.
+
 For more information read, 
 
     |:bnext|
-    |:previous|
+    |:bprevious|
 
 =============================================================================
  								*faq-9*
@@ -2335,6 +2334,8 @@ You can use the following mappings: >
     :imap <Up> <C-o>gk
     :map <Down> gj
     :imap <Down> <C-o>gj
+    :noremap j gj
+    :noremap k gk
 <
  								*faq-10.5*
 10.5. What is the definition of a sentence, paragraph and section in Vim?
@@ -2419,6 +2420,7 @@ For more information, read
     |'scrollbind'|
     |scroll-binding|
     |'scrollopt'|
+    |'cursorbind'|
 
  								*faq-10.9*
 10.9. When I use my arrow keys, Vim changes modes, inserts weird characters
@@ -2554,6 +2556,12 @@ To temporarily turn off the search highlighting, use >
 <
 You can also clear the search highlighting, by searching for a pattern that
 is not in the current file (for example, search for the pattern 'asdf').
+
+You can use this mapping, to clear the search highlighting when
+redrawing the window pressing <CTRL-L> >
+
+    :nnoremap <silent> <C-L> <C-L>:nohls<CR>
+<
 
 For more information, read 
 
@@ -2787,7 +2795,7 @@ For more information, read
 You can use the 'argdo', 'bufdo', 'windo' or 'tabdo' commands to execute an
 ex command on multiple files. For example: >
 
-    :argdo %s/foo/bar/g
+    :argdo %s/foo/bar/g|upd
 <
 For more information, read 
 
@@ -2869,6 +2877,13 @@ using a collation [] like this: >
     /[\xbc]
     /[\u00bc]
 <
+Alternatively, you can use the special atom \%d \%o \%x \%u: >
+
+    /\%d188
+    /\%o274
+    /\%xbc
+    /\%u00bc
+<
 Or you use digraphs to enter the character. For example enter: >
 
     /CTRL-K14
@@ -2881,6 +2896,7 @@ For more information, read
     |:ascii|
     |ga|
     |/\]|
+    |/\%d|
     |digraphs|
 
  								*faq-11.19*
@@ -3244,7 +3260,7 @@ For more information, read
 You can use the following command to add a line before each line with
 "pattern" in it: >
 
-    :g/pattern/normal Oi<line of text goes here>
+    :g/pattern/normal! Oi<line of text goes here>
 <
 Alternatively you can yank the line using the Y command and then insert the
 line using the following command: >
@@ -3942,7 +3958,7 @@ For more information, read
 
  								*faq-14.9*
 14.9. When I indent lines using the > or < key, the standard 8-tabstops are
-     used instead of the current 'tabstop' setting. Why?
+      used instead of the current 'tabstop' setting. Why?
 
 The number of spaces used when lines are indented using the ">" operator is
 controlled by the 'shiftwidth' option. The 'tabstop' setting is not used
@@ -4300,11 +4316,11 @@ For more information, read
 15.4. How do I execute an ex command on a column of text selected in Visual
       block mode?
 
-All the ex commands operate on whole lines only. If you try to execute an
-ex command on a column of text selected in visual block mode, Vim will
-operate on all the selected lines (instead of the selected columns). You
-can use the vis.vim plugin script from http://vim.sourceforge.net scripts
-archive to do this.
+All the ex commands operate on whole lines only. If you try to execute
+an ex command on a column of text selected in visual block mode, Vim
+will operate on all the selected lines (instead of the selected
+columns). You can use the vis.vim or NrrwRgn plugin script from
+http://vim.sourceforge.net scripts archive to do this.
 
 For more information, read 
 
@@ -4994,6 +5010,10 @@ To see what a key is mapped to, use the following commands: >
 You can also check the mappings in a particular mode using one of the
 ":cmap", ":nmap", ":vmap", ":imap", ":omap", etc commands.
 
+To find out, where the key has been mapped, prefix the :verbose command: >
+
+    :verbose :map <key>
+<
 For more information, read 
 
     |map-listing|
@@ -5421,7 +5441,7 @@ printed literally in insert mode. One of ways to workaround this problem is
 to make {rhs} be one command, via wrapping it to the function. For example: >
 
     function GetFontNameOfFirstChar()
-    normal 0
+    normal! 0
     echo getfontname()
     endfunction
 <
@@ -5986,12 +6006,21 @@ particular column: >
 <
 This will highlight all the characters after the 75th column.
 
+You can also set the 'colorcolumn' option to highlight a particular
+column:
+
+   :set colorcolumn=+2
+
+which highlights 2 columns after the current 'textwidth' setting
+(alternatively, you can use the exact column number).
+
 For more information, read 
 
     |:match|
     |/\%v|
     |/\+|
     |/.|
+    |'colorcolumn'|
 
  								*faq-24.14*
 24.14. How do I convert a source file (.c, .h, etc) with the Vim syntax
@@ -7788,13 +7817,14 @@ name. You can try using the 'stty' command: >
     $ stty erase ^H
 <
 where, you have to enter the ^H character by pressing the CTRL-V key and
-then the CTRL-H key.
+then the CTRL-H key. Also check the value of your 'backspace' setting.
 
 For more information, read 
 
     |:fixdel|
     |Linux-backspace|
     |NetBSD-backspace|
+    |'backspace'|
 
  								*faq-32.4*
 32.4. I am using Vim in a xterm. When I quit Vim, the screen contents are
@@ -8520,7 +8550,8 @@ normal mode command.
 
 To execute more than one normal mode command, press the CTRL-L key,
 followed by any number of normal mode commands and then press <Esc> to get
-back to the insert mode.
+back to the insert mode. (This only works, when the 'insertmode' option
+is set).
 
 For more information, read 
 
