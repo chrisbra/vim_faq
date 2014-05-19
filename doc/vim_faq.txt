@@ -542,7 +542,7 @@ SECTION 25 - VIM SCRIPT WRITING
 	  the mapping/function. Why?
 |faq-25.29| How can I call a function defined with s: (script local
 	  function) from another script/plugin?
-|faq-25.30| Is it possible to un-source a sourced script? In otherwords,
+|faq-25.30| Is it possible to un-source a sourced script? In other words,
 	  reverse all the commands executed by sourcing a script.
                                                                 *faq-plugins*
 SECTION 26 - PLUGINS
@@ -688,7 +688,7 @@ SECTION 33 - VIM ON MS-WINDOWS
 |faq-33.10| I would like to use Vim with Microsoft Visual Studio. How do I
 	  do this?
 |faq-33.11| Where do I place the _vimrc and _gvimrc files?
-|faq-33.12| Everytime I save a file, Vim warns about the file being changed
+|faq-33.12| Every time I save a file, Vim warns about the file being changed
 	  outside of Vim. Why?
                                                                 *faq-printing*
 SECTION 34 - PRINTING
@@ -1136,7 +1136,7 @@ persists, the chance is good you've found a bug in Vim (see also
 Question 2.6. |faq-2.6|)
 
 If the error does not occur when starting Vim this way, then the problem
-is either related to some plugin of yours or some setting in onr of your
+is either related to some plugin of yours or some setting in one of your
 local setup files. You need to find out, what triggers the error, you
 try starting Vim this way: >
 
@@ -1168,7 +1168,7 @@ If the problem does not occur, when only loading your .vimrc file, the
 error must be caused by a plugin or another runtime file (indent
 autoload or syntax script). Check the output of the :scriptnames command
 to see what files have been loaded and for each one try to disable each
-one by one and see which one triggers the bug. (Often files that are
+one by one and see which one triggers the bug. Often files that are
 loaded by vim, have a simple configuration variable to disable them, but
 you need to check inside each file separately.
 
@@ -6650,7 +6650,7 @@ the 'runtimepath' option, use the following command: >
 
     :set runtimepath
 <
-For Unix systems, this is usally the "$HOME/.vim" directory. For MS-Windows
+For Unix systems, this is usually the "$HOME/.vim" directory. For MS-Windows
 systems, this is usually the $VIM\vimfiles or $HOME\vimfiles directory.
 Depending on the type of the runtime file, you have to place it under a
 specific directory under the above runtime directory. The names of the
@@ -7744,7 +7744,7 @@ options.
 
 For example, the following commands will position the GUI Vim window at the
 X,Y co-ordinates 50,50 and set the number of lines to 50 and the number of
-columsn to 80. >
+columns to 80. >
 
     :winpos 50 50
     :set lines=50
