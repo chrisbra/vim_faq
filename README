@@ -690,7 +690,7 @@ SECTION 33 - VIM ON MS-WINDOWS
 |faq-33.10| I would like to use Vim with Microsoft Visual Studio. How do I
 	  do this?
 |faq-33.11| Where do I place the _vimrc and _gvimrc files?
-|faq-33.12| Everytime I save a file, Vim warns about the file being changed
+|faq-33.12| Every time I save a file, Vim warns about the file being changed
 	  outside of Vim. Why?
                                                                 *faq-printing*
 SECTION 34 - PRINTING
@@ -6556,7 +6556,7 @@ the 'runtimepath' option, use the following command: >
 
     :set runtimepath
 <
-For Unix systems, this is usally the "$HOME/.vim" directory. For MS-Windows
+For Unix systems, this is usually the "$HOME/.vim" directory. For MS-Windows
 systems, this is usually the $VIM\vimfiles or $HOME\vimfiles directory.
 Depending on the type of the runtime file, you have to place it under a
 specific directory under the above runtime directory. The names of the

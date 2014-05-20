@@ -159,17 +159,17 @@ function! VimifyAndInstallFaq(vim_faq_textfile, vim_doc_path)
 
     " make 'helpHyperTextJumps' in index
     %s/^ \{4\}\([0-9]\{1,2\}\.[0-9]\{1,2\}\)\. \(\w\)/|faq-\1| \2/
-    " this line is too long. It alligns the Questions at column 13
+    " this line is too long. It aligns the Questions at column 13
     %s/^\(|faq-[0-9]\{1,2\}\.[0-9]\{1,2\}|\) \(.\)/\=submatch(1) . 
 	\ s:ReturnSpaces(12 - strlen(submatch(1))) . submatch(2)/
-    " Allign 2nd, 3rd, etc. lines of questions at column 13 too ...
+    " Align 2nd, 3rd, etc. lines of questions at column 13 too ...
     1,/==/s/^ \{5,\}\(.\)/\t  \1/
 
     " create 'helpHyperTextEntry' for INDEX (in questions)
     %s/\(\nINDEX\)/\t\t\t\t\t\t\t\t*faq-index*\1/
 
     " create 'helpHyperTextEntries' in all sections (in questions)
-    " This line is waaay too long .... Right allign, but the Entries always
+    " This line is waaay too long .... Right llign, but the Entries always
     " start at a tabstop). Note: 78 - strlen("*faq-*) = 72
     1,/^=\+$/s/\(\nSECTION [0-9]\+ - \)\(\w.\+\)$/\=s:ReturnSpaces(72 - 
 	\ strlen(submatch(2)) - (72 - strlen(submatch(2))) % 8) . "*faq-" . 
