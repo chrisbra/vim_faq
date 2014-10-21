@@ -3255,6 +3255,19 @@ The first command, clears the contents of the register "a". The second
 command copies all the lines containing "mypattern" into the register "a".
 Note that the capital letter "A" is used to append the matched lines. Now
 you can paste the contents of register "a" to a buffer using "ap command.
+
+If you only want to collect all matches, you can use a different
+approach. For that run the ':s' command with the flags 'gn' so that it
+won't actually  change the buffer ('n' flag) but select each match ('g'
+flag). Combining this with the '\=' part in the replacement part, you
+can copy each match to e.g. a list. Altogether this looks like this:
+
+    :let list=[]
+    :%s/pattern/\=add(list, submatch(0))/gn
+
+Now all matches will be in the list and you can post process them as
+wanted.
+
 For more information, read
 
     :help :g
@@ -3264,6 +3277,7 @@ For more information, read
     :help put
     :help registers
     :help :registers
+    :help sub-replace-\=
 
 
 12.10. How do I delete all the lines in a file that do not contain a
