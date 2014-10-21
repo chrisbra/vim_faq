@@ -3408,6 +3408,9 @@ the contents of register "d" into the current buffer.
 For more information, read
 
     :help i_CTRL-R
+    :help i_CTRL-R_CTRL-R
+    :help i_CTRL-R_CTRL-O
+    :help i_CTRL-R_CTRL-P
     :help :put
 
 
