@@ -639,6 +639,8 @@ SECTION 31 - GUI VIM
     31.14. When I use the middle mouse button to scroll text, it pastes the
            last copied text. How do I disable this behavior?
     31.15. How do I change the location and size of a GUI Vim window?
+    31.16. When splitting the Vim window vertically, Vim changes
+           the position.
 
 SECTION 32 - VIM ON UNIX
     32.1. I am running Vim in a xterm. When I press the CTRL-S key, Vim
@@ -4009,9 +4011,8 @@ For more information, read
       used instead of the current 'tabstop' setting. Why?
 
 The number of spaces used when lines are indented using the ">" operator is
-controlled by the 'shiftwidth' option. The 'tabstop' setting is not used
-for indentation. To change the amount of spaces used for indentation, use
-the command:
+controlled by the 'shiftwidth' option. The 'tabstop' setting is only
+used, when the 'shiftwidth' option is zero.
 
     :set shiftwidth=4
 
@@ -7833,6 +7834,17 @@ For more information, read
     :help 'columns'
     :help GUIEnter
 
+31.16. When splitting the Vim window vertically, Vim changes the position.
+
+This is a known problem. When you are splitting the Vim window, Vim will
+try to draw a scrollbar. Since this changes the gui window, Vim tries to
+resize its main window to keep the same position and this will cause Vim
+to move its position. This happens on Windows with a multi-window setup or
+a window that was "snapped" to a certain position. 
+
+A workaournd to this problem is, to remove gui scrollbars, e.g.
+
+    :set guioptions-=L
 
 =============================================================================
 
