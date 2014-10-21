@@ -1077,7 +1077,7 @@
     Question 2.6.)
 
     If the error does not occur when starting Vim this way, then the problem
-    is either related to some plugin of yours or some setting in onr of your
+    is either related to some plugin of yours or some setting in one of your
     local setup files. You need to find out, what triggers the error, you
     try starting Vim this way:
 
