@@ -5157,6 +5157,11 @@ not work everywhere (e.g. the terminal might not pass that key to Vim,
 or they might have unintended side effects (e.g. mapping <C-I> means
 also to map <Tab>).
 
+This is a known issue, that has been discussed and might be implemented
+in the future to enable Vim to distinguish between various keys even in
+console mode. (e.g.
+https://groups.google.com/d/msg/vim_dev/2bp9UdfZ63M/sajb9KM0pNYJ)
+
 20.6. How do I map the numeric keypad keys?
 
 First make sure that the numeric keypad keys are passed to Vim. Next, you
