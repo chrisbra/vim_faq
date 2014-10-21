@@ -201,6 +201,7 @@ SECTION 11 - SEARCHING TEXT
 |faq-11.23| How do I clear the last searched pattern?
 |faq-11.24| Why does this pattern 'a.\{-}p\@!' not match?
 |faq-11.25| How can I use '/' within a pattern, without escaping it?
+|faq-11.26| How can I operate on a search match?
                                                         *faq-changing-text*
 SECTION 12 - CHANGING TEXT
 |faq-12.1|  How do I delete all the trailing white space characters (SPACE
@@ -542,7 +543,7 @@ SECTION 25 - VIM SCRIPT WRITING
 	  the mapping/function. Why?
 |faq-25.29| How can I call a function defined with s: (script local
 	  function) from another script/plugin?
-|faq-25.30| Is it possible to un-source a sourced script? In otherwords,
+|faq-25.30| Is it possible to un-source a sourced script? In other words,
 	  reverse all the commands executed by sourcing a script.
                                                                 *faq-plugins*
 SECTION 26 - PLUGINS
@@ -644,6 +645,8 @@ SECTION 31 - GUI VIM
 |faq-31.14| When I use the middle mouse button to scroll text, it pastes the
 	  last copied text. How do I disable this behavior?
 |faq-31.15| How do I change the location and size of a GUI Vim window?
+|faq-31.16| When splitting the Vim window vertically, Vim changes
+	  the position.
                                                         *faq-vim-on-unix*
 SECTION 32 - VIM ON UNIX
 |faq-32.1|  I am running Vim in a xterm. When I press the CTRL-S key, Vim
@@ -688,7 +691,7 @@ SECTION 33 - VIM ON MS-WINDOWS
 |faq-33.10| I would like to use Vim with Microsoft Visual Studio. How do I
 	  do this?
 |faq-33.11| Where do I place the _vimrc and _gvimrc files?
-|faq-33.12| Everytime I save a file, Vim warns about the file being changed
+|faq-33.12| Every time I save a file, Vim warns about the file being changed
 	  outside of Vim. Why?
                                                                 *faq-printing*
 SECTION 34 - PRINTING
@@ -1168,7 +1171,7 @@ If the problem does not occur, when only loading your .vimrc file, the
 error must be caused by a plugin or another runtime file (indent
 autoload or syntax script). Check the output of the :scriptnames command
 to see what files have been loaded and for each one try to disable each
-one by one and see which one triggers the bug. (Often files that are
+one by one and see which one triggers the bug. Often files that are
 loaded by vim, have a simple configuration variable to disable them, but
 you need to check inside each file separately.
 
@@ -3024,9 +3027,9 @@ when there are not other restrictions. The whole pattern then would
 behave the same as "ap\@!", i.e. it would match any "a" not followed by
 a "p").
 
-This means, it matches as
-few as possible 'a's without trying to keep going until Vim finds the
-longest match. This means, it will still match 'ap'.
+This means, it matches as few as possible 'a's without trying to keep
+going until Vim finds the longest match. This means, it will still match
+'ap'.
 
  								*faq-11.25*
 11.25. How can I use '/' within a pattern, without escaping it?
@@ -3052,8 +3055,32 @@ See also the help at >
 
     :h @/
     :h /<CR>
-<
+< 								*faq-11.26*
+11.26. How can I operate on a search match?
 
+The 'gn' command makes it easy to operate on regions of text that match
+the current search pattern. By default, it will search forward for the
+last used search pattern and visually select the match. If the cursor is
+already on the match, it will be visually selected. If you used the 'gn'
+command after an operator (e.g. 'c' to change text), it will be applied
+on the match.
+
+If Visual mode is active before using gn, the visual selection will be
+extended until the end of the next match. 
+
+The 'gN' commands works similar but searches backwards.
+
+This allows to repeat simple operations on each match. For example, you
+might want to change each occurence of apples by peaches. So you search
+using '/apple' then you can use 'cgnpeach<esc>' to replace the current
+match by peach. Now you can use the dot '.' command to redo the
+replacement for the rest of the buffer.
+
+See also the help at >
+
+    :h gn
+    :h gN
+<
 =============================================================================
  								*faq-12*
 SECTION 12 - CHANGING TEXT
@@ -3226,6 +3253,19 @@ The first command, clears the contents of the register "a". The second
 command copies all the lines containing "mypattern" into the register "a".
 Note that the capital letter "A" is used to append the matched lines. Now
 you can paste the contents of register "a" to a buffer using "ap command.
+
+If you only want to collect all matches, you can use a different
+approach. For that run the ':s' command with the flags 'gn' so that it
+won't actually  change the buffer ('n' flag) but select each match ('g'
+flag). Combining this with the '\=' part in the replacement part, you
+can copy each match to e.g. a list. Altogether this looks like this: >
+
+    :let list=[]
+    :%s/pattern/\=add(list, submatch(0))/gn
+<
+Now all matches will be in the list and you can post process them as
+wanted.
+
 For more information, read 
 
     |:g|
@@ -3235,6 +3275,7 @@ For more information, read
     |put|
     |registers|
     |:registers|
+    |sub-replace-\=|
 
  								*faq-12.10*
 12.10. How do I delete all the lines in a file that do not contain a
@@ -3365,6 +3406,9 @@ the contents of register "d" into the current buffer.
 For more information, read 
 
     |i_CTRL-R|
+    |i_CTRL-R_CTRL-R|
+    |i_CTRL-R_CTRL-O|
+    |i_CTRL-R_CTRL-P|
     |:put|
 
  								*faq-12.18*
@@ -3961,9 +4005,8 @@ For more information, read
       used instead of the current 'tabstop' setting. Why?
 
 The number of spaces used when lines are indented using the ">" operator is
-controlled by the 'shiftwidth' option. The 'tabstop' setting is not used
-for indentation. To change the amount of spaces used for indentation, use
-the command: >
+controlled by the 'shiftwidth' option. The 'tabstop' setting is only
+used, when the 'shiftwidth' option is zero. >
 
     :set shiftwidth=4
 <
@@ -5144,6 +5187,11 @@ You can try other combinations of Ctrl + any key, but they may either
 not work everywhere (e.g. the terminal might not pass that key to Vim,
 or they might have unintended side effects (e.g. mapping <C-I> means
 also to map <Tab>).
+
+This is a known issue, that has been discussed and might be implemented
+in the future to enable Vim to distinguish between various keys even in
+console mode. (e.g.
+https://groups.google.com/d/msg/vim_dev/2bp9UdfZ63M/sajb9KM0pNYJ)
  								*faq-20.6*
 20.6. How do I map the numeric keypad keys?
 
@@ -6650,7 +6698,7 @@ the 'runtimepath' option, use the following command: >
 
     :set runtimepath
 <
-For Unix systems, this is usally the "$HOME/.vim" directory. For MS-Windows
+For Unix systems, this is usually the "$HOME/.vim" directory. For MS-Windows
 systems, this is usually the $VIM\vimfiles or $HOME\vimfiles directory.
 Depending on the type of the runtime file, you have to place it under a
 specific directory under the above runtime directory. The names of the
@@ -7744,7 +7792,7 @@ options.
 
 For example, the following commands will position the GUI Vim window at the
 X,Y co-ordinates 50,50 and set the number of lines to 50 and the number of
-columsn to 80. >
+columns to 80. >
 
     :winpos 50 50
     :set lines=50
@@ -7762,7 +7810,19 @@ For more information, read
     |'lines'|
     |'columns'|
     |GUIEnter|
+ 								*faq-31.16*
+31.16. When splitting the Vim window vertically, Vim changes the position.
 
+This is a known problem. When you are splitting the Vim window, Vim will
+try to draw a scrollbar. Since this changes the gui window, Vim tries to
+resize its main window to keep the same position and this will cause Vim
+to move its position. This happens on Windows with a multi-window setup or
+a window that was "snapped" to a certain position. 
+
+A workaournd to this problem is, to remove gui scrollbars, e.g. >
+
+    :set guioptions-=L
+<
 =============================================================================
  								*faq-32*
 SECTION 32 - VIM ON UNIX
