@@ -106,14 +106,12 @@
           number?
      8.5. How do I open all the current buffers in separate windows?
      8.6. How do I close (delete) a buffer without exiting Vim?
-     8.7. I have several buffers opened with ":e filename". How do I close
-          one of the buffers without exiting Vim?
-     8.8. When I use the command ":%bd" to delete all the buffers, not all
+     8.7. When I use the command ":%bd" to delete all the buffers, not all
           the buffers are deleted. Why?
-     8.9. How do I display the buffer number of the current buffer/file?
-     8.10. How do I delete a buffer without closing the window in which the
-           buffer is displayed?
-     8.11. How do I map the tab key to cycle through and open all the
+     8.8. How do I display the buffer number of the current buffer/file?
+     8.9. How do I delete a buffer without closing the window in which the
+          buffer is displayed?
+     8.10. How do I map the tab key to cycle through and open all the
            buffers?
 
 [1mWINDOWS[0m
@@ -195,6 +193,7 @@
      11.23. How do I clear the last searched pattern?
      11.24. Why does this pattern 'a.\{-}p\@!' not match?
      11.25. How can I use '/' within a pattern, without escaping it?
+     11.26. How can I operate on a search match?
 
 [1mCHANGING TEXT[0m
      12.1. How do I delete all the trailing white space characters (SPACE
@@ -536,7 +535,7 @@
             the mapping/function. Why?
      25.29. How can I call a function defined with s: (script local
             function) from another script/plugin?
-     25.30. Is it possible to un-source a sourced script? In otherwords,
+     25.30. Is it possible to un-source a sourced script? In other words,
             reverse all the commands executed by sourcing a script.
 
 [1mPLUGINS[0m
@@ -637,6 +636,8 @@
      31.14. When I use the middle mouse button to scroll text, it pastes the
             last copied text. How do I disable this behavior?
      31.15. How do I change the location and size of a GUI Vim window?
+     31.16. When splitting the Vim window vertically, Vim changes
+            the position.
 
 [1mVIM ON UNIX[0m
      32.1. I am running Vim in a xterm. When I press the CTRL-S key, Vim
@@ -681,7 +682,7 @@
      33.10. I would like to use Vim with Microsoft Visual Studio. How do I
             do this?
      33.11. Where do I place the _vimrc and _gvimrc files?
-     33.12. Everytime I save a file, Vim warns about the file being changed
+     33.12. Every time I save a file, Vim warns about the file being changed
             outside of Vim. Why?
 
 [1mPRINTING[0m
@@ -728,8 +729,6 @@
      36.10. How do I use Copy and Paste with Vim?
      36.11. Why shouldn't I modify the files in the system runtime
             directory?
-     36.12. How do I debug and find out if there is an error in my .vimrc
-            or in any other file that is read during startup?
 
 [1mUNICODE[0m
      37.1. Is it possible to create Unicode files using Vim?
@@ -764,28 +763,26 @@
     appears on output. More often than not, the final document is meant to
     be printed or typeset or what have you, in order to present it in a
     pleasing manner to others. Examples of word processors are Microsoft
-    Word, WordPerfect, FrameMaker, and OpenOffice Writer.
+    Word, FrameMaker, and OpenOffice Writer.
 
     An editor is simply for entering text. Any typesetting or laying out of
     the document is secondary. With an editor, one's main concern is
     entering text, not making the text look good. Examples of editors other
-    than Vim and Vi are Emacs, Crisp, Brief, TextMate and xedit. And
-    Notepad.
+    than Vim and Vi are Emacs, TextMate, Ultraedit and gedit. And Notepad.
 
     For more information read
 
     [1m:help intro[0m
 
   [1m1.2. Who wrote Vim?[0m
-    Most of Vim was written by Bram Moolenar, with contributions from too
-    many people to mention here. See ":h credits" for a complete list.
-
-    Vim is based on Stevie, worked on by Tim Thompson, Tony Andrews and G.R.
-    (Fred) Walter.
+    Most of Vim is based on Stevie and was written by Bram Moolenaar, with
+    contributions from too many people to mention here.
 
     For more information, read:
 
     [1m:help author[0m
+
+    [1m:help credits[0m
 
   [1m1.3. Is Vim compatible with Vi?[0m
     Yes. Vim is very much compatible with Vi. You can use the "-C"
@@ -801,9 +798,16 @@
 
      :set compatible
 
+    If you want to make sure, to start Vim in a 'nocompatible' mode to
+    original Vi, supply the -N command line argument:
+
+     $ vim -N
+
     For more information, read
 
     [1m:help -C[0m
+
+    [1m:help -N[0m
 
     [1m:help 'compatible'[0m
 
@@ -829,6 +833,8 @@
       one window to another. Each file opened during a Vim session also has
       an associated buffer and you can easily jump from one to the other.
       Also like any modern GUI, Vim supports opening several files in tabs.
+      You can do batch processing for tabs, buffers, windows and the
+      argumentlist.
 
    Flexible insert mode
       Vim allows you to use the arrow keys while in insert mode to move
@@ -905,17 +911,19 @@
 
    Scripting language
       Vim has a powerful scripting language so new commands can be created.
-      You can also use Perl, Python, TCL and Ruby to achieve the same thing!
+      You can also use Perl, Python, TCL, Lua and Ruby to achieve the same thing!
 
    Plugins
       Extra functionality implemented via vim commands (regular commands or
       the scripting language) that is automatically loaded on startup.
-      Examples: file explorer, network editing.  More are being developed
-      and shared on VimOnline all the time.
+      Examples: file explorer, network editing, enhanced autocompletion,
+      syntax checks.
+      More are being developed and shared on VimOnline all the time.
 
    Syntax highlighting for many programming languages
-      Syntax highlighting for hundreds of programming languages is
-      supported. Support for others can be added.
+      Syntax highlighting (including concealing items) for hundreds of
+      programming languages is supported. Support for others can be
+      added.
 
    Extended regular expressions
       Vim supports extended regular expressions which are similar in
@@ -934,7 +942,7 @@
 
    Extensive customizable
       Vim can be tuned and customized to work like you want by setting
-      options.  You can define your own commands, macros and even plugins
+      options. You can define your own commands, macros and even plugins
       to extend its capabilities
 
    Programming performance features:
@@ -950,10 +958,10 @@
       Vim allows you to search for a match of the word under the cursor in
       the current and included files.
 
-   Advance text objects
-      Instantly select, or delete, or copy, or indent, or format, or change
-      case, or ... to all the text between ( and ), or { and }, or < and >,
-      or [ and ].  Or a word, sentence, or paragraph.  Very powerful.
+   Advanced text objects
+      Instantly select, delete, copy, indent, format, change case, or ...
+      to all the text between ( and ), or { and }, or < and >, or [ and
+      ].  Or a word, sentence, or paragraph.  Very powerful.
 
    Folding
       Certain parts of the text can be "folded" away.  The best example is
@@ -1042,28 +1050,78 @@
     best to either use the documentation that comes with vim or use the
     online version at http://vimhelp.appspot.com
 
+    You can find a pdf version of the full English help, including this faq
+    (in letter, A4 and Ipad format) at:
+
+     http://www.nathangrigg.net/vimhelp/
+
+    This document is cross-referenced, so you can use the hyperlink
+    functionality.
+
   [1m2.5. I have a "xyz" (some) problem with Vim. How do I determine it is a
-  problem with my setup or with Vim?[0m
-    First, you have to determine that the problem is not with your .vimrc or
-    .gvimrc or system vimrc or your personal plugin files or in any of your
-    setup files. To do this, use
+  problem with my setup or with Vim?  / Have I found a bug in Vim?[0m
+    First, you need to find out, whether the error is in the actual runtime
+    files or any plugin that is distributed with Vim or whether it is a
+    simple side effect of any configuration option from your .vimrc or
+    .gvimrc. So first, start vim like this:
 
-     $ vim -N -u NONE -U NONE
+     vim -u NONE -U NONE -N -i NONE
 
-    This will start Vim in 'nocompatible" mode and will not source your
-    personal .vimrc and .gvimrc files. It will also not load your personal
-    plugins. In this invocation of Vim, try to reproduce your problem. If
-    you are not able to reproduce the problem, then the problem is related
-    to some setting in one of your local setup files or plugins. To locate
-    the problem in your setup files, you have to use trial and error and try
-    commenting out the lines in your setup files one by one. You can also
-    use the -V command line argument to Vim to get more debug information
-    and analyze the problem:
+    this starts Vim in nocompatible mode (-N), without reading your viminfo
+    file (-i NONE), without reading any configuration file (-u NONE for not
+    reading .vimrc file and -U NONE for not reading a .gvimrc file) or even
+    plugin.
 
-     $ vim -V2
+    In this invocation, try to reproduce your problem. If the error
+    persists, the chance is good you've found a bug in Vim (see also
+    Question 2.6.)
+
+    If the error does not occur when starting Vim this way, then the problem
+    is either related to some plugin of yours or some setting in onr of your
+    local setup files. You need to find out, what triggers the error, you
+    try starting Vim this way:
+
+     vim -u NONE -U NONE -N
+
+    If the error occurs, the problem is your .viminfo file. Simply delete
+    the viminfo file then. If the error does not occur, try:
+
+     vim -u ~/.vimrc --noplugin -N -i NONE
+
+    This will simply use your .vimrc as configuration file, but not load any
+    plugins. If the error occurs this time, the error is possibly caused by
+    some configuration option inside your .vimrc file. Depending on the
+    length of your vimrc file, it can be quite hard to trace the origin
+    within that file.
+
+    The best way is to add :finish command in the middle of your .vimrc.
+    Then restart again using the same command line. If the error still
+    occurs, the bug must be caused because of a setting in the first half of
+    your .vimrc. If it doesn't happen, the problematic setting must be in
+    the second half of your .vimrc. So move the :finish command to the
+    middle of that half, of which you know that triggers the error and move
+    your way along, until you find the problematic option. If your .vimrc is
+    350 lines long, you need at a maximum 9 tries to find the offending line
+    (in practise, this can often be further reduced, since often lines
+    depend on each other).
+
+    If the problem does not occur, when only loading your .vimrc file, the
+    error must be caused by a plugin or another runtime file (indent
+    autoload or syntax script). Check the output of the :scriptnames command
+    to see what files have been loaded and for each one try to disable each
+    one by one and see which one triggers the bug. Often files that are
+    loaded by vim, have a simple configuration variable to disable them, but
+    you need to check inside each file separately.
+
+    You can also use the -V command line argument to get more debug
+    information to analyze the problem:
+
+     $ vim -V2logfile
 
     You can increase the value passed to the -V argument to get more debug
-    information.
+    information. By also specifying a logfile name, this makes sure, the
+    debug messages don't appear on the screen and won't disturb you when
+    trying to reproduce the problem.
 
     For more information, read
 
@@ -1092,9 +1150,11 @@
     will be forwarded to the Vim Development list.
 
     The Vim Development mailing list (see Question 2.2) is a good place to
-    discuss general bugs. If the bug you find is with syntax highlighting or
-    some other "added feature" (i.e. not directly programmed into vim),
-    attempt to inform the maintainer of that feature.
+    discuss general bugs. If the bug you find is with syntax highlighting, a
+    runtime file, or some other "added feature" (i.e. not directly
+    programmed into vim), attempt to inform the maintainer of that feature.
+    His e-mail address will be mentioned at the top of the corresponding
+    runtime file.
 
     For more information, read
 
@@ -1106,7 +1166,8 @@
     repository http://www.github.com/chrisbra/vim_faq (Patches are welcome).
 
     The repository also includes the faq in different formats, e.g. manpage,
-    and html file, plain text version and a version in vim help format.
+    ,pdf file, html file, plain text version and a version in vim help
+    format.
 
     A slightly older version (which doesn't seem to get updated anymore) can
     still be found at VimOnline (vim.sf.net). Other places will be decided
@@ -1138,7 +1199,11 @@
    compiler plugin or developed a new script or a colorscheme.
    Is there a public website where I can upload this?[0m
     Yes. You can use the Vim Online website to upload your plugins/scripts,
-    colorschemes, tips, etc. The site is at http://vim.sourceforge.net
+    colorschemes, etc. The site is at http://vim.sourceforge.net Nowadays
+    people also seem to share their plugins/runtime files at github.
+
+    Tips can also be shared in the Wiki which you can find at
+    http://vim.wikia.com
 
 [1mAVAILABILITY[0m
   [1m3.1. What is the latest version of Vim?[0m
@@ -1240,6 +1305,8 @@
     a list of all available subjects. Use the standard search keys to locate
     the information you want. You can abbreviate the ":help" command as
     ":h".
+
+    For searching the help, see the next Question 4.2.
 
     For more information, read
 
@@ -1431,6 +1498,11 @@
      :set noeol
      :w
 
+    Alternatively, you can use:
+
+     :set noeol
+     :w ++bin
+
     For more information, read
 
     [1m:help 'endofline'[0m
@@ -1445,7 +1517,7 @@
     .vimrc or .gvimrc file to open a file at the last edited location:
 
      au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
-                          \ exe "normal g'\"" | endif
+                          \ exe "normal! g`\"" | endif
 
     For more information, read
 
@@ -1504,7 +1576,8 @@
     You can use the ":edit" command, without specifying a file name, to
     reload the current file. If you have made modifications to the file, you
     can use ":edit!" to force the reload of the current file (you will lose
-    your modifications).
+    your modifications, but depending on your 'undolevels' settings, those
+    changes might be saved into the undo history).
 
     For more information, read
 
@@ -1606,7 +1679,7 @@
     There is also the LargeFile plugin available at
     http://www.vim.org/scripts/script.php?script_id=1506 which automatically
     sets these options, when working with large files (it is configurable,
-    what is considered to be a large file, be default, it is 100MB).
+    what is considered to be a large file, by default, it is 100MB).
 
 [1mEDITING MULTIPLE FILES[0m
   [1m6.1. How do I open multiple files at once from within Vim?[0m
@@ -1734,7 +1807,7 @@
     [1m:help buffers[0m
 
   [1m6.5. Is it possible to open multiple top level windows in a single instance
-  of Vim similar to Nedit or emacs?[0m
+  of Vim similar to Nedit or Emacs?[0m
     No. It is currently not possible to open multiple top-level windows in a
     single instance of Vim. This feature is in the todo list.
 
@@ -1885,7 +1958,8 @@
 
     By setting the 'hidden' option, you can also save the modification
     history (undo-history) for the buffer. Otherwise, as you switch between
-    files, the undo-history will be lost.
+    files, the undo-history will be lost (unless you use persistent
+    undofiles).
 
     For more information, read
 
@@ -1933,6 +2007,11 @@
 
      :ball
 
+    If you want all buffers to be opened in new tabs, simply prefix the :tab
+    command:
+
+     :tab :sball
+
     For more information, read
 
     [1m:help :ball[0m
@@ -1951,19 +2030,7 @@
 
     [1m:help :bunload[0m
 
-  [1m8.7. I have several buffers opened with :e filename. How do I close one of
-  the buffers without exiting Vim?[0m
-    You can use the ":bdelete <buffername>" command to close the buffer.
-
-    For more information, read
-
-    [1m:help :bdelete[0m
-
-    [1m:help :bunload[0m
-
-    [1m:help :bwipeout[0m
-
-  [1m8.8. When I use the command ":%bd" to delete all the buffers, not all the
+  [1m8.7. When I use the command ":%bd" to delete all the buffers, not all the
   buffers are deleted. Why?[0m
     In the ":%bd" command, the '%' range will be replaced with the starting
     and ending line numbers in the current buffer. Instead of using '%' as
@@ -1974,7 +2041,7 @@
 
     [1m:help :bd[0m
 
-  [1m8.9. How do I display the buffer number of the current buffer/file?[0m
+  [1m8.8. How do I display the buffer number of the current buffer/file?[0m
     You can use 2<CTRL-G> command to display the buffer number for the
     current file/buffer. Note the use of count before the CTRL-G command. If
     the count is greater than 1, then Vim will display the buffer number.
@@ -1997,8 +2064,8 @@
 
     [1m:help 'statusline'[0m
 
-  [1m8.10. How do I delete a buffer without closing the window in which the
-   buffer is displayed?[0m
+  [1m8.9. How do I delete a buffer without closing the window in which the
+  buffer is displayed?[0m
     You can use the following command to open the next buffer and delete the
     current buffer.
 
@@ -2012,7 +2079,7 @@
 
     [1m:help :buffers[0m
 
-  [1m8.11. How do I map the tab key to cycle through and open all the buffers?[0m
+  [1m8.10. How do I map the tab key to cycle through and open all the buffers?[0m
     You can use the following two map commands, to map the CTRL-Tab key to
     open the next buffer and the CTRL-SHIFT-Tab key to open the previous
     buffer:
@@ -2020,11 +2087,13 @@
      :nnoremap <C-Tab> :bnext<CR>
      :nnoremap <S-C-Tab> :bprevious<CR>
 
+    Note, this might not work in the terminal version of Vim.
+
     For more information read,
 
     [1m:help :bnext[0m
 
-    [1m:help :previous[0m
+    [1m:help :bprevious[0m
 
 [1mWINDOWS[0m
   [1m9.1. What is the difference between a Vim window and a buffer?[0m
@@ -2212,6 +2281,8 @@
      :imap <Up> <C-o>gk
      :map <Down> gj
      :imap <Down> <C-o>gj
+     :noremap j gj
+     :noremap k gk
 
   [1m10.5. What is the definition of a sentence, paragraph and section in Vim?[0m
     A sentence is defined as ending at a '.', '!' or '?' followed by either
@@ -2295,6 +2366,8 @@
     [1m:help scroll-binding[0m
 
     [1m:help 'scrollopt'[0m
+
+    [1m:help 'cursorbind'[0m
 
   [1m10.9. When I use my arrow keys, Vim changes modes, inserts weird characters
   in my document but doesn't move the cursor properly. What's going on?[0m
@@ -2433,6 +2506,11 @@
     You can also clear the search highlighting, by searching for a pattern
     that is not in the current file (for example, search for the pattern
     'asdf').
+
+    You can use this mapping, to clear the search highlighting when
+    redrawing the window pressing <CTRL-L>
+
+     :nnoremap <silent> <C-L> <C-L>:nohls<CR>
 
     For more information, read
 
@@ -2681,7 +2759,7 @@
     You can use the 'argdo', 'bufdo', 'windo' or 'tabdo' commands to execute
     an ex command on multiple files. For example:
 
-     :argdo %s/foo/bar/g
+     :argdo %s/foo/bar/g|upd
 
     For more information, read
 
@@ -2765,6 +2843,13 @@
      /[\xbc]
      /[\u00bc]
 
+    Alternatively, you can use the special atom \%d \%o \%x \%u:
+
+     /\%d188
+     /\%o274
+     /\%xbc
+     /\%u00bc
+
     Or you use digraphs to enter the character. For example enter:
 
      /CTRL-K14
@@ -2780,6 +2865,8 @@
     [1m:help ga[0m
 
     [1m:help /\][0m
+
+    [1m:help /\%d[0m
 
     [1m:help digraphs[0m
 
@@ -2933,6 +3020,30 @@
 
      :h @/
      :h /<CR>
+
+  [1m11.26. How can I operate on a search match?[0m
+    The 'gn' command makes it easy to operate on regions of text that match
+    the current search pattern. By default, it will search forward for the
+    last used search pattern and visually select the match. If the cursor is
+    already on the match, it will be visually selected. If you used the 'gn'
+    command after an operator (e.g. 'c' to change text), it will be applied
+    on the match.
+
+    If Visual mode is active before using gn, the visual selection will be
+    extended until the end of the next match.
+
+    The 'gN' commands works similar but searches backwards.
+
+    This allows to repeat simple operations on each match. For example, you
+    might want to change each occurence of apples by peaches. So you search
+    using '/apple' then you can use 'cgnpeach<esc>' to replace the current
+    match by peach. Now you can use the dot '.' command to redo the
+    replacement for the rest of the buffer.
+
+    See also the help at
+
+     :h gn
+     :h gN
 
 [1mCHANGING TEXT[0m
   [1m12.1. How do I delete all the trailing white space characters (SPACE and
@@ -3108,7 +3219,21 @@
     command copies all the lines containing "mypattern" into the register
     "a". Note that the capital letter "A" is used to append the matched
     lines. Now you can paste the contents of register "a" to a buffer using
-    "ap command. For more information, read
+    "ap command.
+
+    If you only want to collect all matches, you can use a different
+    approach. For that run the ':s' command with the flags 'gn' so that it
+    won't actually change the buffer ('n' flag) but select each match ('g'
+    flag). Combining this with the '\=' part in the replacement part, you
+    can copy each match to e.g. a list. Altogether this looks like this:
+
+     :let list=[]
+     :%s/pattern/\=add(list, submatch(0))/gn
+
+    Now all matches will be in the list and you can post process them as
+    wanted.
+
+    For more information, read
 
     [1m:help :g[0m
 
@@ -3123,6 +3248,8 @@
     [1m:help registers[0m
 
     [1m:help :registers[0m
+
+    [1m:help sub-replace-\=[0m
 
   [1m12.10. How do I delete all the lines in a file that do not contain a
     pattern?[0m
@@ -3145,7 +3272,7 @@
     You can use the following command to add a line before each line with
     "pattern" in it:
 
-     :g/pattern/normal Oi<line of text goes here>
+     :g/pattern/normal! Oi<line of text goes here>
 
     Alternatively you can yank the line using the Y command and then insert
     the line using the following command:
@@ -3248,6 +3375,12 @@
     For more information, read
 
     [1m:help i_CTRL-R[0m
+
+    [1m:help i_CTRL-R_CTRL-R[0m
+
+    [1m:help i_CTRL-R_CTRL-O[0m
+
+    [1m:help i_CTRL-R_CTRL-P[0m
 
     [1m:help :put[0m
 
@@ -3852,11 +3985,10 @@
     [1m:help :[0m>
 
   [1m14.9. When I indent lines using the > or < key, the standard 8-tabstops are
-  used instead of the current 'tabstop' setting. Why?[0m
+   used instead of the current 'tabstop' setting. Why?[0m
     The number of spaces used when lines are indented using the ">" operator
-    is controlled by the 'shiftwidth' option. The 'tabstop' setting is not
-    used for indentation. To change the amount of spaces used for
-    indentation, use the command:
+    is controlled by the 'shiftwidth' option. The 'tabstop' setting is only
+    used, when the 'shiftwidth' option is zero.
 
      :set shiftwidth=4
 
@@ -4227,7 +4359,7 @@
     All the ex commands operate on whole lines only. If you try to execute
     an ex command on a column of text selected in visual block mode, Vim
     will operate on all the selected lines (instead of the selected
-    columns). You can use the vis.vim plugin script from
+    columns). You can use the vis.vim or NrrwRgn plugin script from
     http://vim.sourceforge.net scripts archive to do this.
 
     For more information, read
@@ -4882,6 +5014,10 @@
     You can also check the mappings in a particular mode using one of the
     ":cmap", ":nmap", ":vmap", ":imap", ":omap", etc commands.
 
+    To find out, where the key has been mapped, prefix the :verbose command:
+
+     :verbose :map <key>
+
     For more information, read
 
     [1m:help map-listing[0m
@@ -5009,6 +5145,11 @@
     not work everywhere (e.g. the terminal might not pass that key to Vim,
     or they might have unintended side effects (e.g. mapping <C-I> means
     also to map <Tab>).
+
+    This is a known issue, that has been discussed and might be implemented
+    in the future to enable Vim to distinguish between various keys even in
+    console mode. (e.g.
+    https://groups.google.com/d/msg/vim_dev/2bp9UdfZ63M/sajb9KM0pNYJ)
 
   [1m20.6. How do I map the numeric keypad keys?[0m
     First make sure that the numeric keypad keys are passed to Vim. Next,
@@ -5312,7 +5453,7 @@
     function. For example:
 
      function GetFontNameOfFirstChar()
-     normal 0
+     normal! 0
      echo getfontname()
      endfunction
 
@@ -5842,6 +5983,14 @@
 
     This will highlight all the characters after the 75th column.
 
+    You can also set the 'colorcolumn' option to highlight a particular
+    column:
+
+       :set colorcolumn=+2
+
+    which highlights 2 columns after the current 'textwidth' setting
+    (alternatively, you can use the exact column number).
+
     For more information, read
 
     [1m:help :match[0m
@@ -5851,6 +6000,8 @@
     [1m:help /\+[0m
 
     [1m:help /.[0m
+
+    [1m:help 'colorcolumn'[0m
 
   [1m24.14. How do I convert a source file (.c, .h, etc) with the Vim syntax
     highlighting into a HTML file?[0m
@@ -6459,7 +6610,7 @@
 
      :set runtimepath
 
-    For Unix systems, this is usally the "$HOME/.vim" directory. For
+    For Unix systems, this is usually the "$HOME/.vim" directory. For
     MS-Windows systems, this is usually the $VIM\vimfiles or $HOME\vimfiles
     directory. Depending on the type of the runtime file, you have to place
     it under a specific directory under the above runtime directory. The
@@ -7486,7 +7637,7 @@
 
     For example, the following commands will position the GUI Vim window at
     the X,Y co-ordinates 50,50 and set the number of lines to 50 and the
-    number of columsn to 80.
+    number of columns to 80.
 
      :winpos 50 50
      :set lines=50
@@ -7508,6 +7659,17 @@
     [1m:help 'columns'[0m
 
     [1m:help GUIEnter[0m
+
+  [1m31.16. When splitting the Vim window vertically, Vim changes the position.[0m
+    This is a known problem. When you are splitting the Vim window, Vim will
+    try to draw a scrollbar. Since this changes the gui window, Vim tries to
+    resize its main window to keep the same position and this will cause Vim
+    to move its position. This happens on Windows with a multi-window setup
+    or a window that was "snapped" to a certain position.
+
+    A workaournd to this problem is, to remove gui scrollbars, e.g.
+
+     :set guioptions-=L
 
 [1mVIM ON UNIX[0m
   [1m32.1. I am running Vim in a xterm. When I press the CTRL-S key, Vim
@@ -7555,7 +7717,7 @@
      $ stty erase ^H
 
     where, you have to enter the ^H character by pressing the CTRL-V key and
-    then the CTRL-H key.
+    then the CTRL-H key. Also check the value of your 'backspace' setting.
 
     For more information, read
 
@@ -7564,6 +7726,8 @@
     [1m:help Linux-backspace[0m
 
     [1m:help NetBSD-backspace[0m
+
+    [1m:help 'backspace'[0m
 
   [1m32.4. I am using Vim in a xterm. When I quit Vim, the screen contents are
    restored back to the original contents. How do I disable this?[0m
@@ -8242,7 +8406,8 @@
 
     To execute more than one normal mode command, press the CTRL-L key,
     followed by any number of normal mode commands and then press <Esc> to
-    get back to the insert mode.
+    get back to the insert mode. (This only works, when the 'insertmode'
+    option is set).
 
     For more information, read
 
@@ -8328,57 +8493,6 @@
     for an explanation of several ways to modify Vim's response to different
     filetypes and where to put those modifications so that they will not be
     overwritten.
-
-  [1m36.12. How do I debug and find out if there is an error in my .vimrc or
-    in any other file that is read during startup?[0m
-    First, you need to find out, whether the error is in the actual runtime
-    files or any plugin that is distributed with Vim or whether it is a
-    simple side effect of any configuration option from your .vimrc. So
-    first, start vim like this:
-
-     vim -u NONE -U NONE -N -i NONE
-
-    this starts Vim in nocompatible mode (-N), without reading your viminfo
-    file (-i NONE), without reading any configuration file (-u NONE for not
-    reading .vimrc file and -U NONE for not reading a .gvimrc file).
-
-    If the error persists, the chance is good you've found a bug in Vim (see
-    also Question 2.6.)
-
-    If the error does not occur when starting Vim this way, you need to find
-    out, what triggers the error, you try starting Vim this way:
-
-     vim -u NONE -U NONE -N
-
-    If the error occurs, the problem is your .viminfo file. Simply delete
-    the viminfo file then. If the error does not occur, try:
-
-     vim -u ~/.vimrc --noplugin -N -i NONE
-
-    This will simply use your .vimrc as configuration file, but not load any
-    plugins. If the error occurs this time, the error is possibly caused by
-    some configuration option inside your .vimrc file. Depending on the
-    length of your vimrc file, it can be quite hard to trace the origin
-    within that file.
-
-    The best way is to add :finish command in the middle of your .vimrc.
-    Then restart again using the same command line. If the error still
-    occurs, the bug must be caused because of a setting in the first half of
-    your .vimrc. If it doesn't happen, the problematic setting must be in
-    the second half of your .vimrc. So move the :finish command to the
-    middle of that half, of which you know that triggers the error and move
-    your way along, until you find the problematic option. If your .vimrc is
-    350 lines long, you need at a maximum 9 tries to find the offending line
-    (in practise, this can often be further reduced, since often lines
-    depend on each other).
-
-    If the problem does not occur, when only loading your .vimrc file, the
-    error must be caused by a plugin or another runtime file (indent
-    autoload or syntax script). Check the output of the :scriptnames command
-    to see what files have been loaded and for each one try to disable each
-    one by one and see which one triggers the bug. (Often files that are
-    loaded by vim, have a simple configuration variable to disable them, but
-    you need to check inside each file separately.
 
 [1mUNICODE[0m
     Author: Tony Mechelynck <antoine.mechelynck AT belgacom.net>
@@ -8546,5 +8660,5 @@
 [1mAUTHOR[0m
     Current Maintainer: Christian Brabandt <cb@256bit.org>
 
-    Last updated on: 13 August 2013
+    Last updated on: 21 Oktober 2014
 
