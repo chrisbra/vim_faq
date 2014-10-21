@@ -1,6 +1,6 @@
 *vim_faq.txt*	Frequently Asked Questions
 
-Last updated on: 13 August 2013
+Last updated on: 21 Oktober 2014
 
 	  VIM FAQ by: Christian Brabandt <cb@256bit.org>
 
@@ -8865,9 +8865,13 @@ For more information, read
 First set the 'encoding' option properly (for instance, to utf-8), then use
 the :digraphs command to list the currently defined digraphs.
 
+Alternatively, the help file contains the complete set of all digraphs.
+So you can easily search that list there.
+
 For more information, read 
 
     |:digraphs|
     |'encoding'|
+    |digraph-table|
 
  vim:tw=78:ts=8:ft=help:norl:

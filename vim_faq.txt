@@ -8892,10 +8892,14 @@ For more information, read
 First set the 'encoding' option properly (for instance, to utf-8), then use
 the :digraphs command to list the currently defined digraphs.
 
+Alternatively, the help file contains the complete set of all digraphs.
+So you can easily search that list there.
+
 For more information, read
 
     :help :digraphs
     :help 'encoding'
+    :help digraph-table
 
 =============================================================================
 
