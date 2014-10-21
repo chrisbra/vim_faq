@@ -195,6 +195,7 @@ SECTION 11 - SEARCHING TEXT
     11.23. How do I clear the last searched pattern?
     11.24. Why does this pattern 'a.\{-}p\@!' not match?
     11.25. How can I use '/' within a pattern, without escaping it?
+    11.26. How can I operate on a search match?
 
 SECTION 12 - CHANGING TEXT
     12.1. How do I delete all the trailing white space characters (SPACE
@@ -3028,9 +3029,9 @@ when there are not other restrictions. The whole pattern then would
 behave the same as "ap\@!", i.e. it would match any "a" not followed by
 a "p").
 
-This means, it matches as
-few as possible 'a's without trying to keep going until Vim finds the
-longest match. This means, it will still match 'ap'.
+This means, it matches as few as possible 'a's without trying to keep
+going until Vim finds the longest match. This means, it will still match
+'ap'.
 
 
 11.25. How can I use '/' within a pattern, without escaping it?
@@ -3057,6 +3058,30 @@ See also the help at
     :h @/
     :h /<CR>
 
+11.26. How can I operate on a search match?
+
+The 'gn' command makes it easy to operate on regions of text that match
+the current search pattern. By default, it will search forward for the
+last used search pattern and visually select the match. If the cursor is
+already on the match, it will be visually selected. If you used the 'gn'
+command after an operator (e.g. 'c' to change text), it will be applied
+on the match.
+
+If Visual mode is active before using gn, the visual selection will be
+extended until the end of the next match. 
+
+The 'gN' commands works similar but searches backwards.
+
+This allows to repeat simple operations on each match. For example, you
+might want to change each occurence of apples by peaches. So you search
+using '/apple' then you can use 'cgnpeach<esc>' to replace the current
+match by peach. Now you can use the dot '.' command to redo the
+replacement for the rest of the buffer.
+
+See also the help at
+
+    :h gn
+    :h gN
 
 =============================================================================
 
