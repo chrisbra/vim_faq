@@ -3057,8 +3057,8 @@ Then use 'n' to jump to the next occurrence.
 
 See also the help at
 
-    :h @/
-    :h /<CR>
+    :help @/
+    :help /<CR>
 
 11.26. How can I operate on a search match?
 
@@ -3082,8 +3082,8 @@ replacement for the rest of the buffer.
 
 See also the help at
 
-    :h gn
-    :h gN
+    :help gn
+    :help gN
 
 =============================================================================
 
