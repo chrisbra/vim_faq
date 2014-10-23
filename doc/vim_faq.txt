@@ -3051,11 +3051,11 @@ into the search register:
 
 Then use 'n' to jump to the next occurrence.
 
-See also the help at >
+See also the help at 
 
-    :h @/
-    :h /<CR>
-< 								*faq-11.26*
+    |@/|
+    |/<CR>|
+ 								*faq-11.26*
 11.26. How can I operate on a search match?
 
 The 'gn' command makes it easy to operate on regions of text that match
@@ -3076,11 +3076,11 @@ using '/apple' then you can use 'cgnpeach<esc>' to replace the current
 match by peach. Now you can use the dot '.' command to redo the
 replacement for the rest of the buffer.
 
-See also the help at >
+See also the help at 
 
-    :h gn
-    :h gN
-<
+    |gn|
+    |gN|
+
 =============================================================================
  								*faq-12*
 SECTION 12 - CHANGING TEXT
