@@ -7297,8 +7297,8 @@ The Neovim project however has added the ":terminal" command which opens
 a new shell prompt. To read more about Neovim, look at their webpage
 http://neovim.io
 
-Alternatively, you can try using the Unix "screen" utility or the 'splitvt'
-program.
+Alternatively, you can try using the Unix "screen", "tmux" or "splitvt"
+utility.
 
 Following is a post from the vim_use mailinglist
 (http://groups.google.com/group/vim_use/msg/22c97ebfd6a978eb)
