@@ -7,7 +7,7 @@
 <link rev="made" href="mailto:root@localhost" />
 </head>
 
-<body style="background-color: white">
+<body>
 
 
 
@@ -1999,6 +1999,8 @@
 
 <p>Where {dirname} is the directory where the help files are. The gzip.vim plugin supplied with the standard Vim distribution will take care of decompressing the files. You must make sure that $VIMRUNTIME is set to where the other Vim files are, when they are not in the same location as the compressed &quot;doc&quot; directory.</p>
 
+<p>Note, that the :helpgrep command does not work with compressed help pages.</p>
+
 <p>For more information, read</p>
 
 <p><b>:help gzip-helpfile</b></p>
@@ -3405,8 +3407,9 @@
 
 <p>See also the help at</p>
 
-<pre><code> :h @/
- :h /&lt;CR&gt;</code></pre>
+<p><b>:help @/</b></p>
+
+<p><b>:help /&lt;CR</b>&gt;</p>
 
 <h2 id="How-can-I-operate-on-a-search-match">11.26. How can I operate on a search match?</h2>
 
@@ -3420,8 +3423,9 @@
 
 <p>See also the help at</p>
 
-<pre><code> :h gn
- :h gN</code></pre>
+<p><b>:help gn</b></p>
+
+<p><b>:help gN</b></p>
 
 <h1 id="CHANGING-TEXT1">CHANGING TEXT</h1>
 
@@ -6961,7 +6965,9 @@ or
 
 <p><b>:help shell-window</b></p>
 
-<p>Alternatively, you can try using the Unix &quot;screen&quot; utility or the &#39;splitvt&#39; program.</p>
+<p>The Neovim project however has added the &quot;:terminal&quot; command which opens a new shell prompt. To read more about Neovim, look at their webpage http://neovim.io</p>
+
+<p>Alternatively, you can try using the Unix &quot;screen&quot;, &quot;tmux&quot; or &quot;splitvt&quot; utility.</p>
 
 <p>Following is a post from the vim_use mailinglist (http://groups.google.com/group/vim_use/msg/22c97ebfd6a978eb)</p>
 
@@ -8141,17 +8147,21 @@ or
 
 <p>First set the &#39;encoding&#39; option properly (for instance, to utf-8), then use the :digraphs command to list the currently defined digraphs.</p>
 
+<p>Alternatively, the help file contains the complete set of all digraphs. So you can easily search that list there.</p>
+
 <p>For more information, read</p>
 
 <p><b>:help :digraphs</b></p>
 
 <p><b>:help &#39;encoding&#39;</b></p>
 
+<p><b>:help digraph-table</b></p>
+
 <h1 id="AUTHOR">AUTHOR</h1>
 
 <p>Current Maintainer: Christian Brabandt &lt;cb@256bit.org&gt;</p>
 
-<p>Last updated on: 21 Oktober 2014</p>
+<p>Last updated on: 14 September 2015</p>
 
 
 </body>

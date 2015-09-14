@@ -1555,6 +1555,9 @@ decompressing the files.  You must make sure that $VIMRUNTIME is set to
 where the other Vim files are, when they are not in the same location as
 the compressed "doc" directory.
 
+Note, that the :helpgrep command does not work with compressed help
+pages.
+
 For more information, read
 
 B<:help gzip-helpfile>
@@ -3410,8 +3413,10 @@ Then use 'n' to jump to the next occurrence.
 
 See also the help at
 
- :h @/
- :h /<CR>
+B<:help @/>
+
+B<:help /<CR>>
+
 
 =head2 11.26. How can I operate on a search match?
 
@@ -3435,8 +3440,10 @@ replacement for the rest of the buffer.
 
 See also the help at
 
- :h gn
- :h gN
+B<:help gn>
+
+B<:help gN>
+
 
 
 =head1 CHANGING TEXT
@@ -8247,8 +8254,12 @@ For more information, read
 B<:help shell-window>
 
 
-Alternatively, you can try using the Unix "screen" utility or the 'splitvt'
-program.
+The Neovim project however has added the ":terminal" command which opens
+a new shell prompt. To read more about Neovim, look at their webpage
+http://neovim.io
+
+Alternatively, you can try using the Unix "screen", "tmux" or "splitvt"
+utility.
 
 Following is a post from the vim_use mailinglist
 (http://groups.google.com/group/vim_use/msg/22c97ebfd6a978eb)
@@ -10001,11 +10012,16 @@ B<:help i_CTRL-V_digit>
 First set the 'encoding' option properly (for instance, to utf-8), then use
 the :digraphs command to list the currently defined digraphs.
 
+Alternatively, the help file contains the complete set of all digraphs.
+So you can easily search that list there.
+
 For more information, read
 
 B<:help :digraphs>
 
 B<:help 'encoding'>
+
+B<:help digraph-table>
 
 
 
@@ -10013,4 +10029,4 @@ B<:help 'encoding'>
 
 Current Maintainer: Christian Brabandt <cb@256bit.org>
 
-Last updated on: 21 Oktober 2014
+Last updated on: 14 September 2015

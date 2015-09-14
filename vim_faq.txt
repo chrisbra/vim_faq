@@ -8911,4 +8911,4 @@ For more information, read
 =============================================================================
 
 Current Maintainer: Christian Brabandt <cb@256bit.org>
-Last updated on: 21 Oktober 2014
+Last updated on: 14 September 2015

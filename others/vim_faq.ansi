@@ -1401,6 +1401,9 @@
     where the other Vim files are, when they are not in the same location as
     the compressed "doc" directory.
 
+    Note, that the :helpgrep command does not work with compressed help
+    pages.
+
     For more information, read
 
     [1m:help gzip-helpfile[0m
@@ -3018,8 +3021,9 @@
 
     See also the help at
 
-     :h @/
-     :h /<CR>
+    [1m:help @/[0m
+
+    [1m:help /<CR[0m>
 
   [1m11.26. How can I operate on a search match?[0m
     The 'gn' command makes it easy to operate on regions of text that match
@@ -3042,8 +3046,9 @@
 
     See also the help at
 
-     :h gn
-     :h gN
+    [1m:help gn[0m
+
+    [1m:help gN[0m
 
 [1mCHANGING TEXT[0m
   [1m12.1. How do I delete all the trailing white space characters (SPACE and
@@ -7178,8 +7183,12 @@
 
     [1m:help shell-window[0m
 
-    Alternatively, you can try using the Unix "screen" utility or the
-    'splitvt' program.
+    The Neovim project however has added the ":terminal" command which opens
+    a new shell prompt. To read more about Neovim, look at their webpage
+    http://neovim.io
+
+    Alternatively, you can try using the Unix "screen", "tmux" or "splitvt"
+    utility.
 
     Following is a post from the vim_use mailinglist
     (http://groups.google.com/group/vim_use/msg/22c97ebfd6a978eb)
@@ -8651,14 +8660,19 @@
     First set the 'encoding' option properly (for instance, to utf-8), then
     use the :digraphs command to list the currently defined digraphs.
 
+    Alternatively, the help file contains the complete set of all digraphs.
+    So you can easily search that list there.
+
     For more information, read
 
     [1m:help :digraphs[0m
 
     [1m:help 'encoding'[0m
 
+    [1m:help digraph-table[0m
+
 [1mAUTHOR[0m
     Current Maintainer: Christian Brabandt <cb@256bit.org>
 
-    Last updated on: 21 Oktober 2014
+    Last updated on: 14 September 2015
 
