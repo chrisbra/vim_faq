@@ -7293,6 +7293,10 @@ For more information, read
 
     :help shell-window
 
+The Neovim project however has added the ":terminal" command which opens
+a new shell prompt. To read more about Neovim, look at their webpage
+http://neovim.io
+
 Alternatively, you can try using the Unix "screen" utility or the 'splitvt'
 program.
 
