@@ -1471,6 +1471,9 @@ decompressing the files.  You must make sure that $VIMRUNTIME is set to
 where the other Vim files are, when they are not in the same location as
 the compressed "doc" directory.
 
+Note, that the :helpgrep command does not work with compressed help
+pages.
+
 For more information, read
 
     :help gzip-helpfile
