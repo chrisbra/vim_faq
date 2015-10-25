@@ -7777,6 +7777,38 @@
 
     [1m:help 'clipboard'[0m
 
+    If the clipboard is not the cause of the slow startup, it might be a
+    plugin that slows down Vim. In that case, you can use the --startuptime
+    argument to debug this further. You can do:
+
+     $ vim --startuptime vim_startup.log
+
+    and the timing will be written to the file vim_startup.log. For even
+    more advanced profiling, you can use the profiling feature, that is
+    available in huge builds of Vim. To do so, call Vim like this:
+
+     $ vim --cmd 'profile start profile.log' \
+       --cmd 'profile func *' \
+       --cmd 'profile file *' \
+       -c 'profdel func *' \
+       -c 'profdel file *' \
+       -c 'qa!'
+
+    After running this, you will have a file profile.log in your current
+    directory. To further analyse this, open the file profile.log and run:
+
+     " Open profile.log file in vim first
+     :let timings=[]
+     :g/^SCRIPT/call add(timings, [getline('.')[len('SCRIPT  '):], matchstr(getline(line('.')+1), '^Sourced \zs\d\+')]+map(getline(line('.')+2, line('.')+3), 'matchstr(v:val, ''\d\+\.\d\+$'')'))
+     :enew
+     :call setline('.', ['count total (s)   self (s)  script']+map(copy(timings), 'printf("%5u %9s   %8s  %s", v:val[1], v:val[2], v:val[3], v:val[0])'))
+
+    For more information, read
+
+    [1m:help --startuptime[0m
+
+    [1m:help profiling[0m
+
   [1m32.6. How can I make the cursor in gvim in unix stop blinking?[0m
     You can modify the 'guicursor' option, to stop the cursor from blinking.
     For example:
@@ -8674,5 +8706,5 @@
 [1mAUTHOR[0m
     Current Maintainer: Christian Brabandt <cb@256bit.org>
 
-    Last updated on: 14 September 2015
+    Last updated on: 25 Oktober 2015
 

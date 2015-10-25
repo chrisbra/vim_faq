@@ -7434,6 +7434,33 @@ or
 
 <p><b>:help &#39;clipboard&#39;</b></p>
 
+<p>If the clipboard is not the cause of the slow startup, it might be a plugin that slows down Vim. In that case, you can use the --startuptime argument to debug this further. You can do:</p>
+
+<pre><code> $ vim --startuptime vim_startup.log</code></pre>
+
+<p>and the timing will be written to the file vim_startup.log. For even more advanced profiling, you can use the profiling feature, that is available in huge builds of Vim. To do so, call Vim like this:</p>
+
+<pre><code> $ vim --cmd &#39;profile start profile.log&#39; \
+   --cmd &#39;profile func *&#39; \
+   --cmd &#39;profile file *&#39; \
+   -c &#39;profdel func *&#39; \
+   -c &#39;profdel file *&#39; \
+   -c &#39;qa!&#39;</code></pre>
+
+<p>After running this, you will have a file profile.log in your current directory. To further analyse this, open the file profile.log and run:</p>
+
+<pre><code> &quot; Open profile.log file in vim first
+ :let timings=[]
+ :g/^SCRIPT/call add(timings, [getline(&#39;.&#39;)[len(&#39;SCRIPT  &#39;):], matchstr(getline(line(&#39;.&#39;)+1), &#39;^Sourced \zs\d\+&#39;)]+map(getline(line(&#39;.&#39;)+2, line(&#39;.&#39;)+3), &#39;matchstr(v:val, &#39;&#39;\d\+\.\d\+$&#39;&#39;)&#39;))
+ :enew
+ :call setline(&#39;.&#39;, [&#39;count total (s)   self (s)  script&#39;]+map(copy(timings), &#39;printf(&quot;%5u %9s   %8s  %s&quot;, v:val[1], v:val[2], v:val[3], v:val[0])&#39;))</code></pre>
+
+<p>For more information, read</p>
+
+<p><b>:help --startuptime</b></p>
+
+<p><b>:help profiling</b></p>
+
 <h2 id="How-can-I-make-the-cursor-in-gvim-in-unix-stop-blinking">32.6. How can I make the cursor in gvim in unix stop blinking?</h2>
 
 <p>You can modify the &#39;guicursor&#39; option, to stop the cursor from blinking. For example:</p>
@@ -8161,7 +8188,7 @@ or
 
 <p>Current Maintainer: Christian Brabandt &lt;cb@256bit.org&gt;</p>
 
-<p>Last updated on: 14 September 2015</p>
+<p>Last updated on: 25 Oktober 2015</p>
 
 
 </body>
