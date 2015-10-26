@@ -13,7 +13,7 @@ DOPDF=1
 
 all: help vimball uninstall install 
 
-release: help generate README vimball uninstall install
+release: help docs README vimball uninstall install
 
 vimball: $(PLUGIN).vmb
 
@@ -42,7 +42,7 @@ $(PLUGIN).vmb:
 help:
 	vim -u NONE -U NONE -N -c ':so vim_faq.vim|:CreateVimFAQHelp|wq' ${FAQ}
 
-generate:
+docs:
 	vim -u NONE -U NONE -N -c ':$$s/Last updated on: \zs.*$$/\=strftime("%d %B %Y")/|wq' ${FAQ}
 	vim -u NONE -U NONE -N -c '/^\" GetLatestVimScripts: /s/\d\+\s\ze:AutoInstall:/\=(submatch(0)+1)." "/|wq' ${SCRIPT}
 	vim -u NONE -U NONE -N -c '/^" Last Change: /s/: \zs.*$$/\=strftime("%d %B %Y")/|wq' ${SCRIPT}
