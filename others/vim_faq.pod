@@ -1885,6 +1885,13 @@ it is 100MB).
 
 =head2 6.1. How do I open multiple files at once from within Vim?
 
+Make a difference between args, buffers, tabs and windows. They are all
+different things in VIM.
+
+args is a list of arguments. Buffers are place to edit text, almost
+always attached to a file but not necessarily. Window is a place for a
+buffer and tab is set of windows, better name would be 'layout'.
+
 There are several ways to open multiple files at once from within Vim. You
 can use the ":next" command to specify a group of files:
 
@@ -1898,6 +1905,8 @@ You can use the :args command to specify a group of files as arguments:
 
 After loading the files, you can use the ":next" and ":prev" command to
 switch between the files.
+
+To execute command for all files in argument-list use ":argdo"
 
 For more information, read
 
@@ -1913,11 +1922,21 @@ B<:help argument-list>
 
 =head2 6.2. How do I switch between multiple files/buffers in Vim?
 
+To list all buffers use ":ls", to list buffers without file attached to
+(also known as unlisted buffers, ex. scratch buffer and help-window) use
+":ls!"
+
 There are several ways to switch between multiple files. You can use the
-":buffer" command to switch between multiple files. For example,
+":buffer" command to switch between multiple files. You can also shorten
+command as ":b" and use only part of the filename. For example,
 
  :buffer file1
  :buffer file2
+ :b e2
+
+You can also use <TAB> after ":b" for autocompletion. Try also ":b"
+followed by <CTRL-d> to see all available buffers. This works also for
+":e".
 
 You can also use the CTRL-^ key to switch between buffers. By specifying a
 count before pressing the key, you can edit the buffer with that number.
@@ -1926,6 +1945,10 @@ Without the count, you can edit the alternate buffer by pressing CTRL-^
 You can also use the ":e #" command to edit a particular buffer:
 
  :e #5
+
+To close a buffer use ":bd" -command.
+
+To execute command for all files in buffer-list use ":bufdo"
 
 For more information, read
 
@@ -10061,4 +10084,4 @@ B<:help digraph-table>
 
 Current Maintainer: Christian Brabandt <cb@256bit.org>
 
-Last updated on: 25 Oktober 2015
+Last updated on: 09 November 2015

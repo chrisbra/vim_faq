@@ -8964,4 +8964,4 @@ For more information, read
 =============================================================================
 
 Current Maintainer: Christian Brabandt <cb@256bit.org>
-Last updated on: 25 Oktober 2015
+Last updated on: 09 November 2015

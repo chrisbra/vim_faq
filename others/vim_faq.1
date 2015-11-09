@@ -133,7 +133,7 @@
 .\" ========================================================================
 .\"
 .IX Title "vimfaq 1"
-.TH vimfaq 1 "2015-10-25" "48" "http://vimhelp.appspot.com/vim_faq.txt.html"
+.TH vimfaq 1 "2015-11-09" "49" "http://vimhelp.appspot.com/vim_faq.txt.html"
 .\" For nroff, turn off justification.  Always turn off hyphenation; it makes
 .\" way too many mistakes in technical documents.
 .if n .ad l
@@ -2108,6 +2108,13 @@ it is 100MB).
 .IX Header "EDITING MULTIPLE FILES"
 .SS "6.1. How do I open multiple files at once from within Vim?"
 .IX Subsection "6.1. How do I open multiple files at once from within Vim?"
+Make a difference between args, buffers, tabs and windows. They are all
+different things in \s-1VIM.\s0
+.PP
+args is a list of arguments. Buffers are place to edit text, almost
+always attached to a file but not necessarily. Window is a place for a
+buffer and tab is set of windows, better name would be 'layout'.
+.PP
 There are several ways to open multiple files at once from within Vim. You
 can use the \*(L":next\*(R" command to specify a group of files:
 .PP
@@ -2126,6 +2133,8 @@ You can use the :args command to specify a group of files as arguments:
 After loading the files, you can use the \*(L":next\*(R" and \*(L":prev\*(R" command to
 switch between the files.
 .PP
+To execute command for all files in argument-list use \*(L":argdo\*(R"
+.PP
 For more information, read
 .PP
 \&\fB:help 07.2\fR
@@ -2137,13 +2146,23 @@ For more information, read
 \&\fB:help argument-list\fR
 .SS "6.2. How do I switch between multiple files/buffers in Vim?"
 .IX Subsection "6.2. How do I switch between multiple files/buffers in Vim?"
-There are several ways to switch between multiple files. You can use the
-\&\*(L":buffer\*(R" command to switch between multiple files. For example,
+To list all buffers use \*(L":ls\*(R", to list buffers without file attached to
+(also known as unlisted buffers, ex. scratch buffer and help-window) use
+\&\*(L":ls!\*(R"
 .PP
-.Vb 2
+There are several ways to switch between multiple files. You can use the
+\&\*(L":buffer\*(R" command to switch between multiple files. You can also shorten
+command as \*(L":b\*(R" and use only part of the filename. For example,
+.PP
+.Vb 3
 \& :buffer file1
 \& :buffer file2
+\& :b e2
 .Ve
+.PP
+You can also use <\s-1TAB\s0> after \*(L":b\*(R" for autocompletion. Try also \*(L":b\*(R"
+followed by <CTRL\-d> to see all available buffers. This works also for
+\&\*(L":e\*(R".
 .PP
 You can also use the CTRL\-^ key to switch between buffers. By specifying a
 count before pressing the key, you can edit the buffer with that number.
@@ -2154,6 +2173,10 @@ You can also use the \*(L":e #\*(R" command to edit a particular buffer:
 .Vb 1
 \& :e #5
 .Ve
+.PP
+To close a buffer use \*(L":bd\*(R" \-command.
+.PP
+To execute command for all files in buffer-list use \*(L":bufdo\*(R"
 .PP
 For more information, read
 .PP
@@ -9711,4 +9734,4 @@ For more information, read
 .IX Header "AUTHOR"
 Current Maintainer: Christian Brabandt <cb@256bit.org>
 .PP
-Last updated on: 25 Oktober 2015
+Last updated on: 09 November 2015

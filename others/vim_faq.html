@@ -2265,6 +2265,10 @@
 
 <h2 id="How-do-I-open-multiple-files-at-once-from-within-Vim">6.1. How do I open multiple files at once from within Vim?</h2>
 
+<p>Make a difference between args, buffers, tabs and windows. They are all different things in VIM.</p>
+
+<p>args is a list of arguments. Buffers are place to edit text, almost always attached to a file but not necessarily. Window is a place for a buffer and tab is set of windows, better name would be &#39;layout&#39;.</p>
+
 <p>There are several ways to open multiple files at once from within Vim. You can use the &quot;:next&quot; command to specify a group of files:</p>
 
 <pre><code> :next f1.txt f2.txt
@@ -2276,6 +2280,8 @@
  :args *.c</code></pre>
 
 <p>After loading the files, you can use the &quot;:next&quot; and &quot;:prev&quot; command to switch between the files.</p>
+
+<p>To execute command for all files in argument-list use &quot;:argdo&quot;</p>
 
 <p>For more information, read</p>
 
@@ -2289,16 +2295,25 @@
 
 <h2 id="How-do-I-switch-between-multiple-files-buffers-in-Vim">6.2. How do I switch between multiple files/buffers in Vim?</h2>
 
-<p>There are several ways to switch between multiple files. You can use the &quot;:buffer&quot; command to switch between multiple files. For example,</p>
+<p>To list all buffers use &quot;:ls&quot;, to list buffers without file attached to (also known as unlisted buffers, ex. scratch buffer and help-window) use &quot;:ls!&quot;</p>
+
+<p>There are several ways to switch between multiple files. You can use the &quot;:buffer&quot; command to switch between multiple files. You can also shorten command as &quot;:b&quot; and use only part of the filename. For example,</p>
 
 <pre><code> :buffer file1
- :buffer file2</code></pre>
+ :buffer file2
+ :b e2</code></pre>
+
+<p>You can also use &lt;TAB&gt; after &quot;:b&quot; for autocompletion. Try also &quot;:b&quot; followed by &lt;CTRL-d&gt; to see all available buffers. This works also for &quot;:e&quot;.</p>
 
 <p>You can also use the CTRL-^ key to switch between buffers. By specifying a count before pressing the key, you can edit the buffer with that number. Without the count, you can edit the alternate buffer by pressing CTRL-^</p>
 
 <p>You can also use the &quot;:e #&quot; command to edit a particular buffer:</p>
 
 <pre><code> :e #5</code></pre>
+
+<p>To close a buffer use &quot;:bd&quot; -command.</p>
+
+<p>To execute command for all files in buffer-list use &quot;:bufdo&quot;</p>
 
 <p>For more information, read</p>
 
@@ -8188,7 +8203,7 @@ or
 
 <p>Current Maintainer: Christian Brabandt &lt;cb@256bit.org&gt;</p>
 
-<p>Last updated on: 25 Oktober 2015</p>
+<p>Last updated on: 09 November 2015</p>
 
 
 </body>

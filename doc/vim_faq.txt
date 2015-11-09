@@ -1,6 +1,6 @@
 *vim_faq.txt*	Frequently Asked Questions
 
-Last updated on: 14 September 2015
+Last updated on: 25 Oktober 2015
 
 	  VIM FAQ by: Christian Brabandt <cb@256bit.org>
 
@@ -1750,6 +1750,13 @@ SECTION 6 - EDITING MULTIPLE FILES
  								*faq-6.1*
 6.1. How do I open multiple files at once from within Vim?
 
+Make a difference between args, buffers, tabs and windows. They are all
+different things in VIM.
+
+args is a list of arguments. Buffers are place to edit text, almost
+always attached to a file but not necessarily. Window is a place for a
+buffer and tab is set of windows, better name would be 'layout'.
+
 There are several ways to open multiple files at once from within Vim. You
 can use the ":next" command to specify a group of files: >
 
@@ -1764,6 +1771,8 @@ You can use the :args command to specify a group of files as arguments: >
 After loading the files, you can use the ":next" and ":prev" command to
 switch between the files.
 
+To execute command for all files in argument-list use ":argdo"
+
 For more information, read 
 
     |07.2|
@@ -1774,12 +1783,22 @@ For more information, read
  								*faq-6.2*
 6.2. How do I switch between multiple files/buffers in Vim?
 
+To list all buffers use ":ls", to list buffers without file attached to
+(also known as unlisted buffers, ex. scratch buffer and help-window) use
+":ls!"
+
 There are several ways to switch between multiple files. You can use the
-":buffer" command to switch between multiple files. For example, >
+":buffer" command to switch between multiple files. You can also shorten
+command as ":b" and use only part of the filename. For example, >
 
     :buffer file1
     :buffer file2
+    :b e2
 <
+You can also use <TAB> after ":b" for autocompletion. Try also ":b"
+followed by <CTRL-d> to see all available buffers. This works also for
+":e".
+
 You can also use the CTRL-^ key to switch between buffers. By specifying a
 count before pressing the key, you can edit the buffer with that number.
 Without the count, you can edit the alternate buffer by pressing CTRL-^
@@ -1788,6 +1807,10 @@ You can also use the ":e #" command to edit a particular buffer: >
 
     :e #5
 <
+To close a buffer use ":bd" -command.
+
+To execute command for all files in buffer-list use ":bufdo"
+
 For more information, read 
 
     |edit-files|
@@ -7955,9 +7978,9 @@ After running this, you will have a file profile.log in your current
 directory. To further analyse this, open the file profile.log and run: >
 
     " Open profile.log file in vim first
-    :let timings=[]                      
+    :let timings=[]
     :g/^SCRIPT/call add(timings, [getline('.')[len('SCRIPT  '):], matchstr(getline(line('.')+1), '^Sourced \zs\d\+')]+map(getline(line('.')+2, line('.')+3), 'matchstr(v:val, ''\d\+\.\d\+$'')'))
-    :enew                            
+    :enew
     :call setline('.', ['count total (s)   self (s)  script']+map(copy(timings), 'printf("%5u %9s   %8s  %s", v:val[1], v:val[2], v:val[3], v:val[0])'))
 <
 For more information, read 
