@@ -1,11 +1,11 @@
 " VIM_FAQ - The Vim faq from http://vimdoc.sourceforge.net/
 " -------------------------------------------------------------
-" Version:  50
+" Version:  51
 " Maintainer:  Christian Brabandt
-" Last Change: 09 November 2015
+" Last Change: 13 November 2015
 "
 " Script: 
-" GetLatestVimScripts: 3298 50 :AutoInstall: faq_plugin.vim
+" GetLatestVimScripts: 3298 51 :AutoInstall: faq_plugin.vim
 "
 "
 " empty stub. This plugin contains only of the documentation

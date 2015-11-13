@@ -133,7 +133,7 @@
 .\" ========================================================================
 .\"
 .IX Title "vimfaq 1"
-.TH vimfaq 1 "2015-11-09" "49" "http://vimhelp.appspot.com/vim_faq.txt.html"
+.TH vimfaq 1 "2015-11-13" "50" "http://vimhelp.appspot.com/vim_faq.txt.html"
 .\" For nroff, turn off justification.  Always turn off hyphenation; it makes
 .\" way too many mistakes in technical documents.
 .if n .ad l
@@ -1385,7 +1385,6 @@ There are several:
 \& vim\-dev           Patches, bug reports, development discussions
 \& vim\-mac           Macintosh discussion
 \& vim\-fr            General discussion in French
-\& vim\-multibyte     Multibyte development issues
 \& vim\-vms           Development on VMS
 .Ve
 .PP
@@ -1397,6 +1396,12 @@ well. The remaining four are very low volume.
 \& To subscribe:   send an email to <NAME>\-subscribe@vim.org
 \& To unsubscribe: send an email to <NAME>\-unsubscribe@vim.org
 \& To get help:    send an email to <NAME>\-help@vim.org
+.Ve
+.PP
+The available mailing lists are also mentioned here:
+.PP
+.Vb 1
+\& http://www.vim.org/maillist.php
 .Ve
 .SS "2.3. Is there an archive available for the Vim mailing lists?"
 .IX Subsection "2.3. Is there an archive available for the Vim mailing lists?"
@@ -1440,7 +1445,7 @@ simple side effect of any configuration option from your .vimrc or
 \& vim \-u NONE \-U NONE \-N \-i NONE
 .Ve
 .PP
-this starts Vim in nocompatible mode (\-N), without reading your viminfo
+This starts Vim in nocompatible mode (\-N), without reading your viminfo
 file (\-i \s-1NONE\s0), without reading any configuration file (\-u \s-1NONE\s0 for not
 reading .vimrc file and \-U \s-1NONE\s0 for not reading a .gvimrc file) or even
 plugin.
@@ -1547,11 +1552,10 @@ It will be auto-generated from the source that is managed in the github
 repository http://www.github.com/chrisbra/vim_faq (Patches are welcome).
 .PP
 The repository also includes the faq in different formats, e.g. manpage,
-,pdf file, html file, plain text version and a version in vim help format.
+pdf file, html file, plain text version and a version in vim help format.
 .PP
 A slightly older version (which doesn't seem to get updated anymore) can
-still be found at VimOnline (vim.sf.net). Other places will be decided in
-the future.
+still be found at VimOnline (vim.sf.net).
 .SS "2.8. What if I don't find an answer in this \s-1FAQ\s0?"
 .IX Subsection "2.8. What if I don't find an answer in this FAQ?"
 This \s-1FAQ\s0 covers mainly Vim-specific questions. You may find more
@@ -1650,6 +1654,11 @@ For more information, read
 You can download the sources for the latest version of Vim from the
 VimOnline website. The \s-1URL\s0 for this site is
 http://vim.sourceforge.net/download.php.
+.PP
+Some users keep updated repositories for distributing latest binary
+versions of Vim. You can find those repositories here:
+.PP
+http://vim.wikia.com/wiki/Where_to_download_Vim
 .SS "3.3. What platforms does it run on?"
 .IX Subsection "3.3. What platforms does it run on?"
 All Unix platforms.
@@ -1662,9 +1671,9 @@ filetype plugins, compiler files, color schemes, documentation, indentation
 files and keymaps) from the Vim ftp site from the
 ftp://ftp.vim.org/pub/vim/runtime directory.
 .PP
-Alternatively, the runtime files can be downloaded from the mercurial
+Alternatively, the runtime files can be downloaded from the git
 repository that holds Vim source code at:
-http://code.google.com/p/vim/source/browse/runtime
+https://github.com/vim/vim/tree/master/runtime
 .SH "HELP"
 .IX Header "HELP"
 .SS "4.1. How do I use the help files?"
@@ -1755,8 +1764,8 @@ You can get information about the different modes in Vim by reading
 \&\fB:help vim-modes\fR
 .SS "4.5. How do I generate the Vim help tags file after adding a new Vim help file?"
 .IX Subsection "4.5. How do I generate the Vim help tags file after adding a new Vim help file?"
-You can use the \*(L":helptags\*(R" command to regenerate the Vim help tag file.
-For example:
+You can use the \*(L":helptags\*(R" command to regenerate the Vim help tag file
+from within Vim. For example:
 .PP
 .Vb 2
 \& :cd $VIMRUNTIME/doc
@@ -1788,8 +1797,7 @@ decompressing the files.  You must make sure that \f(CW$VIMRUNTIME\fR is set to
 where the other Vim files are, when they are not in the same location as
 the compressed \*(L"doc\*(R" directory.
 .PP
-Note, that the :helpgrep command does not work with compressed help
-pages.
+Note, that the :helpgrep command does not work with compressed help pages.
 .PP
 For more information, read
 .PP
@@ -1892,6 +1900,8 @@ For more information, read
 \&\fB:help autocommand\fR
 .PP
 \&\fB:help 'acd'\fR
+.PP
+\&\fB:help \f(BIgetcwd()\fB\fR
 .SS "5.4. How do I write a file without the line feed (\s-1EOL\s0) at the end of the file?"
 .IX Subsection "5.4. How do I write a file without the line feed (EOL) at the end of the file?"
 You can turn off the 'eol' option and turn on the 'binary' option to write
@@ -1910,9 +1920,24 @@ Alternatively, you can use:
 \& :w ++bin
 .Ve
 .PP
+If you rather only like Vim not to write missing EOLs, you can reset the
+\&'fixeol' option. This needs a Vim newer 7.4.785, so you should wrap this
+in an if condition in your .vimrc like this:
+.PP
+.Vb 3
+\& if exists(\*(Aq+fixeol\*(Aq)
+\&     set nofixeol
+\& endif
+.Ve
+.PP
+This has the advantage of avoiding the many side effects that the
+\&'binary' option has.
+.PP
 For more information, read
 .PP
 \&\fB:help 'endofline'\fR
+.PP
+\&\fB:help 'fixeol'\fR
 .PP
 \&\fB:help 'binary'\fR
 .PP
@@ -9734,4 +9759,4 @@ For more information, read
 .IX Header "AUTHOR"
 Current Maintainer: Christian Brabandt <cb@256bit.org>
 .PP
-Last updated on: 09 November 2015
+Last updated on: 13 November 2015

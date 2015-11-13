@@ -1710,7 +1710,6 @@
  vim-dev           Patches, bug reports, development discussions
  vim-mac           Macintosh discussion
  vim-fr            General discussion in French
- vim-multibyte     Multibyte development issues
  vim-vms           Development on VMS</code></pre>
 
 <p>Of these, only vim and vim-dev are of general interest. vim-announce is read-only to most people, and its messages are sent to the other lists as well. The remaining four are very low volume.</p>
@@ -1718,6 +1717,10 @@
 <pre><code> To subscribe:   send an email to &lt;NAME&gt;-subscribe@vim.org
  To unsubscribe: send an email to &lt;NAME&gt;-unsubscribe@vim.org
  To get help:    send an email to &lt;NAME&gt;-help@vim.org</code></pre>
+
+<p>The available mailing lists are also mentioned here:</p>
+
+<pre><code> http://www.vim.org/maillist.php</code></pre>
 
 <h2 id="Is-there-an-archive-available-for-the-Vim-mailing-lists">2.3. Is there an archive available for the Vim mailing lists?</h2>
 
@@ -1745,7 +1748,7 @@
 
 <pre><code> vim -u NONE -U NONE -N -i NONE</code></pre>
 
-<p>this starts Vim in nocompatible mode (-N), without reading your viminfo file (-i NONE), without reading any configuration file (-u NONE for not reading .vimrc file and -U NONE for not reading a .gvimrc file) or even plugin.</p>
+<p>This starts Vim in nocompatible mode (-N), without reading your viminfo file (-i NONE), without reading any configuration file (-u NONE for not reading .vimrc file and -U NONE for not reading a .gvimrc file) or even plugin.</p>
 
 <p>In this invocation, try to reproduce your problem. If the error persists, the chance is good you&#39;ve found a bug in Vim (see also Question 2.6.)</p>
 
@@ -1803,9 +1806,9 @@
 
 <p>The FAQ can be found at http://vimhelp.appspot.com/vim_faq.txt.html. It will be auto-generated from the source that is managed in the github repository http://www.github.com/chrisbra/vim_faq (Patches are welcome).</p>
 
-<p>The repository also includes the faq in different formats, e.g. manpage, ,pdf file, html file, plain text version and a version in vim help format.</p>
+<p>The repository also includes the faq in different formats, e.g. manpage, pdf file, html file, plain text version and a version in vim help format.</p>
 
-<p>A slightly older version (which doesn&#39;t seem to get updated anymore) can still be found at VimOnline (vim.sf.net). Other places will be decided in the future.</p>
+<p>A slightly older version (which doesn&#39;t seem to get updated anymore) can still be found at VimOnline (vim.sf.net).</p>
 
 <h2 id="What-if-I-dont-find-an-answer-in-this-FAQ">2.8. What if I don&#39;t find an answer in this FAQ?</h2>
 
@@ -1893,6 +1896,10 @@
 
 <p>You can download the sources for the latest version of Vim from the VimOnline website. The URL for this site is http://vim.sourceforge.net/download.php.</p>
 
+<p>Some users keep updated repositories for distributing latest binary versions of Vim. You can find those repositories here:</p>
+
+<p>http://vim.wikia.com/wiki/Where_to_download_Vim</p>
+
 <h2 id="What-platforms-does-it-run-on">3.3. What platforms does it run on?</h2>
 
 <p>All Unix platforms. All Windows platforms. Amiga, Atari, BeOS, DOS, Macintosh, MachTen, OS/2, RiscOS, VMS, IBM z/OS.</p>
@@ -1901,7 +1908,7 @@
 
 <p>You can download the latest version of the Vim runtime files (syntax files, filetype plugins, compiler files, color schemes, documentation, indentation files and keymaps) from the Vim ftp site from the ftp://ftp.vim.org/pub/vim/runtime directory.</p>
 
-<p>Alternatively, the runtime files can be downloaded from the mercurial repository that holds Vim source code at: http://code.google.com/p/vim/source/browse/runtime</p>
+<p>Alternatively, the runtime files can be downloaded from the git repository that holds Vim source code at: https://github.com/vim/vim/tree/master/runtime</p>
 
 <h1 id="HELP1">HELP</h1>
 
@@ -1976,7 +1983,7 @@
 
 <h2 id="How-do-I-generate-the-Vim-help-tags-file-after-adding-a-new-Vim-help-file">4.5. How do I generate the Vim help tags file after adding a new Vim help file?</h2>
 
-<p>You can use the &quot;:helptags&quot; command to regenerate the Vim help tag file. For example:</p>
+<p>You can use the &quot;:helptags&quot; command to regenerate the Vim help tag file from within Vim. For example:</p>
 
 <pre><code> :cd $VIMRUNTIME/doc
  :helptags .</code></pre>
@@ -2087,6 +2094,8 @@
 
 <p><b>:help &#39;acd&#39;</b></p>
 
+<p><b>:help getcwd()</b></p>
+
 <h2 id="How-do-I-write-a-file-without-the-line-feed-EOL-at-the-end-of-the-file">5.4. How do I write a file without the line feed (EOL) at the end of the file?</h2>
 
 <p>You can turn off the &#39;eol&#39; option and turn on the &#39;binary&#39; option to write a file without the EOL at the end of the file:</p>
@@ -2100,9 +2109,19 @@
 <pre><code> :set noeol
  :w ++bin</code></pre>
 
+<p>If you rather only like Vim not to write missing EOLs, you can reset the &#39;fixeol&#39; option. This needs a Vim newer 7.4.785, so you should wrap this in an if condition in your .vimrc like this:</p>
+
+<pre><code> if exists(&#39;+fixeol&#39;)
+     set nofixeol
+ endif</code></pre>
+
+<p>This has the advantage of avoiding the many side effects that the &#39;binary&#39; option has.</p>
+
 <p>For more information, read</p>
 
 <p><b>:help &#39;endofline&#39;</b></p>
+
+<p><b>:help &#39;fixeol&#39;</b></p>
 
 <p><b>:help &#39;binary&#39;</b></p>
 
@@ -8203,7 +8222,7 @@ or
 
 <p>Current Maintainer: Christian Brabandt &lt;cb@256bit.org&gt;</p>
 
-<p>Last updated on: 09 November 2015</p>
+<p>Last updated on: 13 November 2015</p>
 
 
 </body>

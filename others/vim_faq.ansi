@@ -1021,7 +1021,6 @@
      vim-dev           Patches, bug reports, development discussions
      vim-mac           Macintosh discussion
      vim-fr            General discussion in French
-     vim-multibyte     Multibyte development issues
      vim-vms           Development on VMS
 
     Of these, only vim and vim-dev are of general interest. vim-announce is
@@ -1031,6 +1030,10 @@
      To subscribe:   send an email to <NAME>-subscribe@vim.org
      To unsubscribe: send an email to <NAME>-unsubscribe@vim.org
      To get help:    send an email to <NAME>-help@vim.org
+
+    The available mailing lists are also mentioned here:
+
+     http://www.vim.org/maillist.php
 
   [1m2.3. Is there an archive available for the Vim mailing lists?[0m
     Yes. Visit http://www.yahoogroups.com/list/<name>, where name is one of:
@@ -1067,7 +1070,7 @@
 
      vim -u NONE -U NONE -N -i NONE
 
-    this starts Vim in nocompatible mode (-N), without reading your viminfo
+    This starts Vim in nocompatible mode (-N), without reading your viminfo
     file (-i NONE), without reading any configuration file (-u NONE for not
     reading .vimrc file and -U NONE for not reading a .gvimrc file) or even
     plugin.
@@ -1166,12 +1169,11 @@
     repository http://www.github.com/chrisbra/vim_faq (Patches are welcome).
 
     The repository also includes the faq in different formats, e.g. manpage,
-    ,pdf file, html file, plain text version and a version in vim help
+    pdf file, html file, plain text version and a version in vim help
     format.
 
     A slightly older version (which doesn't seem to get updated anymore) can
-    still be found at VimOnline (vim.sf.net). Other places will be decided
-    in the future.
+    still be found at VimOnline (vim.sf.net).
 
   [1m2.8. What if I don't find an answer in this FAQ?[0m
     This FAQ covers mainly Vim-specific questions. You may find more
@@ -1268,6 +1270,11 @@
     VimOnline website. The URL for this site is
     http://vim.sourceforge.net/download.php.
 
+    Some users keep updated repositories for distributing latest binary
+    versions of Vim. You can find those repositories here:
+
+    http://vim.wikia.com/wiki/Where_to_download_Vim
+
   [1m3.3. What platforms does it run on?[0m
     All Unix platforms. All Windows platforms. Amiga, Atari, BeOS, DOS,
     Macintosh, MachTen, OS/2, RiscOS, VMS, IBM z/OS.
@@ -1278,9 +1285,9 @@
     indentation files and keymaps) from the Vim ftp site from the
     ftp://ftp.vim.org/pub/vim/runtime directory.
 
-    Alternatively, the runtime files can be downloaded from the mercurial
+    Alternatively, the runtime files can be downloaded from the git
     repository that holds Vim source code at:
-    http://code.google.com/p/vim/source/browse/runtime
+    https://github.com/vim/vim/tree/master/runtime
 
 [1mHELP[0m
   [1m4.1. How do I use the help files?[0m
@@ -1369,8 +1376,8 @@
 
   [1m4.5. How do I generate the Vim help tags file after adding a new Vim help
   file?[0m
-    You can use the ":helptags" command to regenerate the Vim help tag file.
-    For example:
+    You can use the ":helptags" command to regenerate the Vim help tag file
+    from within Vim. For example:
 
      :cd $VIMRUNTIME/doc
      :helptags .
@@ -1492,6 +1499,8 @@
 
     [1m:help 'acd'[0m
 
+    [1m:help getcwd()[0m
+
   [1m5.4. How do I write a file without the line feed (EOL) at the end of the
   file?[0m
     You can turn off the 'eol' option and turn on the 'binary' option to
@@ -1506,9 +1515,22 @@
      :set noeol
      :w ++bin
 
+    If you rather only like Vim not to write missing EOLs, you can reset the
+    'fixeol' option. This needs a Vim newer 7.4.785, so you should wrap this
+    in an if condition in your .vimrc like this:
+
+     if exists('+fixeol')
+         set nofixeol
+     endif
+
+    This has the advantage of avoiding the many side effects that the
+    'binary' option has.
+
     For more information, read
 
     [1m:help 'endofline'[0m
+
+    [1m:help 'fixeol'[0m
 
     [1m:help 'binary'[0m
 
@@ -8729,5 +8751,5 @@
 [1mAUTHOR[0m
     Current Maintainer: Christian Brabandt <cb@256bit.org>
 
-    Last updated on: 09 November 2015
+    Last updated on: 13 November 2015
 

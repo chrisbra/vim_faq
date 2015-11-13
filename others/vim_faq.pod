@@ -1123,7 +1123,6 @@ There are several:
  vim-dev           Patches, bug reports, development discussions
  vim-mac           Macintosh discussion
  vim-fr            General discussion in French
- vim-multibyte     Multibyte development issues
  vim-vms           Development on VMS
 
 Of these, only vim and vim-dev are of general interest. vim-announce is
@@ -1134,6 +1133,9 @@ well. The remaining four are very low volume.
  To unsubscribe: send an email to <NAME>-unsubscribe@vim.org
  To get help:    send an email to <NAME>-help@vim.org
 
+The available mailing lists are also mentioned here:
+
+ http://www.vim.org/maillist.php
 
 =head2 2.3. Is there an archive available for the Vim mailing lists?
 
@@ -1144,7 +1146,6 @@ Alternatively, visit www.gmane.org to find out about GMANE, which allows
 you to access the mailing lists as though they were newsgroups.  This
 offers some convenience to those who wish to browse the history or casually
 observe the current threads.
-
 
 =head2 2.4. Where can I get the Vim user manual in HTML/PDF/PS format?
 
@@ -1174,7 +1175,7 @@ simple side effect of any configuration option from your .vimrc or
 
  vim -u NONE -U NONE -N -i NONE
 
-this starts Vim in nocompatible mode (-N), without reading your viminfo
+This starts Vim in nocompatible mode (-N), without reading your viminfo
 file (-i NONE), without reading any configuration file (-u NONE for not
 reading .vimrc file and -U NONE for not reading a .gvimrc file) or even
 plugin.
@@ -1280,12 +1281,10 @@ It will be auto-generated from the source that is managed in the github
 repository http://www.github.com/chrisbra/vim_faq (Patches are welcome).
 
 The repository also includes the faq in different formats, e.g. manpage,
-,pdf file, html file, plain text version and a version in vim help format.
+pdf file, html file, plain text version and a version in vim help format.
 
 A slightly older version (which doesn't seem to get updated anymore) can
-still be found at VimOnline (vim.sf.net). Other places will be decided in
-the future.
-
+still be found at VimOnline (vim.sf.net). 
 
 =head2 2.8. What if I don't find an answer in this FAQ?
 
@@ -1397,6 +1396,10 @@ You can download the sources for the latest version of Vim from the
 VimOnline website. The URL for this site is
 http://vim.sourceforge.net/download.php.
 
+Some users keep updated repositories for distributing latest binary
+versions of Vim. You can find those repositories here:
+
+http://vim.wikia.com/wiki/Where_to_download_Vim
 
 =head2 3.3. What platforms does it run on?
 
@@ -1412,9 +1415,9 @@ filetype plugins, compiler files, color schemes, documentation, indentation
 files and keymaps) from the Vim ftp site from the
 ftp://ftp.vim.org/pub/vim/runtime directory.
 
-Alternatively, the runtime files can be downloaded from the mercurial
+Alternatively, the runtime files can be downloaded from the git
 repository that holds Vim source code at:
-http://code.google.com/p/vim/source/browse/runtime
+https://github.com/vim/vim/tree/master/runtime
 
 
 
@@ -1521,8 +1524,8 @@ B<:help vim-modes>
 =head2 4.5. How do I generate the Vim help tags file after adding a new Vim help
   file?
 
-You can use the ":helptags" command to regenerate the Vim help tag file.
-For example:
+You can use the ":helptags" command to regenerate the Vim help tag file
+from within Vim. For example:
 
  :cd $VIMRUNTIME/doc
  :helptags .
@@ -1555,8 +1558,7 @@ decompressing the files.  You must make sure that $VIMRUNTIME is set to
 where the other Vim files are, when they are not in the same location as
 the compressed "doc" directory.
 
-Note, that the :helpgrep command does not work with compressed help
-pages.
+Note, that the :helpgrep command does not work with compressed help pages.
 
 For more information, read
 
@@ -1658,6 +1660,8 @@ B<:help autocommand>
 
 B<:help 'acd'>
 
+B<:help getcwd()>
+
 
 
 =head2 5.4. How do I write a file without the line feed (EOL) at the end of the
@@ -1675,9 +1679,22 @@ Alternatively, you can use:
  :set noeol
  :w ++bin
 
+If you rather only like Vim not to write missing EOLs, you can reset the
+'fixeol' option. This needs a Vim newer 7.4.785, so you should wrap this
+in an if condition in your .vimrc like this:
+
+ if exists('+fixeol')
+     set nofixeol
+ endif
+
+This has the advantage of avoiding the many side effects that the
+'binary' option has.
+
 For more information, read
 
 B<:help 'endofline'>
+
+B<:help 'fixeol'>
 
 B<:help 'binary'>
 
@@ -10084,4 +10101,4 @@ B<:help digraph-table>
 
 Current Maintainer: Christian Brabandt <cb@256bit.org>
 
-Last updated on: 09 November 2015
+Last updated on: 13 November 2015
