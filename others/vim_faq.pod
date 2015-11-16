@@ -1711,11 +1711,16 @@ in the '"' register. You can use the following autocmd in your .vimrc or
  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
                       \ exe "normal! g`\"" | endif
 
+Alternatively, you can simply source the vimrc_example.vim file, which is
+distributed with Vim.
+
 For more information, read
 
 B<:help '">
 
 B<:help last-position-jump>
+
+B<:help vimrc_example.vim>
 
 
 
@@ -1777,7 +1782,7 @@ B<:help 'includeexpr'>
 You can use the ":edit" command, without specifying a file name, to reload
 the current file.  If you have made modifications to the file, you can use
 ":edit!" to force the reload of the current file (you will lose your
-modifications, but depending on your 'undolevels' settings, those
+modifications, but depending on your 'undoreload' settings, those
 changes might be saved into the undo history).
 
 For more information, read
@@ -1787,6 +1792,8 @@ B<:help :edit>
 B<:help :edit!>
 
 B<:help 'confirm'>
+
+B<:help 'undoreload'>
 
 
 
@@ -2014,6 +2021,8 @@ B<:help -O>
 B<:help -p>
 
 B<:help startup-options>
+
+B<:help 'tabpagemax'>
 
 
 
@@ -2334,6 +2343,8 @@ For more information, read
 
 B<:help :bd>
 
+
+(This behaviour has been fixed with patch 7.4.530)
 
 
 =head2 8.8. How do I display the buffer number of the current buffer/file?
@@ -10101,4 +10112,4 @@ B<:help digraph-table>
 
 Current Maintainer: Christian Brabandt <cb@256bit.org>
 
-Last updated on: 13 November 2015
+Last updated on: 16 November 2015

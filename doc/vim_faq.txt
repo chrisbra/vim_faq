@@ -1,6 +1,6 @@
 *vim_faq.txt*	Frequently Asked Questions
 
-Last updated on: 25 Oktober 2015
+Last updated on: 13 November 2015
 
 	  VIM FAQ by: Christian Brabandt <cb@256bit.org>
 
@@ -1078,7 +1078,6 @@ There are several: >
     vim-dev           Patches, bug reports, development discussions
     vim-mac           Macintosh discussion
     vim-fr            General discussion in French
-    vim-multibyte     Multibyte development issues
     vim-vms           Development on VMS
 
 Of these, only vim and vim-dev are of general interest. vim-announce is
@@ -1089,7 +1088,10 @@ well. The remaining four are very low volume. >
     To unsubscribe: send an email to <NAME>-unsubscribe@vim.org
     To get help:    send an email to <NAME>-help@vim.org
 <
- 								*faq-2.3*
+The available mailing lists are also mentioned here: >
+
+    http://www.vim.org/maillist.php
+< 								*faq-2.3*
 2.3. Is there an archive available for the Vim mailing lists?
 
 Yes. Visit http://www.yahoogroups.com/list/<name>, where name is one of:
@@ -1099,7 +1101,6 @@ Alternatively, visit www.gmane.org to find out about GMANE, which allows
 you to access the mailing lists as though they were newsgroups.  This
 offers some convenience to those who wish to browse the history or casually
 observe the current threads.
-
  								*faq-2.4*
 2.4. Where can I get the Vim user manual in HTML/PDF/PS format?
 
@@ -1129,7 +1130,7 @@ simple side effect of any configuration option from your .vimrc or
 
     vim -u NONE -U NONE -N -i NONE
 <
-this starts Vim in nocompatible mode (-N), without reading your viminfo
+This starts Vim in nocompatible mode (-N), without reading your viminfo
 file (-i NONE), without reading any configuration file (-u NONE for not
 reading .vimrc file and -U NONE for not reading a .gvimrc file) or even
 plugin.
@@ -1227,12 +1228,10 @@ It will be auto-generated from the source that is managed in the github
 repository http://www.github.com/chrisbra/vim_faq (Patches are welcome).
 
 The repository also includes the faq in different formats, e.g. manpage,
-,pdf file, html file, plain text version and a version in vim help format.
+pdf file, html file, plain text version and a version in vim help format.
 
 A slightly older version (which doesn't seem to get updated anymore) can
-still be found at VimOnline (vim.sf.net). Other places will be decided in
-the future.
-
+still be found at VimOnline (vim.sf.net). 
  								*faq-2.8*
 2.8. What if I don't find an answer in this FAQ?
 
@@ -1331,6 +1330,10 @@ You can download the sources for the latest version of Vim from the
 VimOnline website. The URL for this site is
 http://vim.sourceforge.net/download.php.
 
+Some users keep updated repositories for distributing latest binary
+versions of Vim. You can find those repositories here:
+
+http://vim.wikia.com/wiki/Where_to_download_Vim
  								*faq-3.3*
 3.3. What platforms does it run on?
 
@@ -1346,9 +1349,9 @@ filetype plugins, compiler files, color schemes, documentation, indentation
 files and keymaps) from the Vim ftp site from the
 ftp://ftp.vim.org/pub/vim/runtime directory.
 
-Alternatively, the runtime files can be downloaded from the mercurial
+Alternatively, the runtime files can be downloaded from the git
 repository that holds Vim source code at:
-http://code.google.com/p/vim/source/browse/runtime
+https://github.com/vim/vim/tree/master/runtime
 
 =============================================================================
  								*faq-4*
@@ -1442,8 +1445,8 @@ You can get information about the different modes in Vim by reading
 4.5. How do I generate the Vim help tags file after adding a new Vim help
      file?
 
-You can use the ":helptags" command to regenerate the Vim help tag file.
-For example: >
+You can use the ":helptags" command to regenerate the Vim help tag file
+from within Vim. For example: >
 
     :cd $VIMRUNTIME/doc
     :helptags .
@@ -1474,8 +1477,7 @@ decompressing the files.  You must make sure that $VIMRUNTIME is set to
 where the other Vim files are, when they are not in the same location as
 the compressed "doc" directory.
 
-Note, that the :helpgrep command does not work with compressed help
-pages.
+Note, that the :helpgrep command does not work with compressed help pages.
 
 For more information, read 
 
@@ -1558,6 +1560,7 @@ For more information, read
     |filename-modifiers|
     |autocommand|
     |'acd'|
+    |getcwd()|
 
  								*faq-5.4*
 5.4. How do I write a file without the line feed (EOL) at the end of the
@@ -1575,9 +1578,21 @@ Alternatively, you can use: >
     :set noeol
     :w ++bin
 <
+If you rather only like Vim not to write missing EOLs, you can reset the
+'fixeol' option. This needs a Vim newer 7.4.785, so you should wrap this
+in an if condition in your .vimrc like this: >
+
+    if exists('+fixeol')
+        set nofixeol
+    endif
+<
+This has the advantage of avoiding the many side effects that the
+'binary' option has.
+
 For more information, read 
 
     |'endofline'|
+    |'fixeol'|
     |'binary'|
     |23.4|
 
@@ -1591,10 +1606,14 @@ in the '"' register. You can use the following autocmd in your .vimrc or
     au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
                          \ exe "normal! g`\"" | endif
 <
+Alternatively, you can simply source the vimrc_example.vim file, which is
+distributed with Vim.
+
 For more information, read 
 
     |'quote|
     |last-position-jump|
+    |vimrc_example.vim|
 
  								*faq-5.6*
 5.6. When editing a file in Vim, which is being changed by an external
@@ -1644,7 +1663,7 @@ For more information, read
 You can use the ":edit" command, without specifying a file name, to reload
 the current file.  If you have made modifications to the file, you can use
 ":edit!" to force the reload of the current file (you will lose your
-modifications, but depending on your 'undolevels' settings, those
+modifications, but depending on your 'undoreload' settings, those
 changes might be saved into the undo history).
 
 For more information, read 
@@ -1652,6 +1671,7 @@ For more information, read
     |:edit|
     |:edit!|
     |'confirm'|
+    |'undoreload'|
 
  								*faq-5.9*
 5.9. How do I autosave a file periodically?
@@ -1849,6 +1869,7 @@ For more information, read
     |-O|
     |-p|
     |startup-options|
+    |'tabpagemax'|
 
  								*faq-6.4*
 6.4. How do I configure Vim to autoload several files at once similar to
@@ -2120,6 +2141,8 @@ the buffers, you can use the command ":1,9999bd".
 For more information, read 
 
     |:bd|
+
+(This behaviour has been fixed with patch 7.4.530)
 
  								*faq-8.8*
 8.8. How do I display the buffer number of the current buffer/file?

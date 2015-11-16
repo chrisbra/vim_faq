@@ -2134,11 +2134,15 @@
 <pre><code> au BufReadPost * if line(&quot;&#39;\&quot;&quot;) &gt; 0 &amp;&amp; line(&quot;&#39;\&quot;&quot;) &lt;= line(&quot;$&quot;) |
                       \ exe &quot;normal! g`\&quot;&quot; | endif</code></pre>
 
+<p>Alternatively, you can simply source the vimrc_example.vim file, which is distributed with Vim.</p>
+
 <p>For more information, read</p>
 
 <p><b>:help &#39;&quot;</b></p>
 
 <p><b>:help last-position-jump</b></p>
+
+<p><b>:help vimrc_example.vim</b></p>
 
 <h2 id="When-editing-a-file-in-Vim-which-is-being-changed-by-an-external-application-Vim-opens-a-warning-window-like-the-confirm-dialog-each-time-a-change-is-detected.-How-do-I-disable-this-warning">5.6. When editing a file in Vim, which is being changed by an external application, Vim opens a warning window (like the confirm dialog) each time a change is detected. How do I disable this warning?</h2>
 
@@ -2185,7 +2189,7 @@
 
 <h2 id="How-do-I-reload-re-edit-the-current-file">5.8. How do I reload/re-edit the current file?</h2>
 
-<p>You can use the &quot;:edit&quot; command, without specifying a file name, to reload the current file. If you have made modifications to the file, you can use &quot;:edit!&quot; to force the reload of the current file (you will lose your modifications, but depending on your &#39;undolevels&#39; settings, those changes might be saved into the undo history).</p>
+<p>You can use the &quot;:edit&quot; command, without specifying a file name, to reload the current file. If you have made modifications to the file, you can use &quot;:edit!&quot; to force the reload of the current file (you will lose your modifications, but depending on your &#39;undoreload&#39; settings, those changes might be saved into the undo history).</p>
 
 <p>For more information, read</p>
 
@@ -2194,6 +2198,8 @@
 <p><b>:help :edit!</b></p>
 
 <p><b>:help &#39;confirm&#39;</b></p>
+
+<p><b>:help &#39;undoreload&#39;</b></p>
 
 <h2 id="How-do-I-autosave-a-file-periodically">5.9. How do I autosave a file periodically?</h2>
 
@@ -2373,6 +2379,8 @@
 <p><b>:help -p</b></p>
 
 <p><b>:help startup-options</b></p>
+
+<p><b>:help &#39;tabpagemax&#39;</b></p>
 
 <h2 id="How-do-I-configure-Vim-to-autoload-several-files-at-once-similar-to-work-sets-or-projects">6.4. How do I configure Vim to autoload several files at once similar to &quot;work-sets&quot; or &quot;projects&quot;?</h2>
 
@@ -2601,6 +2609,8 @@
 <p>For more information, read</p>
 
 <p><b>:help :bd</b></p>
+
+<p>(This behaviour has been fixed with patch 7.4.530)</p>
 
 <h2 id="How-do-I-display-the-buffer-number-of-the-current-buffer-file">8.8. How do I display the buffer number of the current buffer/file?</h2>
 
@@ -8222,7 +8232,7 @@ or
 
 <p>Current Maintainer: Christian Brabandt &lt;cb@256bit.org&gt;</p>
 
-<p>Last updated on: 13 November 2015</p>
+<p>Last updated on: 16 November 2015</p>
 
 
 </body>

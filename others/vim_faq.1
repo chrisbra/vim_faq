@@ -133,7 +133,7 @@
 .\" ========================================================================
 .\"
 .IX Title "vimfaq 1"
-.TH vimfaq 1 "2015-11-13" "50" "http://vimhelp.appspot.com/vim_faq.txt.html"
+.TH vimfaq 1 "2015-11-16" "51" "http://vimhelp.appspot.com/vim_faq.txt.html"
 .\" For nroff, turn off justification.  Always turn off hyphenation; it makes
 .\" way too many mistakes in technical documents.
 .if n .ad l
@@ -1953,11 +1953,16 @@ in the '"' register. You can use the following autocmd in your .vimrc or
 \&                      \e exe "normal! g\`\e"" | endif
 .Ve
 .PP
+Alternatively, you can simply source the vimrc_example.vim file, which is
+distributed with Vim.
+.PP
 For more information, read
 .PP
 \&\fB:help '"\fR
 .PP
 \&\fB:help last-position-jump\fR
+.PP
+\&\fB:help vimrc_example.vim\fR
 .SS "5.6. When editing a file in Vim, which is being changed by an external application, Vim opens a warning window (like the confirm dialog) each time a change is detected. How do I disable this warning?"
 .IX Subsection "5.6. When editing a file in Vim, which is being changed by an external application, Vim opens a warning window (like the confirm dialog) each time a change is detected. How do I disable this warning?"
 You can set the Vim 'autoread' option to automatically read the file again
@@ -2012,7 +2017,7 @@ For more information, read
 You can use the \*(L":edit\*(R" command, without specifying a file name, to reload
 the current file.  If you have made modifications to the file, you can use
 \&\*(L":edit!\*(R" to force the reload of the current file (you will lose your
-modifications, but depending on your 'undolevels' settings, those
+modifications, but depending on your 'undoreload' settings, those
 changes might be saved into the undo history).
 .PP
 For more information, read
@@ -2022,6 +2027,8 @@ For more information, read
 \&\fB:help :edit!\fR
 .PP
 \&\fB:help 'confirm'\fR
+.PP
+\&\fB:help 'undoreload'\fR
 .SS "5.9. How do I autosave a file periodically?"
 .IX Subsection "5.9. How do I autosave a file periodically?"
 Vim doesn't support auto-saving a file periodically.
@@ -2252,6 +2259,8 @@ For more information, read
 \&\fB:help \-p\fR
 .PP
 \&\fB:help startup-options\fR
+.PP
+\&\fB:help 'tabpagemax'\fR
 .ie n .SS "6.4. How do I configure Vim to autoload several files at once similar to ""work-sets"" or ""projects""?"
 .el .SS "6.4. How do I configure Vim to autoload several files at once similar to ``work-sets'' or ``projects''?"
 .IX Subsection "6.4. How do I configure Vim to autoload several files at once similar to work-sets or projects?"
@@ -2537,6 +2546,8 @@ the buffers, you can use the command \*(L":1,9999bd\*(R".
 For more information, read
 .PP
 \&\fB:help :bd\fR
+.PP
+(This behaviour has been fixed with patch 7.4.530)
 .SS "8.8. How do I display the buffer number of the current buffer/file?"
 .IX Subsection "8.8. How do I display the buffer number of the current buffer/file?"
 You can use 2<\s-1CTRL\-G\s0> command to display the buffer number for the current
@@ -9759,4 +9770,4 @@ For more information, read
 .IX Header "AUTHOR"
 Current Maintainer: Christian Brabandt <cb@256bit.org>
 .PP
-Last updated on: 13 November 2015
+Last updated on: 16 November 2015

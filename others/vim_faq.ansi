@@ -1544,11 +1544,16 @@
      au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
                           \ exe "normal! g`\"" | endif
 
+    Alternatively, you can simply source the vimrc_example.vim file, which
+    is distributed with Vim.
+
     For more information, read
 
     [1m:help '"[0m
 
     [1m:help last-position-jump[0m
+
+    [1m:help vimrc_example.vim[0m
 
   [1m5.6. When editing a file in Vim, which is being changed by an external
   application, Vim opens a warning window (like the confirm dialog) each
@@ -1601,7 +1606,7 @@
     You can use the ":edit" command, without specifying a file name, to
     reload the current file. If you have made modifications to the file, you
     can use ":edit!" to force the reload of the current file (you will lose
-    your modifications, but depending on your 'undolevels' settings, those
+    your modifications, but depending on your 'undoreload' settings, those
     changes might be saved into the undo history).
 
     For more information, read
@@ -1611,6 +1616,8 @@
     [1m:help :edit![0m
 
     [1m:help 'confirm'[0m
+
+    [1m:help 'undoreload'[0m
 
   [1m5.9. How do I autosave a file periodically?[0m
     Vim doesn't support auto-saving a file periodically.
@@ -1816,6 +1823,8 @@
     [1m:help -p[0m
 
     [1m:help startup-options[0m
+
+    [1m:help 'tabpagemax'[0m
 
   [1m6.4. How do I configure Vim to autoload several files at once similar to
   "work-sets" or "projects"?[0m
@@ -2088,6 +2097,8 @@
     For more information, read
 
     [1m:help :bd[0m
+
+    (This behaviour has been fixed with patch 7.4.530)
 
   [1m8.8. How do I display the buffer number of the current buffer/file?[0m
     You can use 2<CTRL-G> command to display the buffer number for the
@@ -8751,5 +8762,5 @@
 [1mAUTHOR[0m
     Current Maintainer: Christian Brabandt <cb@256bit.org>
 
-    Last updated on: 13 November 2015
+    Last updated on: 16 November 2015
 
