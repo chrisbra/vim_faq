@@ -1,6 +1,6 @@
 *vim_faq.txt*	Frequently Asked Questions
 
-Last updated on: 13 November 2015
+Last updated on: 16 November 2015
 
 	  VIM FAQ by: Christian Brabandt <cb@256bit.org>
 
@@ -588,6 +588,8 @@ SECTION 28 - QUICKFIX
 	  disappears and I have to use the  :clist command to see the error
 	  message again. Is there any other way to see these error
 	  messages?
+|faq-28.3|  How can I perform a command for each item in the
+	  quickfix/location list?
                                                                 *faq-folding*
 SECTION 29 - FOLDING
 |faq-29.1|  How do I extend the Vim folding support?
@@ -7172,6 +7174,32 @@ For more information, read
     |:copen|
     |:cwindow|
     |quickfix|
+ 								*faq-28.3*
+28.3. How can I perform a command for each item in the quickfix/location
+      list?
+
+Starting from Vim 7.4.858 Vim provides the new commands :cfdo, :cdo,
+:lfdo and :ldo. They work by iterating over all items in the quickfix
+list and performing a command on each. The difference is, that the :lfdo
+and :ldo commands iterate over the location list entries, while the
+:cfdo and :cdo commands operate on the items in the quickfix list. Also,
+the :cfdo and :lfdo operate on all different files, while the :cdo and
+:ldo commands operate on each item in the quickfix/location list.
+
+For example you could vimgrep all C files in the current directory for a
+search string "Foobar": >
+
+    :vimgrep /Foobar/ *.c
+<
+and as this populates your quickfix list, you could simply replace all
+occurences by using: >
+
+    :cdo :%s/Foobar/Foobaz | upd
+<
+For more information, read 
+
+    |:cfdo|
+    |:cdo|
 
 =============================================================================
  								*faq-29*

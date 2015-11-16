@@ -508,6 +508,7 @@
     <ul>
       <li><a href="#How-do-I-build-programs-from-Vim">28.1. How do I build programs from Vim?</a></li>
       <li><a href="#When-I-run-the-make-command-in-Vim-I-get-the-errors-listed-as-the-compiler-compiles-the-program.-When-it-finishes-this-list-disappears-and-I-have-to-use-the-:clist-command-to-see-the-error-message-again.-Is-there-any-other-way-to-see-these-error-messages">28.2. When I run the make command in Vim I get the errors listed as the compiler compiles the program. When it finishes this list disappears and I have to use the :clist command to see the error message again. Is there any other way to see these error messages?</a></li>
+      <li><a href="#How-can-I-perform-a-command-for-each-item-in-the-quickfix-location-list">28.3. How can I perform a command for each item in the quickfix/location list?</a></li>
     </ul>
   </li>
   <li><a href="#FOLDING1">FOLDING</a>
@@ -1241,7 +1242,9 @@
        compiler compiles the program. When it finishes this list
        disappears and I have to use the  :clist command to see the error
        message again. Is there any other way to see these error
-       messages?</code></pre>
+       messages?
+ 28.3. How can I perform a command for each item in the
+       quickfix/location list?</code></pre>
 
 <h1 id="FOLDING">FOLDING</h1>
 
@@ -6883,6 +6886,24 @@ or
 <p><b>:help :cwindow</b></p>
 
 <p><b>:help quickfix</b></p>
+
+<h2 id="How-can-I-perform-a-command-for-each-item-in-the-quickfix-location-list">28.3. How can I perform a command for each item in the quickfix/location list?</h2>
+
+<p>Starting from Vim 7.4.858 Vim provides the new commands :cfdo, :cdo, :lfdo and :ldo. They work by iterating over all items in the quickfix list and performing a command on each. The difference is, that the :lfdo and :ldo commands iterate over the location list entries, while the :cfdo and :cdo commands operate on the items in the quickfix list. Also, the :cfdo and :lfdo operate on all different files, while the :cdo and :ldo commands operate on each item in the quickfix/location list.</p>
+
+<p>For example you could vimgrep all C files in the current directory for a search string &quot;Foobar&quot;:</p>
+
+<pre><code> :vimgrep /Foobar/ *.c</code></pre>
+
+<p>and as this populates your quickfix list, you could simply replace all occurences by using:</p>
+
+<pre><code> :cdo :%s/Foobar/Foobaz | upd</code></pre>
+
+<p>For more information, read</p>
+
+<p><b>:help :cfdo</b></p>
+
+<p><b>:help :cdo</b></p>
 
 <h1 id="FOLDING1">FOLDING</h1>
 

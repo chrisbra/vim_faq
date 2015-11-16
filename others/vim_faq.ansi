@@ -580,6 +580,8 @@
            disappears and I have to use the  :clist command to see the error
            message again. Is there any other way to see these error
            messages?
+     28.3. How can I perform a command for each item in the
+           quickfix/location list?
 
 [1mFOLDING[0m
      29.1. How do I extend the Vim folding support?
@@ -7104,6 +7106,32 @@
     [1m:help :cwindow[0m
 
     [1m:help quickfix[0m
+
+  [1m28.3. How can I perform a command for each item in the quickfix/location
+   list?[0m
+    Starting from Vim 7.4.858 Vim provides the new commands :cfdo, :cdo,
+    :lfdo and :ldo. They work by iterating over all items in the quickfix
+    list and performing a command on each. The difference is, that the :lfdo
+    and :ldo commands iterate over the location list entries, while the
+    :cfdo and :cdo commands operate on the items in the quickfix list. Also,
+    the :cfdo and :lfdo operate on all different files, while the :cdo and
+    :ldo commands operate on each item in the quickfix/location list.
+
+    For example you could vimgrep all C files in the current directory for a
+    search string "Foobar":
+
+     :vimgrep /Foobar/ *.c
+
+    and as this populates your quickfix list, you could simply replace all
+    occurences by using:
+
+     :cdo :%s/Foobar/Foobaz | upd
+
+    For more information, read
+
+    [1m:help :cfdo[0m
+
+    [1m:help :cdo[0m
 
 [1mFOLDING[0m
   [1m29.1. How do I extend the Vim folding support?[0m

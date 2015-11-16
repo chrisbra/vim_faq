@@ -133,7 +133,7 @@
 .\" ========================================================================
 .\"
 .IX Title "vimfaq 1"
-.TH vimfaq 1 "2015-11-16" "51" "http://vimhelp.appspot.com/vim_faq.txt.html"
+.TH vimfaq 1 "2015-11-16" "52" "http://vimhelp.appspot.com/vim_faq.txt.html"
 .\" For nroff, turn off justification.  Always turn off hyphenation; it makes
 .\" way too many mistakes in technical documents.
 .if n .ad l
@@ -768,13 +768,15 @@ this \s-1FAQ\s0 is available at http://vimhelp.appspot.com/vim_faq.txt.html
 .Ve
 .SH "QUICKFIX"
 .IX Header "QUICKFIX"
-.Vb 6
+.Vb 8
 \& 28.1. How do I build programs from Vim?
 \& 28.2. When I run the make command in Vim I get the errors listed as the
 \&       compiler compiles the program. When it finishes this list
 \&       disappears and I have to use the  :clist command to see the error
 \&       message again. Is there any other way to see these error
 \&       messages?
+\& 28.3. How can I perform a command for each item in the
+\&       quickfix/location list?
 .Ve
 .SH "FOLDING"
 .IX Header "FOLDING"
@@ -7955,6 +7957,35 @@ For more information, read
 \&\fB:help :cwindow\fR
 .PP
 \&\fB:help quickfix\fR
+.SS "28.3. How can I perform a command for each item in the quickfix/location list?"
+.IX Subsection "28.3. How can I perform a command for each item in the quickfix/location list?"
+Starting from Vim 7.4.858 Vim provides the new commands :cfdo, :cdo,
+:lfdo and :ldo. They work by iterating over all items in the quickfix
+list and performing a command on each. The difference is, that the :lfdo
+and :ldo commands iterate over the location list entries, while the
+:cfdo and :cdo commands operate on the items in the quickfix list. Also,
+the :cfdo and :lfdo operate on all different files, while the :cdo and
+:ldo commands operate on each item in the quickfix/location list.
+.PP
+For example you could vimgrep all C files in the current directory for a
+search string \*(L"Foobar\*(R":
+.PP
+.Vb 1
+\& :vimgrep /Foobar/ *.c
+.Ve
+.PP
+and as this populates your quickfix list, you could simply replace all
+occurences by using:
+.PP
+.Vb 1
+\& :cdo :%s/Foobar/Foobaz | upd
+.Ve
+.PP
+For more information, read
+.PP
+\&\fB:help :cfdo\fR
+.PP
+\&\fB:help :cdo\fR
 .SH "FOLDING"
 .IX Header "FOLDING"
 .SS "29.1. How do I extend the Vim folding support?"
