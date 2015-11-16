@@ -1604,10 +1604,14 @@ in the '"' register. You can use the following autocmd in your .vimrc or
     au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
                          \ exe "normal! g`\"" | endif
 
+Alternatively, you can simply source the vimrc_example.vim file, which is
+distributed with Vim.
+
 For more information, read
 
     :help '"
     :help last-position-jump
+    :help vimrc_example.vim
 
 
 5.6. When editing a file in Vim, which is being changed by an external
@@ -1657,7 +1661,7 @@ For more information, read
 You can use the ":edit" command, without specifying a file name, to reload
 the current file.  If you have made modifications to the file, you can use
 ":edit!" to force the reload of the current file (you will lose your
-modifications, but depending on your 'undolevels' settings, those
+modifications, but depending on your 'undoreload' settings, those
 changes might be saved into the undo history).
 
 For more information, read
@@ -1665,6 +1669,7 @@ For more information, read
     :help :edit
     :help :edit!
     :help 'confirm'
+    :help 'undoreload'
 
 
 5.9. How do I autosave a file periodically?
@@ -1863,6 +1868,7 @@ For more information, read
     :help -O
     :help -p
     :help startup-options
+    :help 'tabpagemax'
 
 
 6.4. How do I configure Vim to autoload several files at once similar to
@@ -2136,6 +2142,8 @@ the buffers, you can use the command ":1,9999bd".
 For more information, read
 
     :help :bd
+
+(This behaviour has been fixed with patch 7.4.530)
 
 
 8.8. How do I display the buffer number of the current buffer/file?
