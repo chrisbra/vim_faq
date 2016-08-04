@@ -133,7 +133,7 @@
 .\" ========================================================================
 .\"
 .IX Title "vimfaq 1"
-.TH vimfaq 1 "2015-11-16" "52" "http://vimhelp.appspot.com/vim_faq.txt.html"
+.TH vimfaq 1 "2016-08-04" "53" "http://vimhelp.appspot.com/vim_faq.txt.html"
 .\" For nroff, turn off justification.  Always turn off hyphenation; it makes
 .\" way too many mistakes in technical documents.
 .if n .ad l
@@ -163,7 +163,7 @@ this \s-1FAQ\s0 is available at http://vimhelp.appspot.com/vim_faq.txt.html
 \& 2.2. Is there a mailing list available?
 \& 2.3. Is there an archive available for the Vim mailing lists?
 \& 2.4. Where can I get the Vim user manual in HTML/PDF/PS format?
-\& 2.5. I have a "xyz" (some) problem with Vim. How do I determine it is a
+\& 2.5. I have a "xyz" (some) problem with Vim. How do I determine if it is a
 \&      problem with my setup or with Vim?
 \& 2.6. Where can I report bugs?
 \& 2.7. Where can the FAQ be found?
@@ -1277,6 +1277,16 @@ Extensive customizable
 \&  to extend its capabilities
 .Ve
 .PP
+Packages
+.IX Subsection "Packages"
+.PP
+.Vb 4
+\&  Packages have been added to keep the installation of the growing
+\&  number of plugins manageable. This is a convenient way to get one
+\&  or more plugins, drop them in a directory and keep them updated.
+\&  Vim will load them automatically, or only when desired.
+.Ve
+.PP
 \fIProgramming performance features:\fR
 .IX Subsection "Programming performance features:"
 .PP
@@ -1339,6 +1349,24 @@ Integration of several programming languages
 \&  can extend Vim using Lua, Ruby, Tcl, Perl and Python 2 and 3.
 .Ve
 .PP
+Asynchronous I/O support
+.IX Subsection "Asynchronous I/O support"
+.PP
+.Vb 4
+\&  Vim uses jobs and channels to talk to other programs
+\&  asynchronously. This allows to have e.g. a compiler run in the
+\&  background and open the quickfix list as soon as it is finished to
+\&  fix warnings and errors.
+.Ve
+.PP
+Timers
+.IX Subsection "Timers"
+.PP
+.Vb 2
+\&  Timers are asynchronous and can fire once or repeatedly to invoke a
+\&  function to do any work.
+.Ve
+.PP
 For more information, read
 .PP
 \&\fB:help vi-differences\fR
@@ -1370,6 +1398,14 @@ Finally, read the Vi \s-1FAQ:\s0
 \& http://www.faqs.org/faqs/editor\-faq/vi/part1/index.html
 .Ve
 .PP
+Finally, there are also some communities, where you can discuss features
+or ask questions:
+.PP
+.Vb 2
+\& http://vi.stackexchange.com
+\& http://vim.reddit.com
+.Ve
+.PP
 For more information, read
 .PP
 \&\fB:help mail-list\fR
@@ -1387,7 +1423,6 @@ There are several:
 \& vim\-dev           Patches, bug reports, development discussions
 \& vim\-mac           Macintosh discussion
 \& vim\-fr            General discussion in French
-\& vim\-vms           Development on VMS
 .Ve
 .PP
 Of these, only vim and vim-dev are of general interest. vim-announce is
@@ -1408,7 +1443,7 @@ The available mailing lists are also mentioned here:
 .SS "2.3. Is there an archive available for the Vim mailing lists?"
 .IX Subsection "2.3. Is there an archive available for the Vim mailing lists?"
 Yes. Visit http://www.yahoogroups.com/list/<name>, where name is one of:
-vimannounce, vim, vimdev, vim-fr, vim-mac, vim-multibyte, vim-vms.
+vimannounce, vim, vimdev, vim-fr, vim-mac, vim-vms.
 .PP
 Alternatively, visit www.gmane.org to find out about \s-1GMANE,\s0 which allows
 you to access the mailing lists as though they were newsgroups.  This
@@ -1435,9 +1470,9 @@ You can find a pdf version of the full English help, including this faq
 .PP
 This document is cross-referenced, so you can use the hyperlink
 functionality.
-.ie n .SS "2.5. I have a ""xyz"" (some) problem with Vim. How do I determine it is a problem with my setup or with Vim?  / Have I found a bug in Vim?"
-.el .SS "2.5. I have a ``xyz'' (some) problem with Vim. How do I determine it is a problem with my setup or with Vim?  / Have I found a bug in Vim?"
-.IX Subsection "2.5. I have a xyz (some) problem with Vim. How do I determine it is a problem with my setup or with Vim? / Have I found a bug in Vim?"
+.ie n .SS "2.5. I have a ""xyz"" (some) problem with Vim. How do I determine if it is a problem with my setup or with Vim?  / Have I found a bug in Vim?"
+.el .SS "2.5. I have a ``xyz'' (some) problem with Vim. How do I determine if it is a problem with my setup or with Vim?  / Have I found a bug in Vim?"
+.IX Subsection "2.5. I have a xyz (some) problem with Vim. How do I determine if it is a problem with my setup or with Vim? / Have I found a bug in Vim?"
 First, you need to find out, whether the error is in the actual runtime
 files or any plugin that is distributed with Vim or whether it is a
 simple side effect of any configuration option from your .vimrc or
@@ -1599,6 +1634,7 @@ The latest version of Vim is 7.4 released on 10th August 2013.
 The release-history of different versions of Vim is below:
 .PP
 .Vb 10
+\& Version 8.0
 \& Version 7.4     10th August, 2013
 \& Version 7.3     15th August, 2010
 \& Version 7.2     9th August, 2008
@@ -1636,13 +1672,7 @@ For more information, read
 .PP
 \&\fB:help new\-7\fR
 .PP
-\&\fB:help changed\-6.1\fR
-.PP
-\&\fB:help changed\-6.2\fR
-.PP
-\&\fB:help changed\-6.3\fR
-.PP
-\&\fB:help changed\-6.4\fR
+\&\fB:help new\-8\fR
 .PP
 \&\fB:help changed\-7.1\fR
 .PP
@@ -1654,8 +1684,11 @@ For more information, read
 .SS "3.2. Where can I find the latest version of Vim?"
 .IX Subsection "3.2. Where can I find the latest version of Vim?"
 You can download the sources for the latest version of Vim from the
-VimOnline website. The \s-1URL\s0 for this site is
-http://vim.sourceforge.net/download.php.
+Github repository. The \s-1URL\s0 for this site is
+https://github.com/vim/vim
+.PP
+A mirror is available at bitbucket:
+https://bitbucket.org/vim\-mirror/vim
 .PP
 Some users keep updated repositories for distributing latest binary
 versions of Vim. You can find those repositories here:
@@ -1741,6 +1774,8 @@ d)  You can use the \*(L":helpgrep\*(R" command to search for the given text in
 .PP
 For more information, read
 .PP
+\&\fB:help help-summary\fR
+.PP
 \&\fB:help c_CTRL\-D\fR
 .PP
 \&\fB:help c_<Tab\fR>
@@ -1772,6 +1807,12 @@ from within Vim. For example:
 .Vb 2
 \& :cd $VIMRUNTIME/doc
 \& :helptags .
+.Ve
+.PP
+To update all \*(L"doc\*(R" directories in your 'runtimepath', you can use
+.PP
+.Vb 1
+\& :helptags ALL
 .Ve
 .PP
 For more information, read
@@ -9801,4 +9842,4 @@ For more information, read
 .IX Header "AUTHOR"
 Current Maintainer: Christian Brabandt <cb@256bit.org>
 .PP
-Last updated on: 16 November 2015
+Last updated on: 04 August 2016

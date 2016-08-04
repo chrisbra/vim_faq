@@ -89,6 +89,7 @@
               <li><a href="#Diff-mode">Diff mode</a></li>
               <li><a href="#Encryption-using-the-blowfish-algorithm">Encryption using the blowfish algorithm</a></li>
               <li><a href="#Extensive-customizable">Extensive customizable</a></li>
+              <li><a href="#Packages">Packages</a></li>
             </ul>
           </li>
           <li><a href="#Programming-performance-features">Programming performance features:</a>
@@ -100,6 +101,8 @@
               <li><a href="#Folding">Folding</a></li>
               <li><a href="#ctags-and-cscope-integration">ctags and cscope integration</a></li>
               <li><a href="#Integration-of-several-programming-languages">Integration of several programming languages</a></li>
+              <li><a href="#Asynchronous-I-O-support">Asynchronous I/O support</a></li>
+              <li><a href="#Timers">Timers</a></li>
             </ul>
           </li>
         </ul>
@@ -113,7 +116,7 @@
       <li><a href="#Is-there-a-mailing-list-available">2.2. Is there a mailing list available?</a></li>
       <li><a href="#Is-there-an-archive-available-for-the-Vim-mailing-lists">2.3. Is there an archive available for the Vim mailing lists?</a></li>
       <li><a href="#Where-can-I-get-the-Vim-user-manual-in-HTML-PDF-PS-format">2.4. Where can I get the Vim user manual in HTML/PDF/PS format?</a></li>
-      <li><a href="#I-have-a-xyz-some-problem-with-Vim.-How-do-I-determine-it-is-a-problem-with-my-setup-or-with-Vim-Have-I-found-a-bug-in-Vim">2.5. I have a &quot;xyz&quot; (some) problem with Vim. How do I determine it is a problem with my setup or with Vim? / Have I found a bug in Vim?</a></li>
+      <li><a href="#I-have-a-xyz-some-problem-with-Vim.-How-do-I-determine-if-it-is-a-problem-with-my-setup-or-with-Vim-Have-I-found-a-bug-in-Vim">2.5. I have a &quot;xyz&quot; (some) problem with Vim. How do I determine if it is a problem with my setup or with Vim? / Have I found a bug in Vim?</a></li>
       <li><a href="#Where-can-I-report-bugs">2.6. Where can I report bugs?</a></li>
       <li><a href="#Where-can-the-FAQ-be-found">2.7. Where can the FAQ be found?</a></li>
       <li><a href="#What-if-I-dont-find-an-answer-in-this-FAQ">2.8. What if I don&#39;t find an answer in this FAQ?</a></li>
@@ -657,7 +660,7 @@
  2.2. Is there a mailing list available?
  2.3. Is there an archive available for the Vim mailing lists?
  2.4. Where can I get the Vim user manual in HTML/PDF/PS format?
- 2.5. I have a &quot;xyz&quot; (some) problem with Vim. How do I determine it is a
+ 2.5. I have a &quot;xyz&quot; (some) problem with Vim. How do I determine if it is a
       problem with my setup or with Vim?
  2.6. Where can I report bugs?
  2.7. Where can the FAQ be found?
@@ -1632,6 +1635,13 @@
   options. You can define your own commands, macros and even plugins
   to extend its capabilities</code></pre>
 
+<h4 id="Packages">Packages</h4>
+
+<pre><code>  Packages have been added to keep the installation of the growing
+  number of plugins manageable. This is a convenient way to get one
+  or more plugins, drop them in a directory and keep them updated.
+  Vim will load them automatically, or only when desired.</code></pre>
+
 <h3 id="Programming-performance-features">Programming performance features:</h3>
 
 <h4 id="Edit-compile-edit-speedup">Edit-compile-edit speedup</h4>
@@ -1672,6 +1682,18 @@
 <pre><code>  If you find the internal scripting language not powerful enough, you
   can extend Vim using Lua, Ruby, Tcl, Perl and Python 2 and 3.</code></pre>
 
+<h4 id="Asynchronous-I-O-support">Asynchronous I/O support</h4>
+
+<pre><code>  Vim uses jobs and channels to talk to other programs
+  asynchronously. This allows to have e.g. a compiler run in the
+  background and open the quickfix list as soon as it is finished to
+  fix warnings and errors.</code></pre>
+
+<h4 id="Timers">Timers</h4>
+
+<pre><code>  Timers are asynchronous and can fire once or repeatedly to invoke a
+  function to do any work.</code></pre>
+
 <p>For more information, read</p>
 
 <p><b>:help vi-differences</b></p>
@@ -1696,6 +1718,11 @@
 
 <pre><code> http://www.faqs.org/faqs/editor-faq/vi/part1/index.html</code></pre>
 
+<p>Finally, there are also some communities, where you can discuss features or ask questions:</p>
+
+<pre><code> http://vi.stackexchange.com
+ http://vim.reddit.com</code></pre>
+
 <p>For more information, read</p>
 
 <p><b>:help mail-list</b></p>
@@ -1712,8 +1739,7 @@
  vim               General discussion
  vim-dev           Patches, bug reports, development discussions
  vim-mac           Macintosh discussion
- vim-fr            General discussion in French
- vim-vms           Development on VMS</code></pre>
+ vim-fr            General discussion in French</code></pre>
 
 <p>Of these, only vim and vim-dev are of general interest. vim-announce is read-only to most people, and its messages are sent to the other lists as well. The remaining four are very low volume.</p>
 
@@ -1727,7 +1753,7 @@
 
 <h2 id="Is-there-an-archive-available-for-the-Vim-mailing-lists">2.3. Is there an archive available for the Vim mailing lists?</h2>
 
-<p>Yes. Visit http://www.yahoogroups.com/list/&lt;name&gt;, where name is one of: vimannounce, vim, vimdev, vim-fr, vim-mac, vim-multibyte, vim-vms.</p>
+<p>Yes. Visit http://www.yahoogroups.com/list/&lt;name&gt;, where name is one of: vimannounce, vim, vimdev, vim-fr, vim-mac, vim-vms.</p>
 
 <p>Alternatively, visit www.gmane.org to find out about GMANE, which allows you to access the mailing lists as though they were newsgroups. This offers some convenience to those who wish to browse the history or casually observe the current threads.</p>
 
@@ -1745,7 +1771,7 @@
 
 <p>This document is cross-referenced, so you can use the hyperlink functionality.</p>
 
-<h2 id="I-have-a-xyz-some-problem-with-Vim.-How-do-I-determine-it-is-a-problem-with-my-setup-or-with-Vim-Have-I-found-a-bug-in-Vim">2.5. I have a &quot;xyz&quot; (some) problem with Vim. How do I determine it is a problem with my setup or with Vim? / Have I found a bug in Vim?</h2>
+<h2 id="I-have-a-xyz-some-problem-with-Vim.-How-do-I-determine-if-it-is-a-problem-with-my-setup-or-with-Vim-Have-I-found-a-bug-in-Vim">2.5. I have a &quot;xyz&quot; (some) problem with Vim. How do I determine if it is a problem with my setup or with Vim? / Have I found a bug in Vim?</h2>
 
 <p>First, you need to find out, whether the error is in the actual runtime files or any plugin that is distributed with Vim or whether it is a simple side effect of any configuration option from your .vimrc or .gvimrc. So first, start vim like this:</p>
 
@@ -1843,7 +1869,8 @@
 
 <p>The release-history of different versions of Vim is below:</p>
 
-<pre><code> Version 7.4     10th August, 2013
+<pre><code> Version 8.0
+ Version 7.4     10th August, 2013
  Version 7.3     15th August, 2010
  Version 7.2     9th August, 2008
  Version 7.1     12th May, 2007
@@ -1879,13 +1906,7 @@
 
 <p><b>:help new-7</b></p>
 
-<p><b>:help changed-6.1</b></p>
-
-<p><b>:help changed-6.2</b></p>
-
-<p><b>:help changed-6.3</b></p>
-
-<p><b>:help changed-6.4</b></p>
+<p><b>:help new-8</b></p>
 
 <p><b>:help changed-7.1</b></p>
 
@@ -1897,7 +1918,9 @@
 
 <h2 id="Where-can-I-find-the-latest-version-of-Vim">3.2. Where can I find the latest version of Vim?</h2>
 
-<p>You can download the sources for the latest version of Vim from the VimOnline website. The URL for this site is http://vim.sourceforge.net/download.php.</p>
+<p>You can download the sources for the latest version of Vim from the Github repository. The URL for this site is https://github.com/vim/vim</p>
+
+<p>A mirror is available at bitbucket: https://bitbucket.org/vim-mirror/vim</p>
 
 <p>Some users keep updated repositories for distributing latest binary versions of Vim. You can find those repositories here:</p>
 
@@ -1958,6 +1981,8 @@
 
 <p>For more information, read</p>
 
+<p><b>:help help-summary</b></p>
+
 <p><b>:help c_CTRL-D</b></p>
 
 <p><b>:help c_&lt;Tab</b>&gt;</p>
@@ -1990,6 +2015,10 @@
 
 <pre><code> :cd $VIMRUNTIME/doc
  :helptags .</code></pre>
+
+<p>To update all &quot;doc&quot; directories in your &#39;runtimepath&#39;, you can use</p>
+
+<pre><code> :helptags ALL</code></pre>
 
 <p>For more information, read</p>
 
@@ -8253,7 +8282,7 @@ or
 
 <p>Current Maintainer: Christian Brabandt &lt;cb@256bit.org&gt;</p>
 
-<p>Last updated on: 16 November 2015</p>
+<p>Last updated on: 04 August 2016</p>
 
 
 </body>

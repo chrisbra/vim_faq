@@ -1,6 +1,6 @@
 *vim_faq.txt*	Frequently Asked Questions
 
-Last updated on: 13 August 2013
+Last updated on: 04 August 2016
 
 	  VIM FAQ by: Christian Brabandt <cb@256bit.org>
 
@@ -28,7 +28,7 @@ SECTION 2 - RESOURCES
 |faq-2.2|   Is there a mailing list available?
 |faq-2.3|   Is there an archive available for the Vim mailing lists?
 |faq-2.4|   Where can I get the Vim user manual in HTML/PDF/PS format?
-|faq-2.5|   I have a "xyz" (some) problem with Vim. How do I determine it is a
+|faq-2.5|   I have a "xyz" (some) problem with Vim. How do I determine if it is a
 	  problem with my setup or with Vim?
 |faq-2.6|   Where can I report bugs?
 |faq-2.7|   Where can the FAQ be found?
@@ -588,6 +588,8 @@ SECTION 28 - QUICKFIX
 	  disappears and I have to use the  :clist command to see the error
 	  message again. Is there any other way to see these error
 	  messages?
+|faq-28.3|  How can I perform a command for each item in the
+	  quickfix/location list?
                                                                 *faq-folding*
 SECTION 29 - FOLDING
 |faq-29.1|  How do I extend the Vim folding support?
@@ -987,6 +989,13 @@ Advanced user features:
      options. You can define your own commands, macros and even plugins
      to extend its capabilities
 <
+  Packages >
+
+     Packages have been added to keep the installation of the growing
+     number of plugins manageable. This is a convenient way to get one
+     or more plugins, drop them in a directory and keep them updated.
+     Vim will load them automatically, or only when desired.
+<
 Programming performance features:
 
   Edit-compile-edit speedup >
@@ -1027,6 +1036,18 @@ Programming performance features:
      If you find the internal scripting language not powerful enough, you
      can extend Vim using Lua, Ruby, Tcl, Perl and Python 2 and 3.
 <
+  Asynchronous I/O support >
+
+     Vim uses jobs and channels to talk to other programs
+     asynchronously. This allows to have e.g. a compiler run in the
+     background and open the quickfix list as soon as it is finished to
+     fix warnings and errors.
+<
+  Timers >
+
+     Timers are asynchronous and can fire once or repeatedly to invoke a
+     function to do any work.
+<
 For more information, read 
 
     |vi-differences|
@@ -1061,6 +1082,12 @@ Finally, read the Vi FAQ: >
 
     http://www.faqs.org/faqs/editor-faq/vi/part1/index.html
 <
+Finally, there are also some communities, where you can discuss features
+or ask questions: >
+
+    http://vi.stackexchange.com
+    http://vim.reddit.com
+<
 For more information, read 
 
     |mail-list|
@@ -1078,8 +1105,6 @@ There are several: >
     vim-dev           Patches, bug reports, development discussions
     vim-mac           Macintosh discussion
     vim-fr            General discussion in French
-    vim-multibyte     Multibyte development issues
-    vim-vms           Development on VMS
 
 Of these, only vim and vim-dev are of general interest. vim-announce is
 read-only to most people, and its messages are sent to the other lists as
@@ -1089,17 +1114,19 @@ well. The remaining four are very low volume. >
     To unsubscribe: send an email to <NAME>-unsubscribe@vim.org
     To get help:    send an email to <NAME>-help@vim.org
 <
- 								*faq-2.3*
+The available mailing lists are also mentioned here: >
+
+    http://www.vim.org/maillist.php
+< 								*faq-2.3*
 2.3. Is there an archive available for the Vim mailing lists?
 
 Yes. Visit http://www.yahoogroups.com/list/<name>, where name is one of:
-vimannounce, vim, vimdev, vim-fr, vim-mac, vim-multibyte, vim-vms.
+vimannounce, vim, vimdev, vim-fr, vim-mac, vim-vms.
 
 Alternatively, visit www.gmane.org to find out about GMANE, which allows
 you to access the mailing lists as though they were newsgroups.  This
 offers some convenience to those who wish to browse the history or casually
 observe the current threads.
-
  								*faq-2.4*
 2.4. Where can I get the Vim user manual in HTML/PDF/PS format?
 
@@ -1119,7 +1146,7 @@ You can find a pdf version of the full English help, including this faq
 This document is cross-referenced, so you can use the hyperlink
 functionality.
  								*faq-2.5*
-2.5. I have a "xyz" (some) problem with Vim. How do I determine it is a
+2.5. I have a "xyz" (some) problem with Vim. How do I determine if it is a
      problem with my setup or with Vim?  / Have I found a bug in Vim?
 
 First, you need to find out, whether the error is in the actual runtime
@@ -1129,7 +1156,7 @@ simple side effect of any configuration option from your .vimrc or
 
     vim -u NONE -U NONE -N -i NONE
 <
-this starts Vim in nocompatible mode (-N), without reading your viminfo
+This starts Vim in nocompatible mode (-N), without reading your viminfo
 file (-i NONE), without reading any configuration file (-u NONE for not
 reading .vimrc file and -U NONE for not reading a .gvimrc file) or even
 plugin.
@@ -1139,7 +1166,7 @@ persists, the chance is good you've found a bug in Vim (see also
 Question 2.6. |faq-2.6|)
 
 If the error does not occur when starting Vim this way, then the problem
-is either related to some plugin of yours or some setting in onr of your
+is either related to some plugin of yours or some setting in one of your
 local setup files. You need to find out, what triggers the error, you
 try starting Vim this way: >
 
@@ -1227,12 +1254,10 @@ It will be auto-generated from the source that is managed in the github
 repository http://www.github.com/chrisbra/vim_faq (Patches are welcome).
 
 The repository also includes the faq in different formats, e.g. manpage,
-,pdf file, html file, plain text version and a version in vim help format.
+pdf file, html file, plain text version and a version in vim help format.
 
 A slightly older version (which doesn't seem to get updated anymore) can
-still be found at VimOnline (vim.sf.net). Other places will be decided in
-the future.
-
+still be found at VimOnline (vim.sf.net). 
  								*faq-2.8*
 2.8. What if I don't find an answer in this FAQ?
 
@@ -1283,6 +1308,7 @@ The latest version of Vim is 7.4 released on 10th August 2013.
 
 The release-history of different versions of Vim is below: >
 
+    Version 8.0
     Version 7.4     10th August, 2013
     Version 7.3     15th August, 2010
     Version 7.2     9th August, 2008
@@ -1316,10 +1342,7 @@ For more information, read
     |new-5|
     |new-6|
     |new-7|
-    |changed-6.1|
-    |changed-6.2|
-    |changed-6.3|
-    |changed-6.4|
+    |new-8|
     |changed-7.1|
     |changed-7.2|
     |changed-7.3|
@@ -1328,9 +1351,16 @@ For more information, read
 3.2. Where can I find the latest version of Vim?
 
 You can download the sources for the latest version of Vim from the
-VimOnline website. The URL for this site is
-http://vim.sourceforge.net/download.php.
+Github repository. The URL for this site is
+https://github.com/vim/vim
 
+A mirror is available at bitbucket:
+https://bitbucket.org/vim-mirror/vim
+
+Some users keep updated repositories for distributing latest binary
+versions of Vim. You can find those repositories here:
+
+http://vim.wikia.com/wiki/Where_to_download_Vim
  								*faq-3.3*
 3.3. What platforms does it run on?
 
@@ -1346,9 +1376,9 @@ filetype plugins, compiler files, color schemes, documentation, indentation
 files and keymaps) from the Vim ftp site from the
 ftp://ftp.vim.org/pub/vim/runtime directory.
 
-Alternatively, the runtime files can be downloaded from the mercurial
+Alternatively, the runtime files can be downloaded from the git
 repository that holds Vim source code at:
-http://code.google.com/p/vim/source/browse/runtime
+https://github.com/vim/vim/tree/master/runtime
 
 =============================================================================
  								*faq-4*
@@ -1414,6 +1444,7 @@ d)  You can use the ":helpgrep" command to search for the given text in
 
 For more information, read 
 
+    |help-summary|
     |c_CTRL-D|
     |c_<Tab>|
     |:tselect|
@@ -1442,12 +1473,16 @@ You can get information about the different modes in Vim by reading
 4.5. How do I generate the Vim help tags file after adding a new Vim help
      file?
 
-You can use the ":helptags" command to regenerate the Vim help tag file.
-For example: >
+You can use the ":helptags" command to regenerate the Vim help tag file
+from within Vim. For example: >
 
     :cd $VIMRUNTIME/doc
     :helptags .
 <
+To update all "doc" directories in your 'runtimepath', you can use 
+
+    :helptags ALL
+
 For more information, read 
 
     |:helptags|
@@ -1473,6 +1508,8 @@ plugin supplied with the standard Vim distribution will take care of
 decompressing the files.  You must make sure that $VIMRUNTIME is set to
 where the other Vim files are, when they are not in the same location as
 the compressed "doc" directory.
+
+Note, that the :helpgrep command does not work with compressed help pages.
 
 For more information, read 
 
@@ -1555,6 +1592,7 @@ For more information, read
     |filename-modifiers|
     |autocommand|
     |'acd'|
+    |getcwd()|
 
  								*faq-5.4*
 5.4. How do I write a file without the line feed (EOL) at the end of the
@@ -1572,9 +1610,21 @@ Alternatively, you can use: >
     :set noeol
     :w ++bin
 <
+If you rather only like Vim not to write missing EOLs, you can reset the
+'fixeol' option. This needs a Vim newer 7.4.785, so you should wrap this
+in an if condition in your .vimrc like this: >
+
+    if exists('+fixeol')
+        set nofixeol
+    endif
+<
+This has the advantage of avoiding the many side effects that the
+'binary' option has.
+
 For more information, read 
 
     |'endofline'|
+    |'fixeol'|
     |'binary'|
     |23.4|
 
@@ -1588,10 +1638,14 @@ in the '"' register. You can use the following autocmd in your .vimrc or
     au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
                          \ exe "normal! g`\"" | endif
 <
+Alternatively, you can simply source the vimrc_example.vim file, which is
+distributed with Vim.
+
 For more information, read 
 
     |'quote|
     |last-position-jump|
+    |vimrc_example.vim|
 
  								*faq-5.6*
 5.6. When editing a file in Vim, which is being changed by an external
@@ -1641,7 +1695,7 @@ For more information, read
 You can use the ":edit" command, without specifying a file name, to reload
 the current file.  If you have made modifications to the file, you can use
 ":edit!" to force the reload of the current file (you will lose your
-modifications, but depending on your 'undolevels' settings, those
+modifications, but depending on your 'undoreload' settings, those
 changes might be saved into the undo history).
 
 For more information, read 
@@ -1649,6 +1703,7 @@ For more information, read
     |:edit|
     |:edit!|
     |'confirm'|
+    |'undoreload'|
 
  								*faq-5.9*
 5.9. How do I autosave a file periodically?
@@ -1747,6 +1802,13 @@ SECTION 6 - EDITING MULTIPLE FILES
  								*faq-6.1*
 6.1. How do I open multiple files at once from within Vim?
 
+Make a difference between args, buffers, tabs and windows. They are all
+different things in VIM.
+
+args is a list of arguments. Buffers are place to edit text, almost
+always attached to a file but not necessarily. Window is a place for a
+buffer and tab is set of windows, better name would be 'layout'.
+
 There are several ways to open multiple files at once from within Vim. You
 can use the ":next" command to specify a group of files: >
 
@@ -1761,6 +1823,8 @@ You can use the :args command to specify a group of files as arguments: >
 After loading the files, you can use the ":next" and ":prev" command to
 switch between the files.
 
+To execute command for all files in argument-list use ":argdo"
+
 For more information, read 
 
     |07.2|
@@ -1771,12 +1835,22 @@ For more information, read
  								*faq-6.2*
 6.2. How do I switch between multiple files/buffers in Vim?
 
+To list all buffers use ":ls", to list buffers without file attached to
+(also known as unlisted buffers, ex. scratch buffer and help-window) use
+":ls!"
+
 There are several ways to switch between multiple files. You can use the
-":buffer" command to switch between multiple files. For example, >
+":buffer" command to switch between multiple files. You can also shorten
+command as ":b" and use only part of the filename. For example, >
 
     :buffer file1
     :buffer file2
+    :b e2
 <
+You can also use <TAB> after ":b" for autocompletion. Try also ":b"
+followed by <CTRL-d> to see all available buffers. This works also for
+":e".
+
 You can also use the CTRL-^ key to switch between buffers. By specifying a
 count before pressing the key, you can edit the buffer with that number.
 Without the count, you can edit the alternate buffer by pressing CTRL-^
@@ -1785,6 +1859,10 @@ You can also use the ":e #" command to edit a particular buffer: >
 
     :e #5
 <
+To close a buffer use ":bd" -command.
+
+To execute command for all files in buffer-list use ":bufdo"
+
 For more information, read 
 
     |edit-files|
@@ -1823,6 +1901,7 @@ For more information, read
     |-O|
     |-p|
     |startup-options|
+    |'tabpagemax'|
 
  								*faq-6.4*
 6.4. How do I configure Vim to autoload several files at once similar to
@@ -2094,6 +2173,8 @@ the buffers, you can use the command ":1,9999bd".
 For more information, read 
 
     |:bd|
+
+(This behaviour has been fixed with patch 7.4.530)
 
  								*faq-8.8*
 8.8. How do I display the buffer number of the current buffer/file?
@@ -3051,11 +3132,11 @@ into the search register:
 
 Then use 'n' to jump to the next occurrence.
 
-See also the help at >
+See also the help at 
 
-    :h @/
-    :h /<CR>
-< 								*faq-11.26*
+    |@/|
+    |/<CR>|
+ 								*faq-11.26*
 11.26. How can I operate on a search match?
 
 The 'gn' command makes it easy to operate on regions of text that match
@@ -3076,11 +3157,11 @@ using '/apple' then you can use 'cgnpeach<esc>' to replace the current
 match by peach. Now you can use the dot '.' command to redo the
 replacement for the rest of the buffer.
 
-See also the help at >
+See also the help at 
 
-    :h gn
-    :h gN
-<
+    |gn|
+    |gN|
+
 =============================================================================
  								*faq-12*
 SECTION 12 - CHANGING TEXT
@@ -7123,6 +7204,32 @@ For more information, read
     |:copen|
     |:cwindow|
     |quickfix|
+ 								*faq-28.3*
+28.3. How can I perform a command for each item in the quickfix/location
+      list?
+
+Starting from Vim 7.4.858 Vim provides the new commands :cfdo, :cdo,
+:lfdo and :ldo. They work by iterating over all items in the quickfix
+list and performing a command on each. The difference is, that the :lfdo
+and :ldo commands iterate over the location list entries, while the
+:cfdo and :cdo commands operate on the items in the quickfix list. Also,
+the :cfdo and :lfdo operate on all different files, while the :cdo and
+:ldo commands operate on each item in the quickfix/location list.
+
+For example you could vimgrep all C files in the current directory for a
+search string "Foobar": >
+
+    :vimgrep /Foobar/ *.c
+<
+and as this populates your quickfix list, you could simply replace all
+occurences by using: >
+
+    :cdo :%s/Foobar/Foobaz | upd
+<
+For more information, read 
+
+    |:cfdo|
+    |:cdo|
 
 =============================================================================
  								*faq-29*
@@ -7268,8 +7375,12 @@ For more information, read
 
     |shell-window|
 
-Alternatively, you can try using the Unix "screen" utility or the 'splitvt'
-program.
+The Neovim project however has added the ":terminal" command which opens
+a new shell prompt. To read more about Neovim, look at their webpage
+http://neovim.io
+
+Alternatively, you can try using the Unix "screen", "tmux" or "splitvt"
+utility.
 
 Following is a post from the vim_use mailinglist
 (http://groups.google.com/group/vim_use/msg/22c97ebfd6a978eb)
@@ -7927,6 +8038,36 @@ For more information, read
     |-X|
     |'clipboard'|
 
+If the clipboard is not the cause of the slow startup, it might be a
+plugin that slows down Vim. In that case, you can use the --startuptime
+argument to debug this further. You can do: >
+
+    $ vim --startuptime vim_startup.log
+<
+and the timing will be written to the file vim_startup.log. For even
+more advanced profiling, you can use the profiling feature, that is
+available in huge builds of Vim. To do so, call Vim like this: >
+
+    $ vim --cmd 'profile start profile.log' \
+      --cmd 'profile func *' \
+      --cmd 'profile file *' \
+      -c 'profdel func *' \
+      -c 'profdel file *' \
+      -c 'qa!'
+<
+After running this, you will have a file profile.log in your current
+directory. To further analyse this, open the file profile.log and run: >
+
+    " Open profile.log file in vim first
+    :let timings=[]
+    :g/^SCRIPT/call add(timings, [getline('.')[len('SCRIPT  '):], matchstr(getline(line('.')+1), '^Sourced \zs\d\+')]+map(getline(line('.')+2, line('.')+3), 'matchstr(v:val, ''\d\+\.\d\+$'')'))
+    :enew
+    :call setline('.', ['count total (s)   self (s)  script']+map(copy(timings), 'printf("%5u %9s   %8s  %s", v:val[1], v:val[2], v:val[3], v:val[0])'))
+<
+For more information, read 
+
+    |--startuptime|
+    |profiling|
  								*faq-32.6*
 32.6. How can I make the cursor in gvim in unix stop blinking?
 
@@ -8865,9 +9006,13 @@ For more information, read
 First set the 'encoding' option properly (for instance, to utf-8), then use
 the :digraphs command to list the currently defined digraphs.
 
+Alternatively, the help file contains the complete set of all digraphs.
+So you can easily search that list there.
+
 For more information, read 
 
     |:digraphs|
     |'encoding'|
+    |digraph-table|
 
  vim:tw=78:ts=8:ft=help:norl:

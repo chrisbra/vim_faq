@@ -1,6 +1,6 @@
 *vim_faq.txt*	Frequently Asked Questions
 
-Last updated on: 16 November 2015
+Last updated on: 04 August 2016
 
 	  VIM FAQ by: Christian Brabandt <cb@256bit.org>
 
@@ -28,7 +28,7 @@ SECTION 2 - RESOURCES
 |faq-2.2|   Is there a mailing list available?
 |faq-2.3|   Is there an archive available for the Vim mailing lists?
 |faq-2.4|   Where can I get the Vim user manual in HTML/PDF/PS format?
-|faq-2.5|   I have a "xyz" (some) problem with Vim. How do I determine it is a
+|faq-2.5|   I have a "xyz" (some) problem with Vim. How do I determine if it is a
 	  problem with my setup or with Vim?
 |faq-2.6|   Where can I report bugs?
 |faq-2.7|   Where can the FAQ be found?
@@ -989,6 +989,13 @@ Advanced user features:
      options. You can define your own commands, macros and even plugins
      to extend its capabilities
 <
+  Packages >
+
+     Packages have been added to keep the installation of the growing
+     number of plugins manageable. This is a convenient way to get one
+     or more plugins, drop them in a directory and keep them updated.
+     Vim will load them automatically, or only when desired.
+<
 Programming performance features:
 
   Edit-compile-edit speedup >
@@ -1029,6 +1036,18 @@ Programming performance features:
      If you find the internal scripting language not powerful enough, you
      can extend Vim using Lua, Ruby, Tcl, Perl and Python 2 and 3.
 <
+  Asynchronous I/O support >
+
+     Vim uses jobs and channels to talk to other programs
+     asynchronously. This allows to have e.g. a compiler run in the
+     background and open the quickfix list as soon as it is finished to
+     fix warnings and errors.
+<
+  Timers >
+
+     Timers are asynchronous and can fire once or repeatedly to invoke a
+     function to do any work.
+<
 For more information, read 
 
     |vi-differences|
@@ -1063,6 +1082,12 @@ Finally, read the Vi FAQ: >
 
     http://www.faqs.org/faqs/editor-faq/vi/part1/index.html
 <
+Finally, there are also some communities, where you can discuss features
+or ask questions: >
+
+    http://vi.stackexchange.com
+    http://vim.reddit.com
+<
 For more information, read 
 
     |mail-list|
@@ -1080,7 +1105,6 @@ There are several: >
     vim-dev           Patches, bug reports, development discussions
     vim-mac           Macintosh discussion
     vim-fr            General discussion in French
-    vim-vms           Development on VMS
 
 Of these, only vim and vim-dev are of general interest. vim-announce is
 read-only to most people, and its messages are sent to the other lists as
@@ -1097,7 +1121,7 @@ The available mailing lists are also mentioned here: >
 2.3. Is there an archive available for the Vim mailing lists?
 
 Yes. Visit http://www.yahoogroups.com/list/<name>, where name is one of:
-vimannounce, vim, vimdev, vim-fr, vim-mac, vim-multibyte, vim-vms.
+vimannounce, vim, vimdev, vim-fr, vim-mac, vim-vms.
 
 Alternatively, visit www.gmane.org to find out about GMANE, which allows
 you to access the mailing lists as though they were newsgroups.  This
@@ -1122,7 +1146,7 @@ You can find a pdf version of the full English help, including this faq
 This document is cross-referenced, so you can use the hyperlink
 functionality.
  								*faq-2.5*
-2.5. I have a "xyz" (some) problem with Vim. How do I determine it is a
+2.5. I have a "xyz" (some) problem with Vim. How do I determine if it is a
      problem with my setup or with Vim?  / Have I found a bug in Vim?
 
 First, you need to find out, whether the error is in the actual runtime
@@ -1284,6 +1308,7 @@ The latest version of Vim is 7.4 released on 10th August 2013.
 
 The release-history of different versions of Vim is below: >
 
+    Version 8.0
     Version 7.4     10th August, 2013
     Version 7.3     15th August, 2010
     Version 7.2     9th August, 2008
@@ -1317,10 +1342,7 @@ For more information, read
     |new-5|
     |new-6|
     |new-7|
-    |changed-6.1|
-    |changed-6.2|
-    |changed-6.3|
-    |changed-6.4|
+    |new-8|
     |changed-7.1|
     |changed-7.2|
     |changed-7.3|
@@ -1329,8 +1351,11 @@ For more information, read
 3.2. Where can I find the latest version of Vim?
 
 You can download the sources for the latest version of Vim from the
-VimOnline website. The URL for this site is
-http://vim.sourceforge.net/download.php.
+Github repository. The URL for this site is
+https://github.com/vim/vim
+
+A mirror is available at bitbucket:
+https://bitbucket.org/vim-mirror/vim
 
 Some users keep updated repositories for distributing latest binary
 versions of Vim. You can find those repositories here:
@@ -1419,6 +1444,7 @@ d)  You can use the ":helpgrep" command to search for the given text in
 
 For more information, read 
 
+    |help-summary|
     |c_CTRL-D|
     |c_<Tab>|
     |:tselect|
@@ -1453,6 +1479,10 @@ from within Vim. For example: >
     :cd $VIMRUNTIME/doc
     :helptags .
 <
+To update all "doc" directories in your 'runtimepath', you can use 
+
+    :helptags ALL
+
 For more information, read 
 
     |:helptags|
