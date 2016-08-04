@@ -1304,6 +1304,7 @@ The latest version of Vim is 7.4 released on 10th August 2013.
 
 The release-history of different versions of Vim is below:
 
+    Version 8.0
     Version 7.4     10th August, 2013
     Version 7.3     15th August, 2010
     Version 7.2     9th August, 2008
@@ -1337,10 +1338,7 @@ For more information, read
     :help new-5
     :help new-6
     :help new-7
-    :help changed-6.1
-    :help changed-6.2
-    :help changed-6.3
-    :help changed-6.4
+    :help new-8
     :help changed-7.1
     :help changed-7.2
     :help changed-7.3
@@ -1349,8 +1347,11 @@ For more information, read
 3.2. Where can I find the latest version of Vim?
 
 You can download the sources for the latest version of Vim from the
-VimOnline website. The URL for this site is
-http://vim.sourceforge.net/download.php.
+Github repository. The URL for this site is
+https://github.com/vim/vim
+
+A mirror is available at bitbucket:
+https://bitbucket.org/vim-mirror/vim
 
 Some users keep updated repositories for distributing latest binary
 versions of Vim. You can find those repositories here:
@@ -1440,6 +1441,7 @@ d)  You can use the ":helpgrep" command to search for the given text in
 
 For more information, read
 
+    :help help-summary
     :help c_CTRL-D
     :help c_<Tab>
     :help :tselect
@@ -1473,6 +1475,10 @@ from within Vim. For example:
 
     :cd $VIMRUNTIME/doc
     :helptags .
+
+To update all "doc" directories in your 'runtimepath', you can use
+
+    :helptags ALL
 
 For more information, read
 
@@ -9038,4 +9044,4 @@ For more information, read
 =============================================================================
 
 Current Maintainer: Christian Brabandt <cb@256bit.org>
-Last updated on: 16 November 2015
+Last updated on: 04 August 2016
