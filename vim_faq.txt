@@ -22,7 +22,7 @@ SECTION 2 - RESOURCES
     2.2. Is there a mailing list available?
     2.3. Is there an archive available for the Vim mailing lists?
     2.4. Where can I get the Vim user manual in HTML/PDF/PS format?
-    2.5. I have a "xyz" (some) problem with Vim. How do I determine it is a
+    2.5. I have a "xyz" (some) problem with Vim. How do I determine if it is a
          problem with my setup or with Vim?
     2.6. Where can I report bugs?
     2.7. Where can the FAQ be found?
@@ -984,6 +984,13 @@ Advanced user features:
      options. You can define your own commands, macros and even plugins
      to extend its capabilities
 
+  Packages
+
+     Packages have been added to keep the installation of the growing
+     number of plugins manageable. This is a convenient way to get one
+     or more plugins, drop them in a directory and keep them updated.
+     Vim will load them automatically, or only when desired.
+
 Programming performance features:
 
   Edit-compile-edit speedup
@@ -1024,6 +1031,18 @@ Programming performance features:
      If you find the internal scripting language not powerful enough, you
      can extend Vim using Lua, Ruby, Tcl, Perl and Python 2 and 3.
 
+  Asynchronous I/O support
+
+     Vim uses jobs and channels to talk to other programs
+     asynchronously. This allows to have e.g. a compiler run in the
+     background and open the quickfix list as soon as it is finished to
+     fix warnings and errors.
+
+  Timers
+
+     Timers are asynchronous and can fire once or repeatedly to invoke a
+     function to do any work.
+
 For more information, read
 
     :help vi-differences
@@ -1058,6 +1077,12 @@ Finally, read the Vi FAQ:
 
     http://www.faqs.org/faqs/editor-faq/vi/part1/index.html
 
+Finally, there are also some communities, where you can discuss features
+or ask questions:
+
+    http://vi.stackexchange.com
+    http://vim.reddit.com
+
 For more information, read
 
     :help mail-list
@@ -1075,7 +1100,6 @@ There are several:
     vim-dev           Patches, bug reports, development discussions
     vim-mac           Macintosh discussion
     vim-fr            General discussion in French
-    vim-vms           Development on VMS
 
 Of these, only vim and vim-dev are of general interest. vim-announce is
 read-only to most people, and its messages are sent to the other lists as
@@ -1092,7 +1116,7 @@ The available mailing lists are also mentioned here:
 2.3. Is there an archive available for the Vim mailing lists?
 
 Yes. Visit http://www.yahoogroups.com/list/<name>, where name is one of:
-vimannounce, vim, vimdev, vim-fr, vim-mac, vim-multibyte, vim-vms.
+vimannounce, vim, vimdev, vim-fr, vim-mac, vim-vms.
 
 Alternatively, visit www.gmane.org to find out about GMANE, which allows
 you to access the mailing lists as though they were newsgroups.  This
@@ -1117,7 +1141,7 @@ You can find a pdf version of the full English help, including this faq
 This document is cross-referenced, so you can use the hyperlink
 functionality.
 
-2.5. I have a "xyz" (some) problem with Vim. How do I determine it is a
+2.5. I have a "xyz" (some) problem with Vim. How do I determine if it is a
      problem with my setup or with Vim?  / Have I found a bug in Vim?
 
 First, you need to find out, whether the error is in the actual runtime
