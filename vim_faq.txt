@@ -1227,7 +1227,7 @@ First collect the required information using the following command:
 
 Now send the resulting text from the above command to the bugs@vim.org
 e-mail address. There is also a public bug tracker available at
-http://code.google.com/p/vim/issues/list. A copy of each message there
+http://github.com/vim/vim/issues. A copy of each message there
 will be forwarded to the Vim Development list.
 
 The Vim Development mailing list (see Question 2.2) is a good place to
