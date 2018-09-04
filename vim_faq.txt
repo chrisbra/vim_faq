@@ -5960,7 +5960,7 @@ can modify the foreground and background resource names in the .Xdefaults
 files to change the colors:
 
     Vim.foreground:     Black
-    Vim.backround:      Wheat
+    Vim.background:     Wheat
 
 You can also use the "-foreground" and "-background" command-line arguments
 to specify the foreground and background colors. These arguments are
