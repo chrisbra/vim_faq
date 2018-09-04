@@ -6374,7 +6374,7 @@ the following command:
 
     :let @a = system('ls')
 
-The above command will store the return value from the 'ls' command into
+The above command will store the output of the 'ls' command into
 the register 'a'.
 
 For more information, read
