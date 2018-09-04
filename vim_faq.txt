@@ -22,8 +22,8 @@ SECTION 2 - RESOURCES
     2.2. Is there a mailing list available?
     2.3. Is there an archive available for the Vim mailing lists?
     2.4. Where can I get the Vim user manual in HTML/PDF/PS format?
-    2.5. I have a "xyz" (some) problem with Vim. How do I determine if it is a
-         problem with my setup or with Vim?
+    2.5. I have a "xyz" (some) problem with Vim. How do I determine if it is
+         a problem with my setup or with Vim?
     2.6. Where can I report bugs?
     2.7. Where can the FAQ be found?
     2.8. What if I don't find an answer in this FAQ?
@@ -787,8 +787,8 @@ For more information read
 
 1.2. Who wrote Vim?
 
-Most of Vim is based on Stevie and was written by Bram Moolenaar, with contributions from too many
-people to mention here.
+Most of Vim is based on Stevie and was written by Bram Moolenaar, with
+contributions from too many people to mention here.
 
 For more information, read:
 
@@ -942,7 +942,8 @@ Advanced user features:
   Scripting language
 
      Vim has a powerful scripting language so new commands can be created.
-     You can also use Perl, Python, TCL, Lua and Ruby to achieve the same thing!
+     You can also use Perl, Python, TCL, Lua and Ruby to achieve the same
+     thing!
 
   Plugins
 
