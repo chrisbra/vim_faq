@@ -346,7 +346,7 @@ SECTION 17 - VIMINFO
           in the viminfo file. What should I do to get rid of these
           messages?
     17.2. How do I disable the viminfo feature?
-    17.3. How do I save and use Vim marks/commands across Vim sessions? 
+    17.3. How do I save and use Vim marks/commands across Vim sessions?
 
 SECTION 18 - REMOTE EDITING
     18.1. How do I open a file with existing instance of gvim? What
@@ -717,7 +717,6 @@ SECTION 35 - BUILDING VIM FROM SOURCE
     35.10. I did successfully download the sources and compiled Vim on
            Unix. But feature ... still does not work. What is wrong and
            how can I fix it?
-           
 
 SECTION 36 - VARIOUS
     36.1. How do I edit binary files with Vim?
@@ -908,7 +907,7 @@ Advanced user features:
 
   Completion in Insert mode
 
-     Vim provides several different possibilities to complete your text. 
+     Vim provides several different possibilities to complete your text.
      For example Vim can complete words while you are typing, by matching
      the current word with other similar words in the file.
 
@@ -936,7 +935,7 @@ Advanced user features:
 
   Graphical User Interface (GUI)
 
-     There are several different graphical user interfaces available. 
+     There are several different graphical user interfaces available.
      Also, it's very easy to add your own menus.  Of course, console vim is
      still supported, and very widely used.
 
@@ -966,7 +965,7 @@ Advanced user features:
 
   Integrated Spell checking
 
-     Spell checking has been integrated into Vim 
+     Spell checking has been integrated into Vim.
 
   Diff mode
 
@@ -3102,7 +3101,7 @@ For more information, read
 possible to make the whole pattern succeed". If it didn't match the 'p',
 the whole pattern would fail (because of the "p\@!") so it does match
 the "p". It is a longer match, but it is the shortest match that makes
-the whole pattern succeed. 
+the whole pattern succeed.
 
 If you wanted "as few as possible regardless" you would use "\@>", which
 basically divides a pattern up so that the pieces either side behave
@@ -3151,7 +3150,7 @@ command after an operator (e.g. 'c' to change text), it will be applied
 on the match.
 
 If Visual mode is active before using gn, the visual selection will be
-extended until the end of the next match. 
+extended until the end of the next match.
 
 The 'gN' commands works similar but searches backwards.
 
@@ -3710,10 +3709,10 @@ can use the "g~{motion}" or "{Visual}~" commands to switch the case of a
 block of text.
 
 If you set 'tildeop' the "~" command behaves like an operator and expects
-a motion command to act on. If you have 
+a motion command to act on. If you have
 
     :set tildeop
-    
+
 and you want to change the case from the current cursor position to the end
 of line, simply use "~$".
 
@@ -3821,7 +3820,7 @@ cursor in the blank space before the first word).
 
 You can exchange two lines with the "ddp" command sequence. The 'dd' will
 delete the current line and 'p' will paste the just deleted line after the
-current line. This will result in exchanging the two lines. 
+current line. This will result in exchanging the two lines.
 
 All of the above operations will change the " unnamed register.
 
@@ -6083,7 +6082,7 @@ by default. Whenever the cursor moves over an item defined with the
 MatchParen highlighting group.
 
 However, if the corresponding parenthesis is not visible in the current
-window, the cursor won't jump to it. 
+window, the cursor won't jump to it.
 
 The matchit plugin provides a similar function, that lets the cursor
 jump to related items (e.g. "if", "else", "endif" items) and skips
@@ -6208,7 +6207,7 @@ For more information, read
 
     :help :syn-include
     :help sh-awk
-    
+
 
 =============================================================================
 
@@ -7418,7 +7417,7 @@ Following is a post from the vim_use mailinglist
 Date: Mon, 24 May 2010
 Subject: Re: Terminal into vim, best options???
 From: Nico Raffo
-To: vim_use 
+To: vim_use
 
 There are quite a few options out there, all with their strengths and
 weaknesses. Shell integration is at the top of the Vim wish list. I'm
@@ -7626,7 +7625,7 @@ You use the ":sort" command like this:
 
 Using the ":sort" command provides many options, you can sort numerical on
 the first found decimal number using:
-   
+
    :%sort n
 
 Or you can specify to sort on the text, starting at virtual column 8:
@@ -7958,7 +7957,7 @@ This is a known problem. When you are splitting the Vim window, Vim will
 try to draw a scrollbar. Since this changes the gui window, Vim tries to
 resize its main window to keep the same position and this will cause Vim
 to move its position. This happens on Windows with a multi-window setup or
-a window that was "snapped" to a certain position. 
+a window that was "snapped" to a certain position.
 
 A workaournd to this problem is, to remove gui scrollbars, e.g.
 
@@ -8569,7 +8568,7 @@ configure script:
 Nevertheless, a feature could still be disabled at compile time, if the
 configure script can't find the required libraries for those features (e.g.
 for clipboard integration, your Vim needs to be linked against the X11
-development libraries). 
+development libraries).
 
 There are several ways to install the required libraries:
 
@@ -8593,7 +8592,7 @@ There are several ways to install the required libraries:
    to find out, whether or not there exists a source version in the
    repository. If there is none, you'll need to add a source repository.
    For openSUSE 11.2 you could use, e.g.
-   
+
    $ zypper ar
    http://download.opensuse.org/source/distribution/11.2/repo/oss/src-11.2
 
@@ -8605,11 +8604,11 @@ There are several ways to install the required libraries:
    $ zypper source-install --build-deps-only vim
 
 3) On a Fedora/RedHat based system, you can use
-   
+
    $ yum-builddep vim-enhanced
 
 4) Run configure with your options and watch for missing libraries:
-  
+
    $ ./configure --with-features=huge 2>&1 |tee logfile
 
    This will run configure and record the output into the file "logfile".
