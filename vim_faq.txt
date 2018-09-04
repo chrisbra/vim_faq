@@ -6660,6 +6660,13 @@ For more information, read
 You can split long lines in a Vim script by inserting the backslash
 character ("\") at the start of the next line. For example,
 
+    set comments=sr:/*,mb:*,el:*/,
+                \://,
+                \b:#,
+                \:%,
+                \n:>,
+                \fb:-
+
 For more information, read
 
     :help line-continuation
