@@ -1,7 +1,7 @@
 "*vim_faq.vim*
-"  Last Change: October 28, 2004
+"  Last Change: September 4, 2018
 "  Maintainer:  Paul Bolle <pebolle@tiscali.nl>
-"  Version:     0.2 for Vim 6.x (tested on 6.2)
+"  Version:     0.3 for Vim 8.x (tested on 8.1)
 
 " Has this plugin already been loaded?
 if exists('loaded_vim_faq')
@@ -168,6 +168,9 @@ function! VimifyAndInstallFaq(vim_faq_textfile, vim_doc_path)
     " create 'helpHyperTextEntry' for INDEX (in questions)
     %s/\(\nINDEX\)/\t\t\t\t\t\t\t\t*faq-index*\1/
 
+    " make 'helpHeader' to INDEX.
+    %s/^INDEX\zs$/ \~/
+
     " create 'helpHyperTextEntries' in all sections (in questions)
     " This line is waaay too long .... Right llign, but the Entries always
     " start at a tabstop). Note: 78 - strlen("*faq-*) = 72
@@ -201,6 +204,9 @@ function! VimifyAndInstallFaq(vim_faq_textfile, vim_doc_path)
     norm! gg
     /==/,$s/\(\nSECTION \)\([0-9]\{1,2\}\)\( -\)/
 	\ \t\t\t\t\t\t\t\t*faq-\2*\1\2\3/
+
+    " make 'helpHeader' to SECTIONs.
+    %s/^SECTION [0-9]\{1,2\} -.*\zs$/ \~/
 
     " make 'helpHyperTextEntries' to answers, e.g. *faq-12.1*
     %s/\(\n\)\([0-9]\{1,2\}\.[0-9]\{1,2\}\)\.\(.\)/
