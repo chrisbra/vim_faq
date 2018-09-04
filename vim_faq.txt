@@ -6,7 +6,7 @@ several ways to solve a problem in Vim. This FAQ gives one of those several
 possibilities. You can explore the other ways using the information and
 links given in this FAQ. The credit for the answers in this FAQ goes to
 Peppe, Benji, Charles Campbell and numerous others. An online version of
-this FAQ is available at http://vimhelp.appspot.com/vim_faq.txt.html
+this FAQ is available at https://vimhelp.appspot.com/vim_faq.txt.html
 
 INDEX
 
@@ -1071,7 +1071,7 @@ newsgroup to post to is comp.editors.
 
 "VimOnline" is a web page that serves as a de facto homepage for vim,
 although the main purpose of it is to gather tips and scripts from
-everywhere.  Get involved!  The URL is vim.sourceforge.net or vim.sf.net.
+everywhere.  Get involved!  The URL is https://www.vim.org
 
 Finally, read the Vi FAQ:
 
@@ -1080,8 +1080,8 @@ Finally, read the Vi FAQ:
 Finally, there are also some communities, where you can discuss features
 or ask questions:
 
-    http://vi.stackexchange.com
-    http://vim.reddit.com
+    https://vi.stackexchange.com
+    https://vim.reddit.com
 
 For more information, read
 
@@ -1111,11 +1111,11 @@ well. The remaining four are very low volume.
 
 The available mailing lists are also mentioned here:
 
-    http://www.vim.org/maillist.php
+    https://www.vim.org/maillist.php
 
 2.3. Is there an archive available for the Vim mailing lists?
 
-Yes. Visit http://www.yahoogroups.com/list/<name>, where name is one of:
+Yes. Visit https://groups.yahoo.com/, where name is one of:
 vimannounce, vim, vimdev, vim-fr, vim-mac, vim-vms.
 
 Alternatively, visit www.gmane.org to find out about GMANE, which allows
@@ -1127,16 +1127,16 @@ observe the current threads.
 
 You can download the HTML/PDF/PS format of the Vim user manual from:
 
-    http://vimdoc.sourceforge.net/
+    https://vimdoc.sourceforge.net/
 
 Note, the user manual from that page is currently pretty outdated. It's
 best to either use the documentation that comes with vim or use the
-online version at http://vimhelp.appspot.com
+online version at https://vimhelp.appspot.com
 
 You can find a pdf version of the full English help, including this faq
 (in letter, A4 and Ipad format) at:
 
-    http://www.nathangrigg.net/vimhelp/
+    https://nathangrigg.com/vimhelp/
 
 This document is cross-referenced, so you can use the hyperlink
 functionality.
@@ -1227,7 +1227,7 @@ First collect the required information using the following command:
 
 Now send the resulting text from the above command to the bugs@vim.org
 e-mail address. There is also a public bug tracker available at
-http://github.com/vim/vim/issues. A copy of each message there
+https://github.com/vim/vim/issues. A copy of each message there
 will be forwarded to the Vim Development list.
 
 The Vim Development mailing list (see Question 2.2) is a good place to
@@ -1244,15 +1244,15 @@ For more information, read
 
 2.7. Where can the FAQ be found?
 
-The FAQ can be found at http://vimhelp.appspot.com/vim_faq.txt.html.
+The FAQ can be found at https://vimhelp.appspot.com/vim_faq.txt.html.
 It will be auto-generated from the source that is managed in the github
-repository http://www.github.com/chrisbra/vim_faq (Patches are welcome).
+repository https://www.github.com/chrisbra/vim_faq (Patches are welcome).
 
 The repository also includes the faq in different formats, e.g. manpage,
 pdf file, html file, plain text version and a version in vim help format.
 
 A slightly older version (which doesn't seem to get updated anymore) can
-still be found at VimOnline (vim.sf.net). 
+still be found at VimOnline (https://www.vim.org/).
 
 2.8. What if I don't find an answer in this FAQ?
 
@@ -1285,7 +1285,7 @@ For more information, read
       Is there a public website where I can upload this?
 
 Yes. You can use the Vim Online website to upload your plugins/scripts,
-colorschemes, etc. The site is at http://vim.sourceforge.net
+colorschemes, etc. The site is at https://www.vim.org
 Nowadays people also seem to share their plugins/runtime files at
 github.
 
@@ -1788,7 +1788,7 @@ following: Swap files support for crash recovery, undo support, syntax
 highlighting, filetype detection and other autocommand based features.
 
 There is also the LargeFile plugin available at
-http://www.vim.org/scripts/script.php?script_id=1506
+https://www.vim.org/scripts/script.php?script_id=1506
 which automatically sets these options, when working with large files
 (it is configurable, what is considered to be a large file, by default,
 it is 100MB).
@@ -2314,7 +2314,7 @@ layout after zooming into a window.  If you want to restore the Vim window
 layout after zooming into a window, you can use the ZoomWin plugin. You can
 download this plugin from the Vim online website at:
 
-http://vim.sourceforge.net/scripts/script.php?script_id=508
+https://www.vim.org/scripts/script.php?script_id=508
 
 For more information, read
 
@@ -4451,7 +4451,7 @@ All the ex commands operate on whole lines only. If you try to execute
 an ex command on a column of text selected in visual block mode, Vim
 will operate on all the selected lines (instead of the selected
 columns). You can use the vis.vim or NrrwRgn plugin script from
-http://vim.sourceforge.net scripts archive to do this.
+https://www.vim.org scripts archive to do this.
 
 For more information, read
 
@@ -5589,7 +5589,7 @@ to make {rhs} be one command, via wrapping it to the function. For example:
     :nmap <F9> :call GetFontNameOfFirstChar()<CR>
 
 A more technical and detailed solution to this problem follows and can
-be found at http://groups.google.com/group/vim_dev/msg/75f1f2dfc00908bb
+be found at https://groups.google.com/group/vim_dev/msg/75f1f2dfc00908bb
 
 Not every normal mode-mapping is automatically suitable for execution via
 <Ctrl-O> from within insert mode; you need to explicitly design your mappings
@@ -7406,13 +7406,13 @@ For more information, read
 
 The Neovim project however has added the ":terminal" command which opens
 a new shell prompt. To read more about Neovim, look at their webpage
-http://neovim.io
+https://neovim.io
 
 Alternatively, you can try using the Unix "screen", "tmux" or "splitvt"
 utility.
 
 Following is a post from the vim_use mailinglist
-(http://groups.google.com/group/vim_use/msg/22c97ebfd6a978eb)
+(https://groups.google.com/group/vim_use/msg/22c97ebfd6a978eb)
 
 -------------------------------------------
 Date: Mon, 24 May 2010
@@ -7428,7 +7428,7 @@ developed and maintained a kick-ass patch :-)
 Here is a (quite biased) overview of what's currently available:
 
 Conque Shell
-URL: http://code.google.com/p/conque/
+URL: https://code.google.com/p/conque/
 Author: Nico Raffo (me!)
 Requirements: *nix, python-enabled vim
 Type: Plugin
@@ -7451,7 +7451,7 @@ Cons:
    colors
 
 Vimshell
-URL: http://github.com/Shougo/vimshell + http://github.com/Shougo/vimproc
+URL: https://github.com/Shougo/vimshell + https://github.com/Shougo/vimproc
 Author: Shougo M
 Requirements: Works on both *nix and Windows. One small, independent
 component may need to be compiled from C source.
@@ -7480,7 +7480,7 @@ Cons:
 
 
 screen.vim (Vim + screen/tmux)
-URL: http://www.vim.org/scripts/script.php?script_id=2711
+URL: https://www.vim.org/scripts/script.php?script_id=2711
 Author: Eric Van Dewoestine
 Requirements: *nix
 Type: Plugin
@@ -7505,7 +7505,7 @@ Cons:
 
 
 Vim-Shell
-URL: http://www.wana.at/vimshell/
+URL: https://www.wana.at/vimshell/
 Author: Thomas Wanda
 Requirements: *nix, patch and recompile Vim from source
 Type: Extension
@@ -7531,7 +7531,7 @@ Cons:
 
 
 Vimsh
-URL: http://www.vim.org/scripts/script.php?script_id=165
+URL: https://www.vim.org/scripts/script.php?script_id=165
 Author: Brian Sturk
 Requirements: python-enabled vim
 Type: Plugin
@@ -7712,7 +7712,7 @@ SECTION 31 - GUI VIM
 Adding support for buffer specific menus is in the Vim TODO list. In the
 mean time, you can try Michael Geddes's plugin, buffermenu.vim:
 
-    http://vim.sourceforge.net/scripts/script.php?script_id=246
+    https://www.vim.org/scripts/script.php?script_id=246
 
 
 31.2. How do I change the font used by GUI Vim?
@@ -8169,10 +8169,11 @@ Xfree86 xterm or rxvt or dtterm) that supports color. Note that if a
 terminal emulator supports changing the background and foreground colors,
 that does not mean that it also supports ANSI escape sequences for changing
 the color. You can download the latest version of Xfree86 xterm from
-http://dickey.his.com/xterm/xterm.html. You can download the latest version
-of rxvt from http://www.rxvt.org. You have to install the terminfo/termcap
-file that supports colors for the terminal emulator. Also, set the TERM
-environment variable to the correct name of the term that supports colors.
+https://invisible-island.net/xterm/xterm.html
+You can download the latest version of rxvt from https://rxvt.org
+You have to install the terminfo/termcap file that supports colors for the
+terminal emulator. Also, set the TERM environment variable to the correct
+name of the term that supports colors.
 
 You can use the colortest.vim script supplied with the Vim runtime
 package to test the color setup. To use this script, follow these steps:
@@ -8279,6 +8280,7 @@ There is a problem with using GNU diff with Vim. You can try using the
 GNU diff.exe built by Ron Aaron from the following link:
 
     http://www.mossbayeng.com/~ron/vim/builds.html
+    (This page no longer exists.)
 
 
 33.8. Is it possible to use Vim as an external editor for MS-Windows
@@ -8288,13 +8290,13 @@ You can use the "cubiclevim" COM Add-In to use Vim as an external editor
 for MS-Windows Outlook email client. Visit the following URL for more
 information:
 
-    http://sourceforge.net/projects/cubiclevim
+    https://sourceforge.net/projects/cubiclevim/
 
 Note, that currently this works only with MS-Office 2000 and XP.
 
 Also the plugin OutlookVim might be worth a look:
 
-http://www.vim.org/scripts/script.php?script_id=3087
+https://www.vim.org/scripts/script.php?script_id=3087
 
 
 33.9. I am using Vim to edit HTML files. How do I start internet explorer
@@ -8400,8 +8402,10 @@ For a Unix system, follow these steps to build Vim from the sources:
 
         $ bunzip2 -c <filename> | tar -xf -
 
+- Alternatively, download the source from the git repository:
+  https://github.com/vim/vim/releases/
 - Alternatively, download the source from the mercurial repository:
-  http://code.google.com/p/vim/source/checkout
+  https://bitbucket.org/vim-mirror/vim/downloads/
 - Run the 'make' command to configure and build Vim with the default
   configuration.
 - Run 'make install' command to install Vim in the default directory.
@@ -8449,8 +8453,10 @@ MS-Windows:
       extra (vim-##-extra.tar.gz) archives from the
       ftp://ftp.vim.org/pub/vim/pc directory.
     - Extract the archives into a directory (for example, c:\vimsrc)
+    - Alternatively, download the source from the git repository:
+      https://github.com/vim/vim/releases/
     - Alternatively, download the source from the mercurial repository:
-      http://code.google.com/p/vim/source/checkout
+      https://bitbucket.org/vim-mirror/vim/downloads/
     - Depending on the installed compiler, you can use the corresponding
       makefile to build the Vim sources. For Visual C++ use the
       Make_mvc.mak makefile, for borland C++ use the Make_bc5.mak makefile,
@@ -8888,7 +8894,7 @@ option.  You can get more information about Unicode from the following
 sites:
 
     http://www.unicode.org
-    http://www.cl.cam.ac.uk/~mgk25/unicode.html
+    https://www.cl.cam.ac.uk/~mgk25/unicode.html
 
 For more information, read
 
