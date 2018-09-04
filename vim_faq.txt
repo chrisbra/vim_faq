@@ -8411,7 +8411,7 @@ you can run the 'configure' command with different flags to include/exclude
 the various Vim features. To list all the available options for the
 'configure' command, use:
 
-    $ configure -help
+    $ configure --help
 
 For more information, read
 
