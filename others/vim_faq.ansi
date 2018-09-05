@@ -6,7 +6,7 @@
     information and links given in this FAQ. The credit for the answers in
     this FAQ goes to Peppe, Benji, Charles Campbell and numerous others. An
     online version of this FAQ is available at
-    http://vimhelp.appspot.com/vim_faq.txt.html
+    https://vimhelp.appspot.com/vim_faq.txt.html
 
 [1mGENERAL INFORMATION[0m
      1.1. What is Vim?
@@ -20,8 +20,8 @@
      2.2. Is there a mailing list available?
      2.3. Is there an archive available for the Vim mailing lists?
      2.4. Where can I get the Vim user manual in HTML/PDF/PS format?
-     2.5. I have a "xyz" (some) problem with Vim. How do I determine if it is a
-          problem with my setup or with Vim?
+     2.5. I have a "xyz" (some) problem with Vim. How do I determine if it is
+          a problem with my setup or with Vim?
      2.6. Where can I report bugs?
      2.7. Where can the FAQ be found?
      2.8. What if I don't find an answer in this FAQ?
@@ -526,9 +526,9 @@
             command from a Vim script. How do I specify the carriage return
             character?
      25.25. How do I split long lines in a Vim script?
-     25.26. When I try to "execute" my function using the "execute 'echo
-            Myfunc()'" command, the cursor is moved to the top of the
-            current buffer.  Why?
+     25.26. When I try to "execute" my function using the "execute Myfunc()"
+            command, the cursor is moved to the top of the current buffer.
+            Why?
      25.27. How do I source/execute the contents of a register?
      25.28. After calling a Vim function or a mapping, when I press the 'u'
             key to undo the last change, Vim undoes all the changes made by
@@ -884,7 +884,7 @@
       the use of external programs.
 
    Completion in Insert mode
-      Vim provides several different possibilities to complete your text. 
+      Vim provides several different possibilities to complete your text.
       For example Vim can complete words while you are typing, by matching
       the current word with other similar words in the file.
 
@@ -907,13 +907,14 @@
       position the cursor, select the visual area, paste a register, etc.
 
    Graphical User Interface (GUI)
-      There are several different graphical user interfaces available. 
+      There are several different graphical user interfaces available.
       Also, it's very easy to add your own menus.  Of course, console vim is
       still supported, and very widely used.
 
    Scripting language
       Vim has a powerful scripting language so new commands can be created.
-      You can also use Perl, Python, TCL, Lua and Ruby to achieve the same thing!
+      You can also use Perl, Python, TCL, Lua and Ruby to achieve the same
+      thing!
 
    Plugins
       Extra functionality implemented via vim commands (regular commands or
@@ -932,7 +933,7 @@
       functionality to that of Perl regular expressions.
 
    Integrated Spell checking
-      Spell checking has been integrated into Vim
+      Spell checking has been integrated into Vim.
 
    Diff mode
       Vim can highlight the differences between two, three or four files.
@@ -1017,17 +1018,16 @@
 
     "VimOnline" is a web page that serves as a de facto homepage for vim,
     although the main purpose of it is to gather tips and scripts from
-    everywhere. Get involved! The URL is vim.sourceforge.net or vim.sf.net.
+    everywhere. Get involved! The URL is https://www.vim.org
 
     Finally, read the Vi FAQ:
 
-     http://www.faqs.org/faqs/editor-faq/vi/part1/index.html
+    http://www.faqs.org/faqs/editor-faq/vi/part1/index.html
 
     Finally, there are also some communities, where you can discuss features
     or ask questions:
 
-     http://vi.stackexchange.com
-     http://vim.reddit.com
+    https://vi.stackexchange.com https://vim.reddit.com
 
     For more information, read
 
@@ -1056,11 +1056,11 @@
 
     The available mailing lists are also mentioned here:
 
-     http://www.vim.org/maillist.php
+    https://www.vim.org/maillist.php
 
   [1m2.3. Is there an archive available for the Vim mailing lists?[0m
-    Yes. Visit http://www.yahoogroups.com/list/<name>, where name is one of:
-    vimannounce, vim, vimdev, vim-fr, vim-mac, vim-vms.
+    Yes. Visit https://groups.yahoo.com/, where name is one of: vimannounce,
+    vim, vimdev, vim-fr, vim-mac, vim-vms.
 
     Alternatively, visit www.gmane.org to find out about GMANE, which allows
     you to access the mailing lists as though they were newsgroups. This
@@ -1070,16 +1070,16 @@
   [1m2.4. Where can I get the Vim user manual in HTML/PDF/PS format?[0m
     You can download the HTML/PDF/PS format of the Vim user manual from:
 
-     http://vimdoc.sourceforge.net/
+    https://vimdoc.sourceforge.net/
 
     Note, the user manual from that page is currently pretty outdated. It's
     best to either use the documentation that comes with vim or use the
-    online version at http://vimhelp.appspot.com
+    online version at https://vimhelp.appspot.com
 
     You can find a pdf version of the full English help, including this faq
     (in letter, A4 and Ipad format) at:
 
-     http://www.nathangrigg.net/vimhelp/
+    https://nathangrigg.com/vimhelp/
 
     This document is cross-referenced, so you can use the hyperlink
     functionality.
@@ -1172,8 +1172,8 @@
 
     Now send the resulting text from the above command to the bugs@vim.org
     e-mail address. There is also a public bug tracker available at
-    http://code.google.com/p/vim/issues/list. A copy of each message there
-    will be forwarded to the Vim Development list.
+    https://github.com/vim/vim/issues. A copy of each message there will be
+    forwarded to the Vim Development list.
 
     The Vim Development mailing list (see Question 2.2) is a good place to
     discuss general bugs. If the bug you find is with syntax highlighting, a
@@ -1187,23 +1187,24 @@
     [1m:help bug-reports[0m
 
   [1m2.7. Where can the FAQ be found?[0m
-    The FAQ can be found at http://vimhelp.appspot.com/vim_faq.txt.html. It
+    The FAQ can be found at https://vimhelp.appspot.com/vim_faq.txt.html. It
     will be auto-generated from the source that is managed in the github
-    repository http://www.github.com/chrisbra/vim_faq (Patches are welcome).
+    repository https://www.github.com/chrisbra/vim_faq (Patches are
+    welcome).
 
     The repository also includes the faq in different formats, e.g. manpage,
     pdf file, html file, plain text version and a version in vim help
     format.
 
     A slightly older version (which doesn't seem to get updated anymore) can
-    still be found at VimOnline (vim.sf.net).
+    still be found at VimOnline (https://www.vim.org/).
 
   [1m2.8. What if I don't find an answer in this FAQ?[0m
     This FAQ covers mainly Vim-specific questions. You may find more
     information suitable for most Vi clones by reading the Vi FAQ. It is
     posted regularly on comp.editors. You can also find a copy at
 
-     http://www.faqs.org/faqs/editor-faq/vi/part1/index.html
+    http://www.faqs.org/faqs/editor-faq/vi/part1/index.html
 
     Also, since Vim has gathered so many features in the last few years,
     successfully documenting the frequently asked questions here is a
@@ -1224,18 +1225,19 @@
    compiler plugin or developed a new script or a colorscheme.
    Is there a public website where I can upload this?[0m
     Yes. You can use the Vim Online website to upload your plugins/scripts,
-    colorschemes, etc. The site is at http://vim.sourceforge.net Nowadays
-    people also seem to share their plugins/runtime files at github.
+    colorschemes, etc. The site is at https://www.vim.org Nowadays people
+    also seem to share their plugins/runtime files at github.
 
     Tips can also be shared in the Wiki which you can find at
     http://vim.wikia.com
 
 [1mAVAILABILITY[0m
   [1m3.1. What is the latest version of Vim?[0m
-    The latest version of Vim is 7.4 released on 10th August 2013.
+    The latest version of Vim is 8.1 released on 17th May 2018.
 
-    The release-history of different versions of Vim is below:
+    The release history of different versions of Vim is below:
 
+     Version 8.1     17th May, 2018
      Version 8.0     12th September, 2016
      Version 7.4     10th August, 2013
      Version 7.3     15th August, 2010
@@ -1256,9 +1258,9 @@
      Version 5.2     24th August, 1998
      Version 5.1     7th April, 1998
      Version 5.0     19th February, 1998
-     Version 4.6     13th March,1997
+     Version 4.6     13th March, 1997
      Version 4.5     17th October, 1996
-     Version 4.2     5th July,1996
+     Version 4.2     5th July, 1996
      Version 4.0     21st May, 1996
      Version 3.0     16th August, 1994
      Version 2.0     21st December, 1993
@@ -1283,6 +1285,8 @@
 
     [1m:help changed-7.4[0m
 
+    [1m:help changed-8.1[0m
+
   [1m3.2. Where can I find the latest version of Vim?[0m
     You can download the sources for the latest version of Vim from the
     Github repository. The URL for this site is https://github.com/vim/vim
@@ -1295,8 +1299,8 @@
     http://vim.wikia.com/wiki/Where_to_download_Vim
 
   [1m3.3. What platforms does it run on?[0m
-    All Unix platforms. All Windows platforms. Amiga, Atari, BeOS, DOS,
-    Macintosh, MachTen, OS/2, RiscOS, VMS, IBM z/OS.
+    All Unix platforms. All Windows platforms (XP and later). Amiga, Atari,
+    BeOS, DOS, Macintosh, MachTen, OS/2, RiscOS, VMS, IBM z/OS.
 
   [1m3.4. Where can I download the latest version of the Vim runtime files?[0m
     You can download the latest version of the Vim runtime files (syntax
@@ -1734,9 +1738,10 @@
     features.
 
     There is also the LargeFile plugin available at
-    http://www.vim.org/scripts/script.php?script_id=1506 which automatically
-    sets these options, when working with large files (it is configurable,
-    what is considered to be a large file, by default, it is 100MB).
+    https://www.vim.org/scripts/script.php?script_id=1506 which
+    automatically sets these options, when working with large files (it is
+    configurable, what is considered to be a large file, by default, it is
+    100MB).
 
 [1mEDITING MULTIPLE FILES[0m
   [1m6.1. How do I open multiple files at once from within Vim?[0m
@@ -2257,7 +2262,7 @@
     window layout after zooming into a window, you can use the ZoomWin
     plugin. You can download this plugin from the Vim online website at:
 
-    http://vim.sourceforge.net/scripts/script.php?script_id=508
+    https://www.vim.org/scripts/script.php?script_id=508
 
     For more information, read
 
@@ -3643,7 +3648,7 @@
     complex examples which will join all consecutive lines with a "+" at the
     end are:
 
-     :g/*$/,/\(^\|[^+]\)$/j
+     :g/+$/,/\(^\|[^+]\)$/j
      :g/+$/mark a | .,/\(^\|[^+]\)$/s/+$// | 'a,.j
 
     For more information, read
@@ -4446,7 +4451,7 @@
     an ex command on a column of text selected in visual block mode, Vim
     will operate on all the selected lines (instead of the selected
     columns). You can use the vis.vim or NrrwRgn plugin script from
-    http://vim.sourceforge.net scripts archive to do this.
+    https://www.vim.org scripts archive to do this.
 
     For more information, read
 
@@ -5546,7 +5551,7 @@
      :nmap <F9> :call GetFontNameOfFirstChar()<CR>
 
     A more technical and detailed solution to this problem follows and can
-    be found at http://groups.google.com/group/vim_dev/msg/75f1f2dfc00908bb
+    be found at https://groups.google.com/group/vim_dev/msg/75f1f2dfc00908bb
 
     Not every normal mode-mapping is automatically suitable for execution
     via <Ctrl-O> from within insert mode; you need to explicitly design your
@@ -5885,7 +5890,7 @@
     .Xdefaults files to change the colors:
 
      Vim.foreground:     Black
-     Vim.backround:      Wheat
+     Vim.background:     Wheat
 
     You can also use the "-foreground" and "-background" command-line
     arguments to specify the foreground and background colors. These
@@ -6284,8 +6289,8 @@
 
      :let @a = system('ls')
 
-    The above command will store the return value from the 'ls' command into
-    the register 'a'.
+    The above command will store the output of the 'ls' command into the
+    register 'a'.
 
     For more information, read
 
@@ -6565,22 +6570,29 @@
     You can split long lines in a Vim script by inserting the backslash
     character ("\") at the start of the next line. For example,
 
+     set comments=sr:/*,mb:*,el:*/,
+                 \://,
+                 \b:#,
+                 \:%,
+                 \n:>,
+                 \fb:-
+
     For more information, read
 
     [1m:help line-continuation[0m
 
-  [1m25.26. When I try to "execute" my function using the "execute 'echo
-    Myfunc()'" command, the cursor is moved to the top of the current
-    buffer.  Why?[0m
-    The ":execute" command runs the normal mode command specified by the
-    argument. In the case of the following command:
+  [1m25.26. When I try to "execute" my function using the "execute Myfunc()"
+    command, the cursor is moved to the top of the current buffer.
+    Why?[0m
+    The ":execute" command runs the ex command specified by the argument. In
+    the case of the following command:
 
-     :execute "echo Myfunc()"
+     :execute Myfunc()
 
-    The call to "echo Myfunc()" will return 0. The ":execute" command will
-    run the normal mode command "0", which moves the cursor to the top of
-    the file. To call a Vim function, you should use the ":call" command
-    instead of the ":execute" command:
+    The call to Myfunc() will return 0. The ":execute" command will run the
+    ex command ":0", which moves the cursor to the top of the file. To call
+    a Vim function, you should use the ":call" command instead of the
+    ":execute" command:
 
      :call Myfunc()
 
@@ -6597,6 +6609,8 @@
     [1m:help 41.5[0m
 
     [1m:help 41.6[0m
+
+    [1m:help cmdline-lines[0m
 
   [1m25.27. How do I source/execute the contents of a register?[0m
     If you have yanked a set of Vim commands into a Vim register (for
@@ -7283,120 +7297,34 @@
 
 [1mVIM WITH EXTERNAL APPLICATIONS[0m
   [1m30.1. Can I run a shell inside a Vim window?[0m
-    Currently Vim doesn't have support for running shell and other external
-    commands inside a Vim window.
+    Since Version 8.1 Vim comes with a terminal window included. It allows
+    to run a shell inside an ordinary Vim window (e.g. split) asynchronously
+    and interact with the shell using the normal Vim commands.
+
+    When the focus is in the terminal window, typed keys will be sent to the
+    job and is called terminal mode. You can click outside of the terminal
+    window to move keyboard focus elsewhere, alternatively one can use
+    Ctrl-W to novigate between different Vim windows. To feed Ctrl-W into
+    the terminal, one needs to use CTRL-W .
+
+    To map keys specifically for terminal mode, use the new :tmap command.
+    After typing Ctrl-W the terminal window will switch to Terminal-Normal
+    mode (this can be used to move the cursor around, scroll the window,
+    etc. Just like normal mode).
+
+    To interact between the terminal and Vim, Vim implements several
+    interfaces using term_sendkeys(), terminal-api and the client-server
+    mechanism.
 
     For more information, read
 
-    [1m:help shell-window[0m
+    [1m:help terminal[0m
 
-    The Neovim project however has added the ":terminal" command which opens
-    a new shell prompt. To read more about Neovim, look at their webpage
-    http://neovim.io
+    [1m:help mapmode-t[0m
 
-    Alternatively, you can try using the Unix "screen", "tmux" or "splitvt"
-    utility.
+    [1m:help Terminal-Normal[0m
 
-    Following is a post from the vim_use mailinglist
-    (http://groups.google.com/group/vim_use/msg/22c97ebfd6a978eb)
-
-    ------------------------------------------- Date: Mon, 24 May 2010
-    Subject: Re: Terminal into vim, best options??? From: Nico Raffo To:
-    vim_use
-
-    There are quite a few options out there, all with their strengths and
-    weaknesses. Shell integration is at the top of the Vim wish list. I'm
-    sure Bram would be more interested in including it if someone developed
-    and maintained a kick-ass patch :-)
-
-    Here is a (quite biased) overview of what's currently available:
-
-    Conque Shell URL: http://code.google.com/p/conque/ Author: Nico Raffo
-    (me!) Requirements: *nix, python-enabled vim Type: Plugin
-
-    Conque is a Vim plugin, written with Vim script and python. It turns
-    your Vim buffer into a terminal emulator. In INSERT mode your buffer
-    behaves like a standard unix terminal. In NORMAL mode you can navigate/
-    search/page through the terminal output.
-
-    Pros: * Relatively easy to install * Near complete VT100 support (you
-    can run emacs in a vim buffer) * Use of Vim features in terminal,
-    including syntax highlighting, copy/paste, etc * Active development
-
-    Cons: * No Windows support (coming with Vim 7.3) * Can be slow,
-    especially with programs which use a lot of terminal colors
-
-    Vimshell URL: http://github.com/Shougo/vimshell +
-    http://github.com/Shougo/vimproc Author: Shougo M Requirements: Works on
-    both *nix and Windows. One small, independent component may need to be
-    compiled from C source. Type: Plugin
-
-    Vimshell is a shell, written in the Vim scripting language, that runs in
-    a Vim buffer. The shell was written to take full advantage of all of
-    Vim's features, for example you can use Vim's omnicomplete features, or
-    any other normal mode Vim commands, to edit your command line. Great
-    potential, but missing a few features, particularly regarding
-    interactive programs.
-
-    Pros: * Relatively easy to install * Edit the command line with Vim,
-    full use of Vim features in both normal and insert mode * Very fast,
-    since there is no background process required * Windows support * Active
-    development
-
-    Cons: * Very limited support of interactive programs such as bash, mysql
-    or python. * Shell has incomplete functionality compared to bash, etc. *
-    Documentation only available in Japanese.
-
-    screen.vim (Vim + screen/tmux) URL:
-    http://www.vim.org/scripts/script.php?script_id=2711 Author: Eric Van
-    Dewoestine Requirements: *nix Type: Plugin
-
-    screen.vim is a Vim plugin which streamlines and enhances the experience
-    of running split screen terminal with Vim running in one of the windows
-    and a terminal running in the other. It uses the programs screen or tmux
-    to manage the split windows and to run the terminal emulation. Both of
-    these programs are very mature, and will give a better terminal
-    experience than any other option. However since the terminal is running
-    independently of Vim, you won't be able to use Vim commands to interact
-    with the terminal output.
-
-    Pros: * Easy to install * Great shell support * Active development
-
-    Cons: * No use of Vim commands to manage the shell window * Relatively
-    little integration between Vim and the shell
-
-    Vim-Shell URL: http://www.wana.at/vimshell/ Author: Thomas Wanda
-    Requirements: *nix, patch and recompile Vim from source Type: Extension
-
-    Vim-Shell is a Vim extension which converts a buffer into a terminal
-    emulator. The shell window itself is very fast and functionality is very
-    strong. It is works great for running complex interactive programs.
-    However the Vim buffer where it runs is no longer editable (you can't
-    scroll up, or even move the cursor). The last official release was for
-    Vim 7.0, although time spent searching on Google will turn up patches
-    for Vim 7.1 and 7.2.
-
-    Pros: * Near complete VT100 support (you can run emacs in a vim buffer,
-    and just about anything else) * Very fast. Compiled into the C source
-
-    Cons: * Relatively difficult to install * No use of Vim features to
-    navigate terminal output * No Windows or Mac support. * No development
-    activity since 2006
-
-    Vimsh URL: http://www.vim.org/scripts/script.php?script_id=165 Author:
-    Brian Sturk Requirements: python-enabled vim Type: Plugin
-
-    Vimsh is a Vim plugin which allows you to run interactive programs in a
-    vim buffer. It provides a nice option for Windows use, but functionality
-    is overall less mature than the other options.
-
-    Pros: * Relatively easy to install * Use Vim commands to edit commands
-    and navigate terminal output * Support in both *nix and Windows (no
-    interactive programs in Windows)
-
-    Cons: * Limited functionality * Inactive development
-
-    -------------------------------------------
+    [1m:help terminal-communication[0m
 
   [1m30.2. How do I pass the word under the cursor to an external command?[0m
     You can use the special keyword <cword> to pass the word under the
@@ -7542,7 +7470,7 @@
     Adding support for buffer specific menus is in the Vim TODO list. In the
     mean time, you can try Michael Geddes's plugin, buffermenu.vim:
 
-     http://vim.sourceforge.net/scripts/script.php?script_id=246
+    https://www.vim.org/scripts/script.php?script_id=246
 
   [1m31.2. How do I change the font used by GUI Vim?[0m
     You can change the 'guifont' option to change the font used by GUI Vim.
@@ -7657,7 +7585,7 @@
     back to the old position using `a. You can also try the following
     suggestion from the Vim Online website:
 
-     http://vim.wikia.com/wiki/VimTip320
+    http://vim.wikia.com/wiki/VimTip320
 
     For more information, read
 
@@ -7980,11 +7908,11 @@
     a terminal emulator supports changing the background and foreground
     colors, that does not mean that it also supports ANSI escape sequences
     for changing the color. You can download the latest version of Xfree86
-    xterm from http://dickey.his.com/xterm/xterm.html. You can download the
-    latest version of rxvt from http://www.rxvt.org. You have to install the
-    terminfo/termcap file that supports colors for the terminal emulator.
-    Also, set the TERM environment variable to the correct name of the term
-    that supports colors.
+    xterm from https://invisible-island.net/xterm/xterm.html You can
+    download the latest version of rxvt from https://rxvt.org You have to
+    install the terminfo/termcap file that supports colors for the terminal
+    emulator. Also, set the TERM environment variable to the correct name of
+    the term that supports colors.
 
     You can use the colortest.vim script supplied with the Vim runtime
     package to test the color setup. To use this script, follow these steps:
@@ -8083,7 +8011,8 @@
     There is a problem with using GNU diff with Vim. You can try using the
     GNU diff.exe built by Ron Aaron from the following link:
 
-     http://www.mossbayeng.com/~ron/vim/builds.html
+    http://www.mossbayeng.com/~ron/vim/builds.html (This page no longer
+    exists.)
 
   [1m33.8. Is it possible to use Vim as an external editor for MS-Windows
    Outlook email client?[0m
@@ -8091,13 +8020,13 @@
     for MS-Windows Outlook email client. Visit the following URL for more
     information:
 
-     http://sourceforge.net/projects/cubiclevim
+    https://sourceforge.net/projects/cubiclevim/
 
     Note, that currently this works only with MS-Office 2000 and XP.
 
     Also the plugin OutlookVim might be worth a look:
 
-    http://www.vim.org/scripts/script.php?script_id=3087
+    https://www.vim.org/scripts/script.php?script_id=3087
 
   [1m33.9. I am using Vim to edit HTML files. How do I start internet explorer
    with the current file to preview the HTML file?[0m
@@ -8186,9 +8115,11 @@
 
          $ bunzip2 -c <filename> | tar -xf -
 
-    - Alternatively, download the source from the mercurial repository:
-    http://code.google.com/p/vim/source/checkout - Run the 'make' command to
-    configure and build Vim with the default configuration. - Run 'make
+    - Alternatively, download the source from the git repository:
+    https://github.com/vim/vim/releases/ - Alternatively, download the
+    source from the mercurial repository:
+    https://bitbucket.org/vim-mirror/vim/downloads/ - Run the 'make' command
+    to configure and build Vim with the default configuration. - Run 'make
     install' command to install Vim in the default directory.
 
     To enable/disable various Vim features, before running the 'make'
@@ -8196,7 +8127,7 @@
     include/exclude the various Vim features. To list all the available
     options for the 'configure' command, use:
 
-     $ configure -help
+     $ configure --help
 
     For more information, read
 
@@ -8232,8 +8163,10 @@
        extra (vim-##-extra.tar.gz) archives from the
        ftp://ftp.vim.org/pub/vim/pc directory.
      - Extract the archives into a directory (for example, c:\vimsrc)
+     - Alternatively, download the source from the git repository:
+       https://github.com/vim/vim/releases/
      - Alternatively, download the source from the mercurial repository:
-       http://code.google.com/p/vim/source/checkout
+       https://bitbucket.org/vim-mirror/vim/downloads/
      - Depending on the installed compiler, you can use the corresponding
        makefile to build the Vim sources. For Visual C++ use the
        Make_mvc.mak makefile, for borland C++ use the Make_bc5.mak makefile,
@@ -8359,7 +8292,7 @@
        to find out, whether or not there exists a source version in the
        repository. If there is none, you'll need to add a source repository.
        For openSUSE 11.2 you could use, e.g.
-   
+
        $ zypper ar
        http://download.opensuse.org/source/distribution/11.2/repo/oss/src-11.2
 
@@ -8653,8 +8586,7 @@
     "+multi_byte" compile-time option. You can get more information about
     Unicode from the following sites:
 
-     http://www.unicode.org
-     http://www.cl.cam.ac.uk/~mgk25/unicode.html
+    http://www.unicode.org https://www.cl.cam.ac.uk/~mgk25/unicode.html
 
     For more information, read
 
@@ -8813,5 +8745,5 @@
 [1mAUTHOR[0m
     Current Maintainer: Christian Brabandt <cb@256bit.org>
 
-    Last updated on: 14 September 2016
+    Last updated on: 05 September 2018
 

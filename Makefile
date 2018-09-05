@@ -11,9 +11,9 @@ DOPDF=1
 
 .PHONY: $(PLUGIN).vmb README
 
-all: help vimball uninstall install 
+all: updateheader help vimball uninstall install 
 
-release: help docs README vimball uninstall install
+release: updateheader help docs README vimball uninstall install
 
 vimball: $(PLUGIN).vmb
 
@@ -42,11 +42,13 @@ $(PLUGIN).vmb:
 help:
 	vim -u NONE -U NONE -N -c ':so vim_faq.vim|:CreateVimFAQHelp|wq' ${FAQ}
 
+updateheader:
+	vim -u NONE -U NONE -N -c '/^" Last Change: /s/: \zs.*$$/\=strftime("%d %B %Y")/|wq' ${SCRIPT}
+	vim -u NONE -U NONE -N -c '/^" Version:/s/\d\+/\=submatch(0)+1/|wq' ${SCRIPT}
+
 docs:
 	vim -u NONE -U NONE -N -c ':$$s/Last updated on: \zs.*$$/\=strftime("%d %B %Y")/|wq' ${FAQ}
 	vim -u NONE -U NONE -N -c '/^\" GetLatestVimScripts: /s/\d\+\s\ze:AutoInstall:/\=(submatch(0)+1)." "/|wq' ${SCRIPT}
-	vim -u NONE -U NONE -N -c '/^" Last Change: /s/: \zs.*$$/\=strftime("%d %B %Y")/|wq' ${SCRIPT}
-	vim -u NONE -U NONE -N -c '/^" Version:/s/\d\+/\=submatch(0)+1/|wq' ${SCRIPT}
 	VERSION=$(shell sed -n '/Version:/{s/^.*\(\S\?\.\?\S\+\)$$/\1/;p}' $(SCRIPT))
 	# Generate additional formats
 	vim -u NONE -U NONE -N -c ':so vim_faq.vim|:CreateVimPODFile|q' ${FAQ}

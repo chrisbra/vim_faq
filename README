@@ -1,6 +1,6 @@
 *vim_faq.txt*	Frequently Asked Questions
 
-Last updated on: 04 August 2016
+Last updated on: 05 September 2018
 
 	  VIM FAQ by: Christian Brabandt <cb@256bit.org>
 
@@ -12,24 +12,24 @@ several ways to solve a problem in Vim. This FAQ gives one of those several
 possibilities. You can explore the other ways using the information and
 links given in this FAQ. The credit for the answers in this FAQ goes to
 Peppe, Benji, Charles Campbell and numerous others. An online version of
-this FAQ is available at http://vimhelp.appspot.com/vim_faq.txt.html
+this FAQ is available at https://vimhelp.appspot.com/vim_faq.txt.html
 								*faq-index*
-INDEX
+INDEX ~
                                                 *faq-general-information*
-SECTION 1 - GENERAL INFORMATION
+SECTION 1 - GENERAL INFORMATION ~
 |faq-1.1|   What is Vim?
 |faq-1.2|   Who wrote Vim?
 |faq-1.3|   Is Vim compatible with Vi?
 |faq-1.4|   What are some of the improvements of Vim over Vi?
 |faq-1.5|   Is Vim free?
                                                         *faq-resources*
-SECTION 2 - RESOURCES
+SECTION 2 - RESOURCES ~
 |faq-2.1|   Where can I learn more about Vim?
 |faq-2.2|   Is there a mailing list available?
 |faq-2.3|   Is there an archive available for the Vim mailing lists?
 |faq-2.4|   Where can I get the Vim user manual in HTML/PDF/PS format?
-|faq-2.5|   I have a "xyz" (some) problem with Vim. How do I determine if it is a
-	  problem with my setup or with Vim?
+|faq-2.5|   I have a "xyz" (some) problem with Vim. How do I determine if it is
+	  a problem with my setup or with Vim?
 |faq-2.6|   Where can I report bugs?
 |faq-2.7|   Where can the FAQ be found?
 |faq-2.8|   What if I don't find an answer in this FAQ?
@@ -40,13 +40,13 @@ SECTION 2 - RESOURCES
 	  or a colorscheme. Is there a public website where I can upload
 	  this?
                                                         *faq-availability*
-SECTION 3 - AVAILABILITY
+SECTION 3 - AVAILABILITY ~
 |faq-3.1|   What is the latest version of Vim?
 |faq-3.2|   Where can I find the latest version of Vim?
 |faq-3.3|   What platforms does it run on?
 |faq-3.4|   Where can I download the latest version of the Vim runtime files?
                                                                 *faq-help*
-SECTION 4 - HELP
+SECTION 4 - HELP ~
 |faq-4.1|   How do I use the help files?
 |faq-4.2|   How do I search for a keyword in the Vim help files?
 |faq-4.3|   I am getting an error message E123, what did I do wrong?
@@ -55,7 +55,7 @@ SECTION 4 - HELP
 	  help file?
 |faq-4.6|   Can I use compressed versions of the help files?
                                                         *faq-editing-a-file*
-SECTION 5 - EDITING A FILE
+SECTION 5 - EDITING A FILE ~
 |faq-5.1|   How do I load a file in Vim for editing?
 |faq-5.2|   How do I save the current file in another name (save as) and edit
 	  a new file?
@@ -75,7 +75,7 @@ SECTION 5 - EDITING A FILE
 	  to the current file?
 |faq-5.12|  How do I reduce the loading time for very large files in Vim?
                                                 *faq-editing-multiple-files*
-SECTION 6 - EDITING MULTIPLE FILES
+SECTION 6 - EDITING MULTIPLE FILES ~
 |faq-6.1|   How do I open multiple files at once from within Vim?
 |faq-6.2|   How do I switch between multiple files/buffers in Vim?
 |faq-6.3|   How do I open several files in Vim, with each file in a separate
@@ -87,7 +87,7 @@ SECTION 6 - EDITING MULTIPLE FILES
 |faq-6.6|   How do I browse/explore directories from within Vim?
 |faq-6.7|   How do I edit files over a network using ftp/scp/rcp/http?
                                                                 *faq-backup*
-SECTION 7 - BACKUP
+SECTION 7 - BACKUP ~
 |faq-7.1|   When I edit and save files, Vim creates a file with the same name
 	  as the original file and a "~" character at the end. How do I stop
 	  Vim from creating this file (or) How do I disable the Vim backup
@@ -102,7 +102,7 @@ SECTION 7 - BACKUP
 	  How do I configure Vim to save a file without changing the file
 	  permissions?
                                                                 *faq-buffers*
-SECTION 8 - BUFFERS
+SECTION 8 - BUFFERS ~
 |faq-8.1|   I have made some modifications to a buffer. How do I edit another
 	  buffer without saving the modified buffer and also without losing
 	  the modifications?
@@ -122,14 +122,14 @@ SECTION 8 - BUFFERS
 |faq-8.10|  How do I map the tab key to cycle through and open all the
 	  buffers?
                                                                 *faq-windows*
-SECTION 9 - WINDOWS
+SECTION 9 - WINDOWS ~
 |faq-9.1|   What is the difference between a Vim window and a buffer?
 |faq-9.2|   How do I increase the width of a Vim window?
 |faq-9.3|   How do I zoom into or out of a window?
 |faq-9.4|   How do I execute an ex command on all the open buffers or open
 	  windows or all the files in the argument list?
                                                                 *faq-motion*
-SECTION 10 - MOTION
+SECTION 10 - MOTION ~
 |faq-10.1|  How do I jump to the beginning (first line) or end (last line) of
 	  a file?
 |faq-10.2|  In insert mode, when I press the <Esc> key to go to command mode,
@@ -162,7 +162,7 @@ SECTION 10 - MOTION
 |faq-10.12| How do I display some context lines when scrolling text?
 |faq-10.13| How do I go back to previous cursor locations?
                                                         *faq-searching-text*
-SECTION 11 - SEARCHING TEXT
+SECTION 11 - SEARCHING TEXT ~
 |faq-11.1|  After I searched for a text with a pattern, all the matched text
 	  stays highlighted. How do I turn off the highlighting
 	  temporarily/permanently?
@@ -203,7 +203,7 @@ SECTION 11 - SEARCHING TEXT
 |faq-11.25| How can I use '/' within a pattern, without escaping it?
 |faq-11.26| How can I operate on a search match?
                                                         *faq-changing-text*
-SECTION 12 - CHANGING TEXT
+SECTION 12 - CHANGING TEXT ~
 |faq-12.1|  How do I delete all the trailing white space characters (SPACE
 	  and TAB) at the end of all the lines in a file?
 |faq-12.2|  How do I replace all the occurrences of multiple consecutive
@@ -267,13 +267,13 @@ SECTION 12 - CHANGING TEXT
 |faq-12.34| How do I exchange (swap) two characters or words or lines?
 |faq-12.35| How do I change the characters used as word delimiters?
                                         *faq-completion-in-insert-mode*
-SECTION 13 - COMPLETION IN INSERT MODE
+SECTION 13 - COMPLETION IN INSERT MODE ~
 |faq-13.1|  How do I complete words or lines in insert mode?
 |faq-13.2|  How do I complete file names in insert mode?
 |faq-13.3|  I am using CTRL-P/CTRL-N to complete words in insert mode. How do
 	  I complete words that occur after the just completed word?
                                                         *faq-text-formatting*
-SECTION 14 - TEXT FORMATTING
+SECTION 14 - TEXT FORMATTING ~
 |faq-14.1|  How do I format a text paragraph so that a new line is inserted
 	  at the end of each wrapped line?
 |faq-14.2|  How do I format long lines in a file so that each line contains
@@ -310,7 +310,7 @@ SECTION 14 - TEXT FORMATTING
 |faq-14.18| How do I join lines without adding or removing any space
 	  characters?
                                                         *faq-visual-mode*
-SECTION 15 - VISUAL MODE
+SECTION 15 - VISUAL MODE ~
 |faq-15.1|  How do I do rectangular block copying?
 |faq-15.2|  How do I delete or change a column of text in a file?
 |faq-15.3|  How do I apply an ex-command on a set of visually selected lines?
@@ -329,7 +329,7 @@ SECTION 15 - VISUAL MODE
 |faq-15.9|  When I select a block of text using the mouse, Vim goes into
 	  selection mode instead of Visual mode. Why?
                                                 *faq-command-line-mode*
-SECTION 16 - COMMAND-LINE MODE
+SECTION 16 - COMMAND-LINE MODE ~
 |faq-16.1|  How do I use the name of the current file in the command mode or
 	  an ex command line?
 |faq-16.2|  How do I edit the text in the Vim command-line effectively?
@@ -347,14 +347,14 @@ SECTION 16 - COMMAND-LINE MODE
 	  it?
 |faq-16.8|  How do I increase the height of the command-line?
                                                                 *faq-viminfo*
-SECTION 17 - VIMINFO
+SECTION 17 - VIMINFO ~
 |faq-17.1|  When I invoke Vim, I get error messages about illegal characters
 	  in the viminfo file. What should I do to get rid of these
 	  messages?
 |faq-17.2|  How do I disable the viminfo feature?
-|faq-17.3|  How do I save and use Vim marks/commands across Vim sessions? 
+|faq-17.3|  How do I save and use Vim marks/commands across Vim sessions?
                                                         *faq-remote-editing*
-SECTION 18 - REMOTE EDITING
+SECTION 18 - REMOTE EDITING ~
 |faq-18.1|  How do I open a file with existing instance of gvim? What
 	  happened to the Vim 5.x OpenWithVim.exe and SendToVim.exe files?
 |faq-18.2|  How do I send a command to a Vim server to write all buffers to
@@ -362,7 +362,7 @@ SECTION 18 - REMOTE EDITING
 |faq-18.3|  Where can I get the documentation about the Vim remote server
 	  functionality?
                                                                 *faq-options*
-SECTION 19 - OPTIONS
+SECTION 19 - OPTIONS ~
 |faq-19.1|  How do I configure Vim in a simple way?
 |faq-19.2|  How do I toggle the value of an option?
 |faq-19.3|  How do I set an option that affects only the current
@@ -391,7 +391,7 @@ SECTION 19 - OPTIONS
 |faq-19.17| How do I remove more than one flag using a single ":set" command
 	  from a Vim option?
                                                         *faq-mapping-keys*
-SECTION 20 - MAPPING KEYS
+SECTION 20 - MAPPING KEYS ~
 |faq-20.1|  How do I know what a key is mapped to?
 |faq-20.2|  How do I list all the user-defined key mappings?
 |faq-20.3|  How do I unmap a key?
@@ -427,7 +427,7 @@ SECTION 20 - MAPPING KEYS
 |faq-20.20| How can I make my normal mode mapping work from within Insert
 	  Mode?
                                                         *faq-abbreviations*
-SECTION 21 - ABBREVIATIONS
+SECTION 21 - ABBREVIATIONS ~
 |faq-21.1|  How do I auto correct misspelled words?
 |faq-21.2|  How do I create multi-line abbreviations?
 |faq-21.3|  When my abbreviations are expanded, an additional space character
@@ -436,7 +436,7 @@ SECTION 21 - ABBREVIATIONS
 |faq-21.4|  How do I insert the current date/time stamp into the file?
 |faq-21.5|  How do I prevent an abbreviation from expanding in insert mode?
                                                 *faq-record-and-playback*
-SECTION 22 - RECORD AND PLAYBACK
+SECTION 22 - RECORD AND PLAYBACK ~
 |faq-22.1|  How do I repeat an editing operation (insertion, deletion, paste,
 	  etc)?
 |faq-22.2|  How I record and repeat a set of key sequences?
@@ -447,7 +447,7 @@ SECTION 22 - RECORD AND PLAYBACK
 	  the first replay of the recorded key sequence, I am no longer
 	  able to play it back.
                                                         *faq-autocommands*
-SECTION 23 - AUTOCOMMANDS
+SECTION 23 - AUTOCOMMANDS ~
 |faq-23.1|  How do I execute a command when I try to modify a read-only file?
 |faq-23.2|  How do I execute a command every time when entering a buffer?
 |faq-23.3|  How do I execute a command every time when entering a window?
@@ -458,7 +458,7 @@ SECTION 23 - AUTOCOMMANDS
 |faq-23.6|  How do I execute/run a function when Vim exits to do some
 	  cleanup?
                                                         *faq-syntax-highlight*
-SECTION 24 - SYNTAX HIGHLIGHT
+SECTION 24 - SYNTAX HIGHLIGHT ~
 |faq-24.1|  How do I turn off/on syntax highlighting?
 |faq-24.2|  How do I change the background and foreground colors used by Vim?
 |faq-24.3|  How do I change the highlight colors to suit a dark/light
@@ -489,7 +489,7 @@ SECTION 24 - SYNTAX HIGHLIGHT
 |faq-24.16| How can I embed one syntax highlighting language into another
 	  one?
                                                 *faq-vim-script-writing*
-SECTION 25 - VIM SCRIPT WRITING
+SECTION 25 - VIM SCRIPT WRITING ~
 |faq-25.1|  How do I list the names of all the scripts sourced by Vim?
 |faq-25.2|  How do I debug Vim scripts?
 |faq-25.3|  How do I locate the script/plugin which sets a Vim option?
@@ -534,9 +534,9 @@ SECTION 25 - VIM SCRIPT WRITING
 	  command from a Vim script. How do I specify the carriage return
 	  character?
 |faq-25.25| How do I split long lines in a Vim script?
-|faq-25.26| When I try to "execute" my function using the "execute 'echo
-	  Myfunc()'" command, the cursor is moved to the top of the
-	  current buffer.  Why?
+|faq-25.26| When I try to "execute" my function using the "execute Myfunc()"
+	  command, the cursor is moved to the top of the current buffer.
+	  Why?
 |faq-25.27| How do I source/execute the contents of a register?
 |faq-25.28| After calling a Vim function or a mapping, when I press the 'u'
 	  key to undo the last change, Vim undoes all the changes made by
@@ -546,7 +546,7 @@ SECTION 25 - VIM SCRIPT WRITING
 |faq-25.30| Is it possible to un-source a sourced script? In other words,
 	  reverse all the commands executed by sourcing a script.
                                                                 *faq-plugins*
-SECTION 26 - PLUGINS
+SECTION 26 - PLUGINS ~
 |faq-26.1|  How do I set different options for different types of files?
 |faq-26.2|  I have downloaded a Vim plugin or a syntax file or a indent file,
 	  or a color scheme or a filetype plugin from the web. Where should
@@ -560,7 +560,7 @@ SECTION 26 - PLUGINS
 |faq-26.8|  How do I set the filetype option for files with names matching a
 	  particular pattern or depending on the file extension?
                                                 *faq-editing-program-files*
-SECTION 27 - EDITING PROGRAM FILES
+SECTION 27 - EDITING PROGRAM FILES ~
 |faq-27.1|  How do I enable automatic indentation for C/C++ files?
 |faq-27.2|  How do I configure the indentation used for C/C++ files?
 |faq-27.3|  How do I turn off the automatic indentation feature?
@@ -581,7 +581,7 @@ SECTION 27 - EDITING PROGRAM FILES
 |faq-27.10| How do I automatically insert comment leaders while typing
 	  comments?
                                                                 *faq-quickfix*
-SECTION 28 - QUICKFIX
+SECTION 28 - QUICKFIX ~
 |faq-28.1|  How do I build programs from Vim?
 |faq-28.2|  When I run the make command in Vim I get the errors listed as the
 	  compiler compiles the program. When it finishes this list
@@ -591,7 +591,7 @@ SECTION 28 - QUICKFIX
 |faq-28.3|  How can I perform a command for each item in the
 	  quickfix/location list?
                                                                 *faq-folding*
-SECTION 29 - FOLDING
+SECTION 29 - FOLDING ~
 |faq-29.1|  How do I extend the Vim folding support?
 |faq-29.2|  When I enable folding by setting the 'foldmethod' option, all the
 	  folds are closed. How do I prevent this?
@@ -604,7 +604,7 @@ SECTION 29 - FOLDING
 |faq-29.7|  I have enabled syntax based folding. Why is Vim so slow?
 
                                         *faq-vim-with-external-applications*
-SECTION 30 - VIM WITH EXTERNAL APPLICATIONS
+SECTION 30 - VIM WITH EXTERNAL APPLICATIONS ~
 |faq-30.1|  Can I run a shell inside a Vim window?
 |faq-30.2|  How do I pass the word under the cursor to an external command?
 |faq-30.3|  How do I get the output of a shell command into a Vim buffer?
@@ -617,7 +617,7 @@ SECTION 30 - VIM WITH EXTERNAL APPLICATIONS
 |faq-30.8|  How do I change the diff command used by the Vim diff support?
 |faq-30.9|  How do I use the Vim diff mode without folding?
                                                                 *faq-gui-vim*
-SECTION 31 - GUI VIM
+SECTION 31 - GUI VIM ~
 |faq-31.1|  How do I create buffer specific menus?
 |faq-31.2|  How do I change the font used by GUI Vim?
 |faq-31.3|  When starting GUI Vim, how do I specify the location of the GVIM
@@ -650,7 +650,7 @@ SECTION 31 - GUI VIM
 |faq-31.16| When splitting the Vim window vertically, Vim changes
 	  the position.
                                                         *faq-vim-on-unix*
-SECTION 32 - VIM ON UNIX
+SECTION 32 - VIM ON UNIX ~
 |faq-32.1|  I am running Vim in a xterm. When I press the CTRL-S key, Vim
 	  freezes. What should I do now?
 |faq-32.2|  I am seeing weird screen update problems in Vim. What can I do to
@@ -671,7 +671,7 @@ SECTION 32 - VIM ON UNIX
 |faq-32.10| How do I get the Vim syntax highlighting to work in a Unix
 	  terminal?
                                                 *faq-vim-on-ms-windows*
-SECTION 33 - VIM ON MS-WINDOWS
+SECTION 33 - VIM ON MS-WINDOWS ~
 |faq-33.1|  In MS-Windows, CTRL-V doesn't start the blockwise visual mode.
 	  What happened?
 |faq-33.2|  When I press the CTRL-Y key, it acts like the CTRL-R key. How do
@@ -696,11 +696,11 @@ SECTION 33 - VIM ON MS-WINDOWS
 |faq-33.12| Every time I save a file, Vim warns about the file being changed
 	  outside of Vim. Why?
                                                                 *faq-printing*
-SECTION 34 - PRINTING
+SECTION 34 - PRINTING ~
 |faq-34.1|  How do I print a file along with line numbers for all the lines?
 |faq-34.2|  How do I print a file with the Vim syntax highlighting colors?
                                                 *faq-building-vim-from-source*
-SECTION 35 - BUILDING VIM FROM SOURCE
+SECTION 35 - BUILDING VIM FROM SOURCE ~
 |faq-35.1|  How do I build Vim from the sources on a Unix system?
 |faq-35.2|  How do I install Vim in my home directory or a directory other
 	  than the default installation directory in Unix?
@@ -723,9 +723,8 @@ SECTION 35 - BUILDING VIM FROM SOURCE
 |faq-35.10| I did successfully download the sources and compiled Vim on
 	  Unix. But feature ... still does not work. What is wrong and
 	  how can I fix it?
-	   
                                                                 *faq-various*
-SECTION 36 - VARIOUS
+SECTION 36 - VARIOUS ~
 |faq-36.1|  How do I edit binary files with Vim?
 |faq-36.2|  How do I disable the visual error flash and the error beep?
 |faq-36.3|  How do I display the ascii value of a character displayed in a
@@ -742,7 +741,7 @@ SECTION 36 - VARIOUS
 |faq-36.11| Why shouldn't I modify the files in the system runtime
 	  directory?
                                                                 *faq-unicode*
-SECTION 37 - UNICODE
+SECTION 37 - UNICODE ~
 |faq-37.1|  Is it possible to create Unicode files using Vim?
 |faq-37.2|  Which Vim settings are particularly important for editing Unicode
 	  files?
@@ -762,7 +761,7 @@ SECTION 37 - UNICODE
 
 =============================================================================
  								*faq-1*
-SECTION 1 - GENERAL INFORMATION
+SECTION 1 - GENERAL INFORMATION ~
 
  								*faq-1.1*
 1.1. What is Vim?
@@ -793,8 +792,8 @@ For more information read
  								*faq-1.2*
 1.2. Who wrote Vim?
 
-Most of Vim is based on Stevie and was written by Bram Moolenaar, with contributions from too many
-people to mention here.
+Most of Vim is based on Stevie and was written by Bram Moolenaar, with
+contributions from too many people to mention here.
 
 For more information, read: 
 
@@ -913,7 +912,7 @@ Advanced user features:
 <
   Completion in Insert mode >
 
-     Vim provides several different possibilities to complete your text. 
+     Vim provides several different possibilities to complete your text.
      For example Vim can complete words while you are typing, by matching
      the current word with other similar words in the file.
 <
@@ -941,14 +940,15 @@ Advanced user features:
 <
   Graphical User Interface (GUI) >
 
-     There are several different graphical user interfaces available. 
+     There are several different graphical user interfaces available.
      Also, it's very easy to add your own menus.  Of course, console vim is
      still supported, and very widely used.
 <
   Scripting language >
 
      Vim has a powerful scripting language so new commands can be created.
-     You can also use Perl, Python, TCL, Lua and Ruby to achieve the same thing!
+     You can also use Perl, Python, TCL, Lua and Ruby to achieve the same
+     thing!
 <
   Plugins >
 
@@ -971,7 +971,7 @@ Advanced user features:
 <
   Integrated Spell checking >
 
-     Spell checking has been integrated into Vim 
+     Spell checking has been integrated into Vim.
 <
   Diff mode >
 
@@ -1064,7 +1064,7 @@ For more information, read
 
 =============================================================================
  								*faq-2*
-SECTION 2 - RESOURCES
+SECTION 2 - RESOURCES ~
 
  								*faq-2.1*
 2.1. Where can I learn more about Vim?
@@ -1076,18 +1076,18 @@ newsgroup to post to is comp.editors.
 
 "VimOnline" is a web page that serves as a de facto homepage for vim,
 although the main purpose of it is to gather tips and scripts from
-everywhere.  Get involved!  The URL is vim.sourceforge.net or vim.sf.net.
+everywhere.  Get involved!  The URL is https://www.vim.org
 
-Finally, read the Vi FAQ: >
+Finally, read the Vi FAQ:
 
-    http://www.faqs.org/faqs/editor-faq/vi/part1/index.html
-<
+http://www.faqs.org/faqs/editor-faq/vi/part1/index.html
+
 Finally, there are also some communities, where you can discuss features
-or ask questions: >
+or ask questions:
 
-    http://vi.stackexchange.com
-    http://vim.reddit.com
-<
+https://vi.stackexchange.com
+https://vim.reddit.com
+
 For more information, read 
 
     |mail-list|
@@ -1114,13 +1114,13 @@ well. The remaining four are very low volume. >
     To unsubscribe: send an email to <NAME>-unsubscribe@vim.org
     To get help:    send an email to <NAME>-help@vim.org
 <
-The available mailing lists are also mentioned here: >
+The available mailing lists are also mentioned here:
 
-    http://www.vim.org/maillist.php
-< 								*faq-2.3*
+https://www.vim.org/maillist.php
+ 								*faq-2.3*
 2.3. Is there an archive available for the Vim mailing lists?
 
-Yes. Visit http://www.yahoogroups.com/list/<name>, where name is one of:
+Yes. Visit https://groups.yahoo.com/, where name is one of:
 vimannounce, vim, vimdev, vim-fr, vim-mac, vim-vms.
 
 Alternatively, visit www.gmane.org to find out about GMANE, which allows
@@ -1130,19 +1130,19 @@ observe the current threads.
  								*faq-2.4*
 2.4. Where can I get the Vim user manual in HTML/PDF/PS format?
 
-You can download the HTML/PDF/PS format of the Vim user manual from: >
+You can download the HTML/PDF/PS format of the Vim user manual from:
 
-    http://vimdoc.sourceforge.net/
-<
+https://vimdoc.sourceforge.net/
+
 Note, the user manual from that page is currently pretty outdated. It's
 best to either use the documentation that comes with vim or use the
-online version at http://vimhelp.appspot.com
+online version at https://vimhelp.appspot.com
 
 You can find a pdf version of the full English help, including this faq
-(in letter, A4 and Ipad format) at: >
+(in letter, A4 and Ipad format) at:
 
-    http://www.nathangrigg.net/vimhelp/
-<
+https://nathangrigg.com/vimhelp/
+
 This document is cross-referenced, so you can use the hyperlink
 functionality.
  								*faq-2.5*
@@ -1232,7 +1232,7 @@ First collect the required information using the following command: >
 <
 Now send the resulting text from the above command to the bugs@vim.org
 e-mail address. There is also a public bug tracker available at
-http://code.google.com/p/vim/issues/list. A copy of each message there
+https://github.com/vim/vim/issues. A copy of each message there
 will be forwarded to the Vim Development list.
 
 The Vim Development mailing list (see Question 2.2 |faq-2.2|) is a good place to
@@ -1249,24 +1249,24 @@ For more information, read
  								*faq-2.7*
 2.7. Where can the FAQ be found?
 
-The FAQ can be found at http://vimhelp.appspot.com/vim_faq.txt.html.
+The FAQ can be found at https://vimhelp.appspot.com/vim_faq.txt.html.
 It will be auto-generated from the source that is managed in the github
-repository http://www.github.com/chrisbra/vim_faq (Patches are welcome).
+repository https://www.github.com/chrisbra/vim_faq (Patches are welcome).
 
 The repository also includes the faq in different formats, e.g. manpage,
 pdf file, html file, plain text version and a version in vim help format.
 
 A slightly older version (which doesn't seem to get updated anymore) can
-still be found at VimOnline (vim.sf.net). 
+still be found at VimOnline (https://www.vim.org/).
  								*faq-2.8*
 2.8. What if I don't find an answer in this FAQ?
 
 This FAQ covers mainly Vim-specific questions. You may find more
 information suitable for most Vi clones by reading the Vi FAQ. It is posted
-regularly on comp.editors. You can also find a copy at >
+regularly on comp.editors. You can also find a copy at
 
-    http://www.faqs.org/faqs/editor-faq/vi/part1/index.html
-<
+http://www.faqs.org/faqs/editor-faq/vi/part1/index.html
+
 Also, since Vim has gathered so many features in the last few years,
 successfully documenting the frequently asked questions here is a
 near-impossible task. To make it possible, please email the maintainer if
@@ -1290,7 +1290,7 @@ For more information, read
       Is there a public website where I can upload this?
 
 Yes. You can use the Vim Online website to upload your plugins/scripts,
-colorschemes, etc. The site is at http://vim.sourceforge.net
+colorschemes, etc. The site is at https://www.vim.org
 Nowadays people also seem to share their plugins/runtime files at
 github.
 
@@ -1299,16 +1299,17 @@ http://vim.wikia.com
 
 =============================================================================
  								*faq-3*
-SECTION 3 - AVAILABILITY
+SECTION 3 - AVAILABILITY ~
 
  								*faq-3.1*
 3.1. What is the latest version of Vim?
 
-The latest version of Vim is 7.4 released on 10th August 2013.
+The latest version of Vim is 8.1 released on 17th May 2018.
 
-The release-history of different versions of Vim is below: >
+The release history of different versions of Vim is below: >
 
-    Version 8.0
+    Version 8.1     17th May, 2018
+    Version 8.0     12th September, 2016
     Version 7.4     10th August, 2013
     Version 7.3     15th August, 2010
     Version 7.2     9th August, 2008
@@ -1328,9 +1329,9 @@ The release-history of different versions of Vim is below: >
     Version 5.2     24th August, 1998
     Version 5.1     7th April, 1998
     Version 5.0     19th February, 1998
-    Version 4.6     13th March,1997
+    Version 4.6     13th March, 1997
     Version 4.5     17th October, 1996
-    Version 4.2     5th July,1996
+    Version 4.2     5th July, 1996
     Version 4.0     21st May, 1996
     Version 3.0     16th August, 1994
     Version 2.0     21st December, 1993
@@ -1347,6 +1348,7 @@ For more information, read
     |changed-7.2|
     |changed-7.3|
     |changed-7.4|
+    |changed-8.1|
  								*faq-3.2*
 3.2. Where can I find the latest version of Vim?
 
@@ -1365,7 +1367,7 @@ http://vim.wikia.com/wiki/Where_to_download_Vim
 3.3. What platforms does it run on?
 
 All Unix platforms.
-All Windows platforms.
+All Windows platforms (XP and later).
 Amiga, Atari, BeOS, DOS, Macintosh, MachTen, OS/2, RiscOS, VMS, IBM z/OS.
 
  								*faq-3.4*
@@ -1382,7 +1384,7 @@ https://github.com/vim/vim/tree/master/runtime
 
 =============================================================================
  								*faq-4*
-SECTION 4 - HELP
+SECTION 4 - HELP ~
 
  								*faq-4.1*
 4.1. How do I use the help files?
@@ -1520,7 +1522,7 @@ For more information, read
 
 =============================================================================
  								*faq-5*
-SECTION 5 - EDITING A FILE
+SECTION 5 - EDITING A FILE ~
 
  								*faq-5.1*
 5.1. How do I load a file in Vim for editing?
@@ -1790,14 +1792,14 @@ following: Swap files support for crash recovery, undo support, syntax
 highlighting, filetype detection and other autocommand based features.
 
 There is also the LargeFile plugin available at
-http://www.vim.org/scripts/script.php?script_id=1506
+https://www.vim.org/scripts/script.php?script_id=1506
 which automatically sets these options, when working with large files
 (it is configurable, what is considered to be a large file, by default,
 it is 100MB).
 
 =============================================================================
  								*faq-6*
-SECTION 6 - EDITING MULTIPLE FILES
+SECTION 6 - EDITING MULTIPLE FILES ~
 
  								*faq-6.1*
 6.1. How do I open multiple files at once from within Vim?
@@ -1976,7 +1978,7 @@ For more information, read:
 
 =============================================================================
  								*faq-7*
-SECTION 7 - BACKUP
+SECTION 7 - BACKUP ~
 
  								*faq-7.1*
 7.1. When I edit and save files, Vim creates a file with the same name as
@@ -2072,7 +2074,7 @@ For more information, read
 
 =============================================================================
  								*faq-8*
-SECTION 8 - BUFFERS
+SECTION 8 - BUFFERS ~
 
  								*faq-8.1*
 8.1. I have made some modifications to a buffer. How do I edit another
@@ -2231,7 +2233,7 @@ For more information read,
 
 =============================================================================
  								*faq-9*
-SECTION 9 - WINDOWS
+SECTION 9 - WINDOWS ~
 
  								*faq-9.1*
 9.1. What is the difference between a Vim window and a buffer?
@@ -2312,7 +2314,7 @@ layout after zooming into a window.  If you want to restore the Vim window
 layout after zooming into a window, you can use the ZoomWin plugin. You can
 download this plugin from the Vim online website at:
 
-http://vim.sourceforge.net/scripts/script.php?script_id=508
+https://www.vim.org/scripts/script.php?script_id=508
 
 For more information, read 
 
@@ -2343,7 +2345,7 @@ For more information, read
 
 =============================================================================
  								*faq-10*
-SECTION 10 - MOTION
+SECTION 10 - MOTION ~
 
  								*faq-10.1*
 10.1. How do I jump to the beginning (first line) or end (last line) of a
@@ -2620,7 +2622,7 @@ For more information, read
 
 =============================================================================
  								*faq-11*
-SECTION 11 - SEARCHING TEXT
+SECTION 11 - SEARCHING TEXT ~
 
  								*faq-11.1*
 11.1. After I searched for a text with a pattern, all the matched text
@@ -3098,7 +3100,7 @@ For more information, read
 possible to make the whole pattern succeed". If it didn't match the 'p',
 the whole pattern would fail (because of the "p\@!") so it does match
 the "p". It is a longer match, but it is the shortest match that makes
-the whole pattern succeed. 
+the whole pattern succeed.
 
 If you wanted "as few as possible regardless" you would use "\@>", which
 basically divides a pattern up so that the pieces either side behave
@@ -3147,7 +3149,7 @@ command after an operator (e.g. 'c' to change text), it will be applied
 on the match.
 
 If Visual mode is active before using gn, the visual selection will be
-extended until the end of the next match. 
+extended until the end of the next match.
 
 The 'gN' commands works similar but searches backwards.
 
@@ -3164,7 +3166,7 @@ See also the help at
 
 =============================================================================
  								*faq-12*
-SECTION 12 - CHANGING TEXT
+SECTION 12 - CHANGING TEXT ~
 
  								*faq-12.1*
 12.1. How do I delete all the trailing white space characters (SPACE and
@@ -3663,7 +3665,7 @@ You can use the ":global" command to search and join the lines: >
 This will, however, only join every second line. A couple of more complex
 examples which will join all consecutive lines with a "+" at the end are: >
 
-    :g/*$/,/\(^\|[^+]\)$/j
+    :g/+$/,/\(^\|[^+]\)$/j
     :g/+$/mark a | .,/\(^\|[^+]\)$/s/+$// | 'a,.j
 <
 For more information, read 
@@ -3706,10 +3708,10 @@ can use the "g~{motion}" or "{Visual}~" commands to switch the case of a
 block of text.
 
 If you set 'tildeop' the "~" command behaves like an operator and expects
-a motion command to act on. If you have 
+a motion command to act on. If you have >
 
     :set tildeop
-    
+<
 and you want to change the case from the current cursor position to the end
 of line, simply use "~$".
 
@@ -3817,7 +3819,7 @@ cursor in the blank space before the first word).
 
 You can exchange two lines with the "ddp" command sequence. The 'dd' will
 delete the current line and 'p' will paste the just deleted line after the
-current line. This will result in exchanging the two lines. 
+current line. This will result in exchanging the two lines.
 
 All of the above operations will change the " unnamed register.
 
@@ -3856,7 +3858,7 @@ For more information, read
 
 =============================================================================
  								*faq-13*
-SECTION 13 - COMPLETION IN INSERT MODE
+SECTION 13 - COMPLETION IN INSERT MODE ~
 
  								*faq-13.1*
 13.1. How do I complete words or lines in insert mode?
@@ -3919,7 +3921,7 @@ For more information, read
 
 =============================================================================
  								*faq-14*
-SECTION 14 - TEXT FORMATTING
+SECTION 14 - TEXT FORMATTING ~
 
  								*faq-14.1*
 14.1. How do I format a text paragraph so that a new line is inserted at
@@ -4388,7 +4390,7 @@ For more information, read
 
 =============================================================================
  								*faq-15*
-SECTION 15 - VISUAL MODE
+SECTION 15 - VISUAL MODE ~
 
  								*faq-15.1*
 15.1. How do I do rectangular block copying?
@@ -4444,7 +4446,7 @@ All the ex commands operate on whole lines only. If you try to execute
 an ex command on a column of text selected in visual block mode, Vim
 will operate on all the selected lines (instead of the selected
 columns). You can use the vis.vim or NrrwRgn plugin script from
-http://vim.sourceforge.net scripts archive to do this.
+https://www.vim.org scripts archive to do this.
 
 For more information, read 
 
@@ -4554,7 +4556,7 @@ For more information, read
 
 =============================================================================
  								*faq-16*
-SECTION 16 - COMMAND-LINE MODE
+SECTION 16 - COMMAND-LINE MODE ~
 
  								*faq-16.1*
 16.1. How do I use the name of the current file in the command mode or an
@@ -4710,7 +4712,7 @@ For more information, read
 
 =============================================================================
  								*faq-17*
-SECTION 17 - VIMINFO
+SECTION 17 - VIMINFO ~
 
  								*faq-17.1*
 17.1. When I invoke Vim, I get error messages about illegal characters in
@@ -4774,7 +4776,7 @@ For more information, read
 
 =============================================================================
  								*faq-18*
-SECTION 18 - REMOTE EDITING
+SECTION 18 - REMOTE EDITING ~
 
  								*faq-18.1*
 18.1. How do I open a file with existing instance of gvim? What happened to
@@ -4818,7 +4820,7 @@ reading
 
 =============================================================================
  								*faq-19*
-SECTION 19 - OPTIONS
+SECTION 19 - OPTIONS ~
 
  								*faq-19.1*
 19.1. How do I configure Vim in a simple way?
@@ -5121,7 +5123,7 @@ For more information, read
 
 =============================================================================
  								*faq-20*
-SECTION 20 - MAPPING KEYS
+SECTION 20 - MAPPING KEYS ~
 
  								*faq-20.1*
 20.1. How do I know what a key is mapped to?
@@ -5577,7 +5579,7 @@ to make {rhs} be one command, via wrapping it to the function. For example: >
     :nmap <F9> :call GetFontNameOfFirstChar()<CR>
 
 A more technical and detailed solution to this problem follows and can
-be found at http://groups.google.com/group/vim_dev/msg/75f1f2dfc00908bb
+be found at https://groups.google.com/group/vim_dev/msg/75f1f2dfc00908bb
 
 Not every normal mode-mapping is automatically suitable for execution via
 <Ctrl-O> from within insert mode; you need to explicitly design your mappings
@@ -5630,7 +5632,7 @@ For more information, read
 
 =============================================================================
  								*faq-21*
-SECTION 21 - ABBREVIATIONS
+SECTION 21 - ABBREVIATIONS ~
 
  								*faq-21.1*
 21.1. How do I auto correct misspelled words?
@@ -5729,7 +5731,7 @@ For more information, read
 
 =============================================================================
  								*faq-22*
-SECTION 22 - RECORD AND PLAYBACK
+SECTION 22 - RECORD AND PLAYBACK ~
 
  								*faq-22.1*
 22.1. How do I repeat an editing operation (insertion, deletion, paste,
@@ -5821,7 +5823,7 @@ For more information, read
 
 =============================================================================
  								*faq-23*
-SECTION 23 - AUTOCOMMANDS
+SECTION 23 - AUTOCOMMANDS ~
 
  								*faq-23.1*
 23.1. How do I execute a command when I try to modify a read-only file?
@@ -5902,7 +5904,7 @@ For more information, read
 
 =============================================================================
  								*faq-24*
-SECTION 24 - SYNTAX HIGHLIGHT
+SECTION 24 - SYNTAX HIGHLIGHT ~
 
  								*faq-24.1*
 24.1. How do I turn off/on syntax highlighting?
@@ -5943,7 +5945,7 @@ can modify the foreground and background resource names in the .Xdefaults
 files to change the colors: >
 
     Vim.foreground:     Black
-    Vim.backround:      Wheat
+    Vim.background:     Wheat
 <
 You can also use the "-foreground" and "-background" command-line arguments
 to specify the foreground and background colors. These arguments are
@@ -6066,7 +6068,7 @@ by default. Whenever the cursor moves over an item defined with the
 MatchParen highlighting group.
 
 However, if the corresponding parenthesis is not visible in the current
-window, the cursor won't jump to it. 
+window, the cursor won't jump to it.
 
 The matchit plugin provides a similar function, that lets the cursor
 jump to related items (e.g. "if", "else", "endif" items) and skips
@@ -6187,15 +6189,14 @@ regions, which will be highlighted with a different language.
 See the wiki for a comprehensive solution:
 http://vim.wikia.com/wiki/Different_syntax_highlighting_within_regions_of_a_file
 
-For more information, read >
+For more information, read 
 
     |:syn-include|
     |sh-awk|
-    
-<
+
 =============================================================================
  								*faq-25*
-SECTION 25 - VIM SCRIPT WRITING
+SECTION 25 - VIM SCRIPT WRITING ~
 
  								*faq-25.1*
 25.1. How do I list the names of all the scripts sourced by Vim?
@@ -6357,7 +6358,7 @@ the following command: >
 
     :let @a = system('ls')
 <
-The above command will store the return value from the 'ls' command into
+The above command will store the output of the 'ls' command into
 the register 'a'.
 
 For more information, read 
@@ -6641,24 +6642,31 @@ For more information, read
 25.25. How do I split long lines in a Vim script?
 
 You can split long lines in a Vim script by inserting the backslash
-character ("\") at the start of the next line. For example,
+character ("\") at the start of the next line. For example, >
 
+    set comments=sr:/*,mb:*,el:*/,
+                \://,
+                \b:#,
+                \:%,
+                \n:>,
+                \fb:-
+<
 For more information, read 
 
     |line-continuation|
 
  								*faq-25.26*
-25.26. When I try to "execute" my function using the "execute 'echo
-       Myfunc()'" command, the cursor is moved to the top of the current
-       buffer.  Why?
+25.26. When I try to "execute" my function using the "execute Myfunc()"
+       command, the cursor is moved to the top of the current buffer.
+       Why?
 
-The ":execute" command runs the normal mode command specified by the
-argument. In the case of the following command: >
+The ":execute" command runs the ex command specified by the argument.
+In the case of the following command: >
 
-    :execute "echo Myfunc()"
+    :execute Myfunc()
 <
-The call to "echo Myfunc()" will return 0. The ":execute" command will run
-the normal mode command "0", which moves the cursor to the top of the file.
+The call to Myfunc() will return 0. The ":execute" command will run
+the ex command ":0", which moves the cursor to the top of the file.
 To call a Vim function, you should use the ":call" command instead of the
 ":execute" command: >
 
@@ -6672,6 +6680,7 @@ For more information, read
     |user-functions|
     |41.5|
     |41.6|
+    |cmdline-lines|
 
  								*faq-25.27*
 25.27. How do I source/execute the contents of a register?
@@ -6732,7 +6741,7 @@ For more information, read
 
 =============================================================================
  								*faq-26*
-SECTION 26 - PLUGINS
+SECTION 26 - PLUGINS ~
 
  								*faq-26.1*
 26.1. How do I set different options for different types of files?
@@ -6960,7 +6969,7 @@ For more information, read
 
 =============================================================================
  								*faq-27*
-SECTION 27 - EDITING PROGRAM FILES
+SECTION 27 - EDITING PROGRAM FILES ~
 
  								*faq-27.1*
 27.1. How do I enable automatic indentation for C/C++ files?
@@ -7172,7 +7181,7 @@ For more information, read
 
 =============================================================================
  								*faq-28*
-SECTION 28 - QUICKFIX
+SECTION 28 - QUICKFIX ~
 
  								*faq-28.1*
 28.1. How do I build programs from Vim?
@@ -7233,7 +7242,7 @@ For more information, read
 
 =============================================================================
  								*faq-29*
-SECTION 29 - FOLDING
+SECTION 29 - FOLDING ~
 
  								*faq-29.1*
 29.1. How do I extend the Vim folding support?
@@ -7363,165 +7372,36 @@ http://vim.wikia.com/wiki/Keep_folds_closed_while_inserting_text
 
 =============================================================================
  								*faq-30*
-SECTION 30 - VIM WITH EXTERNAL APPLICATIONS
+SECTION 30 - VIM WITH EXTERNAL APPLICATIONS ~
 
  								*faq-30.1*
 30.1. Can I run a shell inside a Vim window?
 
-Currently Vim doesn't have support for running shell and other external
-commands inside a Vim window.
+Since Version 8.1 Vim comes with a terminal window included. It allows
+to run a shell inside an ordinary Vim window (e.g. split) asynchronously
+and interact with the shell using the normal Vim commands.
+
+When the focus is in the terminal window, typed keys will be sent to
+the job and is called terminal mode. You can click outside of the
+terminal window to move keyboard focus elsewhere, alternatively one can
+use Ctrl-W to novigate between different Vim windows. To feed Ctrl-W into the
+terminal, one needs to use CTRL-W .
+
+To map keys specifically for terminal mode, use the new :tmap
+command. After typing Ctrl-W the terminal window will switch to
+Terminal-Normal mode (this can be used to move the cursor around, scroll
+the window, etc. Just like normal mode).
+
+To interact between the terminal and Vim, Vim implements several
+interfaces using term_sendkeys(), terminal-api and the client-server
+mechanism.
 
 For more information, read 
 
-    |shell-window|
-
-The Neovim project however has added the ":terminal" command which opens
-a new shell prompt. To read more about Neovim, look at their webpage
-http://neovim.io
-
-Alternatively, you can try using the Unix "screen", "tmux" or "splitvt"
-utility.
-
-Following is a post from the vim_use mailinglist
-(http://groups.google.com/group/vim_use/msg/22c97ebfd6a978eb)
-
--------------------------------------------
-Date: Mon, 24 May 2010
-Subject: Re: Terminal into vim, best options???
-From: Nico Raffo
-To: vim_use 
-
-There are quite a few options out there, all with their strengths and
-weaknesses. Shell integration is at the top of the Vim wish list. I'm
-sure Bram would be more interested in including it if someone
-developed and maintained a kick-ass patch :-)
-
-Here is a (quite biased) overview of what's currently available:
-
-Conque Shell
-URL: http://code.google.com/p/conque/
-Author: Nico Raffo (me!)
-Requirements: *nix, python-enabled vim
-Type: Plugin
-
-Conque is a Vim plugin, written with Vim script and python. It turns
-your Vim buffer into a terminal emulator. In INSERT mode your buffer
-behaves like a standard unix terminal. In NORMAL mode you can navigate/
-search/page through the terminal output.
-
-Pros:
- * Relatively easy to install
- * Near complete VT100 support (you can run emacs in a vim buffer)
- * Use of Vim features in terminal, including syntax highlighting,
-   copy/paste, etc
- * Active development
-
-Cons:
- * No Windows support (coming with Vim 7.3)
- * Can be slow, especially with programs which use a lot of terminal
-   colors
-
-Vimshell
-URL: http://github.com/Shougo/vimshell + http://github.com/Shougo/vimproc
-Author: Shougo M
-Requirements: Works on both *nix and Windows. One small, independent
-component may need to be compiled from C source.
-Type: Plugin
-
-Vimshell is a shell, written in the Vim scripting language, that runs
-in a Vim buffer. The shell was written to take full advantage of all
-of Vim's features, for example you can use Vim's omnicomplete
-features, or any other normal mode Vim commands, to edit your command
-line. Great potential, but missing a few features, particularly
-regarding interactive programs.
-
-Pros:
- * Relatively easy to install
- * Edit the command line with Vim, full use of Vim features in both
-   normal and insert mode
- * Very fast, since there is no background process required
- * Windows support
- * Active development
-
-Cons:
- * Very limited support of interactive programs such as bash, mysql or
-   python.
- * Shell has incomplete functionality compared to bash, etc.
- * Documentation only available in Japanese.
-
-
-screen.vim (Vim + screen/tmux)
-URL: http://www.vim.org/scripts/script.php?script_id=2711
-Author: Eric Van Dewoestine
-Requirements: *nix
-Type: Plugin
-
-screen.vim is a Vim plugin which streamlines and enhances the
-experience of running split screen terminal with Vim running in one of
-the windows and a terminal running in the other. It uses the programs
-screen or tmux to manage the split windows and to run the terminal
-emulation. Both of these programs are very mature, and will give a
-better terminal experience than any other option. However since the
-terminal is running independently of Vim, you won't be able to use Vim
-commands to interact with the terminal output.
-
-Pros:
- * Easy to install
- * Great shell support
- * Active development
-
-Cons:
- * No use of Vim commands to manage the shell window
- * Relatively little integration between Vim and the shell
-
-
-Vim-Shell
-URL: http://www.wana.at/vimshell/
-Author: Thomas Wanda
-Requirements: *nix, patch and recompile Vim from source
-Type: Extension
-
-Vim-Shell is a Vim extension which converts a buffer into a terminal
-emulator. The shell window itself is very fast and functionality is
-very strong. It is works great for running complex interactive
-programs. However the Vim buffer where it runs is no longer editable
-(you can't scroll up, or even move the cursor). The last official
-release was for Vim 7.0, although time spent searching on Google will
-turn up patches for Vim 7.1 and 7.2.
-
-Pros:
- * Near complete VT100 support (you can run emacs in a vim buffer, and
-   just about anything else)
- * Very fast. Compiled into the C source
-
-Cons:
- * Relatively difficult to install
- * No use of Vim features to navigate terminal output
- * No Windows or Mac support.
- * No development activity since 2006
-
-
-Vimsh
-URL: http://www.vim.org/scripts/script.php?script_id=165
-Author: Brian Sturk
-Requirements: python-enabled vim
-Type: Plugin
-
-Vimsh is a Vim plugin which allows you to run interactive programs in
-a vim buffer. It provides a nice option for Windows use, but
-functionality is overall less mature than the other options.
-
-Pros:
- * Relatively easy to install
- * Use Vim commands to edit commands and navigate terminal output
- * Support in both *nix and Windows (no interactive programs in
-   Windows)
-
-Cons:
- * Limited functionality
- * Inactive development
-
--------------------------------------------
+    |terminal|
+    |mapmode-t|
+    |Terminal-Normal|
+    |terminal-communication|
 
  								*faq-30.2*
 30.2. How do I pass the word under the cursor to an external command?
@@ -7597,7 +7477,7 @@ You use the ":sort" command like this:
 
 Using the ":sort" command provides many options, you can sort numerical on
 the first found decimal number using:
-   
+
    :%sort n
 
 Or you can specify to sort on the text, starting at virtual column 8:
@@ -7674,16 +7554,16 @@ For more information, read
 
 =============================================================================
  								*faq-31*
-SECTION 31 - GUI VIM
+SECTION 31 - GUI VIM ~
 
  								*faq-31.1*
 31.1. How do I create buffer specific menus?
 
 Adding support for buffer specific menus is in the Vim TODO list. In the
-mean time, you can try Michael Geddes's plugin, buffermenu.vim: >
+mean time, you can try Michael Geddes's plugin, buffermenu.vim:
 
-    http://vim.sourceforge.net/scripts/script.php?script_id=246
-<
+https://www.vim.org/scripts/script.php?script_id=246
+
  								*faq-31.2*
 31.2. How do I change the font used by GUI Vim?
 
@@ -7797,10 +7677,10 @@ it is always visible. Another approach to solving this problem is to use
 the Vim marks. You can mark the current cursor position using ma. Then
 scroll to a different part of the text and jump back to the old position
 using `a. You can also try the following suggestion from the Vim Online
-website: >
+website:
 
-    http://vim.wikia.com/wiki/VimTip320
-<
+http://vim.wikia.com/wiki/VimTip320
+
 For more information, read 
 
     |mark-motions|
@@ -7928,7 +7808,7 @@ This is a known problem. When you are splitting the Vim window, Vim will
 try to draw a scrollbar. Since this changes the gui window, Vim tries to
 resize its main window to keep the same position and this will cause Vim
 to move its position. This happens on Windows with a multi-window setup or
-a window that was "snapped" to a certain position. 
+a window that was "snapped" to a certain position.
 
 A workaournd to this problem is, to remove gui scrollbars, e.g. >
 
@@ -7936,7 +7816,7 @@ A workaournd to this problem is, to remove gui scrollbars, e.g. >
 <
 =============================================================================
  								*faq-32*
-SECTION 32 - VIM ON UNIX
+SECTION 32 - VIM ON UNIX ~
 
  								*faq-32.1*
 32.1. I am running Vim in a xterm. When I press the CTRL-S key, Vim
@@ -8139,10 +8019,11 @@ Xfree86 xterm or rxvt or dtterm) that supports color. Note that if a
 terminal emulator supports changing the background and foreground colors,
 that does not mean that it also supports ANSI escape sequences for changing
 the color. You can download the latest version of Xfree86 xterm from
-http://dickey.his.com/xterm/xterm.html. You can download the latest version
-of rxvt from http://www.rxvt.org. You have to install the terminfo/termcap
-file that supports colors for the terminal emulator. Also, set the TERM
-environment variable to the correct name of the term that supports colors.
+https://invisible-island.net/xterm/xterm.html
+You can download the latest version of rxvt from https://rxvt.org
+You have to install the terminfo/termcap file that supports colors for the
+terminal emulator. Also, set the TERM environment variable to the correct
+name of the term that supports colors.
 
 You can use the colortest.vim script supplied with the Vim runtime
 package to test the color setup. To use this script, follow these steps: >
@@ -8161,7 +8042,7 @@ For more information, read
 
 =============================================================================
  								*faq-33*
-SECTION 33 - VIM ON MS-WINDOWS
+SECTION 33 - VIM ON MS-WINDOWS ~
 
  								*faq-33.1*
 33.1. In MS-Windows, CTRL-V doesn't start the blockwise visual mode. What
@@ -8245,25 +8126,26 @@ You may want to set the following shell related Vim settings: >
       doesn't work. What should I do now?
 
 There is a problem with using GNU diff with Vim. You can try using the
-GNU diff.exe built by Ron Aaron from the following link: >
+GNU diff.exe built by Ron Aaron from the following link:
 
-    http://www.mossbayeng.com/~ron/vim/builds.html
-<
+http://www.mossbayeng.com/~ron/vim/builds.html
+(This page no longer exists.)
+
  								*faq-33.8*
 33.8. Is it possible to use Vim as an external editor for MS-Windows
       Outlook email client?
 
 You can use the "cubiclevim" COM Add-In to use Vim as an external editor
 for MS-Windows Outlook email client. Visit the following URL for more
-information: >
+information:
 
-    http://sourceforge.net/projects/cubiclevim
-<
+https://sourceforge.net/projects/cubiclevim/
+
 Note, that currently this works only with MS-Office 2000 and XP.
 
 Also the plugin OutlookVim might be worth a look:
 
-http://www.vim.org/scripts/script.php?script_id=3087
+https://www.vim.org/scripts/script.php?script_id=3087
 
  								*faq-33.9*
 33.9. I am using Vim to edit HTML files. How do I start internet explorer
@@ -8322,7 +8204,7 @@ For more information, read
 
 =============================================================================
  								*faq-34*
-SECTION 34 - PRINTING
+SECTION 34 - PRINTING ~
 
  								*faq-34.1*
 34.1. How do I print a file along with line numbers for all the lines?
@@ -8354,7 +8236,7 @@ For more information, read
 
 =============================================================================
  								*faq-35*
-SECTION 35 - BUILDING VIM FROM SOURCE
+SECTION 35 - BUILDING VIM FROM SOURCE ~
 
  								*faq-35.1*
 35.1. How do I build Vim from the sources on a Unix system?
@@ -8367,8 +8249,10 @@ For a Unix system, follow these steps to build Vim from the sources:
 
         $ bunzip2 -c <filename> | tar -xf -
 <
+- Alternatively, download the source from the git repository:
+  https://github.com/vim/vim/releases/
 - Alternatively, download the source from the mercurial repository:
-  http://code.google.com/p/vim/source/checkout
+  https://bitbucket.org/vim-mirror/vim/downloads/
 - Run the 'make' command to configure and build Vim with the default
   configuration.
 - Run 'make install' command to install Vim in the default directory.
@@ -8378,7 +8262,7 @@ you can run the 'configure' command with different flags to include/exclude
 the various Vim features. To list all the available options for the
 'configure' command, use: >
 
-    $ configure -help
+    $ configure --help
 <
 For more information, read 
 
@@ -8416,8 +8300,10 @@ MS-Windows: >
       extra (vim-##-extra.tar.gz) archives from the
       ftp://ftp.vim.org/pub/vim/pc directory.
     - Extract the archives into a directory (for example, c:\vimsrc)
+    - Alternatively, download the source from the git repository:
+      https://github.com/vim/vim/releases/
     - Alternatively, download the source from the mercurial repository:
-      http://code.google.com/p/vim/source/checkout
+      https://bitbucket.org/vim-mirror/vim/downloads/
     - Depending on the installed compiler, you can use the corresponding
       makefile to build the Vim sources. For Visual C++ use the
       Make_mvc.mak makefile, for borland C++ use the Make_bc5.mak makefile,
@@ -8530,7 +8416,7 @@ configure script: >
 Nevertheless, a feature could still be disabled at compile time, if the
 configure script can't find the required libraries for those features (e.g.
 for clipboard integration, your Vim needs to be linked against the X11
-development libraries). 
+development libraries).
 
 There are several ways to install the required libraries:
 
@@ -8554,7 +8440,7 @@ There are several ways to install the required libraries:
    to find out, whether or not there exists a source version in the
    repository. If there is none, you'll need to add a source repository.
    For openSUSE 11.2 you could use, e.g.
-   
+
    $ zypper ar
    http://download.opensuse.org/source/distribution/11.2/repo/oss/src-11.2
 
@@ -8566,11 +8452,11 @@ There are several ways to install the required libraries:
    $ zypper source-install --build-deps-only vim
 
 3) On a Fedora/RedHat based system, you can use
-   
+
    $ yum-builddep vim-enhanced
 
 4) Run configure with your options and watch for missing libraries:
-  
+
    $ ./configure --with-features=huge 2>&1 |tee logfile
 
    This will run configure and record the output into the file "logfile".
@@ -8602,7 +8488,7 @@ For more information, read
 
 =============================================================================
  								*faq-36*
-SECTION 36 - VARIOUS
+SECTION 36 - VARIOUS ~
 
  								*faq-36.1*
 36.1. How do I edit binary files with Vim?
@@ -8840,7 +8726,7 @@ they will not be overwritten.
 
 =============================================================================
  								*faq-37*
-SECTION 37 - UNICODE
+SECTION 37 - UNICODE ~
 Author: Tony Mechelynck <antoine.mechelynck AT belgacom.net>
 
  								*faq-37.1*
@@ -8851,11 +8737,11 @@ available to you, but it is always possible to encode any possible Unicode
 codepoint (and some illegal ones) into a file. To create a Unicode file
 using Vim, you should have compiled Vim with the "+multi_byte" compile-time
 option.  You can get more information about Unicode from the following
-sites: >
+sites:
 
-    http://www.unicode.org
-    http://www.cl.cam.ac.uk/~mgk25/unicode.html
-<
+http://www.unicode.org
+https://www.cl.cam.ac.uk/~mgk25/unicode.html
+
 For more information, read 
 
     |multibyte|
