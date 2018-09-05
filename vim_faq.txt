@@ -1336,15 +1336,15 @@ The release history of different versions of Vim is below:
 
 For more information, read
 
-    :help new-5
-    :help new-6
-    :help new-7
     :help new-8
-    :help changed-7.1
-    :help changed-7.2
-    :help changed-7.3
-    :help changed-7.4
+    :help new-7
+    :help new-6
+    :help new-5
     :help changed-8.1
+    :help changed-7.4
+    :help changed-7.3
+    :help changed-7.2
+    :help changed-7.1
 
 3.2. Where can I find the latest version of Vim?
 
