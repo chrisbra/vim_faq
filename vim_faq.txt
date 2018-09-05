@@ -1300,10 +1300,11 @@ SECTION 3 - AVAILABILITY
 
 3.1. What is the latest version of Vim?
 
-The latest version of Vim is 7.4 released on 10th August 2013.
+The latest version of Vim is 8.1 released on 17th May 2018.
 
-The release-history of different versions of Vim is below:
+The release history of different versions of Vim is below:
 
+    Version 8.1     17th May, 2018
     Version 8.0     12th September, 2016
     Version 7.4     10th August, 2013
     Version 7.3     15th August, 2010
@@ -1324,9 +1325,9 @@ The release-history of different versions of Vim is below:
     Version 5.2     24th August, 1998
     Version 5.1     7th April, 1998
     Version 5.0     19th February, 1998
-    Version 4.6     13th March,1997
+    Version 4.6     13th March, 1997
     Version 4.5     17th October, 1996
-    Version 4.2     5th July,1996
+    Version 4.2     5th July, 1996
     Version 4.0     21st May, 1996
     Version 3.0     16th August, 1994
     Version 2.0     21st December, 1993
@@ -1343,6 +1344,7 @@ For more information, read
     :help changed-7.2
     :help changed-7.3
     :help changed-7.4
+    :help changed-8.1
 
 3.2. Where can I find the latest version of Vim?
 
@@ -1361,7 +1363,7 @@ http://vim.wikia.com/wiki/Where_to_download_Vim
 3.3. What platforms does it run on?
 
 All Unix platforms.
-All Windows platforms.
+All Windows platforms (XP and later).
 Amiga, Atari, BeOS, DOS, Macintosh, MachTen, OS/2, RiscOS, VMS, IBM z/OS.
 
 
@@ -7397,160 +7399,31 @@ SECTION 30 - VIM WITH EXTERNAL APPLICATIONS
 
 30.1. Can I run a shell inside a Vim window?
 
-Currently Vim doesn't have support for running shell and other external
-commands inside a Vim window.
+Since Version 8.1 Vim comes with a terminal window included. It allows
+to run a shell inside an ordinary Vim window (e.g. split) asynchronously
+and interact with the shell using the normal Vim commands.
+
+When the focus is in the terminal window, typed keys will be sent to
+the job and is called terminal mode. You can click outside of the
+terminal window to move keyboard focus elsewhere, alternatively one can
+use Ctrl-W to novigate between different Vim windows. To feed Ctrl-W into the
+terminal, one needs to use CTRL-W .
+
+To map keys specifically for terminal mode, use the new :tmap
+command. After typing Ctrl-W the terminal window will switch to
+Terminal-Normal mode (this can be used to move the cursor around, scroll
+the window, etc. Just like normal mode).
+
+To interact between the terminal and Vim, Vim implements several
+interfaces using term_sendkeys(), terminal-api and the client-server
+mechanism.
 
 For more information, read
 
-    :help shell-window
-
-The Neovim project however has added the ":terminal" command which opens
-a new shell prompt. To read more about Neovim, look at their webpage
-https://neovim.io
-
-Alternatively, you can try using the Unix "screen", "tmux" or "splitvt"
-utility.
-
-Following is a post from the vim_use mailinglist
-(https://groups.google.com/group/vim_use/msg/22c97ebfd6a978eb)
-
--------------------------------------------
-Date: Mon, 24 May 2010
-Subject: Re: Terminal into vim, best options???
-From: Nico Raffo
-To: vim_use
-
-There are quite a few options out there, all with their strengths and
-weaknesses. Shell integration is at the top of the Vim wish list. I'm
-sure Bram would be more interested in including it if someone
-developed and maintained a kick-ass patch :-)
-
-Here is a (quite biased) overview of what's currently available:
-
-Conque Shell
-URL: https://code.google.com/p/conque/
-Author: Nico Raffo (me!)
-Requirements: *nix, python-enabled vim
-Type: Plugin
-
-Conque is a Vim plugin, written with Vim script and python. It turns
-your Vim buffer into a terminal emulator. In INSERT mode your buffer
-behaves like a standard unix terminal. In NORMAL mode you can navigate/
-search/page through the terminal output.
-
-Pros:
- * Relatively easy to install
- * Near complete VT100 support (you can run emacs in a vim buffer)
- * Use of Vim features in terminal, including syntax highlighting,
-   copy/paste, etc
- * Active development
-
-Cons:
- * No Windows support (coming with Vim 7.3)
- * Can be slow, especially with programs which use a lot of terminal
-   colors
-
-Vimshell
-URL: https://github.com/Shougo/vimshell + https://github.com/Shougo/vimproc
-Author: Shougo M
-Requirements: Works on both *nix and Windows. One small, independent
-component may need to be compiled from C source.
-Type: Plugin
-
-Vimshell is a shell, written in the Vim scripting language, that runs
-in a Vim buffer. The shell was written to take full advantage of all
-of Vim's features, for example you can use Vim's omnicomplete
-features, or any other normal mode Vim commands, to edit your command
-line. Great potential, but missing a few features, particularly
-regarding interactive programs.
-
-Pros:
- * Relatively easy to install
- * Edit the command line with Vim, full use of Vim features in both
-   normal and insert mode
- * Very fast, since there is no background process required
- * Windows support
- * Active development
-
-Cons:
- * Very limited support of interactive programs such as bash, mysql or
-   python.
- * Shell has incomplete functionality compared to bash, etc.
- * Documentation only available in Japanese.
-
-
-screen.vim (Vim + screen/tmux)
-URL: https://www.vim.org/scripts/script.php?script_id=2711
-Author: Eric Van Dewoestine
-Requirements: *nix
-Type: Plugin
-
-screen.vim is a Vim plugin which streamlines and enhances the
-experience of running split screen terminal with Vim running in one of
-the windows and a terminal running in the other. It uses the programs
-screen or tmux to manage the split windows and to run the terminal
-emulation. Both of these programs are very mature, and will give a
-better terminal experience than any other option. However since the
-terminal is running independently of Vim, you won't be able to use Vim
-commands to interact with the terminal output.
-
-Pros:
- * Easy to install
- * Great shell support
- * Active development
-
-Cons:
- * No use of Vim commands to manage the shell window
- * Relatively little integration between Vim and the shell
-
-
-Vim-Shell
-URL: https://www.wana.at/vimshell/
-Author: Thomas Wanda
-Requirements: *nix, patch and recompile Vim from source
-Type: Extension
-
-Vim-Shell is a Vim extension which converts a buffer into a terminal
-emulator. The shell window itself is very fast and functionality is
-very strong. It is works great for running complex interactive
-programs. However the Vim buffer where it runs is no longer editable
-(you can't scroll up, or even move the cursor). The last official
-release was for Vim 7.0, although time spent searching on Google will
-turn up patches for Vim 7.1 and 7.2.
-
-Pros:
- * Near complete VT100 support (you can run emacs in a vim buffer, and
-   just about anything else)
- * Very fast. Compiled into the C source
-
-Cons:
- * Relatively difficult to install
- * No use of Vim features to navigate terminal output
- * No Windows or Mac support.
- * No development activity since 2006
-
-
-Vimsh
-URL: https://www.vim.org/scripts/script.php?script_id=165
-Author: Brian Sturk
-Requirements: python-enabled vim
-Type: Plugin
-
-Vimsh is a Vim plugin which allows you to run interactive programs in
-a vim buffer. It provides a nice option for Windows use, but
-functionality is overall less mature than the other options.
-
-Pros:
- * Relatively easy to install
- * Use Vim commands to edit commands and navigate terminal output
- * Support in both *nix and Windows (no interactive programs in
-   Windows)
-
-Cons:
- * Limited functionality
- * Inactive development
-
--------------------------------------------
+    :help terminal
+    :help mapmode-t
+    :help Terminal-Normal
+    :help terminal-communication
 
 
 30.2. How do I pass the word under the cursor to an external command?
@@ -9058,4 +8931,4 @@ For more information, read
 =============================================================================
 
 Current Maintainer: Christian Brabandt <cb@256bit.org>
-Last updated on: 14 September 2016
+Last updated on: 05 September 2018
