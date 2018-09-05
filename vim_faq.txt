@@ -1312,9 +1312,9 @@ The release history of different versions of Vim is below:
     Version 7.1     12th May, 2007
     Version 7.0     8th May, 2006
     Version 6.4     15th October, 2005
-    Version 6.3     8th June 2004
-    Version 6.2     1st June 2003
-    Version 6.1     24th March 2002
+    Version 6.3     8th June, 2004
+    Version 6.2     1st June, 2003
+    Version 6.1     24th March, 2002
     Version 6.0     27th September, 2001
     Version 5.8     31st May, 2001
     Version 5.7     24th June, 2000
