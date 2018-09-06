@@ -46,7 +46,7 @@ function! s:ReturnSpaces(count)
     return repeat(' ', a:count)
 endfunction
 
-function MakePath(vim_doc_path)
+function! MakePath(vim_doc_path)
     " Name of the document path based on the system we use:
     if (has("unix"))
         let l:mkdir_cmd  = ':silent !mkdir -p '
@@ -188,7 +188,19 @@ function! VimifyAndInstallFaq(vim_faq_textfile, vim_doc_path)
     " (Paul Bolle)
 
     " but remove those helpExamples if these are ':help ...' examples
-    %s/>\(\n\_^$\)\(\(\n \{4\}:help.*\)\+\)\(\n^\)<$/\1\2\4/
+    %s/ \?>\(\n\_^$\)\(\(\n \{4\}:help.*\)\+\)\(\n^\)<$/\1\2\4/
+
+    " but remove those helpExamples if these are 'http(s)://...' examples
+    %s/ \?>\(\n\_^$\)\(\(\n \{4,\}[a-z+]\+:\/\/\S*\)\+\)\(\n^\)<$/\1\2\4/
+
+    " remove helpExamples and set helpHeader if these are table style
+    %s/ \?>\(\n\_^$\n\%(\s\+\w\+\)\+\)\(\n\%(\s\+[-=]\+\)\+\)\(\%(\n \{4\}.*\)\+\n^\)<$/\1 \~\2 \~\3/
+
+    " remove those helpExamples in SECTION 1.4.
+    /^1\.4\. What are some of the improvements/,/^\ze\n1\.5\. Is Vim free/s/\( >$\|^<$\)//
+
+    " make helpHeader in SECTION 1.4.
+    /^1\.4\. What are some of the improvements/,/^\ze\n1\.5\. Is Vim free/s/^\(\S.*:\|  \S.*\)\zs/ \~/
 
     " make 'helpHyperTextJumps' from ':help ...' examples
     %s/\(^ \{4\}\):help \(.*\)/\1\|\2\|/

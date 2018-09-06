@@ -10,6 +10,7 @@ DOPDF=1
 
 
 .PHONY: $(PLUGIN).vmb README
+.PHONY: all release vimball clean dist-clean install uninstall help updateheader docs
 
 all: updateheader help vimball uninstall install 
 
