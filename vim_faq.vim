@@ -46,7 +46,7 @@ function! s:ReturnSpaces(count)
     return repeat(' ', a:count)
 endfunction
 
-function MakePath(vim_doc_path)
+function! MakePath(vim_doc_path)
     " Name of the document path based on the system we use:
     if (has("unix"))
         let l:mkdir_cmd  = ':silent !mkdir -p '
