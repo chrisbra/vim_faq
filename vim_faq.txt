@@ -1098,7 +1098,7 @@ For more information, read:
 There are several:
 
     NAME              DESCRIPTION
-
+    ----------------  ---------------------------------------------
     vim-announce      Announcements of new releases
     vim               General discussion
     vim-dev           Patches, bug reports, development discussions
@@ -1109,9 +1109,11 @@ Of these, only vim and vim-dev are of general interest. vim-announce is
 read-only to most people, and its messages are sent to the other lists as
 well. The remaining four are very low volume.
 
-    To subscribe:   send an email to <NAME>-subscribe@vim.org
-    To unsubscribe: send an email to <NAME>-unsubscribe@vim.org
-    To get help:    send an email to <NAME>-help@vim.org
+    ACTION            EMAIL SEND TO
+    ----------------  --------------------------
+    To subscribe:     <NAME>-subscribe@vim.org
+    To unsubscribe:   <NAME>-unsubscribe@vim.org
+    To get help:      <NAME>-help@vim.org
 
 The available mailing lists are also mentioned here:
 
@@ -1313,6 +1315,8 @@ The latest version of Vim is 8.1 released on 17th May 2018.
 
 The release history of different versions of Vim is below:
 
+    VERSION         RELEASE DATE
+    --------------  --------------------
     Version 8.1     17th May, 2018
     Version 8.0     12th September, 2016
     Version 7.4     10th August, 2013
@@ -2478,6 +2482,7 @@ You can use the following motion commands to jump to the beginning or end
 of a sentence or a paragraph or a section:
 
       motion  position    where
+      ------  ---------   -----------------
       (       beginning   current sentence
       )       end         current sentence
       {       beginning   current paragraph
@@ -2502,12 +2507,14 @@ For more information, read:
 You can use one of the following commands to horizontally scroll the screen
 to the left or right:
 
-    zl - scroll to the left
-    zh - scroll to the right
-    zL - scroll half a screenwidth to the left
-    zH - scroll half a screenwidth to the right
-    zs - scroll to position the cursor at the start of the screen
-    ze - scroll to position the cursor at the end of the screen
+    cmd  scroll to
+    ---  --------------------------
+    zl   scroll to the left
+    zh   scroll to the right
+    zL   scroll half a screenwidth to the left
+    zH   scroll half a screenwidth to the right
+    zs   scroll to position the cursor at the start of the screen
+    ze   scroll to position the cursor at the end of the screen
 
 You can use the g0 command to move the cursor to the first character of the
 screen line and the g$ command to move the cursor to the last character of
@@ -3241,6 +3248,8 @@ line only:
 
 The explanation for this command is below:
 
+    part            description
+    -----           --------------------------
     :v/./           Execute the following command for all lines not
                     containing a character (empty lines).
      .,             Use the current line as the start of the range of
@@ -6333,7 +6342,7 @@ You can use the cursor() function to position the cursor.
 
 Alternatively, use the setpos() function:
 
-       call setpos('.', [bufnum, lnum, col, off])
+        call setpos('.', [bufnum, lnum, col, off])
 
 which set's the cursor in the buffer bufnum to line lnum, column col and
 offset for 'virtualedit'. You can use the getpos() function, to return a
@@ -6843,16 +6852,18 @@ Depending on the type of the runtime file, you have to place it under a
 specific directory under the above runtime directory. The names of the
 directories are listed below:
 
-    colors/   - color scheme files
-    compiler/ - compiler files
-    doc/      - documentation
-    ftplugin/ - filetype plugins
-    indent/   - indent scripts
-    keymap/   - key mapping files
-    lang/     - menu translations
-    plugin/   - plugin scripts
-    syntax/   - syntax files
-    tutor/    - files for vimtutor
+    name        description
+    ----------  ------------------
+    colors/     color scheme files
+    compiler/   compiler files
+    doc/        documentation
+    ftplugin/   filetype plugins
+    indent/     indent scripts
+    keymap/     key mapping files
+    lang/       menu translations
+    plugin/     plugin scripts
+    syntax/     syntax files
+    tutor/      files for vimtutor
 
 For more information, read:
 

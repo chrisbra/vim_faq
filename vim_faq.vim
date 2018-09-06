@@ -193,6 +193,9 @@ function! VimifyAndInstallFaq(vim_faq_textfile, vim_doc_path)
     " but remove those helpExamples if these are 'http(s)://...' examples
     %s/ \?>\(\n\_^$\)\(\(\n \{4,\}[a-z+]\+:\/\/\S*\)\+\)\(\n^\)<$/\1\2\4/
 
+    " remove helpExamples and set helpHeader if these are table style
+    %s/ \?>\(\n\_^$\n\%(\s\+\w\+\)\+\)\(\n\%(\s\+[-=]\+\)\+\)\(\%(\n \{4\}.*\)\+\n^\)<$/\1 \~\2 \~\3/
+
     " remove those helpExamples in SECTION 1.4.
     /^1\.4\. What are some of the improvements/,/^\ze\n1\.5\. Is Vim free/s/\( >$\|^<$\)//
 
