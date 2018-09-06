@@ -1079,13 +1079,13 @@ everywhere.  Get involved!  The URL is https://www.vim.org
 
 Finally, read the Vi FAQ:
 
-http://www.faqs.org/faqs/editor-faq/vi/part1/index.html
+    http://www.faqs.org/faqs/editor-faq/vi/part1/index.html
 
 Finally, there are also some communities, where you can discuss features
 or ask questions:
 
-https://vi.stackexchange.com
-https://vim.reddit.com
+    https://vi.stackexchange.com
+    https://vim.reddit.com
 
 For more information, read:
 
@@ -1115,7 +1115,7 @@ well. The remaining four are very low volume.
 
 The available mailing lists are also mentioned here:
 
-https://www.vim.org/maillist.php
+    https://www.vim.org/maillist.php
 
 
 2.3. Is there an archive available for the Vim mailing lists?
@@ -1133,7 +1133,7 @@ observe the current threads.
 
 You can download the HTML/PDF/PS format of the Vim user manual from:
 
-https://vimdoc.sourceforge.net/
+    https://vimdoc.sourceforge.net/
 
 Note, the user manual from that page is currently pretty outdated. It's
 best to either use the documentation that comes with vim or use the
@@ -1142,7 +1142,7 @@ online version at https://vimhelp.appspot.com
 You can find a pdf version of the full English help, including this faq
 (in letter, A4 and Ipad format) at:
 
-https://nathangrigg.com/vimhelp/
+    https://nathangrigg.com/vimhelp/
 
 This document is cross-referenced, so you can use the hyperlink
 functionality.
@@ -1268,7 +1268,7 @@ This FAQ covers mainly Vim-specific questions. You may find more
 information suitable for most Vi clones by reading the Vi FAQ. It is posted
 regularly on comp.editors. You can also find a copy at
 
-http://www.faqs.org/faqs/editor-faq/vi/part1/index.html
+    http://www.faqs.org/faqs/editor-faq/vi/part1/index.html
 
 Also, since Vim has gathered so many features in the last few years,
 successfully documenting the frequently asked questions here is a
@@ -1298,7 +1298,8 @@ Nowadays people also seem to share their plugins/runtime files at
 github.
 
 Tips can also be shared in the Wiki which you can find at
-http://vim.wikia.com
+
+    http://vim.wikia.com
 
 
 =============================================================================
@@ -1360,15 +1361,17 @@ For more information, read:
 
 You can download the sources for the latest version of Vim from the
 Github repository. The URL for this site is
-https://github.com/vim/vim
+
+    https://github.com/vim/vim
 
 A mirror is available at bitbucket:
-https://bitbucket.org/vim-mirror/vim
+
+    https://bitbucket.org/vim-mirror/vim
 
 Some users keep updated repositories for distributing latest binary
 versions of Vim. You can find those repositories here:
 
-http://vim.wikia.com/wiki/Where_to_download_Vim
+    http://vim.wikia.com/wiki/Where_to_download_Vim
 
 
 3.3. What platforms does it run on?
@@ -1387,7 +1390,8 @@ ftp://ftp.vim.org/pub/vim/runtime directory.
 
 Alternatively, the runtime files can be downloaded from the git
 repository that holds Vim source code at:
-https://github.com/vim/vim/tree/master/runtime
+
+    https://github.com/vim/vim/tree/master/runtime
 
 
 =============================================================================
@@ -1801,7 +1805,9 @@ following: Swap files support for crash recovery, undo support, syntax
 highlighting, filetype detection and other autocommand based features.
 
 There is also the LargeFile plugin available at
-https://www.vim.org/scripts/script.php?script_id=1506
+
+    https://www.vim.org/scripts/script.php?script_id=1506
+
 which automatically sets these options, when working with large files
 (it is configurable, what is considered to be a large file, by default,
 it is 100MB).
@@ -2329,7 +2335,7 @@ layout after zooming into a window.  If you want to restore the Vim window
 layout after zooming into a window, you can use the ZoomWin plugin. You can
 download this plugin from the Vim online website at:
 
-https://www.vim.org/scripts/script.php?script_id=508
+    https://www.vim.org/scripts/script.php?script_id=508
 
 For more information, read:
 
@@ -6227,7 +6233,8 @@ You can however create your own custom script to define your own
 regions, which will be highlighted with a different language.
 
 See the wiki for a comprehensive solution:
-http://vim.wikia.com/wiki/Different_syntax_highlighting_within_regions_of_a_file
+
+    http://vim.wikia.com/wiki/Different_syntax_highlighting_within_regions_of_a_file
 
 For more information, read:
 
@@ -7413,7 +7420,8 @@ followed by a search for "folding with 'foldmethod'"
 
 A workaround is to temporarily set the foldmethod to manual while in
 insert mode. This is described in the wiki at:
-http://vim.wikia.com/wiki/Keep_folds_closed_while_inserting_text
+
+    http://vim.wikia.com/wiki/Keep_folds_closed_while_inserting_text
 
 
 =============================================================================
@@ -7609,7 +7617,7 @@ SECTION 31 - GUI VIM
 Adding support for buffer specific menus is in the Vim TODO list. In the
 mean time, you can try Michael Geddes's plugin, buffermenu.vim:
 
-https://www.vim.org/scripts/script.php?script_id=246
+    https://www.vim.org/scripts/script.php?script_id=246
 
 
 31.2. How do I change the font used by GUI Vim?
@@ -7726,7 +7734,7 @@ scroll to a different part of the text and jump back to the old position
 using `a. You can also try the following suggestion from the Vim Online
 website:
 
-http://vim.wikia.com/wiki/VimTip320
+    http://vim.wikia.com/wiki/VimTip320
 
 For more information, read:
 
@@ -8179,7 +8187,7 @@ You may want to set the following shell related Vim settings:
 There is a problem with using GNU diff with Vim. You can try using the
 GNU diff.exe built by Ron Aaron from the following link:
 
-http://www.mossbayeng.com/~ron/vim/builds.html
+    http://www.mossbayeng.com/~ron/vim/builds.html
 (This page no longer exists.)
 
 
@@ -8190,13 +8198,13 @@ You can use the "cubiclevim" COM Add-In to use Vim as an external editor
 for MS-Windows Outlook email client. Visit the following URL for more
 information:
 
-https://sourceforge.net/projects/cubiclevim/
+    https://sourceforge.net/projects/cubiclevim/
 
 Note, that currently this works only with MS-Office 2000 and XP.
 
 Also the plugin OutlookVim might be worth a look:
 
-https://www.vim.org/scripts/script.php?script_id=3087
+    https://www.vim.org/scripts/script.php?script_id=3087
 
 
 33.9. I am using Vim to edit HTML files. How do I start internet explorer
@@ -8793,8 +8801,8 @@ using Vim, you should have compiled Vim with the "+multi_byte" compile-time
 option.  You can get more information about Unicode from the following
 sites:
 
-http://www.unicode.org
-https://www.cl.cam.ac.uk/~mgk25/unicode.html
+    http://www.unicode.org
+    https://www.cl.cam.ac.uk/~mgk25/unicode.html
 
 For more information, read:
 
@@ -8917,7 +8925,7 @@ For more information, read:
 
 There is a "tip", with explains them in different words with an example, at
 
-http://vim.wikia.com/wiki/VimTip246
+    http://vim.wikia.com/wiki/VimTip246
 
 
 37.11. How can I insert Unicode characters into a file using Vim?
