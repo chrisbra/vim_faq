@@ -1328,8 +1328,8 @@ The release history of different versions of Vim is below:
     Version 4.6     13th March, 1997
     Version 4.5     17th October, 1996
     Version 4.2     5th July, 1996
-    Version 4.0     21st May, 1996
-    Version 3.0     16th August, 1994
+    Version 4.0     29th May, 1996
+    Version 3.0     12th August, 1994
     Version 2.0     21st December, 1993
     Version 1.27    23rd April, 1993
     Version 1.17    21st April, 1992
