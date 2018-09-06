@@ -6842,7 +6842,6 @@ after/ directory in any of the 'runtimepath' directories.
   already done by the ftplugin installed with Vim, use an after-directory,
   as follows (replacing foobar by the 'filetype' of the concerned
   files):
-
     - For changes private to one user:
         - on Windows:
             $HOME/vimfiles/after/ftplugin/foobar.vim
@@ -8322,7 +8321,6 @@ For a MS-Windows system, Vim can be built using either the Visual C++
 compiler or the Borland C++ compiler or the Ming GCC compiler or the cygwin
 gcc compiler. Follow these steps to build Vim from the sources for
 MS-Windows:
-
     - Download the source (vim##src.zip), runtime (vim##rt.zip) and the
       extra (vim-##-extra.tar.gz) archives from the
       ftp://ftp.vim.org/pub/vim/pc directory.
