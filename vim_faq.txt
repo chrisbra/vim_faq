@@ -785,6 +785,7 @@ For more information read
 
     :help intro
 
+
 1.2. Who wrote Vim?
 
 Most of Vim is based on Stevie and was written by Bram Moolenaar, with
@@ -794,6 +795,7 @@ For more information, read:
 
     :help author
     :help credits
+
 
 1.3. Is Vim compatible with Vi?
 
@@ -1047,6 +1049,7 @@ For more information, read
 
     :help vi-differences
 
+
 1.5. Is Vim free?
 
 Vim is Charityware. There are no restrictions on using or copying Vim, but
@@ -1056,6 +1059,7 @@ explaining how to do so is included in the distribution.
 For more information, read
 
     :help copyright
+
 
 =============================================================================
 
@@ -1113,6 +1117,7 @@ The available mailing lists are also mentioned here:
 
 https://www.vim.org/maillist.php
 
+
 2.3. Is there an archive available for the Vim mailing lists?
 
 Yes. Visit https://groups.yahoo.com/, where name is one of:
@@ -1122,6 +1127,7 @@ Alternatively, visit www.gmane.org to find out about GMANE, which allows
 you to access the mailing lists as though they were newsgroups.  This
 offers some convenience to those who wish to browse the history or casually
 observe the current threads.
+
 
 2.4. Where can I get the Vim user manual in HTML/PDF/PS format?
 
@@ -1140,6 +1146,7 @@ https://nathangrigg.com/vimhelp/
 
 This document is cross-referenced, so you can use the hyperlink
 functionality.
+
 
 2.5. I have a "xyz" (some) problem with Vim. How do I determine if it is a
      problem with my setup or with Vim?  / Have I found a bug in Vim?
@@ -1254,6 +1261,7 @@ pdf file, html file, plain text version and a version in vim help format.
 A slightly older version (which doesn't seem to get updated anymore) can
 still be found at VimOnline (https://www.vim.org/).
 
+
 2.8. What if I don't find an answer in this FAQ?
 
 This FAQ covers mainly Vim-specific questions. You may find more
@@ -1347,6 +1355,7 @@ For more information, read
     :help changed-7.2
     :help changed-7.1
 
+
 3.2. Where can I find the latest version of Vim?
 
 You can download the sources for the latest version of Vim from the
@@ -1360,6 +1369,7 @@ Some users keep updated repositories for distributing latest binary
 versions of Vim. You can find those repositories here:
 
 http://vim.wikia.com/wiki/Where_to_download_Vim
+
 
 3.3. What platforms does it run on?
 
@@ -2011,6 +2021,7 @@ For more information, read
     :help 'backupcopy'
     :help backup
 
+
 7.2. When I edit and save files, Vim creates a file with the same name as
      the original file and a "un~" extension at the end. How do I stop Vim
      from creating this file (or) How do I disable the Vim undofile feature?
@@ -2034,6 +2045,7 @@ For more information, read
     :help 'undodir'
     :help 'undofile'
     :help undo-persistence
+
 
 7.3. How do I configure Vim to store all the backup files in a particular
      directory?
@@ -3099,6 +3111,7 @@ For more information, read
     :help autocmd-searchpat
     :help last-pattern
 
+
 11.24. Why does this pattern 'a.\{-}p\@!' not match?
 
 "\{-}" doesn't just mean "as few as possible", it means "as few as
@@ -3144,6 +3157,7 @@ See also the help at
     :help @/
     :help /<CR>
 
+
 11.26. How can I operate on a search match?
 
 The 'gn' command makes it easy to operate on regions of text that match
@@ -3168,6 +3182,7 @@ See also the help at
 
     :help gn
     :help gN
+
 
 =============================================================================
 
@@ -3811,6 +3826,7 @@ For more information, read
     :help printf()
     :help :execute
     :help :global
+
 
 12.34. How do I exchange (swap) two characters or words or lines?
 
@@ -5289,6 +5305,7 @@ in the future to enable Vim to distinguish between various keys even in
 console mode. (e.g.
 https://groups.google.com/d/msg/vim_dev/2bp9UdfZ63M/sajb9KM0pNYJ)
 
+
 20.6. How do I map the numeric keypad keys?
 
 First make sure that the numeric keypad keys are passed to Vim. Next, you
@@ -5332,6 +5349,7 @@ For more information, read
     :help map-modes
     :help 40.1
 
+
 20.8. How do I create a mapping that works only in normal and operator
    pending mode (but not in visual mode)?
 
@@ -5348,6 +5366,7 @@ for visual and select mode:
 
 	:map <f3> <your mapping here>
 	:vunmap <f3>
+
 
 20.9. In a Vim script, how do I know which keys to use for my mappings, so
       that the mapped key will not collide with an already used key?
@@ -5565,6 +5584,7 @@ For more information, read
 
     :help keycodes
 
+
 20.19. How do I define a map to accept a count?
 
 Use the @= command to use an expression. For example,
@@ -5574,6 +5594,7 @@ Use the @= command to use an expression. For example,
 Now you can specify a count to the '=' command.
 
     :help complex-repeat
+
 
 20.20. How can I make my normal mode mapping work from within Insert
        Mode?
@@ -5638,11 +5659,11 @@ insert mode, these strategies can be used:
 
 
 For more information, read
+
     :help i_CTRL-O
     :help map_bar
     :help i_CTRL-\_CTRL-O
     :help CTRL-\_CTRL-N
-
 
 
 =============================================================================
@@ -6194,6 +6215,7 @@ You can list the definition of all the current highlight groups using the
 For more information, read
 
     :help :highlight
+
 
 24.16. How can I embed one syntax highlighting language into another one?
 
@@ -7235,6 +7257,7 @@ For more information, read
     :help :cwindow
     :help quickfix
 
+
 28.3. How can I perform a command for each item in the quickfix/location
       list?
 
@@ -7260,6 +7283,7 @@ For more information, read
 
     :help :cfdo
     :help :cdo
+
 
 =============================================================================
 
@@ -7825,6 +7849,7 @@ For more information, read
     :help 'columns'
     :help GUIEnter
 
+
 31.16. When splitting the Vim window vertically, Vim changes the position.
 
 This is a known problem. When you are splitting the Vim window, Vim will
@@ -7836,6 +7861,7 @@ a window that was "snapped" to a certain position.
 A workaournd to this problem is, to remove gui scrollbars, e.g.
 
     :set guioptions-=L
+
 
 =============================================================================
 
@@ -7971,6 +7997,7 @@ For more information, read
 
     :help --startuptime
     :help profiling
+
 
 32.6. How can I make the cursor in gvim in unix stop blinking?
 
@@ -8750,6 +8777,7 @@ for an explanation of several ways to modify Vim's response to
 different filetypes and where to put those modifications so that
 they will not be overwritten.
 
+
 =============================================================================
 
 SECTION 37 - UNICODE
@@ -8926,6 +8954,7 @@ For more information, read
     :help :digraphs
     :help 'encoding'
     :help digraph-table
+
 
 =============================================================================
 
