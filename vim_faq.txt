@@ -2037,10 +2037,10 @@ For more information, read:
      from creating this file (or) How do I disable the Vim undofile feature?
 
 Vim 7.3 contains as new feature persistent undo, that is, undo information
-won't be lost when quitting Vim and be stored in a file that ends with .un~
-You have set the 'undofile' option, so Vim creates an undo file when saving
-the original file. You can stop Vim from creating the backup file, by
-clearing the option:
+won't be lost when quitting Vim and be stored in a file that ends with
+".un~" You have set the 'undofile' option, so Vim creates an undo file when
+saving the original file. You can stop Vim from creating the backup file,
+by clearing the option:
 
     :set noundofile
 
