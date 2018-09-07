@@ -1382,8 +1382,11 @@ versions of Vim. You can find those repositories here:
 
 All Unix platforms.
 All Windows platforms (XP and later).
-Amiga, Atari, BeOS, DOS, Macintosh, MachTen, OS/2, RiscOS, VMS, IBM z/OS.
+Amiga, Atari, BeOS, Macintosh, MachTen, OS/2, RiscOS, VMS, IBM z/OS.
 
+For MS-DOS support has been removed with the latest releases of Vim.
+16-bit DOS: latest supported version 7.1
+32-bit DOS: latest supported version 7.3
 
 3.4. Where can I download the latest version of the Vim runtime files?
 
