@@ -1394,6 +1394,7 @@ For MS-DOS support has been removed with the latest releases of Vim.
 16-bit DOS: latest supported version 7.1
 32-bit DOS: latest supported version 7.3
 
+
 3.4. Where can I download the latest version of the Vim runtime files?
 
 You can download the latest version of the Vim runtime files (syntax files,
@@ -2686,7 +2687,6 @@ You can use this mapping, to clear the search highlighting when
 redrawing the window pressing <CTRL-L>
 
     :nnoremap <silent> <C-L> <C-L>:nohls<CR>
-
 
 For more information, read:
 
