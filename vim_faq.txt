@@ -2986,7 +2986,7 @@ followed by the decimal or hexadecimal or octal value of that character in
 the search "/" command.  To determine the ASCII value of a character you
 can use the ":ascii" or the "ga" command.
 
-For example, to search for the ASCII character with value 188 (??), you can
+For example, to search for the ASCII character with value 188 (¼), you can
 use one of the following search commands:
 
     /<CTRL-V>188
