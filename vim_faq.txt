@@ -113,7 +113,7 @@ SECTION 8 - BUFFERS
     8.8. How do I display the buffer number of the current buffer/file?
     8.9. How do I delete a buffer without closing the window in which the
          buffer is displayed?
-    8.10. How do I map the tab key to cycle through and open all the
+    8.10. How do I map the <Tab> key to cycle through and open all the
           buffers?
 
 SECTION 9 - WINDOWS
@@ -329,7 +329,7 @@ SECTION 16 - COMMAND-LINE MODE
     16.2. How do I edit the text in the Vim command-line effectively?
     16.3. How do I switch from Vi mode to Ex mode?
     16.4. How do I copy the output from an ex-command into a buffer?
-    16.5. When I press the tab key to complete the name of a file in the
+    16.5. When I press the <Tab> key to complete the name of a file in the
           command mode, if there are more than one matching file names,
           then Vim completes the first matching file name and displays a
           list of all matching filenames. How do I configure Vim to only
@@ -400,8 +400,8 @@ SECTION 20 - MAPPING KEYS
           so that the mapped key will not collide with an already used key?
     20.10. How do I map the escape key?
     20.11. How do I map a key to perform nothing?
-    20.12. I want to use the Tab key to indent a block of text and
-           Shift-Tab key to unindent a block of text. How do I map the keys
+    20.12. I want to use the <Tab> key to indent a block of text and
+           <Shift-Tab> key to unindent a block of text. How do I map the keys
            to do this?  This behavior is similar to textpad, visual studio,
            etc.
     20.13. In my mappings the special characters like <CR> are not
@@ -415,7 +415,7 @@ SECTION 20 - MAPPING KEYS
            sometimes when I press a key?
     20.17. How do I map a key to run an external command using a visually
            selected text?
-    20.18. How do I map the Ctrl-I key while still retaining the
+    20.18. How do I map the CTRL-I key while still retaining the
            functionality of the <Tab> key?
     20.19. How do I define a map to accept a count?
     20.20. How can I make my normal mode mapping work from within Insert
@@ -619,9 +619,9 @@ SECTION 31 - GUI VIM
     31.4. How do I add a horizontal scrollbar in GVim?
     31.5. How do I make the scrollbar appear in the left side by default?
     31.6. How do I remove the Vim menubar?
-    31.7. I am using GUI Vim. When I press the ALT key and a letter, the
+    31.7. I am using GUI Vim. When I press the <Alt> key and a letter, the
           menu starting with that letter is selected. I don't want this
-          behavior as I want to map the ALT-<key> combination. How do I do
+          behavior as I want to map the <Alt>-<key> combination. How do I do
           this?
     31.8. Is it possible to scroll the text by dragging the scrollbar so
           that the cursor stays in the original location?
@@ -659,7 +659,7 @@ SECTION 32 - VIM ON UNIX
           minimize the startup time?
     32.6. How can I make the cursor in gvim in unix stop blinking?
     32.7. How do I change the menu font on GTK Vim?
-    32.8. How do I prevent <Ctrl-Z> from suspending Vim?
+    32.8. How do I prevent CTRL-Z from suspending Vim?
     32.9. When I kill the xterm running Vim, the Vim process continues to
           run and takes up a lot of CPU (99%) time. Why is this happening?
     32.10. How do I get the Vim syntax highlighting to work in a Unix
@@ -1422,13 +1422,13 @@ around in the help pages the same way you would in a read-only document.
 You can jump to specific subjects by using tags. This can be done in two
 ways:
 
-   * Use the <Ctrl-]> command while standing on the name of a command
+   * Use the CTRL-] command while standing on the name of a command
      or option. This only works when the tag is a keyword.
-     <Ctrl-LeftMouse> and g<LeftMouse> work just like <Ctrl-]>.
+     <Ctrl-LeftMouse> and g<LeftMouse> work just like CTRL-].
 
    * use the `:tag <subject>` command. This works with all characters.
 
-Use <Ctrl-T> to jump back to previous positions in the help files. Use
+Use CTRL-T to jump back to previous positions in the help files. Use
 `:q` to close the help window.
 
 If you want to jump to a specific subject on the help pages, use ":help
@@ -1454,8 +1454,8 @@ a)  You can press the CTRL-D key after typing the help keyword to get a
     :help str*()<C-D>
     :help '*indent<C-D>
 
-b)  You can press the Tab key after typing a partial help keyword to expand
-    to the matching keyword. You can continue to press the Tab key to see
+b)  You can press the <Tab> key after typing a partial help keyword to expand
+    to the matching keyword. You can continue to press the <Tab> key to see
     other keyword matches.
 
 c)  From the help window, you can use the `:tag` command to search for
@@ -1880,7 +1880,7 @@ command as `:b` and use only part of the filename. For example,
     :b e2
 
 You can also use <TAB> after `:b` for autocompletion. Try also `:b`
-followed by <CTRL-d> to see all available buffers. This works also for
+followed by CTRL-D to see all available buffers. This works also for
 `:e`.
 
 You can also use the CTRL-^ key to switch between buffers. By specifying a
@@ -2250,10 +2250,10 @@ For more information, read:
     :help :buffers
 
 
-8.10. How do I map the tab key to cycle through and open all the buffers?
+8.10. How do I map the <Tab> key to cycle through and open all the buffers?
 
-You can use the following two map commands, to map the CTRL-Tab key to open
-the next buffer and the CTRL-SHIFT-Tab key to open the previous buffer:
+You can use the following two map commands, to map the <Ctrl-Tab> key to open
+the next buffer and the <Ctrl-Shift-Tab> key to open the previous buffer:
 
     :nnoremap <C-Tab> :bnext<CR>
     :nnoremap <S-C-Tab> :bprevious<CR>
@@ -2684,7 +2684,7 @@ You can also clear the search highlighting, by searching for a pattern that
 is not in the current file (for example, search for the pattern "asdf").
 
 You can use this mapping, to clear the search highlighting when
-redrawing the window pressing <CTRL-L>
+redrawing the window pressing CTRL-L
 
     :nnoremap <silent> <C-L> <C-L>:nohls<CR>
 
@@ -3196,7 +3196,7 @@ The "gN" commands works similar but searches backwards.
 
 This allows to repeat simple operations on each match. For example, you
 might want to change each occurence of apples by peaches. So you search
-using "/apple" then you can use "cgnpeach<esc>" to replace the current
+using "/apple" then you can use "cgnpeach<Esc>" to replace the current
 match by peach. Now you can use the dot "." command to redo the
 replacement for the rest of the buffer.
 
@@ -3483,8 +3483,8 @@ For more information, read:
        position?
 
 In Insert mode, you can copy the character above the cursor to the current
-cursor position by typing <Ctrl-Y>. The same can be done with the
-characters below the cursor by typing <Ctrl-E>.
+cursor position by typing CTRL-Y. The same can be done with the
+characters below the cursor by typing CTRL-E.
 
 For more information, read:
 
@@ -3522,8 +3522,8 @@ For more information, read:
 12.17. How do I insert the contents of a Vim register into the current
        buffer?
 
-In insert mode, you can use the <C-R><register> command to insert the
-contents of <register>. For example, use <C-R>a to insert the contents
+In insert mode, you can use the <CTRL-R><register> command to insert the
+contents of <register>. For example, use <CTRL-R>a to insert the contents
 of register "a" into the current buffer.
 
 In normal mode, you can use the `:put <register>` command to insert the
@@ -4689,7 +4689,7 @@ For more information, read:
     :help :silent
 
 
-16.5. When I press the tab key to complete the name of a file in the
+16.5. When I press the <Tab> key to complete the name of a file in the
       command mode, if there are more than one matching file names, then
       Vim completes the first matching file name and displays a list of all
       matching filenames. How do I configure Vim to only display the list
@@ -4710,7 +4710,7 @@ For more information, read:
       command line to a buffer?
 
 To copy text from a buffer to the command line, after yanking the text from
-the buffer, use Ctrl-R 0 in the command line to paste the text. You can
+the buffer, use "<CTRL-R>0" in the command line to paste the text. You can
 also yank the text to a specific register and use CTRL-R <register> to
 paste the text to the command line.  You can use CTRL-R CTRL-W to paste the
 word under the cursor in the command line.
@@ -5247,8 +5247,8 @@ For more information, read:
 20.4. I am not able to create a mapping for the <xxx> key. What is wrong?
 
 1) First make sure, the key is passed correctly to Vim. To determine if
-   this is the case, put Vim in Insert mode and then hit Ctrl-V (or
-   Ctrl-Q if your Ctrl-V is remapped to the paste operation (e.g. on
+   this is the case, put Vim in Insert mode and then hit CTRL-V (or
+   CTRL-Q if your CTRL-V is remapped to the paste operation (e.g. on
    Windows if you are using the mswin.vim script file) followed by your
    key.
 
@@ -5259,12 +5259,12 @@ For more information, read:
    using GVim, which should recognise the key correctly.
 
 2) Possibly, Vim gets your key, but sees it as no different than
-   something else. Say you want to map Ctrl-Right, then in Insert mode
-   hit Ctrl-K followed by Ctrl-Right. If Vim displays <C-Right> it has
+   something else. Say you want to map <Ctrl-Right>, then in Insert mode
+   hit CTRL-K followed by <Ctrl-Right>. If Vim displays <C-Right> it has
    correctly seen the keystroke and you should be able to map it (by
    using <C-Right> as your {lhs}). If it displays <Right> it has seen
-   the keystroke but as if you hadn't held Ctrl down: this means your
-   temrinal passes Ctrl-Right as if it were just <Right>. Anything else
+   the keystroke but as if you hadn't held <Ctrl> down: this means your
+   temrinal passes <Ctrl-Right> as if it were just <Right>. Anything else
    means the key has been misidentified.
 
 3) If the key is seen, but not as itself and not as some recognizable
@@ -5283,7 +5283,7 @@ For more information, read:
 
    where <termname> above should be replaced by the value of 'term'
    (with quotes around it) and <keycode> by what you get when hitting
-   Ctrl-V followed by Ctrl-Right in Insert mode (with nothing around
+   CTRL-V followed by Ctrl-Right in Insert mode (with nothing around
    it). <C-Right> should be left as-is (9 characters). Don't forget that
    in a :set command, white space is not allowed between the equal sign
    and the value, and any space, double quote, vertical bar or backslash
@@ -5306,23 +5306,23 @@ For more information, read:
 The only Ctrl-printable-key chords which Vim can reliably detect (because they
 are defined in the ASCII standard) are the following:
 
-        Ctrl-@                 0x00            NUL
-        Ctrl-A to Ctrl-Z       0x01 to 0x1A
-        Ctrl-a to Ctrl-z       0x01 to 0x1A
-        Ctrl-[                 0x1B            ESC
-        Ctrl-\                 0x1C
-        Ctrl-]                 0x1D
-        Ctrl-^                 0x1E
-        Ctrl-_                 0x1F
-        Ctrl-?                 0x7F            DEL
+        CTRL-@                 0x00            NUL
+        CTRL-A to CTRL-Z       0x01 to 0x1A
+        CTRL-a to CTRL-z       0x01 to 0x1A
+        CTRL-[                 0x1B            ESC
+        CTRL-\                 0x1C
+        CTRL-]                 0x1D
+        CTRL-^                 0x1E
+        CTRL-_                 0x1F
+        CTRL-?                 0x7F            DEL
 
 Most of these, however, already have a function in Vim (and some are
-aliases of other keys: Ctrl-H and Bsp, Ctrl-I and Tab, Ctrl-M and Enter,
-Ctrl-[ and Esc, Ctrl-? and Del).
+aliases of other keys: CTRL-H and <BS>, CTRL-I and <Tab>, CTRL-M and <Enter>,
+CTRL-[ and <Esc>, CTRL-? and <Del>).
 
 The "safest" keys to use in Vim for the {lhs} of a mapping are the F
 keys, with or without Shift: <F2> to <F12> and <S-F1> to <S-F12>. (Some
-OSes, including mine, intercept Ctrl-Fn and Alt-Fn, which never reach an
+OSes, including mine, intercept <Ctrl-Fn> and <Alt-Fn>, which never reach an
 application program such as vim or gvim).
 
 You can try other combinations of Ctrl + any key, but they may either
@@ -5456,7 +5456,7 @@ For more information, read:
     :help map-modes
 
 
-20.12. I want to use the Tab key to indent a block of text and Shift-Tab
+20.12. I want to use the <Tab> key to indent a block of text and <Shift-Tab>
        key to unindent a block of text. How do I map the keys to do this?
        This behavior is similar to textpad, visual studio, etc.
 
@@ -5602,13 +5602,13 @@ For more information, read:
     :help :!cmd
 
 
-20.18. How do I map the Ctrl-I key while still retaining the functionality
+20.18. How do I map the CTRL-I key while still retaining the functionality
        of the <Tab> key?
 
-The Ctrl-I key and the <Tab> key produce the same keycode, so Vim cannot
-distinguish between the Ctrl-I and the <Tab> key. When you map the Ctrl-I
+The CTRL-I key and the <Tab> key produce the same keycode, so Vim cannot
+distinguish between the CTRL-I and the <Tab> key. When you map the CTRL-I
 key, the <Tab> key is also mapped (and vice versa). The same restriction
-applies for the Ctrl-[ key and the <Esc> key.
+applies for the CTRL-[ key and the <Esc> key.
 
 For more information, read:
 
@@ -5629,7 +5629,7 @@ Now you can specify a count to the "=" command.
 20.20. How can I make my normal mode mapping work from within Insert
        Mode?
 
-Mappings in normal mode can be executed after <Ctrl-O> from insert mode as
+Mappings in normal mode can be executed after CTRL-O from insert mode as
 well but if there are more commands included in the mapping {rhs}, only the
 first one will be executed in normal mode and the rest of {rhs} will be
 printed literally in insert mode. One of ways to workaround this problem is
@@ -5646,10 +5646,10 @@ A more technical and detailed solution to this problem follows and can
 be found at https://groups.google.com/group/vim_dev/msg/75f1f2dfc00908bb
 
 Not every normal mode-mapping is automatically suitable for execution via
-<Ctrl-O> from within insert mode; you need to explicitly design your mappings
+CTRL-O from within insert mode; you need to explicitly design your mappings
 for that purpose.
 
-The <Ctrl-O> command allows execution of one normal mode command from
+The CTRL-O command allows execution of one normal mode command from
 within insert mode, then returns to insert mode. If a normal mode mapping
 concatenates multiple normal mode commands, this breaks down in temporary
 normal mode and literally inserts the second part of the command into the
@@ -5682,7 +5682,7 @@ insert mode, these strategies can be used:
     :nnoremap <silent> <script> zC <SID>MyMap1<SID>NMcall MyMap2()<CR>
 
 5)  If none of the above is possible, at least force normal mode for
-    subsequent commands via <CTRL-\><CTRL-N> to avoid accidental insertion
+    subsequent commands via CTRL-\ CTRL-N to avoid accidental insertion
     of the remainder of the mapping.
 
     :nnoremap zC zC<C-\><C-N>VzCzz
@@ -7464,11 +7464,11 @@ and interact with the shell using the normal Vim commands.
 When the focus is in the terminal window, typed keys will be sent to
 the job and is called terminal mode. You can click outside of the
 terminal window to move keyboard focus elsewhere, alternatively one can
-use Ctrl-W to novigate between different Vim windows. To feed Ctrl-W into the
+use CTRL-W to novigate between different Vim windows. To feed CTRL-W into the
 terminal, one needs to use CTRL-W .
 
 To map keys specifically for terminal mode, use the new :tmap
-command. After typing Ctrl-W the terminal window will switch to
+command. After typing CTRL-W the terminal window will switch to
 Terminal-Normal mode (this can be used to move the cursor around, scroll
 the window, etc. Just like normal mode).
 
@@ -7733,11 +7733,11 @@ For more information, read:
     :help 'guioptions'
 
 
-31.7. I am using GUI Vim. When I press the ALT key and a letter, the menu
+31.7. I am using GUI Vim. When I press the <Alt> key and a letter, the menu
       starting with that letter is selected. I don't want this behavior as
-      I want to map the ALT-<key> combination. How do I do this?
+      I want to map the <Alt>-<key> combination. How do I do this?
 
-You can use the 'winaltkeys' option to disable the use of the ALT key to
+You can use the 'winaltkeys' option to disable the use of the <Alt> key to
 select a menu item:
 
     :set winaltkeys=no
@@ -8061,19 +8061,19 @@ For more information, read:
     :help gui-gtk
 
 
-32.8. How do I prevent <Ctrl-Z> from suspending Vim?
+32.8. How do I prevent CTRL-Z from suspending Vim?
 
-You can map <Ctrl-Z> to prevent the suspending. Here are some suggestions:
+You can map CTRL-Z to prevent the suspending. Here are some suggestions:
 
-- Make <Ctrl-Z> do nothing:
+- Make CTRL-Z do nothing:
 
     :map <C-Z> <Nop>
 
-- Make <Ctrl-Z> start a shell:
+- Make CTRL-Z start a shell:
 
     :map <C-Z> :shell<CR>
 
-- Make <Ctrl-Z> give an error message:
+- Make CTRL-Z give an error message:
 
     :map <C-Z> :"suspending disabled<CR>
 
@@ -8962,11 +8962,11 @@ Several methods are available:
   those which require a "dead-key" prefix, like (for instance) the
   circumflex on French keyboards.
 - Characters for which a digraph is defined can be typed as two characters
-  prefixed by <Ctrl-K>.
+  prefixed by CTRL-K.
 - If you have set the 'digraph' option, you can enter the characters for
   which a digraph is defined as <char1><BS><char2>.
-- Any character can be entered by using a <Ctrl-V> prefix (or <Ctrl-Q> if
-  <Ctrl-V> is remapped to paste from the clipboard).
+- Any character can be entered by using a CTRL-V prefix (or CTRL-Q if
+  CTRL-V is remapped to paste from the clipboard).
 
 For more information, read:
 
