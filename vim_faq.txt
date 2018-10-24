@@ -2388,7 +2388,7 @@ SECTION 10 - MOTION
 10.1. How do I jump to the beginning (first line) or end (last line) of a
      file?
 
-You can use 'G' command to jump to the last line in the file and the 'gg'
+You can use "G" command to jump to the last line in the file and the "gg"
 command to jump to the first line in the file.
 
 For more information, read:
@@ -4799,7 +4799,7 @@ For more information, read:
 You can save and restore Vim marks across Vim sessions using the viminfo
 file. To use the viminfo file, make sure the 'viminfo' option is not empty.
 To save and restore Vim marks, the 'viminfo' option should not contain the
-"f" flag or should have a value greater than zero for the 'f' option.
+"f" flag or should have a value greater than zero for the "f" option.
 
 You can also use the viminfo file to synchronize the commandline history
 across different sessions using :wvimfo and :rviminfo commands together
@@ -5163,7 +5163,7 @@ in the option. For example, if you use the following command to remove the
 
     :set formatoptions-=tn
 
-The 't' and 'n' flags will be removed from the 'formatoptions' option, only
+The "t" and "n" flags will be removed from the 'formatoptions' option, only
 if the 'formatoptions' option contains these flags in this order: "tn".
 Otherwise, it will not remove the flags. To avoid this problem, you can
 remove the flags one by one:
