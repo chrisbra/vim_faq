@@ -1431,10 +1431,11 @@ ways:
 Use CTRL-T to jump back to previous positions in the help files. Use
 `:q` to close the help window.
 
-If you want to jump to a specific subject on the help pages, use ":help
-{subject}`. If you don't know what to look for, try `:help index" to get a
-list of all available subjects. Use the standard search keys to locate the
-information you want. You can abbreviate the `:help` command as `:h`.
+If you want to jump to a specific subject on the help pages, use
+`:help {subject}` . If you don't know what to look for, try `:help index`
+to get a list of all available subjects. Use the standard search keys to
+locate the information you want.
+You can abbreviate the `:help` command as `:h`.
 
 For searching the help, see the next Question 4.2.
 
