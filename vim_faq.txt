@@ -5284,7 +5284,7 @@ For more information, read:
 
    where <termname> above should be replaced by the value of 'term'
    (with quotes around it) and <keycode> by what you get when hitting
-   CTRL-V followed by Ctrl-Right in Insert mode (with nothing around
+   CTRL-V followed by <Ctrl-Right> in Insert mode (with nothing around
    it). <C-Right> should be left as-is (9 characters). Don't forget that
    in a :set command, white space is not allowed between the equal sign
    and the value, and any space, double quote, vertical bar or backslash
@@ -5304,8 +5304,8 @@ For more information, read:
 
 20.5. Why does mapping the <C-...> key not work?
 
-The only Ctrl-printable-key chords which Vim can reliably detect (because they
-are defined in the ASCII standard) are the following:
+The only <Ctrl>-<printable-key> chords which Vim can reliably detect
+(because they are defined in the ASCII standard) are the following:
 
         CTRL-@                 0x00            NUL
         CTRL-A to CTRL-Z       0x01 to 0x1A
@@ -5326,7 +5326,7 @@ keys, with or without Shift: <F2> to <F12> and <S-F1> to <S-F12>. (Some
 OSes, including mine, intercept <Ctrl-Fn> and <Alt-Fn>, which never reach an
 application program such as vim or gvim).
 
-You can try other combinations of Ctrl + any key, but they may either
+You can try other combinations of <Ctrl> + any key, but they may either
 not work everywhere (e.g. the terminal might not pass that key to Vim,
 or they might have unintended side effects (e.g. mapping <C-I> means
 also to map <Tab>).
