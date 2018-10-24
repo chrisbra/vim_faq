@@ -579,7 +579,7 @@ SECTION 28 - QUICKFIX
     28.1. How do I build programs from Vim?
     28.2. When I run the make command in Vim I get the errors listed as the
           compiler compiles the program. When it finishes this list
-          disappears and I have to use the  :clist command to see the error
+          disappears and I have to use the `:clist` command to see the error
           message again. Is there any other way to see these error
           messages?
     28.3. How can I perform a command for each item in the
@@ -1187,11 +1187,11 @@ some configuration option inside your .vimrc file. Depending on the
 length of your vimrc file, it can be quite hard to trace the origin
 within that file.
 
-The best way is to add :finish command in the middle of your .vimrc.
+The best way is to add `:finish` command in the middle of your .vimrc.
 Then restart again using the same command line. If the error still
 occurs, the bug must be caused because of a setting in the first half of
 your .vimrc. If it doesn't happen, the problematic setting must be in
-the second half of your .vimrc. So move the :finish command to the
+the second half of your .vimrc. So move the `:finish` command to the
 middle of that half, of which you know that triggers the error and move
 your way along, until you find the problematic option. If your .vimrc is
 350 lines long, you need at a maximum 9 tries to find the offending line
@@ -1200,7 +1200,7 @@ depend on each other).
 
 If the problem does not occur, when only loading your .vimrc file, the
 error must be caused by a plugin or another runtime file (indent
-autoload or syntax script). Check the output of the :scriptnames command
+autoload or syntax script). Check the output of the `:scriptnames` command
 to see what files have been loaded and for each one try to disable each
 one by one and see which one triggers the bug. Often files that are
 loaded by vim, have a simple configuration variable to disable them, but
@@ -1538,7 +1538,7 @@ decompressing the files.  You must make sure that $VIMRUNTIME is set to
 where the other Vim files are, when they are not in the same location as
 the compressed "doc" directory.
 
-Note, that the :helpgrep command does not work with compressed help pages.
+Note, that the `:helpgrep` command does not work with compressed help pages.
 
 For more information, read:
 
@@ -1848,7 +1848,7 @@ can use the `:next` command to specify a group of files:
     :next f1.txt f2.txt
     :next *.c
 
-You can use the :args command to specify a group of files as arguments:
+You can use the `:args` command to specify a group of files as arguments:
 
     :args f1.txt f2.txt
     :args *.c
@@ -2175,7 +2175,7 @@ in the buffer list:
 
     :ball
 
-If you want all buffers to be opened in new tabs, simply prefix the :tab
+If you want all buffers to be opened in new tabs, simply prefix the `:tab`
 command:
 
     :tab :sball
@@ -3057,7 +3057,7 @@ current buffer that contain "vim":
 
     :g/vim/p
 
-Since :p is the default command to be executed for the ex command :g, you
+Since `:p` is the default command to be executed for the ex command `:g`, you
 can also use:
 
     :g/vim
@@ -3837,7 +3837,7 @@ regions, you can also use this idiom:
     :let i = 1
     :g/TODO/s/^/\=printf('%2d.',i)|let i+=1
 
-This first initializes the variable i with 1. In the next line, a :g
+This first initializes the variable i with 1. In the next line, a `:g`
 command is used to perform a substitute command only on lines, that
 match "TODO". After the substitute command has taken place, the variable
 i will be incremented by 1.
@@ -4649,7 +4649,7 @@ For more information, read:
 16.3. How do I switch from Vi mode to Ex mode?
 
 You can use the Q command to switch from Vi mode to Ex mode. To switch from
-Ex mode back to the Vi mode, use the :vi command.
+Ex mode back to the Vi mode, use the `:vi` command.
 
 For more information, read:
 
@@ -4802,7 +4802,7 @@ To save and restore Vim marks, the 'viminfo' option should not contain the
 "f" flag or should have a value greater than zero for the "f" option.
 
 You can also use the viminfo file to synchronize the commandline history
-across different sessions using :wvimfo and :rviminfo commands together
+across different sessions using `:wvimfo` and `:rviminfo` commands together
 with the FocusGained and FocusLost autocommands:
 
     augroup viminfo
@@ -5190,7 +5190,7 @@ To see what a key is mapped to, use the following commands:
 You can also check the mappings in a particular mode using one of the
 `:cmap`, `:nmap`, `:vmap`, `:imap`, `:omap`, etc commands.
 
-To find out, where the key has been mapped, prefix the :verbose command:
+To find out, where the key has been mapped, prefix the `:verbose` command:
 
     :verbose :map <key>
 
@@ -5286,7 +5286,7 @@ For more information, read:
    (with quotes around it) and <keycode> by what you get when hitting
    CTRL-V followed by <Ctrl-Right> in Insert mode (with nothing around
    it). <C-Right> should be left as-is (9 characters). Don't forget that
-   in a :set command, white space is not allowed between the equal sign
+   in a `:set` command, white space is not allowed between the equal sign
    and the value, and any space, double quote, vertical bar or backslash
    present as part of the value must be backslash-escaped.
 
@@ -5422,7 +5422,7 @@ variable to be whatever they wanted:
     :let mapleader = ","
 
 When writing a plugin or other script, more often than not, it is advisable
-to use :noremap instead of :map to avoid side effects from user defined
+to use `:noremap` instead of `:map` to avoid side effects from user defined
 mappings.
 
 For more information, read:
@@ -5657,7 +5657,7 @@ normal mode and literally inserts the second part of the command into the
 buffer instead. To support execution of normal mode mappings from within
 insert mode, these strategies can be used:
 
-1) Instead of concatenating multiple normal mode commands, use one :normal
+1) Instead of concatenating multiple normal mode commands, use one `:normal`
     mapping:
 
     :nnoremap <silent> zC :<C-U>normal! zCVzC<CR>
@@ -6519,7 +6519,7 @@ For more information, read:
 25.14. A Vim variable (bno) contains a buffer number. How do I use this
        variable to open the corresponding buffer?
 
-The :buffer command will not accept a variable name. It accepts only a
+The `:buffer` command will not accept a variable name. It accepts only a
 buffer number or buffer name. You have to use the `:execute` command to
 evaluate the variable into the corresponding value. For example:
 
@@ -6623,7 +6623,7 @@ For more information, read:
 
 25.19. How do I get the basename of the current file?
 
-You can use the :t filename modifier to get the basename of the current
+You can use the ":t" filename modifier to get the basename of the current
 file:
 
     :echo expand("%:t")
@@ -7278,7 +7278,7 @@ For more information, read:
 
 28.2. When I run the make command in Vim I get the errors listed as the
       compiler compiles the program. When it finishes this list disappears
-      and I have to use the  :clist command to see the error message again.
+      and I have to use the `:clist` command to see the error message again.
       Is there any other way to see these error messages?
 
 You can use the `:copen` or `:cwindow` command to open the quickfix window
@@ -7295,13 +7295,13 @@ For more information, read:
 28.3. How can I perform a command for each item in the quickfix/location
       list?
 
-Starting from Vim 7.4.858 Vim provides the new commands :cfdo, :cdo,
-:lfdo and :ldo. They work by iterating over all items in the quickfix
-list and performing a command on each. The difference is, that the :lfdo
-and :ldo commands iterate over the location list entries, while the
-:cfdo and :cdo commands operate on the items in the quickfix list. Also,
-the :cfdo and :lfdo operate on all different files, while the :cdo and
-:ldo commands operate on each item in the quickfix/location list.
+Starting from Vim 7.4.858 Vim provides the new commands `:cfdo`, `:cdo`,
+`:lfdo` and `:ldo.` They work by iterating over all items in the quickfix
+list and performing a command on each. The difference is, that the `:lfdo`
+and `:ldo` commands iterate over the location list entries, while the
+`:cfdo` and `:cdo` commands operate on the items in the quickfix list. Also,
+the `:cfdo` and `:lfdo` operate on all different files, while the `:cdo` and
+`:ldo` commands operate on each item in the quickfix/location list.
 
 For example you could vimgrep all C files in the current directory for a
 search string "Foobar":
@@ -7468,7 +7468,7 @@ terminal window to move keyboard focus elsewhere, alternatively one can
 use CTRL-W to novigate between different Vim windows. To feed CTRL-W into the
 terminal, one needs to use CTRL-W .
 
-To map keys specifically for terminal mode, use the new :tmap
+To map keys specifically for terminal mode, use the new `:tmap`
 command. After typing CTRL-W the terminal window will switch to
 Terminal-Normal mode (this can be used to move the cursor around, scroll
 the window, etc. Just like normal mode).
@@ -8979,7 +8979,7 @@ For more information, read:
 37.12. How can I know which digraphs are defined and for which characters?
 
 First set the 'encoding' option properly (for instance, to utf-8), then use
-the :digraphs command to list the currently defined digraphs.
+the `:digraphs` command to list the currently defined digraphs.
 
 Alternatively, the help file contains the complete set of all digraphs.
 So you can easily search that list there.
