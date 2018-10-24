@@ -1840,7 +1840,7 @@ different things in VIM.
 
 args is a list of arguments. Buffers are place to edit text, almost
 always attached to a file but not necessarily. Window is a place for a
-buffer and tab is set of windows, better name would be 'layout'.
+buffer and tab is set of windows, better name would be "layout".
 
 There are several ways to open multiple files at once from within Vim. You
 can use the `:next` command to specify a group of files:
@@ -7142,7 +7142,7 @@ For more information, read:
 27.6. I am editing a C program using Vim. How do I jump to the beginning or
       end of a code block from within the block?
 
-You can use "[{" command to jump to the beginning of the code block and ']}
+You can use "[{" command to jump to the beginning of the code block and "]}"
 to jump to the end of the code block from inside the block.
 
 For more information, read:
