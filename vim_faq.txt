@@ -2481,7 +2481,7 @@ For more information, read:
     :help sentence
     :help 'joinspaces'
     :help 'cpoptions'
-    :help 'paragraph'
+    :help paragraph
     :help section
     :help word
 
