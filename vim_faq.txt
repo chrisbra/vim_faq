@@ -1311,12 +1311,13 @@ SECTION 3 - AVAILABILITY
 
 3.1. What is the latest version of Vim?
 
-The latest version of Vim is 8.1 released on 17th May 2018.
+The latest version of Vim is 8.2 released on 12th December 2019.
 
 The release history of different versions of Vim is below:
 
     VERSION         RELEASE DATE
     --------------  --------------------
+    Version 8.2     12th December, 2019
     Version 8.1     17th May, 2018
     Version 8.0     12th September, 2016
     Version 7.4     10th August, 2013
@@ -1360,6 +1361,7 @@ For more information, read:
     :help new-7
     :help new-6
     :help new-5
+    :help chnaged-8.2
     :help changed-8.1
     :help changed-7.4
     :help changed-7.3
@@ -1374,9 +1376,11 @@ Github repository. The URL for this site is
 
     https://github.com/vim/vim
 
-A mirror is available at bitbucket:
+A mercurial mirror is also available:
 
     https://bitbucket.org/vim-mirror/vim
+    http://hg.256bit.org/vim/
+    https://hg.osdn.net/view/vim/vim
 
 Some users keep updated repositories for distributing latest binary
 versions of Vim. You can find those repositories here:
@@ -1399,13 +1403,18 @@ For MS-DOS support has been removed with the latest releases of Vim.
 
 You can download the latest version of the Vim runtime files (syntax files,
 filetype plugins, compiler files, color schemes, documentation, indentation
-files and keymaps) from the Vim ftp site from the
-ftp://ftp.vim.org/pub/vim/runtime directory.
-
-Alternatively, the runtime files can be downloaded from the git
-repository that holds Vim source code at:
+files and keymaps) from the Vim github repository
 
     https://github.com/vim/vim/tree/master/runtime
+
+Another way of downloading the runtime files is this:
+
+    wget https://github.com/vim/vim/archive/master.tar.gz -O- |
+    tar zfx - vim-master/runtime/ --strip-components=1
+
+See also:
+
+    https://www.vim.org/runtime.php
 
 
 =============================================================================
@@ -8994,4 +9003,4 @@ For more information, read:
 =============================================================================
 
 Current Maintainer: Christian Brabandt <cb@256bit.org>
-Last updated on: 05 September 2018
+Last updated on: 12 December 2019

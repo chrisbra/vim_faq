@@ -820,9 +820,10 @@ document is secondary. With an editor, one's main concern is entering text,
 not making the text look good. Examples of editors other than Vim and Vi
 are Emacs, TextMate, Ultraedit and gedit. And Notepad.
 
-For more information read
+For more information, read:
 
 B<:help intro>
+
 
 
 =head2 1.2. Who wrote Vim?
@@ -835,6 +836,7 @@ For more information, read:
 B<:help author>
 
 B<:help credits>
+
 
 
 =head2 1.3. Is Vim compatible with Vi?
@@ -857,7 +859,7 @@ original Vi, supply the -N command line argument:
 
  $ vim -N
 
-For more information, read
+For more information, read:
 
 B<:help -C>
 
@@ -1089,9 +1091,10 @@ emphasis on general power-user features and features for programmers.
   Timers are asynchronous and can fire once or repeatedly to invoke a
   function to do any work.
 
-For more information, read
+=head3 For more information, read:
 
 B<:help vi-differences>
+
 
 
 =head2 1.5. Is Vim free?
@@ -1100,9 +1103,10 @@ Vim is Charityware. There are no restrictions on using or copying Vim, but
 the author encourages you to make a donation to charity. A document
 explaining how to do so is included in the distribution.
 
-For more information, read
+For more information, read:
 
 B<:help copyright>
+
 
 
 
@@ -1123,15 +1127,15 @@ everywhere.  Get involved!  The URL is https://www.vim.org
 
 Finally, read the Vi FAQ:
 
-http://www.faqs.org/faqs/editor-faq/vi/part1/index.html
+ http://www.faqs.org/faqs/editor-faq/vi/part1/index.html
 
 Finally, there are also some communities, where you can discuss features
 or ask questions:
 
-https://vi.stackexchange.com
-https://vim.reddit.com
+ https://vi.stackexchange.com
+ https://vim.reddit.com
 
-For more information, read
+For more information, read:
 
 B<:help mail-list>
 
@@ -1144,7 +1148,7 @@ B<:help internet>
 There are several:
 
  NAME              DESCRIPTION
-
+ ----------------  ---------------------------------------------
  vim-announce      Announcements of new releases
  vim               General discussion
  vim-dev           Patches, bug reports, development discussions
@@ -1155,13 +1159,16 @@ Of these, only vim and vim-dev are of general interest. vim-announce is
 read-only to most people, and its messages are sent to the other lists as
 well. The remaining four are very low volume.
 
- To subscribe:   send an email to <NAME>-subscribe@vim.org
- To unsubscribe: send an email to <NAME>-unsubscribe@vim.org
- To get help:    send an email to <NAME>-help@vim.org
+ ACTION            EMAIL SEND TO
+ ----------------  --------------------------
+ To subscribe:     <NAME>-subscribe@vim.org
+ To unsubscribe:   <NAME>-unsubscribe@vim.org
+ To get help:      <NAME>-help@vim.org
 
 The available mailing lists are also mentioned here:
 
-https://www.vim.org/maillist.php
+ https://www.vim.org/maillist.php
+
 
 =head2 2.3. Is there an archive available for the Vim mailing lists?
 
@@ -1173,11 +1180,12 @@ you to access the mailing lists as though they were newsgroups.  This
 offers some convenience to those who wish to browse the history or casually
 observe the current threads.
 
+
 =head2 2.4. Where can I get the Vim user manual in HTML/PDF/PS format?
 
 You can download the HTML/PDF/PS format of the Vim user manual from:
 
-https://vimdoc.sourceforge.net/
+ https://vimdoc.sourceforge.net/
 
 Note, the user manual from that page is currently pretty outdated. It's
 best to either use the documentation that comes with vim or use the
@@ -1186,10 +1194,11 @@ online version at https://vimhelp.appspot.com
 You can find a pdf version of the full English help, including this faq
 (in letter, A4 and Ipad format) at:
 
-https://nathangrigg.com/vimhelp/
+ https://nathangrigg.com/vimhelp/
 
 This document is cross-referenced, so you can use the hyperlink
 functionality.
+
 
 =head2 2.5. I have a "xyz" (some) problem with Vim. How do I determine if it is a
   problem with my setup or with Vim?  / Have I found a bug in Vim?
@@ -1258,7 +1267,7 @@ debug messages don't appear on the screen and won't disturb you when
 trying to reproduce the problem.
 
 
-For more information, read
+For more information, read:
 
 B<:help -u>
 
@@ -1294,7 +1303,7 @@ programmed into vim), attempt to inform the maintainer of that feature.
 His e-mail address will be mentioned at the top of the corresponding
 runtime file.
 
-For more information, read
+For more information, read:
 
 B<:help bug-reports>
 
@@ -1312,13 +1321,14 @@ pdf file, html file, plain text version and a version in vim help format.
 A slightly older version (which doesn't seem to get updated anymore) can
 still be found at VimOnline (https://www.vim.org/).
 
+
 =head2 2.8. What if I don't find an answer in this FAQ?
 
 This FAQ covers mainly Vim-specific questions. You may find more
 information suitable for most Vi clones by reading the Vi FAQ. It is posted
 regularly on comp.editors. You can also find a copy at
 
-http://www.faqs.org/faqs/editor-faq/vi/part1/index.html
+ http://www.faqs.org/faqs/editor-faq/vi/part1/index.html
 
 Also, since Vim has gathered so many features in the last few years,
 successfully documenting the frequently asked questions here is a
@@ -1333,7 +1343,7 @@ answer yourself (remember, Vim has great documentation) but struggled.
 You can send your patches to the Vim developer mailing list
 vim-dev@vim.org.
 
-For more information, read
+For more information, read:
 
 B<:help vim-dev>
 
@@ -1349,7 +1359,8 @@ Nowadays people also seem to share their plugins/runtime files at
 github.
 
 Tips can also be shared in the Wiki which you can find at
-http://vim.wikia.com
+
+ http://vim.wikia.com
 
 
 
@@ -1359,10 +1370,13 @@ http://vim.wikia.com
 
 =head2 3.1. What is the latest version of Vim?
 
-The latest version of Vim is 8.1 released on 17th May 2018.
+The latest version of Vim is 8.2 released on 12th December 2019.
 
 The release history of different versions of Vim is below:
 
+ VERSION         RELEASE DATE
+ --------------  --------------------
+ Version 8.2     12th December, 2019
  Version 8.1     17th May, 2018
  Version 8.0     12th September, 2016
  Version 7.4     10th August, 2013
@@ -1371,9 +1385,9 @@ The release history of different versions of Vim is below:
  Version 7.1     12th May, 2007
  Version 7.0     8th May, 2006
  Version 6.4     15th October, 2005
- Version 6.3     8th June 2004
- Version 6.2     1st June 2003
- Version 6.1     24th March 2002
+ Version 6.3     8th June, 2004
+ Version 6.2     1st June, 2003
+ Version 6.1     24th March, 2002
  Version 6.0     27th September, 2001
  Version 5.8     31st May, 2001
  Version 5.7     24th June, 2000
@@ -1387,64 +1401,88 @@ The release history of different versions of Vim is below:
  Version 4.6     13th March, 1997
  Version 4.5     17th October, 1996
  Version 4.2     5th July, 1996
- Version 4.0     21st May, 1996
- Version 3.0     16th August, 1994
+ Version 4.0     29th May, 1996
+ Version 3.0     12th August, 1994
  Version 2.0     21st December, 1993
  Version 1.27    23rd April, 1993
  Version 1.17    21st April, 1992
+ Version 1.14    2nd November, 1991
 
-For more information, read
+If you are interested in the old release history, check out the
+vim-history git repository:
+https://github.com/vim/vim-history
+and especially for the release history:
+https://github.com/vim/vim-history#release-history
 
-B<:help new-5>
-
-B<:help new-6>
-
-B<:help new-7>
+For more information, read:
 
 B<:help new-8>
 
-B<:help changed-7.1>
+B<:help new-7>
 
-B<:help changed-7.2>
+B<:help new-6>
 
-B<:help changed-7.3>
+B<:help new-5>
+
+B<:help chnaged-8.2>
+
+B<:help changed-8.1>
 
 B<:help changed-7.4>
 
-B<:help changed-8.1>
+B<:help changed-7.3>
+
+B<:help changed-7.2>
+
+B<:help changed-7.1>
+
 
 
 =head2 3.2. Where can I find the latest version of Vim?
 
 You can download the sources for the latest version of Vim from the
 Github repository. The URL for this site is
-https://github.com/vim/vim
 
-A mirror is available at bitbucket:
-https://bitbucket.org/vim-mirror/vim
+ https://github.com/vim/vim
+
+A mercurial mirror is also available:
+
+ https://bitbucket.org/vim-mirror/vim
+ http://hg.256bit.org/vim/
+ https://hg.osdn.net/view/vim/vim
 
 Some users keep updated repositories for distributing latest binary
 versions of Vim. You can find those repositories here:
 
-http://vim.wikia.com/wiki/Where_to_download_Vim
+ http://vim.wikia.com/wiki/Where_to_download_Vim
+
 
 =head2 3.3. What platforms does it run on?
 
 All Unix platforms.
 All Windows platforms (XP and later).
-Amiga, Atari, BeOS, DOS, Macintosh, MachTen, OS/2, RiscOS, VMS, IBM z/OS.
+Amiga, Atari, BeOS, Macintosh, MachTen, OS/2, RiscOS, VMS, IBM z/OS.
 
+For MS-DOS support has been removed with the latest releases of Vim.
+16-bit DOS: latest supported version 7.1
+32-bit DOS: latest supported version 7.3
 
 =head2 3.4. Where can I download the latest version of the Vim runtime files?
 
 You can download the latest version of the Vim runtime files (syntax files,
 filetype plugins, compiler files, color schemes, documentation, indentation
-files and keymaps) from the Vim ftp site from the
-ftp://ftp.vim.org/pub/vim/runtime directory.
+files and keymaps) from the Vim github repository
 
-Alternatively, the runtime files can be downloaded from the git
-repository that holds Vim source code at:
-https://github.com/vim/vim/tree/master/runtime
+ https://github.com/vim/vim/tree/master/runtime
+
+Another way of downloading the runtime files is this:
+
+ wget https://github.com/vim/vim/archive/master.tar.gz -O- |
+ tar zfx - vim-master/runtime/ --strip-components=1
+
+See also:
+
+ https://www.vim.org/runtime.php
 
 
 
@@ -1477,7 +1515,7 @@ information you want. You can abbreviate the ":help" command as ":h".
 
 For searching the help, see the next Question 4.2.
 
-For more information, read
+For more information, read:
 
 B<:help online-help>
 
@@ -1513,7 +1551,7 @@ d)  You can use the ":helpgrep" command to search for the given text in
  all the help files. The quickfix window will be opened with all the
  matching lines.
 
-For more information, read
+For more information, read:
 
 B<:help help-summary>
 
@@ -1536,7 +1574,7 @@ You can get more information about the error and the error message using:
 B<:help E123>
 
 
-For more information, read
+For more information, read:
 
 B<:help error-messages>
 
@@ -1563,7 +1601,7 @@ To update all "doc" directories in your 'runtimepath', you can use
 
  :helptags ALL
 
-For more information, read
+For more information, read:
 
 B<:help :helptags>
 
@@ -1593,7 +1631,7 @@ the compressed "doc" directory.
 
 Note, that the :helpgrep command does not work with compressed help pages.
 
-For more information, read
+For more information, read:
 
 B<:help gzip-helpfile>
 
@@ -1625,7 +1663,7 @@ You can also use the ":args" command to load files into Vim:
 
  :args <filename(s)>
 
-For more information, read
+For more information, read:
 
 B<:help usr_07.txt>
 
@@ -1656,7 +1694,7 @@ You can also use the ":file" command, followed by ":w" command:
  :file <newfilename>
  :w
 
-For more information, read
+For more information, read:
 
 B<:help 07.7>
 
@@ -1681,7 +1719,7 @@ current file, simply set the option 'autochdir'.
 
  :set autochdir
 
-For more information, read
+For more information, read:
 
 B<:help :cd>
 
@@ -1723,7 +1761,7 @@ in an if condition in your .vimrc like this:
 This has the advantage of avoiding the many side effects that the
 'binary' option has.
 
-For more information, read
+For more information, read:
 
 B<:help 'endofline'>
 
@@ -1747,7 +1785,7 @@ in the '"' register. You can use the following autocmd in your .vimrc or
 Alternatively, you can simply source the vimrc_example.vim file, which is
 distributed with Vim.
 
-For more information, read
+For more information, read:
 
 B<:help '">
 
@@ -1773,7 +1811,7 @@ You can also use the following autocommand:
        \ echo "File has been changed outside of vim." |
        \ echohl None
 
-For more information, read
+For more information, read:
 
 B<:help 'autoread'>
 
@@ -1792,7 +1830,7 @@ You can use the CTRL-W f command to edit the file in a new window and
 finally you can use CTRL-W gf top open a new tab page that contains the
 file name under the cursor.
 
-For more information, read
+For more information, read:
 
 B<:help gf>
 
@@ -1818,7 +1856,7 @@ the current file.  If you have made modifications to the file, you can use
 modifications, but depending on your 'undoreload' settings, those
 changes might be saved into the undo history).
 
-For more information, read
+For more information, read:
 
 B<:help :edit>
 
@@ -1834,7 +1872,7 @@ B<:help 'undoreload'>
 
 Vim doesn't support auto-saving a file periodically.
 
-For more information, read
+For more information, read:
 
 B<:help 'updatetime'>
 
@@ -1860,7 +1898,7 @@ read-only mode from the command-line:
 
  $ view <filename>
 
-For more information, read
+For more information, read:
 
 B<:help 07.6>
 
@@ -1900,7 +1938,7 @@ another file for editing, then you can use the following command:
 
  :e! <new_filename>
 
-For more information, read
+For more information, read:
 
 B<:help :edit!_f>
 
@@ -1929,7 +1967,9 @@ following: Swap files support for crash recovery, undo support, syntax
 highlighting, filetype detection and other autocommand based features.
 
 There is also the LargeFile plugin available at
-https://www.vim.org/scripts/script.php?script_id=1506
+
+ https://www.vim.org/scripts/script.php?script_id=1506
+
 which automatically sets these options, when working with large files
 (it is configurable, what is considered to be a large file, by default,
 it is 100MB).
@@ -1965,7 +2005,7 @@ switch between the files.
 
 To execute command for all files in argument-list use ":argdo"
 
-For more information, read
+For more information, read:
 
 B<:help 07.2>
 
@@ -2007,7 +2047,7 @@ To close a buffer use ":bd" -command.
 
 To execute command for all files in buffer-list use ":bufdo"
 
-For more information, read
+For more information, read:
 
 B<:help edit-files>
 
@@ -2045,7 +2085,7 @@ The above command will open the files f1.txt, f2.txt and f3.txt in three
 separate tab windows. The option 'tabpagemax' defines, how many tabpages
 can be opened at the same time, by default it is set to 10.
 
-For more information, read
+For more information, read:
 
 B<:help -o>
 
@@ -2073,7 +2113,7 @@ The ":mkview" command creates a Vim script that restores the contents of
 the current window. You can use the ":loadview" command to load the view
 for the current file.
 
-For more information, read
+For more information, read:
 
 B<:help 21.4>
 
@@ -2121,7 +2161,7 @@ the file explorer using one of the following commands:
 From the file explorer, you can browse through directories, rename, delete
 and edit files.
 
-For more information, read
+For more information, read:
 
 B<:help netrw.vim>
 
@@ -2166,7 +2206,7 @@ also have to turn off the 'writebackup' option:
 
  :set nowritebackup
 
-For more information, read
+For more information, read:
 
 B<:help 07.4>
 
@@ -2187,15 +2227,16 @@ B<:help 'backupcopy'>
 B<:help backup>
 
 
+
 =head2 7.2. When I edit and save files, Vim creates a file with the same name as
   the original file and a "un~" extension at the end. How do I stop Vim
   from creating this file (or) How do I disable the Vim undofile feature?
 
 Vim 7.3 contains as new feature persistent undo, that is, undo information
-won't be lost when quitting Vim and be stored in a file that ends with .un~
-You have set the 'undofile' option, so Vim creates an undo file when saving
-the original file. You can stop Vim from creating the backup file, by
-clearing the option:
+won't be lost when quitting Vim and be stored in a file that ends with
+".un~" You have set the 'undofile' option, so Vim creates an undo file when
+saving the original file. You can stop Vim from creating the backup file,
+by clearing the option:
 
  :set noundofile
 
@@ -2205,13 +2246,14 @@ want your undofiles to be stored only in a particular directory, you can
 point the 'undodir' option to a directory that will contain all your
 aggregated undofiles.
 
-For more information, read
+For more information, read:
 
 B<:help 'undodir'>
 
 B<:help 'undofile'>
 
 B<:help undo-persistence>
+
 
 
 =head2 7.3. How do I configure Vim to store all the backup files in a particular
@@ -2223,7 +2265,7 @@ backup files in the ~/backup directory, you can use the following command:
 
  :set backupdir=~/backup
 
-For more information, read
+For more information, read:
 
 B<:help 07.4>
 
@@ -2248,7 +2290,7 @@ when saving a file:
 This applies, only if you have configured Vim to make a backup whenever
 overwriting a file. By default, Vim will not backup files.
 
-For more information, read
+For more information, read:
 
 B<:help 'backupcopy'>
 
@@ -2278,7 +2320,7 @@ By setting the 'hidden' option, you can also save the modification history
 (undo-history) for the buffer. Otherwise, as you switch between files, the
 undo-history will be lost (unless you use persistent undofiles).
 
-For more information, read
+For more information, read:
 
 B<:help 'hidden'>
 
@@ -2296,7 +2338,7 @@ switching to another buffer:
 
  :set autowrite
 
-For more information, read
+For more information, read:
 
 B<:help 'autowrite'>
 
@@ -2311,7 +2353,7 @@ B<:help 'hidden'>
 You can use the ":enew" command to load an empty buffer in place of the
 buffer in the current window.
 
-For more information, read
+For more information, read:
 
 B<:help :enew>
 
@@ -2323,7 +2365,7 @@ You can use the CTRL-^ command to load a buffer by specifying the buffer
 number. For example, to load buffer number 5, you have to use the 5 CTRL-^
 command.
 
-For more information, read
+For more information, read:
 
 B<:help CTRL-^>
 
@@ -2341,7 +2383,7 @@ command:
 
  :tab :sball
 
-For more information, read
+For more information, read:
 
 B<:help :ball>
 
@@ -2354,7 +2396,7 @@ delete a buffer without exiting Vim. For example:
 
  :bdelete file1
 
-For more information, read
+For more information, read:
 
 B<:help :bdelete>
 
@@ -2372,7 +2414,7 @@ ending line numbers in the current buffer. Instead of using '%' as the
 range, you should specify numbers for the range. For example, to delete all
 the buffers, you can use the command ":1,9999bd".
 
-For more information, read
+For more information, read:
 
 B<:help :bd>
 
@@ -2394,7 +2436,7 @@ number:
 You can also include the "%n" field to the 'statusline' option to display
 the current buffer number on the statusline.
 
-For more information read,
+For more information, read:
 
 B<:help CTRL-G>
 
@@ -2414,7 +2456,7 @@ the current buffer.
 
  :bnext | bdelete #
 
-For more information read,
+For more information, read:
 
 B<:help :bnext>
 
@@ -2434,7 +2476,7 @@ the next buffer and the CTRL-SHIFT-Tab key to open the previous buffer:
 
 Note, this might not work in the terminal version of Vim.
 
-For more information read,
+For more information, read:
 
 B<:help :bnext>
 
@@ -2454,7 +2496,7 @@ remains unchanged until you write the buffer to the file. A Vim window is a
 viewport onto a buffer. You can use multiple windows on one buffer or
 several windows on different buffers.
 
-For more information, read
+For more information, read:
 
 B<:help usr_08.txt>
 
@@ -2477,7 +2519,7 @@ commands:
 
 You can also use CTRL-W < or CTRL-W > or CTRL-W | commands.
 
-For more information, read
+For more information, read:
 
 B<:help :vertical-resize>
 
@@ -2533,9 +2575,9 @@ layout after zooming into a window.  If you want to restore the Vim window
 layout after zooming into a window, you can use the ZoomWin plugin. You can
 download this plugin from the Vim online website at:
 
-https://www.vim.org/scripts/script.php?script_id=508
+ https://www.vim.org/scripts/script.php?script_id=508
 
-For more information, read
+For more information, read:
 
 B<:help CTRL-W_o>
 
@@ -2560,7 +2602,7 @@ the open windows.  You can use the ":argdo" command to execute an ex
 command on all the files specified in the argument list. And finally you
 can use the ":tabdo" command to execute an ex command in all open tab pages.
 
-For more information, read
+For more information, read:
 
 B<:help :windo>
 
@@ -2585,7 +2627,7 @@ B<:help 26.3>
 You can use 'G' command to jump to the last line in the file and the 'gg'
 command to jump to the first line in the file.
 
-For more information, read
+For more information, read:
 
 B<:help G>
 
@@ -2609,7 +2651,7 @@ You can use the CTRL-O or CTRL-\ CTRL-O command in insert mode to execute a
 single ex command and return back to insert mode without moving the cursor
 column.
 
-For more information, read
+For more information, read:
 
 B<:help 'virtualedit'>
 
@@ -2627,7 +2669,7 @@ horizontal location when scrolling text:
 
  :set nostartofline
 
-For more information, read
+For more information, read:
 
 B<:help 'startofline'>
 
@@ -2645,7 +2687,7 @@ resetting the 'wrap' option:
 
  :set nowrap
 
-For more information, read
+For more information, read:
 
 B<:help gj>
 
@@ -2679,7 +2721,7 @@ A section begins after a form-feed (<C-L>) in the first column and at each
 of a set of section macros, specified by the pairs of characters in the
 'sections' option.
 
-For more information, read
+For more information, read:
 
 B<:help sentence>
 
@@ -2702,6 +2744,7 @@ You can use the following motion commands to jump to the beginning or end
 of a sentence or a paragraph or a section:
 
    motion  position    where
+   ------  ---------   -----------------
    (       beginning   current sentence
    )       end         current sentence
    {       beginning   current paragraph
@@ -2714,7 +2757,7 @@ of a sentence or a paragraph or a section:
 Each of these motions can be preceded by a number which will extend the
 jump forward (or backward).
 
-For more information, read
+For more information, read:
 
 B<:help object-motions>
 
@@ -2727,18 +2770,20 @@ B<:help object-motions>
 You can use one of the following commands to horizontally scroll the screen
 to the left or right:
 
- zl - scroll to the left
- zh - scroll to the right
- zL - scroll half a screenwidth to the left
- zH - scroll half a screenwidth to the right
- zs - scroll to position the cursor at the start of the screen
- ze - scroll to position the cursor at the end of the screen
+ cmd  scroll to
+ ---  --------------------------
+ zl   scroll to the left
+ zh   scroll to the right
+ zL   scroll half a screenwidth to the left
+ zH   scroll half a screenwidth to the right
+ zs   scroll to position the cursor at the start of the screen
+ ze   scroll to position the cursor at the end of the screen
 
 You can use the g0 command to move the cursor to the first character of the
 screen line and the g$ command to move the cursor to the last character of
 the screen line without scrolling the screen.
 
-For more information, read
+For more information, read:
 
 B<:help scroll-horizontal>
 
@@ -2749,7 +2794,7 @@ B<:help scroll-horizontal>
 You can set the "scrollbind" option for each of the buffers to scroll them
 simultaneously.
 
-For more information, read
+For more information, read:
 
 B<:help 'scrollbind'>
 
@@ -2778,7 +2823,7 @@ to map your key sequence to a matching cursor movement command and save
 these mappings in a file. You can then ":source" the file whenever you work
 from that terminal.
 
-For more information, read
+For more information, read:
 
 B<:help 'timeout'>
 
@@ -2813,7 +2858,7 @@ line, add the '>' flag to the 'whichwrap' option:
 The above will work only in normal and visual modes. To use this in insert
 and replace modes, add the '[' and ']' flags respectively.
 
-For more information, read
+For more information, read:
 
 B<:help 'whichwrap'>
 
@@ -2843,7 +2888,7 @@ use Vim as a modeless editor.
 
 You can also start Vim in insert mode using the ":startinsert" ex command.
 
-For more information, read
+For more information, read:
 
 B<:help 'insertmode'>
 
@@ -2868,7 +2913,7 @@ lines (context) above and below the cursor.
 
  :set scrolloff=10
 
-For more information, read
+For more information, read:
 
 B<:help 'scrolloff'>
 
@@ -2883,7 +2928,7 @@ or `` command. You can use the CTRL-O command to go back to older cursor
 positions and the CTRL-I command to go to the newer cursor positions in the
 jump list.
 
-For more information, read
+For more information, read:
 
 B<:help 03.10>
 
@@ -2922,7 +2967,7 @@ redrawing the window pressing <CTRL-L>
  :nnoremap <silent> <C-L> <C-L>:nohls<CR>
 
 
-For more information, read
+For more information, read:
 
 B<:help 'hlsearch'>
 
@@ -2936,7 +2981,7 @@ You can either use '\r' or <CTRL-V><CTRL-M> to enter a carriage return
 character in a pattern. In Vim scripts, it is better to use '\r' for the
 carriage return character.
 
-For more information, read
+For more information, read:
 
 B<:help sub-replace-special>
 
@@ -2951,7 +2996,7 @@ CTRL-V key and then pressing the CTRL-M key.
 
 You can also use the "\r" character. In Vim scripts, "\r" is preferred.
 
-For more information, read
+For more information, read:
 
 B<:help c_CTRL-V>
 
@@ -2971,7 +3016,7 @@ can use the following command to search for the special character:
 
 where, ^V is entered by pressing CTRL-V.
 
-For more information, read
+For more information, read:
 
 B<:help ga>
 
@@ -2989,7 +3034,7 @@ non-printable characters in a file:
  :set hlsearch
  /\(\p\|$\)\@!.
 
-For more information, read
+For more information, read:
 
 B<:help /\p>
 
@@ -3015,7 +3060,7 @@ example:
 The \< atom matches the beginning of the word and the \> atom matches the
 end of the word.
 
-For more information, read
+For more information, read:
 
 B<:help /\<>
 
@@ -3029,7 +3074,7 @@ You can press the * key to search forward for the current word under the
 cursor.  To search backward, you can press the # key. Note that only whole
 keywords will be searched using these commands.
 
-For more information, read
+For more information, read:
 
 B<:help star>
 
@@ -3058,7 +3103,7 @@ directive:
 
  /\c<pattern>
 
-For more information, read
+For more information, read:
 
 B<:help 'ignorecase'>
 
@@ -3080,7 +3125,7 @@ The main difference is the use of '\w' and '\k', where the latter is based
 on the 'iskeyword' option which may include accented and other language
 specific characters.
 
-For more information, read
+For more information, read:
 
 B<:help /\1>
 
@@ -3127,7 +3172,7 @@ To count the number of words made up of non-space characters, you can use
 
  :%s/\S\+/&/gn
 
-For more information, read
+For more information, read:
 
 B<:help count-items>
 
@@ -3149,7 +3194,7 @@ end of the matched word. For example
 
  /mypattern/e
 
-For more information about search offsets, read
+For more information about search offsets, read:
 
 B<:help search-offset>
 
@@ -3168,7 +3213,7 @@ You can search for an empty line using:
  /^\s*$
 
 The latter also matches lines, that consist only of white space, while the
-former only matches true empty lines. For more information, read
+former only matches true empty lines. For more information, read:
 
 B<:help /^>
 
@@ -3188,7 +3233,7 @@ You can search for a line containing only a single character using:
 
  /^\s*\a\s*$
 
-For more information, read
+For more information, read:
 
 B<:help /^>
 
@@ -3209,7 +3254,7 @@ ex command on multiple files. For example:
 
  :argdo %s/foo/bar/g|upd
 
-For more information, read
+For more information, read:
 
 B<:help :argdo>
 
@@ -3229,7 +3274,7 @@ B<:help :tabdo>
 You can use the 'e' flag to the substitute command to continue processing
 other commands in a map, when a pattern is not found.
 
-For more information, read
+For more information, read:
 
 B<:help :s_flags>
 
@@ -3243,7 +3288,7 @@ occurrence of the character @ in a line, you can use the command 5f@. This
 assumes the cursor is at the beginning of the line - and that this first
 character is not the one your are looking for.
 
-For more information, read
+For more information, read:
 
 B<:help f>
 
@@ -3270,7 +3315,7 @@ character using the following command:
 Note that in the above command, if you use \n instead of \r, then the tab
 characters will not be replaced by a new-line character.
 
-For more information, read
+For more information, read:
 
 B<:help sub-replace-special>
 
@@ -3316,7 +3361,7 @@ Or you use digraphs to enter the character. For example enter:
 
 to search for the above character.
 
-For more information, read
+For more information, read:
 
 B<:help i_CTRL-V_digit>
 
@@ -3343,7 +3388,7 @@ characters, you can use one of the following commands:
  /^.*\%>80c.*$
  /^.*\%>80v.*$
 
-For more information, read
+For more information, read:
 
 B<:help /\{>
 
@@ -3376,7 +3421,7 @@ following command:
 
  :g/<pattern>/#
 
-For more information, read
+For more information, read:
 
 B<:help :global>
 
@@ -3403,7 +3448,7 @@ following search command:
 
  /Hello\_s\+World
 
-For more information, read
+For more information, read:
 
 B<:help 27.8>
 
@@ -3426,7 +3471,7 @@ a buffer, you can use the following command:
 
  /white\%>9l\%<31l
 
-For more information, read
+For more information, read:
 
 B<:help /\%l>
 
@@ -3444,7 +3489,7 @@ the following command:
 
  :autocmd BufUnload * let @/ = ""
 
-For more information, read
+For more information, read:
 
 B<:help @/>
 
@@ -3453,6 +3498,7 @@ B<:help :let-@>
 B<:help autocmd-searchpat>
 
 B<:help last-pattern>
+
 
 
 =head2 11.24. Why does this pattern 'a.\{-}p\@!' not match?
@@ -3502,6 +3548,7 @@ B<:help @/>
 B<:help /<CR>>
 
 
+
 =head2 11.26. How can I operate on a search match?
 
 The 'gn' command makes it easy to operate on regions of text that match
@@ -3530,6 +3577,7 @@ B<:help gN>
 
 
 
+
 =head1 CHANGING TEXT
 
 
@@ -3542,7 +3590,7 @@ remove all the trailing white space characters:
 
  :%s/\s\+$//
 
-For more information, read
+For more information, read:
 
 B<:help :%>
 
@@ -3568,7 +3616,7 @@ Alternatively use:
 
  :%s/  \+/ /g
 
-For more information, read
+For more information, read:
 
 B<:help :%>
 
@@ -3589,6 +3637,8 @@ line only:
 
 The explanation for this command is below:
 
+ part            description
+ -----           --------------------------
  :v/./           Execute the following command for all lines not
                  containing a character (empty lines).
   .,             Use the current line as the start of the range of
@@ -3602,7 +3652,7 @@ Note that this will give an error message if the empty lines are at the end
 of the file. To correct this, you have to add a temporary line at the end
 of the file, execute the command and then remove the temporary line.
 
-For more information, read
+For more information, read:
 
 B<:help :v>
 
@@ -3638,7 +3688,7 @@ You can use the "yiw" (yank inner word without whitespace) command or the
 "yaw" (yank a word with whitespace) command to copy/yank the current
 word.
 
-For more information, read
+For more information, read:
 
 B<:help 04.6>
 
@@ -3666,7 +3716,7 @@ another line, first mark the position using the 'ma' command, go to the
 start of the yank position, and then yank till the mark using y`a (note the
 direction of the quote)
 
-For more information, read
+For more information, read:
 
 B<:help yank>
 
@@ -3686,7 +3736,7 @@ want to append some new text to this, you have to use the "A" register
 name. If you use the lowercase register name, then the contents of the
 register will be overwritten with the new text.
 
-For more information, read
+For more information, read:
 
 B<:help quote>
 
@@ -3705,7 +3755,7 @@ use the yank operator followed by a motion command. For example:
 
 From inside the sentence you can use 'yi)' to yank the sentence.
 
-For more information, read
+For more information, read:
 
 B<:help yank>
 
@@ -3743,7 +3793,7 @@ can copy each match to e.g. a list. Altogether this looks like this:
 Now all matches will be in the list and you can post process them as
 wanted.
 
-For more information, read
+For more information, read:
 
 B<:help :g>
 
@@ -3775,7 +3825,7 @@ or
 
  :g!/pattern/d
 
-For more information, read
+For more information, read:
 
 B<:help :v>
 
@@ -3795,7 +3845,7 @@ line using the following command:
 
  :g/pattern/put!
 
-For more information, read
+For more information, read:
 
 B<:help :g>
 
@@ -3815,7 +3865,7 @@ line contains a particular pattern:
 
  :g/<pattern>/+{cmd}
 
-For more information, read
+For more information, read:
 
 B<:help :g>
 
@@ -3838,7 +3888,7 @@ command:
 Unless you want the normal mode commands to be remapped, consider using a
 ":normal!" command instead (note the "!").
 
-For more information, read
+For more information, read:
 
 B<:help :global>
 
@@ -3855,7 +3905,7 @@ In Insert mode, you can copy the character above the cursor to the current
 cursor position by typing <Ctrl-Y>. The same can be done with the
 characters below the cursor by typing <Ctrl-E>.
 
-For more information, read
+For more information, read:
 
 B<:help i_CTRL-Y>
 
@@ -3871,7 +3921,7 @@ You can use the ":put" ex command to insert blank lines. For example, try
  :put =''
  :put! =''
 
-For more information, read
+For more information, read:
 
 B<:help :put>
 
@@ -3884,7 +3934,7 @@ current buffer. In insert mode, you can use the <C-R>% or the
 <C-R>=expand("%") command. In normal mode, you can use the ":put =@%"
 command.
 
-For more information, read
+For more information, read:
 
 B<:help i_CTRL-R>
 
@@ -3905,7 +3955,7 @@ In normal mode, you can use the ":put <register>" command to insert the
 contents of <register>. For example, use the ":put d" command to insert
 the contents of register "d" into the current buffer.
 
-For more information, read
+For more information, read:
 
 B<:help i_CTRL-R>
 
@@ -3928,7 +3978,7 @@ start the virtual mode, use
 
  :set virtualedit=all
 
-For more information, read
+For more information, read:
 
 B<:help 'virtualedit'>
 
@@ -3948,7 +3998,7 @@ To match specifically you could use a more complex substitution like this:
 
 You can also use the command: ciwfoo<C-R>"bar<Esc>
 
-For more information, read
+For more information, read:
 
 B<:help :substitute>
 
@@ -3968,7 +4018,7 @@ the files specified as arguments:
  :args *
  :argdo %s/<your_text>/<replacement_text>/ge | update
 
-For more information, read
+For more information, read:
 
 B<:help :args_f>
 
@@ -3987,7 +4037,7 @@ increment/decrement from the number by specifying a count to the key. This
 works for decimal, octal and hexadecimal numbers. You can change the base
 used by Vim for this operation by modifying the 'nrformats' option.
 
-For more information, read
+For more information, read:
 
 B<:help 26.2>
 
@@ -4017,7 +4067,7 @@ character:
 
  :s/newpattern/~/
 
-For more information, read
+For more information, read:
 
 B<:help :s>
 
@@ -4050,7 +4100,7 @@ line to uppercase, you can use the following command:
 
  :s/\<\(.\)\(\k*\)\>/\u\1\L\2/g
 
-For more information, read
+For more information, read:
 
 B<:help sub-replace-special>
 
@@ -4071,7 +4121,7 @@ keyboard. You can use the ":digraphs" command to display all the currently
 defined digraphs. You can add a new digraph to the list using the
 ":digraphs" command.
 
-For more information, read
+For more information, read:
 
 B<:help digraphs>
 
@@ -4097,7 +4147,7 @@ erase previously entered characters in insert mode:
 
  :set backspace=indent,eol,start
 
-For more information, read
+For more information, read:
 
 B<:help 'backspace'>
 
@@ -4119,7 +4169,7 @@ examples which will join all consecutive lines with a "+" at the end are:
  :g/+$/,/\(^\|[^+]\)$/j
  :g/+$/mark a | .,/\(^\|[^+]\)$/s/+$// | 'a,.j
 
-For more information, read
+For more information, read:
 
 B<:help :g>
 
@@ -4136,7 +4186,7 @@ lines:
 
  :put =@"
 
-For more information, read
+For more information, read:
 
 B<:help :put>
 
@@ -4171,7 +4221,7 @@ a motion command to act on. If you have
 and you want to change the case from the current cursor position to the end
 of line, simply use "~$".
 
-For more information, read
+For more information, read:
 
 B<:help case>
 
@@ -4186,7 +4236,7 @@ You can enter ASCII characters that are not present in the keyboard by
 pressing CTRL-V and then the ASCII character number. You can also use
 digraphs to enter special ASCII characters.
 
-For more information, read
+For more information, read:
 
 B<:help i_CTRL-V_digit>
 
@@ -4213,7 +4263,7 @@ digraphs for all characters, together with their value in decimal and
 alpha. You can enter a non-printable character by entering CTRL-K followed
 by two alphanumeric characters (a digraph).
 
-For more information, read
+For more information, read:
 
 B<:help :ascii>
 
@@ -4262,7 +4312,7 @@ command is used to perform a substitute command only on lines, that
 match 'TODO'. After the substitute command has taken place, the variable
 i will be incremented by 1.
 
-For more information, read
+For more information, read:
 
 B<:help sub-replace-special>
 
@@ -4277,6 +4327,7 @@ B<:help printf()>
 B<:help :execute>
 
 B<:help :global>
+
 
 
 =head2 12.34. How do I exchange (swap) two characters or words or lines?
@@ -4298,7 +4349,7 @@ All of the above operations will change the " unnamed register.
 You can use the ":m +" ex command to exchange two lines without changing the
 unnamed register.
 
-For more information, read
+For more information, read:
 
 B<:help x>
 
@@ -4331,7 +4382,7 @@ To remove '_' as a word delimiter, you can use
 
  :set iskeyword-=_
 
-For more information, read
+For more information, read:
 
 B<:help 'iskeyword'>
 
@@ -4373,7 +4424,7 @@ Vim supports completion of the following items:
 User defined completions and omni completions are often set by filetype
 plugins.
 
-For more information, read
+For more information, read:
 
 B<:help 24.3>
 
@@ -4387,7 +4438,7 @@ In insert mode, you can use the CTRL-X CTRL-F command sequence to complete
 filenames that start with the same characters as in the current line before
 the cursor.
 
-For more information, read
+For more information, read:
 
 B<:help compl-filename>
 
@@ -4399,7 +4450,7 @@ B<:help compl-filename>
 You can use CTRL-X CTRL-N and CTRL-X CTRL-P keys to complete words that are
 present after the just completed word.
 
-For more information, read
+For more information, read:
 
 B<:help i_CTRL-X_CTRL-P>
 
@@ -4430,7 +4481,7 @@ range of text. For example:
  gwap - Format current paragraph (and don't move cursor)
  gq3j - Format the current and the next 3 lines
 
-For more information, read
+For more information, read:
 
 B<:help gq>
 
@@ -4458,7 +4509,7 @@ Now to break the long lines in a file to the length defined by the
 
  :g/./normal gqq
 
-For more information, read
+For more information, read:
 
 B<:help 'textwidth'>
 
@@ -4481,7 +4532,7 @@ all paragraphs in a specific range, use:
 
  :'a,'bg/\S/normal gq}
 
-For more information, read
+For more information, read:
 
 B<:help gq>
 
@@ -4512,7 +4563,7 @@ You can use the 'n' flag in the 'formatoptions' to align the text.
 With this option, when formatting text, Vim will recognize numbered lists.
 For this option to work, the 'autoindent' option also must be set.
 
-For more information, read
+For more information, read:
 
 B<:help 'formatoptions'>
 
@@ -4530,7 +4581,7 @@ CTRL-D key to delete on shiftwidth of indent at the start of the current
 line. You can also use the CTRL-O >> and CTRL-O << commands to indent the
 current line in insert mode.
 
-For more information, read
+For more information, read:
 
 B<:help i_CTRL-T>
 
@@ -4554,7 +4605,7 @@ You can format/indent an entire file using the gg=G command, where
  =  - apply indentation
  G  - till end of file
 
-For more information, read
+For more information, read:
 
 B<:help gg>
 
@@ -4573,7 +4624,7 @@ B<:help C-indenting>
 You can use the '>>' and '<<' commands to increase or decrease the
 indentation of the current line.
 
-For more information, read
+For more information, read:
 
 B<:help shift-left-right>
 
@@ -4593,7 +4644,7 @@ indent the lines
 
  :10,20>
 
-For more information, read
+For more information, read:
 
 B<:help shift-left-right>
 
@@ -4616,7 +4667,7 @@ used, when the 'shiftwidth' option is zero.
 
  :set shiftwidth=4
 
-For more information, read
+For more information, read:
 
 B<:help 'shiftwidth'>
 
@@ -4635,7 +4686,7 @@ present, remove it. Also, depending on your preference, you may also want
 to check the value of the 'autoindent', 'smartindent', 'cindent' and
 'indentexpr' options and turn them off as needed.
 
-For more information, read
+For more information, read:
 
 B<:help :filetype-indent-off>
 
@@ -4656,7 +4707,7 @@ You can use the 'FileType' autocommand to set the 'textwidth' option:
 
  autocmd FileType mail set tw=<your_value>
 
-For more information, read
+For more information, read:
 
 B<:help :autocmd>
 
@@ -4673,7 +4724,7 @@ Vim will auto-magically break the newly entered lines. For example:
 
  :set textwidth=75
 
-For more information, read
+For more information, read:
 
 B<:help 'textwidth'>
 
@@ -4731,7 +4782,7 @@ use the following command:
 
  :e ++ff=dos filename
 
-For more information, read
+For more information, read:
 
 B<:help 'fileformats'>
 
@@ -4882,7 +4933,7 @@ symbols.
 
  :set display=lastline
 
-For more information, read
+For more information, read:
 
 B<:help 'display'>
 
@@ -4898,7 +4949,7 @@ example, to convert all the tabs to white spaces, use
  :set expandtab
  :retab
 
-For more information, read
+For more information, read:
 
 B<:help :retab>
 
@@ -4922,7 +4973,7 @@ word processor:
  :set showbreak=>>>
 
 You can use the 'gk' and 'gj' commands to move one screen line up and down.
-For more information, read
+For more information, read:
 
 B<:help 'wrap'>
 
@@ -4949,7 +5000,7 @@ character.
 To join lines without adding or removing any space characters, you can use
 the gJ or ":join!" commands.
 
-For more information, read
+For more information, read:
 
 B<:help gJ>
 
@@ -4983,7 +5034,7 @@ If CTRL-V does not work as expected, it may have been remapped to CTRL-Q by
 the mswin.vim script which is often sourced by a vimrc on Windows machines
 to mimic some common short cuts from other programs.
 
-For more information, read
+For more information, read:
 
 B<:help 04.4>
 
@@ -5000,7 +5051,7 @@ B<:help Q_vi>
 You can use the Vim block-wise visual mode to select the column of text and
 apply an operator (delete, change, copy, etc) on it.
 
-For more information, read
+For more information, read:
 
 B<:help visual-block>
 
@@ -5017,7 +5068,7 @@ command. After visually selecting the lines, press ":" to go to the command
 mode.  Vim will automatically insert the visual range '<,'>. You can run
 any ex-command on the visual range.
 
-For more information, read
+For more information, read:
 
 B<:help v_:>
 
@@ -5036,7 +5087,7 @@ will operate on all the selected lines (instead of the selected
 columns). You can use the vis.vim or NrrwRgn plugin script from
 https://www.vim.org scripts archive to do this.
 
-For more information, read
+For more information, read:
 
 B<:help cmdline-ranges>
 
@@ -5054,7 +5105,7 @@ You can select the entire file in visual mode using ggVG.
  V  - Start linewise visual mode
  G  - goto the end of the file.
 
-For more information, read
+For more information, read:
 
 B<:help gg>
 
@@ -5073,7 +5124,7 @@ You can use the 'gv' command to reselect the last selected visual area. You
 can also use the marks '< and '> to jump to the beginning or the end of the
 last selected visual area.
 
-For more information, read
+For more information, read:
 
 B<:help gv>
 
@@ -5088,7 +5139,7 @@ B<:help '>>
 You can use the 'o' command to jump to the beginning/end of a visually
 selected region.
 
-For more information, read
+For more information, read:
 
 B<:help v_o>
 
@@ -5110,7 +5161,7 @@ option is also automatically set when you use the "behave mswin" command.
 Select mode looks like visual mode, but it is similar to the selection mode
 in MS-Windows.
 
-For more information, read
+For more information, read:
 
 B<:help Select-mode>
 
@@ -5135,7 +5186,7 @@ option:
 Note that by default, the 'selectmode' option will be set to empty, so that
 always visual mode is used.
 
-For more information, read
+For more information, read:
 
 B<:help 'selectmode'>
 
@@ -5152,7 +5203,7 @@ text. The '[ mark is set to the beginning of the last changed/yanked text
 and the '] mark is set to the end of the last changed/yanked text. To
 visually select this block of text use the command '[v']
 
-For more information, read
+For more information, read:
 
 B<:help '[>
 
@@ -5182,7 +5233,7 @@ are currently editing:
 
  :!xpdf %<.pdf
 
-For more information, read
+For more information, read:
 
 B<:help :_%>
 
@@ -5204,7 +5255,7 @@ enter/return key.
 In a similar vain, the search history can be edited with "q/" and "q?"
 commands.
 
-For more information, read
+For more information, read:
 
 B<:help cmdline-window>
 
@@ -5215,7 +5266,7 @@ B<:help cmdline-window>
 You can use the Q command to switch from Vi mode to Ex mode. To switch from
 Ex mode back to the Vi mode, use the :vi command.
 
-For more information, read
+For more information, read:
 
 B<:help Q>
 
@@ -5252,7 +5303,7 @@ following set of commands:
  :g/HelloWord/p
  :redir END
 
-For more information, read
+For more information, read:
 
 B<:help :redir>
 
@@ -5272,7 +5323,7 @@ option to 'list':
 
  :set wildmode=list
 
-For more information, read
+For more information, read:
 
 B<:help 'wildmode'>
 
@@ -5296,7 +5347,7 @@ is to open the command line window using q: from normal mode or CTRL-F from
 the command-line mode. In the command line window you can use all the Vim
 commands to edit the command line.
 
-For more information, read
+For more information, read:
 
 B<:help c_CTRL-R>
 
@@ -5315,7 +5366,7 @@ An alternative solution, is to use the histadd() function like this:
 
  :call histadd(':', 'echo strftime("%c")')
 
-For more information, read
+For more information, read:
 
 B<:help c_<Esc>>
 
@@ -5330,7 +5381,7 @@ option:
 
  :set cmdheight=2
 
-For more information, read
+For more information, read:
 
 B<:help 'cmdheight'>
 
@@ -5351,7 +5402,7 @@ B<:help 05.7>
 You can remove the $HOME/.viminfo or the $HOME/_viminfo file to get rid of
 these error messages.
 
-For more information, read
+For more information, read:
 
 B<:help viminfo-errors>
 
@@ -5372,7 +5423,7 @@ feature by setting the 'viminfo' option to an empty string in your local
 
  :set viminfo=""
 
-For more information, read
+For more information, read:
 
 B<:help 'viminfo'>
 
@@ -5399,7 +5450,7 @@ Note, this will only work reliably, when Vim can detect the FocusLost
 and FocusGained autocommands correctly. This means it should work with
 GVim but might depend on your terminal for konsole vim.
 
-For more information, read
+For more information, read:
 
 B<:help 21.3>
 
@@ -5447,7 +5498,7 @@ You can use the Vim remote server functionality to do this:
 
  $ gvim --servername myVIM --remote-send "<C-\><C-N>:wall<CR>"
 
-For more information, read
+For more information, read:
 
 B<:help client-server>
 
@@ -5480,7 +5531,7 @@ You can use the ":options" command to open the Vim option window:
 
 This window can be used for viewing and setting all the options.
 
-For more information, read
+For more information, read:
 
 B<:help :options>
 
@@ -5498,7 +5549,7 @@ You can also suffix the option with "!" to toggle the value:
  :set ignorecase!
  :set hlsearch!
 
-For more information, read
+For more information, read:
 
 B<:help set-option>
 
@@ -5528,7 +5579,7 @@ You can also use the following command to set an option locally:
 
  :let &l:{option-name} = <value>
 
-For more information, read
+For more information, read:
 
 B<:help :setlocal>
 
@@ -5543,7 +5594,7 @@ character. For example:
 
  :set tags=tags\ /usr/tags
 
-For more information, read
+For more information, read:
 
 B<:help option-backslash>
 
@@ -5565,7 +5616,7 @@ in the first line.
 The 'modelines' settings specifies the number of
 lines that will be checked for the Vim set commands.
 
-For more information, read
+For more information, read:
 
 B<:help 21.6>
 
@@ -5586,7 +5637,7 @@ lines.
 
  :set number
 
-For more information, read
+For more information, read:
 
 B<:help 'number'>
 
@@ -5633,7 +5684,7 @@ trailing space characters will be displayed with a '.' character.
 
  :set listchars=trail:.
 
-For more information, read
+For more information, read:
 
 B<:help 'listchars'>
 
@@ -5649,7 +5700,7 @@ the status line:
 
  :set ruler
 
-For more information, read
+For more information, read:
 
 B<:help 'ruler'>
 
@@ -5663,7 +5714,7 @@ last line.
 
  :set showmode
 
-For more information, read
+For more information, read:
 
 B<:help 'showmode'>
 
@@ -5677,7 +5728,7 @@ status line:
 
  :set showcmd
 
-For more information, read
+For more information, read:
 
 B<:help 'showcmd'>
 
@@ -5689,7 +5740,7 @@ B<:help 'showcmd'>
 You can set the 'statusline' option to display different values/settings in
 the Vim status line.
 
-For more information, read
+For more information, read:
 
 B<:help 'statusline'>
 
@@ -5707,7 +5758,7 @@ You can set the 'laststatus' option to 2 to display the status line always.
 
  :set laststatus=2
 
-For more information, read
+For more information, read:
 
 B<:help 'laststatus'>
 
@@ -5720,7 +5771,7 @@ To make a Vim option setting persistent across different Vim instances, add
 your setting to the .vimrc or .gvimrc file. You can also use the ":mkvimrc"
 command to generate a vimrc file for the current settings.
 
-For more information, read
+For more information, read:
 
 B<:help save-settings>
 
@@ -5758,7 +5809,7 @@ than the value for the timeout option. Setting the timeout option to a
 larger value can help alleviate problems that appear when using function
 keys over a slow line.
 
-For more information, read
+For more information, read:
 
 B<:help 'ttimeout'>
 
@@ -5772,7 +5823,7 @@ characters, add the $ flag to the 'cpoptions' option:
 
  :set cpoptions+=$
 
-For more information, read
+For more information, read:
 
 B<:help 'cpoptions'>
 
@@ -5795,7 +5846,7 @@ remove the flags one by one:
 
  :set formatoptions-=t formatoptions-=n
 
-For more information, read
+For more information, read:
 
 B<:help :set-=>
 
@@ -5820,7 +5871,7 @@ To find out, where the key has been mapped, prefix the :verbose command:
 
  :verbose :map <key>
 
-For more information, read
+For more information, read:
 
 B<:help map-listing>
 
@@ -5834,7 +5885,7 @@ You can list all the user-defined key mappings using:
 
  :map
 
-For more information, read
+For more information, read:
 
 B<:help map-listing>
 
@@ -5860,7 +5911,7 @@ the unmap command:
  :unmap <buffer> <key>
  :unmap! <buffer> <key>
 
-For more information, read
+For more information, read:
 
 B<:help :unmap>
 
@@ -5922,7 +5973,7 @@ B<:help mapleader>
 
      :map <C-Right>  <your_command_to_be_mapped>
 
-For more information, read
+For more information, read:
 
 B<:help map-keys-fails>
 
@@ -5966,6 +6017,7 @@ in the future to enable Vim to distinguish between various keys even in
 console mode. (e.g.
 https://groups.google.com/d/msg/vim_dev/2bp9UdfZ63M/sajb9KM0pNYJ)
 
+
 =head2 20.6. How do I map the numeric keypad keys?
 
 First make sure that the numeric keypad keys are passed to Vim. Next, you
@@ -5976,7 +6028,7 @@ can use the following command to map the numeric keypad keys:
 where, <kSomething> can be kHome, kEnd, kPageUp, kPageDown, kPlus, kMinus,
 kDivide, kMultiply, kEnter, etc.
 
-For more information, read
+For more information, read:
 
 B<:help key-codes>
 
@@ -6003,7 +6055,7 @@ use:
 
  :smap <F3> <your mapping here>
 
-For more information, read
+For more information, read:
 
 B<:help :vmap>
 
@@ -6014,6 +6066,7 @@ B<:help :smap>
 B<:help map-modes>
 
 B<:help 40.1>
+
 
 
 =head2 20.8. How do I create a mapping that works only in normal and operator
@@ -6032,6 +6085,7 @@ for visual and select mode:
 
 	:map <f3> <your mapping here>
 	:vunmap <f3>
+
 
 =head2 20.9. In a Vim script, how do I know which keys to use for my mappings, so
    that the mapped key will not collide with an already used key?
@@ -6059,7 +6113,7 @@ When writing a plugin or other script, more often than not, it is advisable
 to use :noremap instead of :map to avoid side effects from user defined
 mappings.
 
-For more information, read
+For more information, read:
 
 B<:help <Leader>>
 
@@ -6086,7 +6140,7 @@ pressed.
  :map <F7> <Nop>
  :map! <F7> <Nop>
 
-For more information, read
+For more information, read:
 
 B<:help <Nop>>
 
@@ -6113,7 +6167,7 @@ Use the following mapping:
 Note, that the <S-Tab> mapping will work only if Vim receives the correct
 key sequence. This is mostly the case with GUI Vim.
 
-For more information, read
+For more information, read:
 
 B<:help :inoremap>
 
@@ -6153,7 +6207,7 @@ The 'compatible' option must be reset:
 
  :set nocompatible
 
-For more information, read
+For more information, read:
 
 B<:help 'cpoptions'>
 
@@ -6173,7 +6227,7 @@ You can also try the following command:
 
 There are also other ways to do this.
 
-For more information, read
+For more information, read:
 
 B<:help map_bar>
 
@@ -6187,7 +6241,7 @@ Instead of using the ":map lhs rhs" command, use the ":noremap lhs rhs"
 command. For abbreviations, use "noreabbrev lhs rhs". The "nore" prefix
 prevents the mapping or abbreviation from being expanded again.
 
-For more information, read
+For more information, read:
 
 B<:help :noremap>
 
@@ -6213,7 +6267,7 @@ the next key. If the 'timeout' option is set (which is the default), then
 Vim will timeout after waiting for the period specified with the
 'timeoutlen' option (default is 1 second).
 
-For more information, read
+For more information, read:
 
 B<:help map-typing>
 
@@ -6255,7 +6309,7 @@ the visual mode and displayed on the command line. If the visual range is
 not removed using <C-U>, then the output from the external command will
 replace the visually selected text.
 
-For more information, read
+For more information, read:
 
 B<:help :vmap>
 
@@ -6277,9 +6331,10 @@ distinguish between the Ctrl-I and the <Tab> key. When you map the Ctrl-I
 key, the <Tab> key is also mapped (and vice versa). The same restriction
 applies for the Ctrl-[ key and the <Esc> key.
 
-For more information, read
+For more information, read:
 
 B<:help keycodes>
+
 
 
 =head2 20.19. How do I define a map to accept a count?
@@ -6291,6 +6346,7 @@ Use the @= command to use an expression. For example,
 Now you can specify a count to the '=' command.
 
 B<:help complex-repeat>
+
 
 
 =head2 20.20. How can I make my normal mode mapping work from within Insert
@@ -6355,7 +6411,8 @@ insert mode, these strategies can be used:
  :nnoremap zC zC<C-\><C-N>VzCzz
 
 
-For more information, read
+For more information, read:
+
 B<:help i_CTRL-O>
 
 B<:help map_bar>
@@ -6363,7 +6420,6 @@ B<:help map_bar>
 B<:help i_CTRL-\_CTRL-O>
 
 B<:help CTRL-\_CTRL-N>
-
 
 
 
@@ -6382,7 +6438,7 @@ following abbreviation can be used to correct "teh" with "the":
 Vim supports abbreviations in insert mode, replace mode and command-line
 mode.
 
-For more information, read
+For more information, read:
 
 B<:help 24.7>
 
@@ -6407,7 +6463,7 @@ the following text:
 --
 ---------
 
-For more information, read
+For more information, read:
 
 B<:help abbreviations>
 
@@ -6432,7 +6488,7 @@ Now, define your abbreviations using the new "Iabbr" command instead of the
 builtin "iabbrev" command. With this command, after expanding the
 abbreviated text, the next typed space character will be discarded.
 
-For more information, read
+For more information, read:
 
 B<:help abbreviations>
 
@@ -6456,7 +6512,7 @@ Some other forms of the above abbreviation are listed below:
  iabbrev hml  <C-R>=strftime("%d/%m/%y %H:%M:%S")<CR>
  iabbrev hms  <C-R>=strftime("%H:%M:%S")<CR>
 
-For more information, read
+For more information, read:
 
 B<:help strftime()>
 
@@ -6469,7 +6525,7 @@ B<:help i_CTRL-R>
 You can prevent an abbreviation from expanding in insert mode by typing
 CTRL-V before the character after the abbreviated word.
 
-For more information, read
+For more information, read:
 
 B<:help abbreviations>
 
@@ -6486,7 +6542,7 @@ B<:help abbreviations>
 You can repeat the last editing operation using the '.' command. This will
 repeat the last simple change like a insert, delete, change, paste, etc.
 
-For more information, read
+For more information, read:
 
 B<:help 04.3>
 
@@ -6514,7 +6570,7 @@ command line argument to play it back:
 
  $ vim -s <file_name>
 
-For more information, read
+For more information, read:
 
 B<:help 10.1>
 
@@ -6535,7 +6591,7 @@ modify the register. For example:
 
  :let @a = "iHello World\<Esc>"
 
-For more information, read
+For more information, read:
 
 B<:help recording>
 
@@ -6559,7 +6615,7 @@ set of key sequences using qa ..... q. The recorded key sequences are
 stored in the register 'a'. You can paste the contents of register 'a'
 using "ap.
 
-For more information, read
+For more information, read:
 
 B<:help recording>
 
@@ -6577,7 +6633,7 @@ key sequence, when the yank is performed, register 0 is overwritten with
 the yanked text. So your recording stored in register 0 is lost. You have
 to use some other register.
 
-For more information, read
+For more information, read:
 
 B<:help registers>
 
@@ -6596,7 +6652,7 @@ read-only file:
 
  :autocmd FileChangedRO * call MyCheckoutFunction()
 
-For more information, read
+For more information, read:
 
 B<:help FileChangedRO>
 
@@ -6609,7 +6665,7 @@ when entering a buffer. For example:
 
  :autocmd BufEnter *.c set formatoptions=croqt
 
-For more information, read
+For more information, read:
 
 B<:help BufEnter>
 
@@ -6622,7 +6678,7 @@ when entering a window. For example:
 
  :autocmd WinEnter *.c call MyFunction()
 
-For more information, read
+For more information, read:
 
 B<:help WinEnter>
 
@@ -6635,7 +6691,7 @@ You can use the special words <afile> or <abuf> in an autocmd to get the
 name of the file or the buffer number for which the autocommand is
 executed.
 
-For more information, read
+For more information, read:
 
 B<:help :<afile>>
 
@@ -6653,7 +6709,7 @@ the modified buffers whenever Vim loses focus:
 
  :autocmd FocusLost * wall
 
-For more information, read
+For more information, read:
 
 B<:help FocusLost>
 
@@ -6668,7 +6724,7 @@ exits. For example,
 
  :autocmd VimLeave * call MyCleanupFunction()
 
-For more information, read
+For more information, read:
 
 B<:help VimLeave>
 
@@ -6694,7 +6750,7 @@ To disable the syntax highlighting, you can use the following command:
 
  :syntax off
 
-For more information, read
+For more information, read:
 
 B<:help 06.1>
 
@@ -6730,7 +6786,7 @@ supported only in the Motif or Athena versions:
 
  $ gvim -foreground Black -background Wheat
 
-For more information, read
+For more information, read:
 
 B<:help :highlight>
 
@@ -6747,7 +6803,7 @@ the highlight colors to suit a dark/light background:
 
  :set background=dark
 
-For more information, read
+For more information, read:
 
 B<:help 'background'>
 
@@ -6769,7 +6825,7 @@ To change the color modify the LineNr highlight group. For example:
 
 This will give red numbers on a black background in GVIM.
 
-For more information, read
+For more information, read:
 
 B<:help :highlight>
 
@@ -6783,7 +6839,7 @@ visually selected block:
 
  :highlight Visual guibg=red
 
-For more information, read
+For more information, read:
 
 B<:help :highlight>
 
@@ -6804,7 +6860,7 @@ The "NonText" highlighting group is used for "eol", "extends" and
 "precedes" settings in the "listchars" option.  The "SpecialKey"
 highlighting group is used for the "tab" and "trail" settings.
 
-For more information, read
+For more information, read:
 
 B<:help 'listchars'>
 
@@ -6822,7 +6878,7 @@ You can specify the color scheme using the ":colorscheme" command in your
 
  colorscheme evening
 
-For more information, read
+For more information, read:
 
 B<:help :colorscheme>
 
@@ -6842,7 +6898,7 @@ You can also use the command:
 
 Note that this might considerably slow down the screen refreshing.
 
-For more information, read
+For more information, read:
 
 B<:help :syn-sync>
 
@@ -6867,7 +6923,7 @@ matches in comments. This uses the % command to jump to corresponding
 items. Though both plugins provide similar functions they are unrelated
 and work differently.
 
-For more information, read
+For more information, read:
 
 B<:help matchparen>
 
@@ -6886,7 +6942,7 @@ highlighting:
 
  :highlight clear comment
 
-For more information, read
+For more information, read:
 
 B<:help ft-c-syntax>
 
@@ -6901,7 +6957,7 @@ changes. Instead you should create a file under the ~/.vim/after/syntax
 directory with the same name as the original syntax file and add your
 additions to this file.
 
-For more information, read
+For more information, read:
 
 B<:help mysyntaxfile-add>
 
@@ -6919,7 +6975,7 @@ example, to replace the c.vim syntax file in a Unix system, place the new
 c.vim in the ~/.vim/syntax directory. In a MS-Windows system, place the new
 syntax file in the $HOME/vimfiles/syntax or $VIM/vimfiles/syntax directory.
 
-For more information, read
+For more information, read:
 
 B<:help mysyntaxfile-replace>
 
@@ -6946,7 +7002,7 @@ column:
 which highlights 2 columns after the current 'textwidth' setting
 (alternatively, you can use the exact column number).
 
-For more information, read
+For more information, read:
 
 B<:help :match>
 
@@ -6968,7 +7024,7 @@ with the Vim syntax highlighting. Use the following command:
 
  :TOhtml
 
-For more information, read
+For more information, read:
 
 B<:help convert-to-HTML>
 
@@ -6981,9 +7037,10 @@ B<:help :TOhtml>
 You can list the definition of all the current highlight groups using the
 ":highlight" (without any arguments) ex command.
 
-For more information, read
+For more information, read:
 
 B<:help :highlight>
+
 
 
 =head2 24.16. How can I embed one syntax highlighting language into another one?
@@ -6996,9 +7053,10 @@ You can however create your own custom script to define your own
 regions, which will be highlighted with a different language.
 
 See the wiki for a comprehensive solution:
-http://vim.wikia.com/wiki/Different_syntax_highlighting_within_regions_of_a_file
 
-For more information, read
+ http://vim.wikia.com/wiki/Different_syntax_highlighting_within_regions_of_a_file
+
+For more information, read:
 
 B<:help :syn-include>
 
@@ -7018,7 +7076,7 @@ sourced by Vim:
 
  :scriptnames
 
-For more information, read
+For more information, read:
 
 B<:help :scriptnames>
 
@@ -7030,7 +7088,7 @@ Vim has built-in support for a primitive debugger to debug Vim plugins and
 scripts. Using this debugger you can set breakpoints and step through the
 plugin functions.
 
-For more information, read
+For more information, read:
 
 B<:help debug-scripts>
 
@@ -7045,7 +7103,7 @@ modified a Vim option. For example:
 
  :verbose set textwidth?
 
-For more information, read
+For more information, read:
 
 B<:help :set-verbose>
 
@@ -7061,7 +7119,7 @@ You can use the ":messages" command to display the previous messages.
 
  :messages
 
-For more information, read
+For more information, read:
 
 B<:help :messages>
 
@@ -7081,7 +7139,7 @@ letter and don't contain a lower case letter. For this to work, the
 'viminfo' option must contain the '!' flag. Vim will store the variables in
 the viminfo file.
 
-For more information, read
+For more information, read:
 
 B<:help 'viminfo'>
 
@@ -7096,7 +7154,7 @@ B<:help variables>
 You can use the ":startinsert" command to start the insert mode from inside
 a Vim function.
 
-For more information, read
+For more information, read:
 
 B<:help :startinsert>
 
@@ -7110,7 +7168,7 @@ You can use the cursor() function to position the cursor.
 
 Alternatively, use the setpos() function:
 
-    call setpos('.', [bufnum, lnum, col, off])
+     call setpos('.', [bufnum, lnum, col, off])
 
 which set's the cursor in the buffer bufnum to line lnum, column col and
 offset for 'virtualedit'. You can use the getpos() function, to return a
@@ -7123,7 +7181,7 @@ You can also use the following command to change the cursor position:
 
      exe "normal! " . lnum . "G" . col . "|"
 
-For more information, read
+For more information, read:
 
 B<:help cursor()>
 
@@ -7149,7 +7207,7 @@ environment variable using the $env_var syntax:
  if $EDITOR == 'vi'
  endif
 
-For more information, read
+For more information, read:
 
 B<:help expr-env>
 
@@ -7164,7 +7222,7 @@ environment variable.
  if exists("$MY_ENV_VAR")
  endif
 
-For more information, read
+For more information, read:
 
 B<:help exists()>
 
@@ -7195,7 +7253,7 @@ the following command:
 The above command will store the output of the 'ls' command into
 the register 'a'.
 
-For more information, read
+For more information, read:
 
 B<:help :call>
 
@@ -7220,7 +7278,7 @@ You can use the "normal!" command in your script to invoke a normal-mode
 command. This will use the standard functionality of the normal mode
 command and will not use the user-defined mapping.
 
-For more information, read
+For more information, read:
 
 B<:help :normal>
 
@@ -7253,7 +7311,7 @@ one shown below:
  :vmap <F3> "*y:call ...
 
 
-For more information, read
+For more information, read:
 
 B<:help gv>
 
@@ -7277,7 +7335,7 @@ You can use the 'execute' command to evaluate the variable:
 
  :execute '%s/mytext/' . myvar . '/'
 
-For more information, read
+For more information, read:
 
 B<:help :execute>
 
@@ -7286,7 +7344,7 @@ You can also use "\=" in the substitute command to evaluate the variable:
 
  :%s/mytext/\=myvar/
 
-For more information, read
+For more information, read:
 
 B<:help sub-replace-special>
 
@@ -7301,7 +7359,7 @@ evaluate the variable into the corresponding value. For example:
 
  :execute "buffer " . bno
 
-For more information, read
+For more information, read:
 
 B<:help :execute>
 
@@ -7328,7 +7386,7 @@ the 'old_tw' variable, you can use the following command:
 
  :let &tw = old_tw
 
-For more information, read
+For more information, read:
 
 B<:help expr-option>
 
@@ -7343,7 +7401,7 @@ You can use the following command to format the just inserted text:
 
  :normal '[=']
 
-For more information, read
+For more information, read:
 
 B<:help '[>
 
@@ -7377,7 +7435,7 @@ character under the cursor:
 
 Note, that the above commands will change the '< and '> marks.
 
-For more information, read
+For more information, read:
 
 B<:help getline()>
 
@@ -7399,7 +7457,7 @@ With some commands, you can use the file name modifiers directly:
  :!gcc -o %:r.o %
  :!xpdf %<.pdf
 
-For more information, read
+For more information, read:
 
 B<:help filename-modifiers>
 
@@ -7418,7 +7476,7 @@ file:
 
  :echo expand("%:t")
 
-For more information, read
+For more information, read:
 
 B<:help filename-modifiers>
 
@@ -7433,7 +7491,7 @@ in insert mode:
 
 Note, that this will only insert the return value of the function.
 
-For more information, read
+For more information, read:
 
 B<:help i_CTRL-R>
 
@@ -7455,7 +7513,7 @@ the result:
 
 You can also use "!" ex-command to run an external command.
 
-For more information, read
+For more information, read:
 
 B<:help system()>
 
@@ -7471,7 +7529,7 @@ B<:help 10.9>
 You can use the predefined Vim v:shell_error variable to get the return
 status of the last run shell command.
 
-For more information, read
+For more information, read:
 
 B<:help v:shell_error>
 
@@ -7490,7 +7548,7 @@ From a Vim script, you can check the value of the 'modified' option:
      echo "File is modified"
  endif
 
-For more information, read
+For more information, read:
 
 B<:help 'modified'>
 
@@ -7506,7 +7564,7 @@ character in a normal mode command:
  :execute "normal \<CR>"
  :execute "normal ixxx\<Esc>"
 
-For more information, read
+For more information, read:
 
 B<:help :execute>
 
@@ -7526,7 +7584,7 @@ character ("\") at the start of the next line. For example,
              \n:>,
              \fb:-
 
-For more information, read
+For more information, read:
 
 B<:help line-continuation>
 
@@ -7548,7 +7606,7 @@ To call a Vim function, you should use the ":call" command instead of the
 
  :call Myfunc()
 
-For more information, read
+For more information, read:
 
 B<:help :call>
 
@@ -7576,7 +7634,7 @@ of the following commands:
 or
  :exe @a
 
-For more information, read
+For more information, read:
 
 B<:help :@>
 
@@ -7591,7 +7649,7 @@ function/mapping are treated as one single operation. When you undo the
 last operation by pressing 'u', all the changes made by the
 function/mapping are reversed.
 
-For more information, read
+For more information, read:
 
 B<:help undo-redo>
 
@@ -7608,7 +7666,7 @@ script and cannot be called from other scripts. To define a function in a
 script/plugin, so that it can be called from other plugins/scripts, define
 the function without the s: prefix.
 
-For more information, read
+For more information, read:
 
 B<:help script-variable>
 
@@ -7624,7 +7682,7 @@ B<:help :scriptnames>
 No. It is not possible to reverse or undo all the commands executed by
 sourcing a script.
 
-For more information, read
+For more information, read:
 
 B<:help :source>
 
@@ -7660,7 +7718,7 @@ type of files. For example, to set the 'textwidth' option to 75 for only
 
  autocmd BufRead *.txt setlocal textwidth=80
 
-For more information, read
+For more information, read:
 
 B<:help filetype-plugin>
 
@@ -7689,18 +7747,20 @@ Depending on the type of the runtime file, you have to place it under a
 specific directory under the above runtime directory. The names of the
 directories are listed below:
 
- colors/   - color scheme files
- compiler/ - compiler files
- doc/      - documentation
- ftplugin/ - filetype plugins
- indent/   - indent scripts
- keymap/   - key mapping files
- lang/     - menu translations
- plugin/   - plugin scripts
- syntax/   - syntax files
- tutor/    - files for vimtutor
+ name        description
+ ----------  ------------------
+ colors/     color scheme files
+ compiler/   compiler files
+ doc/        documentation
+ ftplugin/   filetype plugins
+ indent/     indent scripts
+ keymap/     key mapping files
+ lang/       menu translations
+ plugin/     plugin scripts
+ syntax/     syntax files
+ tutor/      files for vimtutor
 
-For more information, read
+For more information, read:
 
 B<:help your-runtime-dir>
 
@@ -7720,7 +7780,6 @@ after/ directory in any of the 'runtimepath' directories.
   already done by the ftplugin installed with Vim, use an after-directory,
   as follows (replacing foobar by the 'filetype' of the concerned
   files):
-
  - For changes private to one user:
      - on Windows:
          $HOME/vimfiles/after/ftplugin/foobar.vim
@@ -7758,7 +7817,7 @@ the new file.  If you placed the file in the $VIMRTUNTIME/ftplugin runtime
 directory, then Vim will first source the new file and then will source the
 existing filetype plugin file.
 
-For more information, read
+For more information, read:
 
 B<:help ftplugin-overrule>
 
@@ -7781,7 +7840,7 @@ the plugins:
 
  $ vim --noplugin
 
-For more information, read
+For more information, read:
 
 B<:help 'loadplugins'>
 
@@ -7802,7 +7861,7 @@ You can turn off loading the filetype plugins using:
 
  filetype plugin off
 
-For more information, read
+For more information, read:
 
 B<:help :filetype-plugin-on>
 
@@ -7828,7 +7887,7 @@ file with the same name as the original filetype plugin in the
 c.vim filetype plugin, create a c.vim file in the ~/.vim/after/ftplugin
 directory and add your preferences in this file.
 
-For more information, read
+For more information, read:
 
 B<:help ftplugin-overrule>
 
@@ -7845,7 +7904,7 @@ your .vimrc file:
 
  let g:loaded_netrw = 1
 
-For more information, read
+For more information, read:
 
 B<:help netrw>
 
@@ -7873,7 +7932,7 @@ in the ~/.vim directory (or in one of the directories specified in the
      au! BufRead,BufNewFile *.x       setfiletype c
  augroup END
 
-For more information, read
+For more information, read:
 
 B<:help new-filetype>
 
@@ -7898,7 +7957,7 @@ If you want to only enable automatic C indentation, then use:
 
  :set cindent
 
-For more information, read
+For more information, read:
 
 B<:help 'cindent'>
 
@@ -7913,7 +7972,7 @@ B<:help filetype>
 You can configure the Vim C indentation by modifying the value of the
 'cinoptions', 'cinkeys' and 'cinwords' options.
 
-For more information, read
+For more information, read:
 
 B<:help 'cindent'>
 
@@ -7949,7 +8008,7 @@ Also, check the setting for the following options:
  :set smartindent?
  :set indentexpr?
 
-For more information, read
+For more information, read:
 
 B<:help 'cindent'>
 
@@ -7971,7 +8030,7 @@ characters used for the automatic indentation:
 
  :set shiftwidth=4
 
-For more information, read
+For more information, read:
 
 B<:help 'shiftwidth'>
 
@@ -7984,7 +8043,7 @@ You can use the "[d" command to display the definition of a macro, "[i"
 command to display the definition of a variable, "gd" to goto the local
 declaration of a variable and "gD" to go to the global Declaration.
 
-For more information, read
+For more information, read:
 
 B<:help [d>
 
@@ -8008,7 +8067,7 @@ B<:help 29.5>
 You can use '[{' command to jump to the beginning of the code block and ']}
 to jump to the end of the code block from inside the block.
 
-For more information, read
+For more information, read:
 
 B<:help [{>
 
@@ -8044,7 +8103,7 @@ The default filetype plugin for C and C++ files
 then you can add the above lines to the
 ~/.vim/after/ftplugin/cpp.vim file.
 
-For more information, read
+For more information, read:
 
 B<:help formatoptions>
 
@@ -8067,7 +8126,7 @@ line. Enter the comment character and then stop the insert mode by pressing
 <Esc>. Vim will automatically insert the entered characters at the
 beginning of all the selected lines.
 
-For more information, read
+For more information, read:
 
 B<:help visual-block>
 
@@ -8101,7 +8160,7 @@ Another approach is to use the following command:
 This command will search for the header file in the directories specified
 in the 'path' option.
 
-For more information, read
+For more information, read:
 
 B<:help cmdline-special>
 
@@ -8126,7 +8185,7 @@ You may also want to add the 'c' flag to auto-wrap comments using the
 
  :set formatoptions=croq
 
-For more information, read
+For more information, read:
 
 B<:help 30.6>
 
@@ -8148,7 +8207,7 @@ B<:help fo-table>
 You can use the ":make" command to build programs from Vim. The ":make"
 command runs the program specified by the 'makeprg' option.
 
-For more information, read
+For more information, read:
 
 B<:help 30.1>
 
@@ -8173,13 +8232,14 @@ You can use the ":copen" or ":cwindow" command to open the quickfix window
 that contains the compiler output. You can select different error lines
 from this window and jump to the corresponding line in the source code.
 
-For more information, read
+For more information, read:
 
 B<:help :copen>
 
 B<:help :cwindow>
 
 B<:help quickfix>
+
 
 
 =head2 28.3. How can I perform a command for each item in the quickfix/location
@@ -8203,11 +8263,12 @@ occurences by using:
 
  :cdo :%s/Foobar/Foobaz | upd
 
-For more information, read
+For more information, read:
 
 B<:help :cfdo>
 
 B<:help :cdo>
+
 
 
 
@@ -8241,7 +8302,7 @@ You can use the following commands:
      endif
  endfun
 
-For more information, read
+For more information, read:
 
 B<:help 'foldexpr'>
 
@@ -8257,7 +8318,7 @@ folds above the specified value.
 
  :set foldlevelstart=99
 
-For more information, read
+For more information, read:
 
 B<:help 'foldlevelstart'>
 
@@ -8280,7 +8341,7 @@ To start editing with all the folds opened, you can use
 
  :set foldlevelstart=999
 
-For more information, read
+For more information, read:
 
 B<:help 'foldlevelstart'>
 
@@ -8294,7 +8355,7 @@ to a value greater than zero:
 
  :set foldcolumn=2
 
-For more information, read
+For more information, read:
 
 B<:help 'foldcolumn'>
 
@@ -8305,7 +8366,7 @@ B<:help 'foldcolumn'>
 You can use the 'foldtext' option to change the text displayed for a closed
 fold.
 
-For more information, read
+For more information, read:
 
 B<:help 'foldtext'>
 
@@ -8322,7 +8383,7 @@ You can use the ":mkview" command to store manually created folds. Later,
 you can use the ":loadview" command to restore the folds. For this to work,
 the 'viewoptions' must contain "folds".
 
-For more information, read
+For more information, read:
 
 B<:help 28.4>
 
@@ -8356,7 +8417,8 @@ followed by a search for "folding with 'foldmethod'"
 
 A workaround is to temporarily set the foldmethod to manual while in
 insert mode. This is described in the wiki at:
-http://vim.wikia.com/wiki/Keep_folds_closed_while_inserting_text
+
+ http://vim.wikia.com/wiki/Keep_folds_closed_while_inserting_text
 
 
 
@@ -8385,7 +8447,7 @@ To interact between the terminal and Vim, Vim implements several
 interfaces using term_sendkeys(), terminal-api and the client-server
 mechanism.
 
-For more information, read
+For more information, read:
 
 B<:help terminal>
 
@@ -8404,7 +8466,7 @@ to an external command. For example:
 
  :!dict <cword>
 
-For more information, read
+For more information, read:
 
 B<:help :<cword>>
 
@@ -8423,7 +8485,7 @@ following command:
 
  :0r !ls
 
-For more information, read
+For more information, read:
 
 B<:help :r!>
 
@@ -8457,7 +8519,7 @@ range of lines, you can use
 
 The above command will pipe the lines 10-20 to the sort command.
 
-For more information, read
+For more information, read:
 
 B<:help :range!>
 
@@ -8504,7 +8566,7 @@ script, supplied as part of the standard Vim distribution. This shell
 script uses the $VIMRUNTIME/macros/less.vim Vim script to provide less like
 key bindings.
 
-For more information, read
+For more information, read:
 
 B<:help less>
 
@@ -8522,7 +8584,7 @@ You can also press the K key to run the program specified by the
 'keywordprg' option with the keyword under the cursor. By default,
 'keywordprg' is set to run man on the keyword under the cursor.
 
-For more information, read
+For more information, read:
 
 B<:help ft-man-plugin>
 
@@ -8537,7 +8599,7 @@ B<:help 'keywordprg'>
 By default, the Vim diff support uses the 'diff' command. You can change
 this by changing the 'diffexpr' option.
 
-For more information, read
+For more information, read:
 
 B<:help diff-diffexpr>
 
@@ -8554,7 +8616,7 @@ and use the diff mode without folding:
 
 If you like vertically split windows, then replace "-o" with "-O".
 
-For more information, read
+For more information, read:
 
 B<:help vimdiff>
 
@@ -8570,7 +8632,7 @@ B<:help vimdiff>
 Adding support for buffer specific menus is in the Vim TODO list. In the
 mean time, you can try Michael Geddes's plugin, buffermenu.vim:
 
-https://www.vim.org/scripts/script.php?script_id=246
+ https://www.vim.org/scripts/script.php?script_id=246
 
 
 =head2 31.2. How do I change the font used by GUI Vim?
@@ -8594,7 +8656,7 @@ to bringup a dialog which will help you in changing the guifont:
 You can also use the -font Vim command line option to specify the font used
 for normal text.
 
-For more information, read
+For more information, read:
 
 B<:help 'guifont'>
 
@@ -8624,7 +8686,7 @@ of the GUI Vim window. For example:
 
  $ gvim -geometry 80x25+100+300
 
-For more information, read
+For more information, read:
 
 B<:help 31.4>
 
@@ -8639,7 +8701,7 @@ option:
 
  :set guioptions+=b
 
-For more information, read
+For more information, read:
 
 B<:help 'guioptions'>
 
@@ -8655,7 +8717,7 @@ appear in the left side.
  :set guioptions+=l
  :set guioptions-=r
 
-For more information, read
+For more information, read:
 
 B<:help 'guioptions'>
 
@@ -8670,7 +8732,7 @@ You can remove the Vim menubar by removing the 'm' flag from the
 
  :set guioptions-=m
 
-For more information, read
+For more information, read:
 
 B<:help 'guioptions'>
 
@@ -8685,7 +8747,7 @@ select a menu item:
 
  :set winaltkeys=no
 
-For more information, read
+For more information, read:
 
 B<:help 'winaltkeys'>
 
@@ -8705,9 +8767,9 @@ scroll to a different part of the text and jump back to the old position
 using `a. You can also try the following suggestion from the Vim Online
 website:
 
-http://vim.wikia.com/wiki/VimTip320
+ http://vim.wikia.com/wiki/VimTip320
 
-For more information, read
+For more information, read:
 
 B<:help mark-motions>
 
@@ -8721,7 +8783,7 @@ You can set the 'browsedir' option to the default directory to use for the
 
  :set browsedir='<your_dir>'
 
-For more information, read
+For more information, read:
 
 B<:help 'browsedir'>
 
@@ -8736,7 +8798,7 @@ console dialogs instead of GUI dialogs:
 
  :set guioptions+=c
 
-For more information, read
+For more information, read:
 
 B<:help 'guioptions'>
 
@@ -8756,7 +8818,7 @@ By default, GUI Vim will disconnect from the program that started Vim. With
 the '-f' option, GUI Vim will not disconnect from the program that started
 it.
 
-For more information, read
+For more information, read:
 
 B<:help gui-fork>
 
@@ -8771,7 +8833,7 @@ Vim supports only fixed width (mono-spaced) fonts. Proportional fonts are
 not supported.  In the "Select Font" dialog, only fixed width fonts will be
 displayed.
 
-For more information, read
+For more information, read:
 
 B<:help font-sizes>
 
@@ -8786,7 +8848,7 @@ command-line mode:
 
  :set mouse+=c
 
-For more information, read
+For more information, read:
 
 B<:help mouse-using>
 
@@ -8805,7 +8867,7 @@ button:
  :map  <MiddleMouse> <Nop>
  :map! <MiddleMouse> <Nop>
 
-For more information, read
+For more information, read:
 
 B<:help gui-mouse-mapping>
 
@@ -8832,7 +8894,7 @@ Vim window. The 'lines' and 'columns' options specify the number of lines
 and characters to use for the height and the width of the window
 respectively.
 
-For more information, read
+For more information, read:
 
 B<:help 31.4>
 
@@ -8843,6 +8905,7 @@ B<:help 'lines'>
 B<:help 'columns'>
 
 B<:help GUIEnter>
+
 
 
 =head2 31.16. When splitting the Vim window vertically, Vim changes the position.
@@ -8856,6 +8919,7 @@ a window that was "snapped" to a certain position.
 A workaournd to this problem is, to remove gui scrollbars, e.g.
 
  :set guioptions-=L
+
 
 
 =head1 VIM ON UNIX
@@ -8891,7 +8955,7 @@ following commands:
 
 You have to use a proper terminal emulator like xterm with correct TERM
 settings (TERM=xterm) and a correct terminfo/termcap file.
-For more information, read
+For more information, read:
 
 B<:help 'term'>
 
@@ -8914,7 +8978,7 @@ name. You can try using the 'stty' command:
 where, you have to enter the ^H character by pressing the CTRL-V key and
 then the CTRL-H key. Also check the value of your 'backspace' setting.
 
-For more information, read
+For more information, read:
 
 B<:help :fixdel>
 
@@ -8936,7 +9000,7 @@ feature, add the following line to your .vimrc file:
 
  :set t_ti= t_te=
 
-For more information, read
+For more information, read:
 
 B<:help 'restorescreen'>
 
@@ -8963,7 +9027,7 @@ You can also set the 'clipboard' option to
 
 This has the same effect as using the -X command-line argument.
 
-For more information, read
+For more information, read:
 
 B<:help -X>
 
@@ -8996,11 +9060,12 @@ directory. To further analyse this, open the file profile.log and run:
  :enew
  :call setline('.', ['count total (s)   self (s)  script']+map(copy(timings), 'printf("%5u %9s   %8s  %s", v:val[1], v:val[2], v:val[3], v:val[0])'))
 
-For more information, read
+For more information, read:
 
 B<:help --startuptime>
 
 B<:help profiling>
+
 
 
 =head2 32.6. How can I make the cursor in gvim in unix stop blinking?
@@ -9010,7 +9075,7 @@ For example:
 
  :set guicursor=a:blinkon0
 
-For more information, read
+For more information, read:
 
 B<:help 'guicursor'>
 
@@ -9027,7 +9092,7 @@ example:
 
 The last line changes the font of all widgets.
 
-For more information, read
+For more information, read:
 
 B<:help gui-gtk>
 
@@ -9060,7 +9125,7 @@ When Vim is built with support for Python interface, you will have this
 problem. This is a known problem with the python thread library and Vim.  To
 solve this problem, use a Vim binary built without the Python interface.
 
-For more information, read
+For more information, read:
 
 B<:help +python>
 
@@ -9089,7 +9154,7 @@ package to test the color setup. To use this script, follow these steps:
  :e $VIMRUNTIME/syntax/colortest.vim
  :source %
 
-For more information, read
+For more information, read:
 
 B<:help 06.2>
 
@@ -9120,7 +9185,7 @@ of CTRL-V to start the blockwise visual mode. The mswin.vim script maps
 CTRL-Q for staring the blockwise visual mode. So you can use CTRL-Q instead
 of CTRL-V.
 
-For more information, read
+For more information, read:
 
 B<:help CTRL-V>
 
@@ -9149,7 +9214,7 @@ the GUIEnter autocmd to maximize the Vim window on startup:
 
  autocmd GUIEnter * simalt ~x
 
-For more information, read
+For more information, read:
 
 B<:help :simalt>
 
@@ -9167,7 +9232,7 @@ Most probably, you used the mouse wheel to scroll the text in Vim. There is
 a known problem in using intellimouse mouse wheel with Vim. To avoid this
 problem, disable Universal scrolling support for Vim.
 
-For more information, read
+For more information, read:
 
 B<:help intellimouse-wheel-problems>
 
@@ -9201,7 +9266,7 @@ You may want to set the following shell related Vim settings:
 There is a problem with using GNU diff with Vim. You can try using the
 GNU diff.exe built by Ron Aaron from the following link:
 
-http://www.mossbayeng.com/~ron/vim/builds.html
+ http://www.mossbayeng.com/~ron/vim/builds.html
 (This page no longer exists.)
 
 
@@ -9212,13 +9277,13 @@ You can use the "cubiclevim" COM Add-In to use Vim as an external editor
 for MS-Windows Outlook email client. Visit the following URL for more
 information:
 
-https://sourceforge.net/projects/cubiclevim/
+ https://sourceforge.net/projects/cubiclevim/
 
 Note, that currently this works only with MS-Office 2000 and XP.
 
 Also the plugin OutlookVim might be worth a look:
 
-https://www.vim.org/scripts/script.php?script_id=3087
+ https://www.vim.org/scripts/script.php?script_id=3087
 
 
 =head2 33.9. I am using Vim to edit HTML files. How do I start internet explorer
@@ -9236,7 +9301,7 @@ You have to download and use the OLE version of Vim (for example:
 gvim61ole.zip). This file also contains instructions on how to use Vim with
 Visual Studio.
 
-For more information, read
+For more information, read:
 
 B<:help MSVisualStudio>
 
@@ -9249,7 +9314,7 @@ by the VIM environment variable. If you are sharing this system with other
 users, then you can place the files in a directory and set the HOME
 environment variable to this directory.
 
-For more information, read
+For more information, read:
 
 B<:help $HOME-use>
 
@@ -9274,7 +9339,7 @@ except on the day daylight saving time starts.
 This problem will go away the next day after the day the daylight saving
 time starts.
 
-For more information, read
+For more information, read:
 
 B<:help W11>
 
@@ -9293,7 +9358,7 @@ print your file:
  :set printoptions=number:y
  :hardcopy
 
-For more information, read
+For more information, read:
 
 B<:help 'printoptions'>
 
@@ -9307,7 +9372,7 @@ You can use the ":hardcopy" command to print a file with the Vim syntax
 highlighting colors. You can also convert your file to a HTML file using
 the 2html.vim script and print the HTML file.
 
-For more information, read
+For more information, read:
 
 B<:help syntax-printing>
 
@@ -9349,7 +9414,7 @@ the various Vim features. To list all the available options for the
 
  $ configure --help
 
-For more information, read
+For more information, read:
 
 B<:help install>
 
@@ -9365,11 +9430,11 @@ while running the configure script.
  $ ./configure --prefix=/users/xyz
 
 You can enable/disable various Vim feature by supplying different arguments
-to the configure script. For more information about all these options, run
+to the configure script. For more information about all these options, run:
 
  $ ./configure --help
 
-For more information, read
+For more information, read:
 
 B<:help install-home>
 
@@ -9383,7 +9448,6 @@ For a MS-Windows system, Vim can be built using either the Visual C++
 compiler or the Borland C++ compiler or the Ming GCC compiler or the cygwin
 gcc compiler. Follow these steps to build Vim from the sources for
 MS-Windows:
-
  - Download the source (vim##src.zip), runtime (vim##rt.zip) and the
    extra (vim-##-extra.tar.gz) archives from the
    ftp://ftp.vim.org/pub/vim/pc directory.
@@ -9404,7 +9468,7 @@ makefiles. After successfully building the sources, you can copy the
 vim.exe or gvim.exe file to the desired directory along with the files from
 the runtime archive.
 
-For more information, read
+For more information, read:
 
 B<:help install>
 
@@ -9418,7 +9482,7 @@ runtime package. You need to download and install the Vim runtime package.
 For example, for MS-Windows, the name of the Vim 6.1 runtime package is
 vim61rt.zip.
 
-For more information, read
+For more information, read:
 
 B<:help install>
 
@@ -9446,7 +9510,7 @@ function:
      " Set up some menus
  endif
 
-For more information, read
+For more information, read:
 
 B<:help :version>
 
@@ -9461,7 +9525,7 @@ B<:help has()>
 Yes. You can build Vim by optionally enabling/disabling many of the
 features including GUI.
 
-For more information, read
+For more information, read:
 
 B<:help install>
 
@@ -9575,7 +9639,7 @@ to track down the required missing packages using method 4 from above. But
 usually, this works good enough for most people and you won't have to
 bother with the fourth method.
 
-For more information, read
+For more information, read:
 
 B<:help :version>
 
@@ -9602,7 +9666,7 @@ You can also use the "-b" command-line option to edit a binary file:
 You can also use the xxd utility (part of the Vim distribution) to edit
 binary files.
 
-For more information, read
+For more information, read:
 
 B<:help 23.4>
 
@@ -9627,7 +9691,7 @@ following command:
 
  :set visualbell t_vb=
 
-For more information, read
+For more information, read:
 
 B<:help 'visualbell'>
 
@@ -9643,7 +9707,7 @@ B<:help t_vb>
 You can use the 'ga' command to display the ascii value of a displayed
 character.
 
-For more information, read
+For more information, read:
 
 B<:help ga>
 
@@ -9656,7 +9720,7 @@ B<:help :ascii>
 You cannot use zero as a count for a Vim command, as "0" is a command on
 its own, moving to the first column of the line.
 
-For more information, read
+For more information, read:
 
 B<:help 0>
 
@@ -9671,7 +9735,7 @@ You can disable the Vim welcome screen, by adding the 'I' flag to the
 
  :set shortmess+=I
 
-For more information, read
+For more information, read:
 
 B<:help :intro>
 
@@ -9692,7 +9756,7 @@ You can also increase the command height by setting the 'cmdheight' option:
 
  :set cmdheight=2
 
-For more information, read
+For more information, read:
 
 B<:help hit-enter>
 
@@ -9739,7 +9803,7 @@ following command:
 
  $ vim -s mycmds.txt *.pl
 
-For more information, read
+For more information, read:
 
 B<:help -c>
 
@@ -9759,7 +9823,7 @@ followed by any number of normal mode commands and then press <Esc> to get
 back to the insert mode. (This only works, when the 'insertmode' option
 is set).
 
-For more information, read
+For more information, read:
 
 B<:help i_CTRL-O>
 
@@ -9780,7 +9844,7 @@ you can use the following command:
 
  $ vim + +startinsert! myfile.txt
 
-For more information, read
+For more information, read:
 
 B<:help :startinsert>
 
@@ -9813,7 +9877,7 @@ mouse, then Vim doesn't control the mouse and xterm controls the
 mouse.
 
 In the GUI mode, Copy and Paste should just work, depending on the 'mouse'
-setting. For more information, read
+setting. For more information, read:
 
 B<:help 'clipboard'>
 
@@ -9855,6 +9919,7 @@ different filetypes and where to put those modifications so that
 they will not be overwritten.
 
 
+
 =head1 UNICODE
 
 Author: Tony Mechelynck <antoine.mechelynck AT belgacom.net>
@@ -9869,10 +9934,10 @@ using Vim, you should have compiled Vim with the "+multi_byte" compile-time
 option.  You can get more information about Unicode from the following
 sites:
 
-http://www.unicode.org
-https://www.cl.cam.ac.uk/~mgk25/unicode.html
+ http://www.unicode.org
+ https://www.cl.cam.ac.uk/~mgk25/unicode.html
 
-For more information, read
+For more information, read:
 
 B<:help multibyte>
 
@@ -9887,7 +9952,7 @@ The most important are the various "encoding" options, i.e., 'encoding',
 'fileencoding', 'fileencodings' and 'termencoding'. The boolean option
 'bomb' is also significant.
 
-For more information, read
+For more information, read:
 
 B<:help 'encoding'>
 
@@ -9907,7 +9972,7 @@ Basically, the 'encoding' option defines how Vim will represent your data
 internally.  However, all Unicode encodings are represented internally as
 utf-8 and converted (if necessary) when reading and writing.
 
-For more information, read
+For more information, read:
 
 B<:help 'encoding'>
 
@@ -9922,7 +9987,7 @@ for big-endian. If you create a file with an encoding of ucs-2 or ucs-4
 without specifying endianness, Vim will use what is typical of your
 machine.
 
-For more information, read
+For more information, read:
 
 B<:help encoding-names>
 
@@ -9939,7 +10004,7 @@ will check for a byte-order mark. When writing a file, if the 'bomb' option
 is set, Vim will write a byte-order mark on files whose encoding warrants
 it.
 
-For more information, read
+For more information, read:
 
 B<:help 'fileencodings'>
 
@@ -9953,7 +10018,7 @@ The 'fileencoding' option defines the particular encoding which Vim will
 use to write a file. If empty, then the value of the 'encoding' option is
 the default.
 
-For more information, read
+For more information, read:
 
 B<:help 'fileencoding'>
 
@@ -9972,7 +10037,7 @@ When Vim opens a file, it checks it against the encodings listed in
 then Vim sets 'fileencoding' to the null string, i.e., the value of
 'encoding' will be used.
 
-For more information, read
+For more information, read:
 
 B<:help 'fileencodings'>
 
@@ -9986,7 +10051,7 @@ The 'termencoding' option defines how your keyboard encodes the data you
 type.  If empty, Vim assumes that it has the same value as 'encoding'.
 Usually it should be set to something that matches your locale.
 
-For more information, read
+For more information, read:
 
 B<:help 'termencoding'>
 
@@ -10002,7 +10067,7 @@ absence of a byte-order mark at the start of the file. When writing, Vim
 will write a byte-order mark if the 'bomb' option is set. You may set or
 unset it manually do make Vim write, or not write, the b.o.m.
 
-For more information, read
+For more information, read:
 
 B<:help 'bomb'>
 
@@ -10012,7 +10077,7 @@ B<:help 'bomb'>
 
 There is a "tip", with explains them in different words with an example, at
 
-http://vim.wikia.com/wiki/VimTip246
+ http://vim.wikia.com/wiki/VimTip246
 
 
 =head2 37.11. How can I insert Unicode characters into a file using Vim?
@@ -10029,7 +10094,7 @@ Several methods are available:
 - Any character can be entered by using a <Ctrl-V> prefix (or <Ctrl-Q> if
   <Ctrl-V> is remapped to paste from the clipboard).
 
-For more information, read
+For more information, read:
 
 B<:help digraphs>
 
@@ -10047,7 +10112,7 @@ the :digraphs command to list the currently defined digraphs.
 Alternatively, the help file contains the complete set of all digraphs.
 So you can easily search that list there.
 
-For more information, read
+For more information, read:
 
 B<:help :digraphs>
 
@@ -10057,8 +10122,9 @@ B<:help digraph-table>
 
 
 
+
 =head1 AUTHOR
 
 Current Maintainer: Christian Brabandt <cb@256bit.org>
 
-Last updated on: 05 September 2018
+Last updated on: 12 December 2019
