@@ -5319,11 +5319,32 @@ not work everywhere (e.g. the terminal might not pass that key to Vim,
 or they might have unintended side effects (e.g. mapping <C-I> means
 also to map <Tab>).
 
-This is a known issue, that has been discussed and might be implemented
-in the future to enable Vim to distinguish between various keys even in
-console mode. (e.g.
-https://groups.google.com/d/msg/vim_dev/2bp9UdfZ63M/sajb9KM0pNYJ)
+If you are using a recent xterm as terminal, Vim is able to actually
+distinguish most Ctrl,Alt,Shift (and even distinguish Ctrl-I from Tab, etc)
+mappings by making use of the modifyOtherKeys feature of xterm. See the xterm
+documentation:
 
+https://invisible-island.net/xterm/modified-keys.html
+and
+https://invisible-island.net/xterm/manpage/xterm.html#VT100-Widget-Resources:modifyOtherKeys
+
+For terminals that pretend to be xterm, vim will try to enable this feature.
+You can check, if this feature is enabled in your Vim by typing CTRL-SHIFT-V
+CTRL-V in insert mode. If the result is a single byte, then the feature is
+off, when the feature is enabled, Vim will print: <1b>27;5;118~.
+Note: that your desktop environment or terminal might intercept the key press,
+to e.g. paste the clipboard
+
+If this feature causes problems, you can disable it:
+        let &t_TI = ''
+        let &t_TE = ''
+It does not take effect immediate, run a shell command after changing those
+values: 
+        :!true
+
+For more information, read:
+
+    |modifyOtherKeys|
  								*faq-20.6*
 20.6. How do I map the numeric keypad keys?
 
