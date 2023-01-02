@@ -53,7 +53,7 @@ docs:
 	VERSION=$(shell sed -n '/Version:/{s/^.*\(\S\?\.\?\S\+\)$$/\1/;p}' $(SCRIPT))
 	# Generate additional formats
 	vim -u NONE -U NONE -N -c ':so vim_faq.vim|:CreateVimPODFile|q' ${FAQ}
-	pod2man --name=vimfaq --release=${VERSION} --center='http://vimhelp.appspot.com/vim_faq.txt.html' ${POD} > others/${NAME}.1
+	pod2man --name=vimfaq --release=${VERSION} --center='https://vimhelp.org/vim_faq.txt.html' ${POD} > others/${NAME}.1
 	pod2html --verbose --title="Vim FAQ" ${POD} > others/${NAME}.html
 	pod2text -c ${POD} > others/${NAME}.ansi
 	@/bin/sh -c "if test -x \"$$(which pod2pdf)\" && test ${DOPDF} -eq 1 ;\
