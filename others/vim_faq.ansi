@@ -6,7 +6,7 @@
     information and links given in this FAQ. The credit for the answers in
     this FAQ goes to Peppe, Benji, Charles Campbell and numerous others. An
     online version of this FAQ is available at
-    https://vimhelp.appspot.com/vim_faq.txt.html
+    https://vimhelp.org/vim_faq.txt.html
 
 [1mGENERAL INFORMATION[0m
      1.1. What is Vim?
@@ -1076,7 +1076,7 @@
 
     Note, the user manual from that page is currently pretty outdated. It's
     best to either use the documentation that comes with vim or use the
-    online version at https://vimhelp.appspot.com
+    online version at https://vimhelp.org
 
     You can find a pdf version of the full English help, including this faq
     (in letter, A4 and Ipad format) at:
@@ -1189,7 +1189,7 @@
     [1m:help bug-reports[0m
 
   [1m2.7. Where can the FAQ be found?[0m
-    The FAQ can be found at https://vimhelp.appspot.com/vim_faq.txt.html. It
+    The FAQ can be found at https://vimhelp.org/vim_faq.txt.html. It
     will be auto-generated from the source that is managed in the github
     repository https://www.github.com/chrisbra/vim_faq (Patches are
     welcome).

@@ -6,7 +6,7 @@ several ways to solve a problem in Vim. This FAQ gives one of those several
 possibilities. You can explore the other ways using the information and
 links given in this FAQ. The credit for the answers in this FAQ goes to
 Peppe, Benji, Charles Campbell and numerous others. An online version of
-this FAQ is available at https://vimhelp.appspot.com/vim_faq.txt.html
+this FAQ is available at https://vimhelp.org/vim_faq.txt.html
 
 INDEX
 
@@ -1139,7 +1139,7 @@ You can download the HTML/PDF/PS format of the Vim user manual from:
 
 Note, the user manual from that page is currently pretty outdated. It's
 best to either use the documentation that comes with vim or use the
-online version at https://vimhelp.appspot.com
+online version at https://vimhelp.org
 
 You can find a pdf version of the full English help, including this faq
 (in letter, A4 and Ipad format) at:
@@ -1253,7 +1253,7 @@ For more information, read:
 
 2.7. Where can the FAQ be found?
 
-The FAQ can be found at https://vimhelp.appspot.com/vim_faq.txt.html.
+The FAQ can be found at https://vimhelp.org/vim_faq.txt.html.
 It will be auto-generated from the source that is managed in the github
 repository https://www.github.com/chrisbra/vim_faq (Patches are welcome).
 
