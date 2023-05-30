@@ -1357,11 +1357,12 @@ https://github.com/vim/vim-history#release-history
 
 For more information, read:
 
+    :help new-9
     :help new-8
     :help new-7
     :help new-6
     :help new-5
-    :help chnaged-8.2
+    :help changed-8.2
     :help changed-8.1
     :help changed-7.4
     :help changed-7.3
@@ -2744,7 +2745,7 @@ where, ^V is entered by pressing CTRL-V.
 For more information, read:
 
     :help ga
-    :help using_CTRL_V
+    :help using_CTRL-V
     :help 24.8
 
 
@@ -7189,7 +7190,7 @@ then you can add the above lines to the
 
 For more information, read:
 
-    :help formatoptions
+    :help 'formatoptions'
     :help 30.6
     :help format-comments
     :help filetype-plugins
