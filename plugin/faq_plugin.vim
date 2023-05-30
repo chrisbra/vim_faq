@@ -5,7 +5,7 @@
 " Last Change: 11 January 2023
 "
 " Script: 
-" GetLatestVimScripts: 3298 59 :AutoInstall: faq_plugin.vim
+" GetLatestVimScripts: 3298 60 :AutoInstall: faq_plugin.vim
 "
 "
 " empty stub. This plugin contains only of the documentation
