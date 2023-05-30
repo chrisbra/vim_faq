@@ -44,6 +44,7 @@ help:
 	vim -u NONE -U NONE -N -c ':so vim_faq.vim|:CreateVimFAQHelp|wq' ${FAQ}
 
 updateheader:
+	vim -u NONE -U NONE -N -c '/^Last updated on: /s/: \zs.*$$/\=strftime("%d %B %Y")/|wq' ${FAQ}
 	vim -u NONE -U NONE -N -c '/^" Last Change: /s/: \zs.*$$/\=strftime("%d %B %Y")/|wq' ${SCRIPT}
 	vim -u NONE -U NONE -N -c '/^" Version:/s/\d\+/\=submatch(0)+1/|wq' ${SCRIPT}
 
