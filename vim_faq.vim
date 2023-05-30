@@ -261,7 +261,7 @@ endfunction
 func! MakePODFile(textfile)
     /^INDEX/d
     g/^=\+$/d
-    call append(1,['=pod', '', '=head1 DESCRIPTION'])
+    call append(1,['=pod', '', '=encoding utf-8', '', '=head1 DESCRIPTION'])
     /^1.4/,/^1.5/s/^.*:$/=head3 &/
     /^1.4/,/^1.5/s/^\s\s\S.*$/=head4 &/
     %s/^SECTION \d\+ - \(.\+\)$/=head1 \1\r/
