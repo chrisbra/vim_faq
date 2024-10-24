@@ -1,6 +1,6 @@
 *vim_faq.txt*	Frequently Asked Questions
 
-Last updated on: 12 December 2019
+Last updated on: 24 October 2024
 
 	  VIM FAQ by: Christian Brabandt <cb@256bit.org>
 
@@ -1360,11 +1360,12 @@ https://github.com/vim/vim-history#release-history
 
 For more information, read:
 
+    |new-9|
     |new-8|
     |new-7|
     |new-6|
     |new-5|
-    |chnaged-8.2|
+    |changed-8.2|
     |changed-8.1|
     |changed-7.4|
     |changed-7.3|
@@ -2739,7 +2740,7 @@ where, ^V is entered by pressing CTRL-V.
 For more information, read:
 
     |ga|
-    |using_CTRL_V|
+    |using_CTRL-V|
     |24.8|
 
  								*faq-11.5*
@@ -7168,7 +7169,7 @@ then you can add the above lines to the
 
 For more information, read:
 
-    |formatoptions|
+    |'formatoptions'|
     |30.6|
     |format-comments|
     |filetype-plugins|
