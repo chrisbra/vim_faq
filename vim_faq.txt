@@ -1317,6 +1317,8 @@ The release history of different versions of Vim is below:
 
     VERSION         RELEASE DATE
     --------------  --------------------
+    Version 9.1     2nd January, 2024
+    Version 9.0     28th June, 2022
     Version 8.2     12th December, 2019
     Version 8.1     17th May, 2018
     Version 8.0     12th September, 2016
@@ -1359,15 +1361,9 @@ For more information, read:
 
     :help new-9
     :help new-8
-    :help new-7
-    :help new-6
-    :help new-5
+    :help changed-9.1
     :help changed-8.2
     :help changed-8.1
-    :help changed-7.4
-    :help changed-7.3
-    :help changed-7.2
-    :help changed-7.1
 
 
 3.2. Where can I find the latest version of Vim?
@@ -1379,9 +1375,7 @@ Github repository. The URL for this site is
 
 A mercurial mirror is also available:
 
-    https://bitbucket.org/vim-mirror/vim
-    http://hg.256bit.org/vim/
-    https://hg.osdn.net/view/vim/vim
+    https://www.vim.org/hgweb/vim/
 
 Some users keep updated repositories for distributing latest binary
 versions of Vim. You can find those repositories here:
@@ -1392,12 +1386,13 @@ versions of Vim. You can find those repositories here:
 3.3. What platforms does it run on?
 
 All Unix platforms.
-All Windows platforms (XP and later).
-Amiga, Atari, BeOS, Macintosh, MachTen, OS/2, RiscOS, VMS, IBM z/OS.
+All Windows platforms (10 and later).
+Amiga, Macintosh, MachTen, VMS, IBM z/OS.
 
 For MS-DOS support has been removed with the latest releases of Vim.
 16-bit DOS: latest supported version 7.1
 32-bit DOS: latest supported version 7.3
+Windows XP and Visat: latest supported version 9.0
 
 
 3.4. Where can I download the latest version of the Vim runtime files?
@@ -2997,7 +2992,7 @@ followed by the decimal or hexadecimal or octal value of that character in
 the search "/" command.  To determine the ASCII value of a character you
 can use the `:ascii` or the "ga" command.
 
-For example, to search for the ASCII character with value 188 (¼), you can
+For example, to search for the ASCII character with value 188, you can
 use one of the following search commands:
 
     /<CTRL-V>188
@@ -8341,13 +8336,7 @@ SECTION 35 - BUILDING VIM FROM SOURCE
 
 For a Unix system, follow these steps to build Vim from the sources:
 
-- Download the source and run-time files archive (vim-##.tar.bz2) from the
-  ftp://ftp.vim.org/pub/vim/unix directory.
-- Extract the archive using the bzip2 and tar utilities using the command:
-
-        $ bunzip2 -c <filename> | tar -xf -
-
-- Alternatively, download the source from the git repository:
+- Download the source from the git repository:
   https://github.com/vim/vim/releases/
 - Alternatively, download the source from the mercurial repository:
   https://bitbucket.org/vim-mirror/vim/downloads/
@@ -8393,14 +8382,8 @@ For a MS-Windows system, Vim can be built using either the Visual C++
 compiler or the Borland C++ compiler or the Ming GCC compiler or the cygwin
 gcc compiler. Follow these steps to build Vim from the sources for
 MS-Windows:
-    - Download the source (vim##src.zip), runtime (vim##rt.zip) and the
-      extra (vim-##-extra.tar.gz) archives from the
-      ftp://ftp.vim.org/pub/vim/pc directory.
-    - Extract the archives into a directory (for example, c:\vimsrc)
-    - Alternatively, download the source from the git repository:
+    - download the source from the git repository:
       https://github.com/vim/vim/releases/
-    - Alternatively, download the source from the mercurial repository:
-      https://bitbucket.org/vim-mirror/vim/downloads/
     - Depending on the installed compiler, you can use the corresponding
       makefile to build the Vim sources. For Visual C++ use the
       Make_mvc.mak makefile, for borland C++ use the Make_bc5.mak makefile,
@@ -9004,4 +8987,4 @@ For more information, read:
 =============================================================================
 
 Current Maintainer: Christian Brabandt <cb@256bit.org>
-Last updated on: 24 October 2024
+Last updated on: 11 October 2025
